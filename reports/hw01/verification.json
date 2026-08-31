@@ -1,0 +1,39 @@
+{
+  "summary": {
+    "passed": 17,
+    "total": 17,
+    "all_passed": true
+  },
+  "checks": {
+    "agents_demo_present": true,
+    "hw1_client_present": true,
+    "run_nondeterminism_present": true,
+    "model_client_at_src": true,
+    "agent_md_at_root": true,
+    "domain_schema_at_root": true,
+    "webapp_index_html_present": true,
+    "webapp_app_js_present": true,
+    "webapp_styles_css_present": true,
+    "webapp_nginx_conf_present": true,
+    "dockerfile_present": true,
+    "app_listens_on_8509": true,
+    "nd_input_valid": true,
+    "nd_runs_csv_has_40_rows": true,
+    "adapter_defines_complete": true,
+    "adapter_counts_tokens": true,
+    "tags_derived_from_input": true
+  },
+  "details": {
+    "nd_runs_row_count": 40
+  },
+  "config": {
+    "SID4": 3209,
+    "PORT_BASE": 8509,
+    "PREFIX": "s3209",
+    "SEED": 3209,
+    "VERIFY_SEED": 263209,
+    "DOMAIN_ID": 1,
+    "domain": "Clinical trial listings"
+  },
+  "model": "qwen3:8b (Ollama, CPU-only, /no_think)"
+}

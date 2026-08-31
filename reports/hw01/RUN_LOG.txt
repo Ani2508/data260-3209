@@ -1,0 +1,380 @@
+DATA 260 HW1 — RUN LOG
+Student: ANI | SID4: 3209 | Domain: Clinical trial listings
+Hardware: Surface Laptop 3, Ryzen 5, 16GB RAM, CPU-only | Model: qwen3:8b (Ollama)
+
+==== Part 1 — Docker ====
+$ cd data260-3209/code
+$ docker build -t clinical-trial-app -f Dockerfile .
+[+] Building 2.8s (9/9) FINISHED
+ => [1/4] FROM docker.io/library/nginx:alpine ...
+ => CACHED [2/4] RUN rm -rf /usr/share/nginx/html/* /etc/nginx/conf.d/default.conf
+ => CACHED [3/4] COPY web_application/nginx.conf /etc/nginx/conf.d/default.conf
+ => CACHED [4/4] COPY web_application/index.html web_application/app.js web_application/styles.css /usr/share/nginx/html/
+ => naming to docker.io/library/clinical-trial-app:latest
+$ docker run -d -p 8509:8509 clinical-trial-app
+df6e77e98e9daf4c396f39d9ed5d0bc38c0e3750740a785b69b2fb9f80764183
+
+==== Part 2 — Agents ====
+$ py -3.12 agents_demo.py --title "Diabetes Drug Trial" --content "..."
+--- Planner (382819 ms) ---
+{
+  "thought": "Identifying key elements from the title and content to generate relevant tags and summary.",
+  "message": "The task requires extracting three multi-word tags and a concise summary from the provided title and content about a diabetes drug trial.",
+  "data": {
+    "tags": [
+      "randomized clinical trial",
+      "oral medication for diabetes",
+      "type 2 diabetes treatment"
+    ],
+    "summary": "Six-month randomized trial tests new oral medication for type 2 diabetes in adults.",
+    "issues": []
+  },
+  "_tokens": {
+    "input": 459,
+    "output": 117,
+    "total": 576
+  }
+  -----------------------------------------------------------------------
+--- Reviewer (364761 ms) ---
+{
+  "thought": "Extracting specific tags and a concise summary from the trial description.",
+  "message": "Tags and summary derived from trial details. Summary captures key elements within word limit. No data issues detected.",
+  "data": {
+    "tags": [
+      "type 2 diabetes treatment",
+      "oral medication trials",
+      "randomized controlled trials"
+    ],
+    "summary": "Six-month trial tests new oral medication for type 2 diabetes in adults.",
+    "issues": []
+  },
+  "_tokens": {
+    "input": 506,
+    "output": 103,
+    "total": 609
+  }
+}
+-------------------------------------------------------------
+=== Finalized Output ===
+{
+  "thought": "Extracting relevant tags and summary based on trial specifics and constraints.",
+  "message": "Tags and summary focus on trial type, condition, and treatment. Summary adheres to word limit. No issues detected.",
+  "data": {
+    "tags": [
+      "type 2 diabetes treatment",
+      "randomized clinical trial",
+      "oral medication trial"
+    ],
+    "summary": "A six-month trial tests a new oral medication for type 2 diabetes management.",
+    "issues": []
+  },
+  "_tokens": {
+    "input": 439,
+    "output": 107,
+    "total": 546
+  }
+}
+=== Publish Package ===
+{
+  "title": "Diabetes Drug Trial",
+  "email": "student@example.com",
+  "content": "A six month randomized trial testing a new oral medication for type 2 diabetes in adults.",
+  "agents": {
+    "transcript": [
+      {
+        "role": "Planner",
+        "content": "The task requires extracting three multi-word tags and a concise summary from the provided title and content about a diabetes drug trial."
+      },
+      {
+        "role": "Reviewer",
+        "content": "Tags and summary derived from trial details. Summary captures key elements within word limit. No data issues detected."
+      }
+    ],
+    "final": {
+      "tags": [
+        "type 2 diabetes treatment",
+        "randomized clinical trial",
+        "oral medication trial"
+      ],
+      "summary": "A six-month trial tests a new oral medication for type 2 diabetes management.",
+      "issues": []
+    }
+  },
+  "submissionDate": "2026-08-26T22:11:00Z"
+}
+
+==== Part 4 — Token client (5-turn) ====
+$ py -3.12 hw1_client.py
+[turn 1] input=191 output=1057 total=1248
+[turn 2] input=282 output=430 total=712
+[turn 3] input=384 output=520 total=904
+/stats -> turns=3 cum_in=857 cum_out=2007 total=2864 history=2721
+[turn 4] input=587 output=665 total=1252
+[turn 5] input=801 output=588 total=1389
+/stats -> turns=5 cum_in=2245 cum_out=3260 total=5505 history=4251
+SESSION SUMMARY -> turns=5 cum_in=2245 cum_out=3260 total=5505
+
+
+---------------------------------
+
+
+
+PS C:\Users\amrut\Downloads\Part2> py -3.12 hw1_client.py
+HW1 Client - 5-turn code-review demo (type '/stats' or 'exit')
+Model: qwen3:8b
+
+you> Please review this function: def add(a,b): return a+b
+
+assistant>
+- The function lacks proper indentation for the return statement, causing a syntax error.
+- The function does not handle non-numeric inputs, which could lead to TypeError.
+- The function name 'add' is appropriate, but could be more descriptive if the context requires it.
+- No error handling is implemented for cases where inputs are not compatible with addition.
+
+[turn 1] input=191 output=1057 total=1248
+you> Review this: def divide(a,b): return a/b
+
+assistant>
+- The function lacks error handling for division by zero, which will raise a ZeroDivisionError.
+- No validation is performed for non-numeric inputs, leading to potential TypeErrors.
+- The return statement correctly performs division, but could use parentheses for clarity if nested.
+- The function does not handle cases where `b` is zero or non-numeric, making it unreliable in edge scenarios.
+
+[turn 2] input=282 output=430 total=712
+you> What are common mistakes when reading a file in Python?
+
+assistant>
+- Forgetting to close the file after reading, leading to resource leaks or corruption.
+- Not using the `with` statement, which automatically handles file closure.
+- Using incorrect modes (`'r'`, `'w'`, `'a'`) that overwrite or truncate files unintentionally.
+- Failing to handle exceptions like `FileNotFoundError` or `PermissionError`.
+- Not specifying encoding parameters, causing decoding errors with non-UTF-8 files.
+- Reading large files into memory all at once, leading to high memory usage.
+- Not checking if the file exists before attempting to open it.
+- Using `read()` without limits, which can cause excessive memory consumption.
+- Ignoring binary vs. text mode differences, leading to data corruption.
+- Not handling cases where the file is empty or contains unexpected content.
+
+[turn 3] input=384 output=520 total=904
+you> /stats
+
+===== /stats =====
+Turns completed          : 3
+Cumulative input tokens  : 857
+Cumulative output tokens : 2007
+Cumulative total tokens  : 2864
+Serialized history length: 2721 chars
+==================
+
+you> Review: def get_user(id): return db.query("SELECT * FROM users WHERE id=" + id)
+
+assistant>
+- The function is vulnerable to SQL injection due to direct string concatenation of user input.
+- No parameterization is used, allowing malicious input to alter the SQL query structure.
+- Lack of error handling for database exceptions like `DatabaseError` or `OperationalError`.
+- No input validation for the `id` parameter, which should be numeric.
+- The SQL query could return multiple rows if `id` is not unique, leading to unexpected results.
+- No use of prepared statements or safe query parameters (`%s`, `?`, etc.) to prevent injection.
+- The function does not handle cases where the database connection (`db`) is closed or invalid.
+- No explicit transaction handling or rollback mechanisms for potential database errors.
+- The query lacks `LIMIT 1` or similar clauses, risking multiple result returns.
+- No logging or error messages for debugging purposes in case of failures.
+
+[turn 4] input=587 output=665 total=1252
+you> Summarize the top 3 issues you found across all the code so far.
+
+assistant>
+- **Security vulnerabilities** like SQL injection from concatenating user input without parameterization.
+- **Lack of error handling** for edge cases (e.g., division by zero, file not found, invalid database queries).
+- **Insufficient input validation** for parameters, leading to potential type errors or unexpected behavior.
+
+[turn 5] input=801 output=588 total=1389
+you> /stats
+
+===== /stats =====
+Turns completed          : 5
+Cumulative input tokens  : 2245
+Cumulative output tokens : 3260
+Cumulative total tokens  : 5505
+Serialized history length: 4251 chars
+==================
+
+you> exit
+
+========== SESSION SUMMARY ==========
+Total turns              : 5
+Cumulative input tokens  : 2245
+Cumulative output tokens : 3260
+Cumulative total tokens  : 5505
+=====================================
+
+==== Part 3 — Non-determinism (40 runs) ====
+<Paste run_nondeterminism.py console output + timestamps after the overnight run.>
+
+PS C:\Users\amrut\Downloads\Part2> cd C:\Users\amrut\Downloads\Part2
+PS C:\Users\amrut\Downloads\Part2> py -3.12 run_nondeterminism.py
+Fixed input: 'Phase II Study of Drug X in Type 2 Diabetes'
+Already completed: {0.0: 0, 0.7: 0}
+[temp 0.0] run 1/20 ...
+   tags=['phase ii trials', 'type 2 diabetes', 'oral medication'] latency=891095ms
+[temp 0.0] run 2/20 ...
+   tags=['phase ii study', 'type 2 diabetes', 'oral medication'] latency=699824ms
+[temp 0.0] run 3/20 ...
+   tags=['phase ii trial', 'type 2 diabetes', 'oral medication'] latency=748352ms
+[temp 0.0] run 4/20 ...
+   tags=['phase ii study', 'type 2 diabetes', 'oral medication'] latency=781739ms
+[temp 0.0] run 5/20 ...
+   tags=['phase ii study', 'type 2 diabetes', 'oral medication'] latency=708759ms
+[temp 0.0] run 6/20 ...
+   tags=['phase ii trial', 'type 2 diabetes', 'oral medication'] latency=664118ms
+[temp 0.0] run 7/20 ...
+   tags=['phase ii trial', 'type 2 diabetes', 'oral medication'] latency=647534ms
+[temp 0.0] run 8/20 ...
+   tags=['phase ii trial', 'type 2 diabetes', 'oral medication'] latency=646699ms
+[temp 0.0] run 9/20 ...
+   tags=['phase ii study', 'type 2 diabetes', 'oral medication'] latency=832720ms
+[temp 0.0] run 10/20 ...
+   tags=['phase ii trial', 'type 2 diabetes', 'oral medication'] latency=707922ms
+[temp 0.0] run 11/20 ...
+   tags=['phase ii trial', 'type 2 diabetes', 'oral medication'] latency=713236ms
+[temp 0.0] run 12/20 ...
+   tags=['phase ii trial', 'type 2 diabetes', 'oral medication'] latency=811392ms
+[temp 0.0] run 13/20 ...
+   tags=['phase ii study', 'type 2 diabetes', 'oral medication'] latency=933299ms
+[temp 0.0] run 14/20 ...
+   tags=['phase ii trial', 'type 2 diabetes', 'oral medication'] latency=927983ms
+[temp 0.0] run 15/20 ...
+   tags=['phase ii trial', 'type 2 diabetes', 'oral medication'] latency=734417ms
+[temp 0.0] run 16/20 ...
+   tags=['phase ii trial', 'type 2 diabetes', 'oral medication'] latency=714486ms
+[temp 0.0] run 17/20 ...
+   tags=['phase ii study', 'type 2 diabetes', 'oral medication'] latency=782386ms
+[temp 0.0] run 18/20 ...
+   tags=['phase ii trial', 'type 2 diabetes', 'oral medication'] latency=677278ms
+[temp 0.0] run 19/20 ...
+   tags=['phase ii trial', 'type 2 diabetes', 'oral medication'] latency=698636ms
+[temp 0.0] run 20/20 ...
+Traceback (most recent call last):
+  File "C:\Users\amrut\Downloads\Part2\run_nondeterminism.py", line 178, in <module>
+    main()
+  File "C:\Users\amrut\Downloads\Part2\run_nondeterminism.py", line 164, in main
+    res = run_pipeline_once(title, content, temp)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\amrut\Downloads\Part2\run_nondeterminism.py", line 63, in run_pipeline_once
+    a = planner.respond(transcript, task, title, content, strict=True)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\amrut\Downloads\Part2\agents_demo.py", line 240, in respond
+    result = self.client.complete(messages)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\amrut\Downloads\Part2\src\model_client.py", line 97, in complete
+    response = self.llm.invoke(lc_messages)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\amrut\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 477, in invoke
+    self.generate_prompt(
+  File "C:\Users\amrut\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1866, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\amrut\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1673, in generate
+    self._generate_with_cache(
+  File "C:\Users\amrut\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 2011, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\amrut\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_ollama\chat_models.py", line 1200, in _generate
+    final_chunk = self._chat_stream_with_aggregation(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\amrut\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_ollama\chat_models.py", line 1135, in _chat_stream_with_aggregation
+    for chunk in self._iterate_over_stream(messages, stop, **kwargs):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\amrut\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_ollama\chat_models.py", line 1224, in _iterate_over_stream
+    for stream_resp in self._create_chat_stream(messages, stop, **kwargs):
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\amrut\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_ollama\chat_models.py", line 1122, in _create_chat_stream
+    yield from self._client.chat(**chat_params)
+  File "C:\Users\amrut\AppData\Local\Programs\Python\Python312\Lib\site-packages\ollama\_client.py", line 191, in inner
+    for line in r.iter_lines():
+                ^^^^^^^^^^^^^^
+  File "C:\Users\amrut\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpx\_models.py", line 929, in iter_lines
+    for text in self.iter_text():
+                ^^^^^^^^^^^^^^^^
+  File "C:\Users\amrut\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpx\_models.py", line 916, in iter_text
+    for byte_content in self.iter_bytes():
+                        ^^^^^^^^^^^^^^^^^
+  File "C:\Users\amrut\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpx\_models.py", line 897, in iter_bytes
+    for raw_bytes in self.iter_raw():
+                     ^^^^^^^^^^^^^^^
+  File "C:\Users\amrut\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpx\_models.py", line 951, in iter_raw
+    for raw_stream_bytes in self.stream:
+                            ^^^^^^^^^^^
+  File "C:\Users\amrut\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpx\_client.py", line 153, in __iter__
+    for chunk in self._stream:
+                 ^^^^^^^^^^^^
+  File "C:\Users\amrut\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpx\_transports\default.py", line 127, in __iter__
+    for part in self._httpcore_stream:
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\amrut\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpcore\_sync\connection_pool.py", line 407, in __iter__
+    raise exc from None
+  File "C:\Users\amrut\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpcore\_sync\connection_pool.py", line 403, in __iter__
+    for part in self._stream:
+                ^^^^^^^^^^^^
+  File "C:\Users\amrut\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpcore\_sync\http11.py", line 342, in __iter__
+    raise exc
+  File "C:\Users\amrut\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpcore\_sync\http11.py", line 334, in __iter__
+    for chunk in self._connection._receive_response_body(**kwargs):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\amrut\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpcore\_sync\http11.py", line 203, in _receive_response_body
+    event = self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\amrut\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpcore\_sync\http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\amrut\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpcore\_backends\sync.py", line 128, in read
+    return self._sock.recv(max_bytes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+PS C:\Users\amrut\Downloads\Part2> py -3.12 run_nondeterminism.py
+Fixed input: 'Phase II Study of Drug X in Type 2 Diabetes'
+Already completed: {0.0: 19, 0.7: 0}
+[temp 0.0] run 20/20 ...
+   tags=['phase ii trials', 'type 2 diabetes', 'oral medication'] latency=882506ms
+[temp 0.7] run 1/20 ...
+   tags=['phase ii trial', 'type 2 diabetes', 'oral medication'] latency=887367ms
+[temp 0.7] run 2/20 ...
+   tags=['phase ii trials', 'type 2 diabetes', 'oral medication testing'] latency=1025393ms
+[temp 0.7] run 3/20 ...
+   tags=['phase ii clinical trial', 'type 2 diabetes', 'oral antidiabetic therapy'] latency=1379380ms
+[temp 0.7] run 4/20 ...
+   tags=['phase ii clinical trial', 'type 2 diabetes', 'oral medication for blood glucose'] latency=1140244ms
+[temp 0.7] run 5/20 ...
+   tags=['phase ii trials', 'type 2 diabetes', 'oral medications'] latency=829238ms
+[temp 0.7] run 6/20 ...
+   tags=['phase-ii-trial', 'type-2-diabetes', 'six months test'] latency=885742ms
+[temp 0.7] run 7/20 ...
+   tags=['phase ii trial', 'type 2 diabetes', 'oral medication'] latency=1458645ms
+[temp 0.7] run 8/20 ...
+   tags=['phase ii study', 'type 2 diabetes', 'oral medication'] latency=1058514ms
+[temp 0.7] run 9/20 ...
+   tags=['phase ii trials', 'type 2 diabetes', 'oral medication'] latency=701004ms
+[temp 0.7] run 10/20 ...
+   tags=['phase ii clinical trial', 'type 2 diabetes', 'oral medication for diabetes'] latency=683723ms
+[temp 0.7] run 11/20 ...
+   tags=['phase ii trial', 'type 2 diabetes', 'blood glucose control'] latency=1393437ms
+[temp 0.7] run 12/20 ...
+   tags=['phase-ii-study', 'type-2-diabetes', 'six months test'] latency=1447736ms
+[temp 0.7] run 13/20 ...
+   tags=['phase ii trial', 'type 2 diabetes', 'oral medication'] latency=786641ms
+[temp 0.7] run 14/20 ...
+   tags=['study phase', 'target condition', 'treatment method'] latency=775892ms
+[temp 0.7] run 15/20 ...
+   tags=['phase ii study', 'type 2 diabetes', 'blood glucose control'] latency=666230ms
+[temp 0.7] run 16/20 ...
+   tags=['phase ii study', 'type 2 diabetes', 'oral medication'] latency=901920ms
+[temp 0.7] run 17/20 ...
+   tags=['phase ii trials', 'type 2 diabetes', 'oral medication'] latency=879020ms
+[temp 0.7] run 18/20 ...
+   tags=['phase ii clinical trials', 'type 2 diabetes', 'oral medications'] latency=897493ms
+[temp 0.7] run 19/20 ...
+   tags=['phase ii trials', 'type 2 diabetes', 'oral medication'] latency=1037055ms
+[temp 0.7] run 20/20 ...
+   tags=['phase ii trial', 'type 2 diabetes', 'blood glucose control'] latency=899358ms
+
+All 40 runs complete.

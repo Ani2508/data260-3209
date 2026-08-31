@@ -1,0 +1,32 @@
+{
+  "experiment": "Part 4 — five-turn conversation token accounting",
+  "model": "qwen3:8b (Ollama, CPU-only, /no_think)",
+  "system_prompt_source": "AGENT.md (strict bullet-only code review)",
+  "per_turn": [
+    { "turn": 1, "input_tokens": 191, "output_tokens": 1057, "total_tokens": 1248 },
+    { "turn": 2, "input_tokens": 282, "output_tokens": 430,  "total_tokens": 712  },
+    { "turn": 3, "input_tokens": 384, "output_tokens": 520,  "total_tokens": 904  },
+    { "turn": 4, "input_tokens": 587, "output_tokens": 665,  "total_tokens": 1252 },
+    { "turn": 5, "input_tokens": 801, "output_tokens": 588,  "total_tokens": 1389 }
+  ],
+  "stats_after_turn_3": {
+    "turns": 3,
+    "cumulative_input_tokens": 857,
+    "cumulative_output_tokens": 2007,
+    "cumulative_total_tokens": 2864,
+    "serialized_history_length_chars": 2721
+  },
+  "stats_after_turn_5": {
+    "turns": 5,
+    "cumulative_input_tokens": 2245,
+    "cumulative_output_tokens": 3260,
+    "cumulative_total_tokens": 5505,
+    "serialized_history_length_chars": 4251
+  },
+  "session_summary": {
+    "total_turns": 5,
+    "cumulative_input_tokens": 2245,
+    "cumulative_output_tokens": 3260,
+    "cumulative_total_tokens": 5505
+  }
+}

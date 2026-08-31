@@ -1,0 +1,41 @@
+run_index,temperature,tag1,tag2,tag3,tags_joined,latency_ms,timestamp
+1,0.0,phase ii trials,type 2 diabetes,oral medication,phase ii trials | type 2 diabetes | oral medication,891095,2026-08-27T19:37:05Z
+2,0.0,phase ii study,type 2 diabetes,oral medication,phase ii study | type 2 diabetes | oral medication,699824,2026-08-27T19:48:46Z
+3,0.0,phase ii trial,type 2 diabetes,oral medication,phase ii trial | type 2 diabetes | oral medication,748352,2026-08-27T20:01:15Z
+4,0.0,phase ii study,type 2 diabetes,oral medication,phase ii study | type 2 diabetes | oral medication,781739,2026-08-27T20:14:17Z
+5,0.0,phase ii study,type 2 diabetes,oral medication,phase ii study | type 2 diabetes | oral medication,708759,2026-08-27T20:26:07Z
+6,0.0,phase ii trial,type 2 diabetes,oral medication,phase ii trial | type 2 diabetes | oral medication,664118,2026-08-27T20:37:12Z
+7,0.0,phase ii trial,type 2 diabetes,oral medication,phase ii trial | type 2 diabetes | oral medication,647534,2026-08-27T20:48:00Z
+8,0.0,phase ii trial,type 2 diabetes,oral medication,phase ii trial | type 2 diabetes | oral medication,646699,2026-08-27T20:58:47Z
+9,0.0,phase ii study,type 2 diabetes,oral medication,phase ii study | type 2 diabetes | oral medication,832720,2026-08-27T21:12:41Z
+10,0.0,phase ii trial,type 2 diabetes,oral medication,phase ii trial | type 2 diabetes | oral medication,707922,2026-08-27T21:24:29Z
+11,0.0,phase ii trial,type 2 diabetes,oral medication,phase ii trial | type 2 diabetes | oral medication,713236,2026-08-27T21:36:23Z
+12,0.0,phase ii trial,type 2 diabetes,oral medication,phase ii trial | type 2 diabetes | oral medication,811392,2026-08-27T21:49:56Z
+13,0.0,phase ii study,type 2 diabetes,oral medication,phase ii study | type 2 diabetes | oral medication,933299,2026-08-27T22:05:30Z
+14,0.0,phase ii trial,type 2 diabetes,oral medication,phase ii trial | type 2 diabetes | oral medication,927983,2026-08-27T22:20:58Z
+15,0.0,phase ii trial,type 2 diabetes,oral medication,phase ii trial | type 2 diabetes | oral medication,734417,2026-08-27T22:33:14Z
+16,0.0,phase ii trial,type 2 diabetes,oral medication,phase ii trial | type 2 diabetes | oral medication,714486,2026-08-27T22:45:09Z
+17,0.0,phase ii study,type 2 diabetes,oral medication,phase ii study | type 2 diabetes | oral medication,782386,2026-08-27T22:58:12Z
+18,0.0,phase ii trial,type 2 diabetes,oral medication,phase ii trial | type 2 diabetes | oral medication,677278,2026-08-27T23:09:30Z
+19,0.0,phase ii trial,type 2 diabetes,oral medication,phase ii trial | type 2 diabetes | oral medication,698636,2026-08-27T23:21:09Z
+20,0.0,phase ii trials,type 2 diabetes,oral medication,phase ii trials | type 2 diabetes | oral medication,882506,2026-08-28T00:09:11Z
+1,0.7,phase ii trial,type 2 diabetes,oral medication,phase ii trial | type 2 diabetes | oral medication,887367,2026-08-28T00:23:59Z
+2,0.7,phase ii trials,type 2 diabetes,oral medication testing,phase ii trials | type 2 diabetes | oral medication testing,1025393,2026-08-28T00:41:05Z
+3,0.7,phase ii clinical trial,type 2 diabetes,oral antidiabetic therapy,phase ii clinical trial | type 2 diabetes | oral antidiabetic therapy,1379380,2026-08-28T01:04:05Z
+4,0.7,phase ii clinical trial,type 2 diabetes,oral medication for blood glucose,phase ii clinical trial | type 2 diabetes | oral medication for blood glucose,1140244,2026-08-28T01:23:06Z
+5,0.7,phase ii trials,type 2 diabetes,oral medications,phase ii trials | type 2 diabetes | oral medications,829238,2026-08-28T01:36:56Z
+6,0.7,phase-ii-trial,type-2-diabetes,six months test,phase-ii-trial | type-2-diabetes | six months test,885742,2026-08-28T01:51:43Z
+7,0.7,phase ii trial,type 2 diabetes,oral medication,phase ii trial | type 2 diabetes | oral medication,1458645,2026-08-28T02:16:02Z
+8,0.7,phase ii study,type 2 diabetes,oral medication,phase ii study | type 2 diabetes | oral medication,1058514,2026-08-28T02:33:42Z
+9,0.7,phase ii trials,type 2 diabetes,oral medication,phase ii trials | type 2 diabetes | oral medication,701004,2026-08-28T02:45:24Z
+10,0.7,phase ii clinical trial,type 2 diabetes,oral medication for diabetes,phase ii clinical trial | type 2 diabetes | oral medication for diabetes,683723,2026-08-28T02:56:48Z
+11,0.7,phase ii trial,type 2 diabetes,blood glucose control,phase ii trial | type 2 diabetes | blood glucose control,1393437,2026-08-28T03:20:02Z
+12,0.7,phase-ii-study,type-2-diabetes,six months test,phase-ii-study | type-2-diabetes | six months test,1447736,2026-08-28T03:44:11Z
+13,0.7,phase ii trial,type 2 diabetes,oral medication,phase ii trial | type 2 diabetes | oral medication,786641,2026-08-28T03:57:18Z
+14,0.7,study phase,target condition,treatment method,study phase | target condition | treatment method,775892,2026-08-28T04:10:15Z
+15,0.7,phase ii study,type 2 diabetes,blood glucose control,phase ii study | type 2 diabetes | blood glucose control,666230,2026-08-28T04:21:22Z
+16,0.7,phase ii study,type 2 diabetes,oral medication,phase ii study | type 2 diabetes | oral medication,901920,2026-08-28T04:36:25Z
+17,0.7,phase ii trials,type 2 diabetes,oral medication,phase ii trials | type 2 diabetes | oral medication,879020,2026-08-28T04:51:04Z
+18,0.7,phase ii clinical trials,type 2 diabetes,oral medications,phase ii clinical trials | type 2 diabetes | oral medications,897493,2026-08-28T05:06:03Z
+19,0.7,phase ii trials,type 2 diabetes,oral medication,phase ii trials | type 2 diabetes | oral medication,1037055,2026-08-28T05:23:20Z
+20,0.7,phase ii trial,type 2 diabetes,blood glucose control,phase ii trial | type 2 diabetes | blood glucose control,899358,2026-08-28T05:38:20Z

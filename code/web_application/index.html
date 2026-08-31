@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HW1-ANI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topbar"></div>
+
+  <main class="wrap">
+    <header class="page-head">
+      <div class="reg-badge">TRIAL REGISTRY</div>
+      <h1>Clinical Trial Listing</h1>
+      <p class="sub">Submit a study to the public trial catalogue. Fields marked with an asterisk are required.</p>
+    </header>
+
+    <div class="layout">
+      <section class="card form-card">
+        <form id="trialForm" novalidate>
+          <div class="field">
+            <label for="trialTitle">Trial Title <span class="req">*</span></label>
+            <input type="text" id="trialTitle" name="trialTitle" required autofocus
+                   placeholder="e.g. Phase II Study of Drug X in Type 2 Diabetes">
+            <p class="err" id="err-trialTitle"></p>
+          </div>
+
+          <div class="field">
+            <label for="sponsor">Sponsor / Institution <span class="req">*</span></label>
+            <input type="text" id="sponsor" name="sponsor" required
+                   placeholder="e.g. Stanford Medical Center">
+            <p class="err" id="err-sponsor"></p>
+          </div>
+
+          <div class="field">
+            <label for="email">Submitter Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" required
+                   placeholder="e.g. coordinator@hospital.org">
+            <p class="err" id="err-email"></p>
+          </div>
+
+          <div class="field">
+            <label for="content">Trial Summary <span class="req">*</span></label>
+            <textarea id="content" name="content" required
+                      placeholder="Describe the study purpose and eligibility."></textarea>
+            <div class="meta-row">
+              <span class="counter" id="counter">0 characters &mdash; need more than 25</span>
+            </div>
+            <p class="err" id="err-content"></p>
+          </div>
+
+          <div class="field">
+            <label for="status">Status <span class="req">*</span></label>
+            <select id="status" name="status" required>
+              <option value="Recruiting">Recruiting</option>
+              <option value="Active - Not Recruiting">Active &ndash; Not Recruiting</option>
+              <option value="Completed">Completed</option>
+              <option value="Terminated">Terminated</option>
+            </select>
+          </div>
+
+          <div class="field terms">
+            <input type="checkbox" id="terms" name="terms">
+            <label for="terms">I agree to the terms and conditions.</label>
+          </div>
+          <p class="err" id="err-terms"></p>
+
+          <button type="submit" class="submit-btn">Submit Trial Listing</button>
+        </form>
+      </section>
+
+      <aside class="card side-card">
+        <div class="side-head">
+          <h2>Submitted Trials</h2>
+          <span class="count-badge" id="countBadge">0</span>
+        </div>
+        <p class="side-empty" id="sideEmpty">No trials submitted yet. Completed submissions appear here.</p>
+        <ul class="trial-list" id="trialList"></ul>
+      </aside>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

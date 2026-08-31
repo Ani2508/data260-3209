@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HW1-ANI</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 2rem auto; padding: 0 1rem; color: #1a1a1a; }
+    h1 { font-size: 2.2rem; margin-bottom: 0.2rem; }
+    label { display: block; margin-top: 1rem; font-weight: 600; }
+    input, textarea, select { width: 100%; padding: 0.5rem; margin-top: 0.3rem; font-size: 1rem; box-sizing: border-box; }
+    textarea { min-height: 100px; resize: vertical; }
+    .terms { display: flex; align-items: center; gap: 0.5rem; margin-top: 1rem; }
+    .terms input { width: auto; margin: 0; }
+    .terms label { margin: 0; font-weight: 400; }
+    button { margin-top: 1.5rem; padding: 0.7rem 1.5rem; font-size: 1rem; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Clinical Trial Listing</h1>
+
+  <form id="trialForm">
+    <label for="trialTitle">Trial Title</label>
+    <input type="text" id="trialTitle" name="trialTitle" required autofocus
+           placeholder="e.g. Phase II Study of Drug X in Type 2 Diabetes">
+
+    <label for="sponsor">Sponsor / Institution</label>
+    <input type="text" id="sponsor" name="sponsor" required
+           placeholder="e.g. Stanford Medical Center">
+
+    <label for="email">Submitter Email</label>
+    <input type="email" id="email" name="email" required
+           placeholder="e.g. coordinator@hospital.org">
+
+    <label for="content">Trial Summary</label>
+    <textarea id="content" name="content" required
+              placeholder="Describe the study purpose and eligibility (more than 25 characters)."></textarea>
+
+    <label for="status">Status</label>
+    <select id="status" name="status" required>
+      <option value="Recruiting">Recruiting</option>
+      <option value="Active - Not Recruiting">Active – Not Recruiting</option>
+      <option value="Completed">Completed</option>
+      <option value="Terminated">Terminated</option>
+    </select>
+
+    <div class="terms">
+      <input type="checkbox" id="terms" name="terms">
+      <label for="terms">I agree to the terms and conditions.</label>
+    </div>
+
+    <button type="submit">Submit Trial Listing</button>
+  </form>
+
+  <script src="app.js"></script>
+</body>
+</html>
