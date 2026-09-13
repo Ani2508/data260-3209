@@ -1,0 +1,2533 @@
+DATA-260 Homework 2 Part 4
+Experiment: 30 runs on one frozen input
+Experiment started UTC: 2026-09-12T19:55:45.904681+00:00
+Input: D:\data260-3209\reports\hw02\cases\schema_input.json
+Turn ceiling: 10
+Model: qwen3:4b-instruct-2507-q4_K_M
+
+RUN 001
+started_at_utc=2026-09-12T19:55:45.904681+00:00
+finished_at_utc=2026-09-12T19:57:02.418047+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=76516.10
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_001.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on the diabetes drug trial content.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes Treatment",
+        "Oral Medication Trial",
+        "Clinical Research"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 81,
+      "total": 263
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from the title and content to ensure relevance and accuracy of tags and summary.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes treatment",
+        "oral medication trial",
+        "clinical research"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 295,
+      "output": 92,
+      "total": 387
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 002
+started_at_utc=2026-09-12T19:57:02.418047+00:00
+finished_at_utc=2026-09-12T19:57:44.160684+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=41730.36
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_002.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes type, medication form, and trial type to ensure relevance and precision.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 93,
+      "total": 387
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 003
+started_at_utc=2026-09-12T19:57:44.160684+00:00
+finished_at_utc=2026-09-12T19:58:16.069590+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=31908.72
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_003.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 004
+started_at_utc=2026-09-12T19:58:16.069590+00:00
+finished_at_utc=2026-09-12T19:58:47.688746+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=31617.26
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_004.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 005
+started_at_utc=2026-09-12T19:58:47.688746+00:00
+finished_at_utc=2026-09-12T19:59:20.421162+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=32733.93
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_005.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 006
+started_at_utc=2026-09-12T19:59:20.421162+00:00
+finished_at_utc=2026-09-12T19:59:52.716661+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=32292.62
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_006.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 007
+started_at_utc=2026-09-12T19:59:52.718670+00:00
+finished_at_utc=2026-09-12T20:00:26.847571+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=34129.15
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_007.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 008
+started_at_utc=2026-09-12T20:00:26.847571+00:00
+finished_at_utc=2026-09-12T20:00:58.740713+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=31896.42
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_008.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 009
+started_at_utc=2026-09-12T20:00:58.740713+00:00
+finished_at_utc=2026-09-12T20:01:31.133089+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=32386.53
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_009.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 010
+started_at_utc=2026-09-12T20:01:31.133089+00:00
+finished_at_utc=2026-09-12T20:02:02.450515+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=31325.46
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_010.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 011
+started_at_utc=2026-09-12T20:02:02.460656+00:00
+finished_at_utc=2026-09-12T20:02:38.783835+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=36324.38
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_011.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 012
+started_at_utc=2026-09-12T20:02:38.785845+00:00
+finished_at_utc=2026-09-12T20:03:12.907481+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=34131.96
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_012.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 013
+started_at_utc=2026-09-12T20:03:12.907481+00:00
+finished_at_utc=2026-09-12T20:03:48.768597+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=35863.18
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_013.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 014
+started_at_utc=2026-09-12T20:03:48.768597+00:00
+finished_at_utc=2026-09-12T20:04:21.763614+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=32989.22
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_014.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 015
+started_at_utc=2026-09-12T20:04:21.778188+00:00
+finished_at_utc=2026-09-12T20:04:54.889431+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=33111.18
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_015.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 016
+started_at_utc=2026-09-12T20:04:54.894275+00:00
+finished_at_utc=2026-09-12T20:05:26.857821+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=31974.59
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_016.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 017
+started_at_utc=2026-09-12T20:05:26.857821+00:00
+finished_at_utc=2026-09-12T20:05:58.484187+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=31621.14
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_017.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 018
+started_at_utc=2026-09-12T20:05:58.484187+00:00
+finished_at_utc=2026-09-12T20:06:30.186136+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=31693.07
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_018.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 019
+started_at_utc=2026-09-12T20:06:30.186136+00:00
+finished_at_utc=2026-09-12T20:07:01.764443+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=31577.54
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_019.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 020
+started_at_utc=2026-09-12T20:07:01.767956+00:00
+finished_at_utc=2026-09-12T20:07:33.329612+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=31564.03
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_020.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 021
+started_at_utc=2026-09-12T20:07:33.329612+00:00
+finished_at_utc=2026-09-12T20:08:07.548005+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=34214.13
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_021.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 022
+started_at_utc=2026-09-12T20:08:07.550018+00:00
+finished_at_utc=2026-09-12T20:08:39.895139+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=32359.72
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_022.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 023
+started_at_utc=2026-09-12T20:08:39.911239+00:00
+finished_at_utc=2026-09-12T20:09:13.785133+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=33876.58
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_023.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 024
+started_at_utc=2026-09-12T20:09:13.785133+00:00
+finished_at_utc=2026-09-12T20:09:48.198912+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=34411.42
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_024.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 025
+started_at_utc=2026-09-12T20:09:48.198912+00:00
+finished_at_utc=2026-09-12T20:10:20.221581+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=32020.85
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_025.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 026
+started_at_utc=2026-09-12T20:10:20.226987+00:00
+finished_at_utc=2026-09-12T20:10:51.948909+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=31721.50
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_026.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 027
+started_at_utc=2026-09-12T20:10:51.948909+00:00
+finished_at_utc=2026-09-12T20:11:24.994352+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=33045.35
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_027.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 028
+started_at_utc=2026-09-12T20:11:24.999997+00:00
+finished_at_utc=2026-09-12T20:11:57.493279+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=32492.28
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_028.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 029
+started_at_utc=2026-09-12T20:11:57.493279+00:00
+finished_at_utc=2026-09-12T20:12:29.193455+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=31699.07
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_029.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+RUN 030
+started_at_utc=2026-09-12T20:12:29.193455+00:00
+finished_at_utc=2026-09-12T20:13:01.456524+00:00
+category=valid first attempt
+turn_count=3
+latency_ms=32261.83
+return_code=0
+raw_file=D:\data260-3209\reports\hw02\raw\run_030.txt
+----- REAL CONSOLE OUTPUT -----
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes",
+        "Oral Medication",
+        "Clinical Trial"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 80,
+      "total": 262
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from title and content: diabetes, medication, and clinical trial to form precise topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes",
+        "oral medication",
+        "clinical trial"
+      ],
+      "summary": "A clinical trial tests a new oral medication for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 294,
+      "output": 91,
+      "total": 385
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")
+----- END CONSOLE OUTPUT -----
+
+SUMMARY
+Experiment finished UTC: 2026-09-12T20:13:01.456524+00:00
+valid first attempt: 30
+valid after one retry: 0
+valid after two or more retries: 0
+abandoned at ceiling: 0

@@ -1,0 +1,86 @@
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Contradictory Clinical Trial Instructions
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+--- Planner validation failed ---
+1 validation error for PlannerOutput
+tags
+  Value error, Each tag must contain between 3 and 30 characters. [type=value_error, input_value=['AI', 'DM', 'CL'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+Turn count: 1
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Reviewer feedback updated.
+
+--- NODE: Planner ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 4
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Corrected tag lengths to meet 3-30 character requirement and ensured all tags are valid.",
+    "message": "Tags adjusted to meet character constraints and topic relevance.",
+    "data": {
+      "tags": [
+        "ArtificialIntelligence",
+        "DiabetesManagement",
+        "ClinicalResearch"
+      ],
+      "summary": "A clinical trial for a diabetes medication faces contradictory instructions, raising concerns about protocol consistency and data reliability."
+    },
+    "_tokens": {
+      "input": 327,
+      "output": 85,
+      "total": 412
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Tags meet length and relevance criteria; summary is within word limit and accurately reflects the content.",
+    "message": "Tags are relevant and properly formatted. Summary is concise and topic-specific.",
+    "data": {
+      "tags": [
+        "ai",
+        "diabetesmanagement",
+        "tags return only"
+      ],
+      "summary": "A clinical trial for a diabetes medication faces contradictory instructions, raising concerns about protocol consistency and data reliability.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 333,
+      "output": 77,
+      "total": 410
+    }
+  },
+  "turn_count": 4,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")

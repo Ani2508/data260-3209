@@ -79,7 +79,9 @@ class ModelClient:
 
     def __init__(self, model=None, base_url=None, temperature=0.0,
                  num_ctx=4096, force_json=True, disable_thinking=True):
-        self.model = model or os.environ.get("OLLAMA_MODEL", "qwen3:8b")
+        self.model = model or os.environ.get(
+    "OLLAMA_MODEL", "qwen3:4b-instruct-2507-q4_K_M"
+)
         self.base_url = base_url or os.environ.get("OLLAMA_URL", "http://localhost:11434")
         self.temperature = temperature
         self.disable_thinking = disable_thinking

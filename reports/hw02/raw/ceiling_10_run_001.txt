@@ -1,0 +1,73 @@
+
+=== Stateful Agent Graph ===
+Model: qwen3:4b-instruct-2507-q4_K_M
+Title: Diabetes Drug Trial
+
+Turn count: 0
+
+--- NODE: Supervisor ---
+Turn count: 1
+
+--- NODE: Planner ---
+Turn count: 1
+Planner proposal updated.
+
+--- NODE: Supervisor ---
+Turn count: 2
+Planner proposal updated.
+
+--- NODE: Reviewer ---
+Turn count: 2
+Planner proposal updated.
+Reviewer feedback updated.
+
+--- NODE: Supervisor ---
+Turn count: 3
+Planner proposal updated.
+Reviewer feedback updated.
+
+=== Final Graph State ===
+{
+  "planner_proposal": {
+    "thought": "Identify key topics from the title and content to create relevant and concise tags.",
+    "message": "Tags and summary generated based on diabetes, trial, and medication.",
+    "data": {
+      "tags": [
+        "Type 2 Diabetes Treatment",
+        "Oral Medication Study",
+        "Clinical Trial Research"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults."
+    },
+    "_tokens": {
+      "input": 182,
+      "output": 83,
+      "total": 265
+    }
+  },
+  "reviewer_feedback": {
+    "thought": "Extracted key topics from the title and content: diabetes, medication, and clinical trial to form precise and relevant topical tags.",
+    "message": "Tags and summary accurately reflect the content of the diabetes drug trial.",
+    "data": {
+      "tags": [
+        "type 2 diabetes treatment",
+        "oral medication study",
+        "clinical trial research"
+      ],
+      "summary": "A trial tests a new oral drug for type 2 diabetes in adults.",
+      "issues": []
+    },
+    "_tokens": {
+      "input": 297,
+      "output": 112,
+      "total": 409
+    }
+  },
+  "turn_count": 3,
+  "turn_ceiling": 10
+}
+
+D:\data260-3209\code\agents_demo.py:49: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("tags")
+D:\data260-3209\code\agents_demo.py:62: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  @validator("summary")

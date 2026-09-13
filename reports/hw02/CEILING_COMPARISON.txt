@@ -1,0 +1,16 @@
+DATA-260 Homework 2 Part 4
+Turn-ceiling comparison
+Input: D:\data260-3209\code\reports\hw02\cases\schema_input.json
+
+TURN CEILING 2
+runs: 20
+completed: 0
+completion_rate: 0.0000
+mean_latency_ms: 19103.69
+
+TURN CEILING 10
+runs: 20
+completed: 20
+completion_rate: 1.0000
+mean_latency_ms: 34894.50
+

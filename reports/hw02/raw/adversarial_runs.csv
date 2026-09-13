@@ -1,0 +1,6 @@
+run,started_at,model,temperature,ceiling,planner_attempts,turn_count,outcome,valid,latency_ms,validation_error
+1,2026-09-12T00:06:55.745993+00:00,qwen3:4b-instruct-2507-q4_K_M,0.0,2,1,2,valid first attempt,True,32399.57,
+2,2026-09-12T00:07:28.145982+00:00,qwen3:4b-instruct-2507-q4_K_M,0.0,2,1,2,valid first attempt,True,10528.59,
+3,2026-09-12T00:07:38.674709+00:00,qwen3:4b-instruct-2507-q4_K_M,0.0,2,1,2,valid first attempt,True,10321.57,
+4,2026-09-12T00:07:48.996723+00:00,qwen3:4b-instruct-2507-q4_K_M,0.0,2,1,2,valid first attempt,True,10482.96,
+5,2026-09-12T00:07:59.479673+00:00,qwen3:4b-instruct-2507-q4_K_M,0.0,2,1,2,valid first attempt,True,11373.64,

@@ -6,55 +6,106 @@
   <title>HW1-ANI</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <div class="topbar"></div>
 
   <main class="wrap">
     <header class="page-head">
       <div class="reg-badge">TRIAL REGISTRY</div>
+
       <h1>Clinical Trial Listing</h1>
-      <p class="sub">Submit a study to the public trial catalogue. Fields marked with an asterisk are required.</p>
+
+      <p class="sub">
+        Submit a study to the public trial catalogue.
+        Fields marked with an asterisk are required.
+      </p>
     </header>
 
     <div class="layout">
       <section class="card form-card">
         <form id="trialForm" novalidate>
+
           <div class="field">
-            <label for="trialTitle">Trial Title <span class="req">*</span></label>
-            <input type="text" id="trialTitle" name="trialTitle" required autofocus
-                   placeholder="e.g. Phase II Study of Drug X in Type 2 Diabetes">
+            <label for="trialTitle">
+              Trial Title <span class="req">*</span>
+            </label>
+
+            <input
+              type="text"
+              id="trialTitle"
+              name="trialTitle"
+              required
+              autofocus
+              placeholder="e.g. Phase II Study of Drug X in Type 2 Diabetes"
+            >
+
             <p class="err" id="err-trialTitle"></p>
           </div>
 
           <div class="field">
-            <label for="sponsor">Sponsor / Institution <span class="req">*</span></label>
-            <input type="text" id="sponsor" name="sponsor" required
-                   placeholder="e.g. Stanford Medical Center">
+            <label for="sponsor">
+              Sponsor / Institution <span class="req">*</span>
+            </label>
+
+            <input
+              type="text"
+              id="sponsor"
+              name="sponsor"
+              required
+              placeholder="e.g. Stanford Medical Center"
+            >
+
             <p class="err" id="err-sponsor"></p>
           </div>
 
           <div class="field">
-            <label for="email">Submitter Email <span class="req">*</span></label>
-            <input type="email" id="email" name="email" required
-                   placeholder="e.g. coordinator@hospital.org">
+            <label for="email">
+              Submitter Email <span class="req">*</span>
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="e.g. coordinator@hospital.org"
+            >
+
             <p class="err" id="err-email"></p>
           </div>
 
           <div class="field">
-            <label for="content">Trial Summary <span class="req">*</span></label>
-            <textarea id="content" name="content" required
-                      placeholder="Describe the study purpose and eligibility."></textarea>
+            <label for="content">
+              Trial Summary <span class="req">*</span>
+            </label>
+
+            <textarea
+              id="content"
+              name="content"
+              required
+              placeholder="Describe the study purpose and eligibility."
+            ></textarea>
+
             <div class="meta-row">
-              <span class="counter" id="counter">0 characters &mdash; need more than 25</span>
+              <span class="counter" id="counter">
+                0 characters — need more than 25
+              </span>
             </div>
+
             <p class="err" id="err-content"></p>
           </div>
 
           <div class="field">
-            <label for="status">Status <span class="req">*</span></label>
+            <label for="status">
+              Status <span class="req">*</span>
+            </label>
+
             <select id="status" name="status" required>
               <option value="Recruiting">Recruiting</option>
-              <option value="Active - Not Recruiting">Active &ndash; Not Recruiting</option>
+              <option value="Active - Not Recruiting">
+                Active — Not Recruiting
+              </option>
               <option value="Completed">Completed</option>
               <option value="Terminated">Terminated</option>
             </select>
@@ -62,11 +113,18 @@
 
           <div class="field terms">
             <input type="checkbox" id="terms" name="terms">
-            <label for="terms">I agree to the terms and conditions.</label>
+
+            <label for="terms">
+              I agree to the terms and conditions.
+            </label>
           </div>
+
           <p class="err" id="err-terms"></p>
 
-          <button type="submit" class="submit-btn">Submit Trial Listing</button>
+          <button type="submit" class="submit-btn">
+            Submit Trial Listing
+          </button>
+
         </form>
       </section>
 
@@ -75,8 +133,84 @@
           <h2>Submitted Trials</h2>
           <span class="count-badge" id="countBadge">0</span>
         </div>
-        <p class="side-empty" id="sideEmpty">No trials submitted yet. Completed submissions appear here.</p>
+
+        <!-- Loading state -->
+        <p
+          class="state state-loading"
+          id="loadingState"
+          role="status"
+          aria-live="polite"
+          hidden
+        >
+          Loading submitted trials...
+        </p>
+
+        <!-- Error state -->
+        <p
+          class="state state-error"
+          id="errorState"
+          role="alert"
+          hidden
+        >
+          We could not load the trial list. Please try again.
+        </p>
+
+        <!-- Empty state -->
+        <p class="side-empty" id="sideEmpty">
+          No trials submitted yet. Completed submissions appear here.
+        </p>
+
+        <!-- Submitted trial list -->
         <ul class="trial-list" id="trialList"></ul>
+		<form id="updateTrialForm" class="management-form">
+  <h3>Update Trial ID 1</h3>
+
+  <label for="updateTitle">New Trial Title</label>
+  <input
+    type="text"
+    id="updateTitle"
+    required
+    placeholder="Enter updated trial title"
+  >
+
+  <label for="updateSponsor">New Sponsor / Institution</label>
+  <input
+    type="text"
+    id="updateSponsor"
+    required
+    placeholder="Enter updated sponsor"
+  >
+
+  <button type="submit" class="submit-btn">
+    Update Trial ID 1
+  </button>
+</form>
+
+<form id="searchTrialForm" class="management-form">
+  <h3>Search Trials</h3>
+
+  <label for="searchInput">
+    Search by Trial Title or Sponsor
+  </label>
+
+  <input
+    type="search"
+    id="searchInput"
+    placeholder="e.g. Diabetes or Mayo"
+  >
+
+  <button type="submit" class="submit-btn">
+    Search Trials
+  </button>
+
+  <button
+    type="button"
+    id="clearSearchBtn"
+    class="submit-btn clear-btn"
+  >
+    Show All Trials
+  </button>
+</form>
       </aside>
     </div>
   </main>

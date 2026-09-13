@@ -9,7 +9,9 @@
   --err: #b3261e;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -30,7 +32,9 @@ body {
   padding: 2.5rem 1.5rem 4rem;
 }
 
-.page-head { margin-bottom: 2rem; }
+.page-head {
+  margin-bottom: 2rem;
+}
 
 .reg-badge {
   display: inline-block;
@@ -50,7 +54,11 @@ h1 {
   letter-spacing: -0.01em;
 }
 
-.sub { color: var(--ink-soft); margin: 0; max-width: 46ch; }
+.sub {
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 46ch;
+}
 
 .layout {
   display: grid;
@@ -66,7 +74,9 @@ h1 {
   padding: 1.75rem;
 }
 
-.field { margin-bottom: 1.25rem; }
+.field {
+  margin-bottom: 1.25rem;
+}
 
 label {
   display: block;
@@ -75,9 +85,13 @@ label {
   margin-bottom: 0.4rem;
 }
 
-.req { color: var(--teal); }
+.req {
+  color: var(--teal);
+}
 
-input, textarea, select {
+input,
+textarea,
+select {
   width: 100%;
   padding: 0.65rem 0.75rem;
   font-size: 0.95rem;
@@ -88,13 +102,18 @@ input, textarea, select {
   transition: border-color 0.15s, box-shadow 0.15s;
 }
 
-input:focus, textarea:focus, select:focus {
+input:focus,
+textarea:focus,
+select:focus {
   outline: none;
   border-color: var(--teal);
-  box-shadow: 0 0 0 3px rgba(13,125,138,0.12);
+  box-shadow: 0 0 0 3px rgba(13, 125, 138, 0.12);
 }
 
-textarea { min-height: 110px; resize: vertical; }
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
 
 .meta-row {
   display: flex;
@@ -102,8 +121,15 @@ textarea { min-height: 110px; resize: vertical; }
   margin-top: 0.35rem;
 }
 
-.counter { font-size: 0.8rem; color: var(--ink-soft); }
-.counter.ok { color: #0a7d4a; font-weight: 600; }
+.counter {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.counter.ok {
+  color: #0a7d4a;
+  font-weight: 600;
+}
 
 .terms {
   display: flex;
@@ -111,8 +137,15 @@ textarea { min-height: 110px; resize: vertical; }
   gap: 0.5rem;
   margin-bottom: 0.4rem;
 }
-.terms input { width: auto; }
-.terms label { margin: 0; font-weight: 400; }
+
+.terms input {
+  width: auto;
+}
+
+.terms label {
+  margin: 0;
+  font-weight: 400;
+}
 
 .err {
   color: var(--err);
@@ -134,16 +167,24 @@ textarea { min-height: 110px; resize: vertical; }
   cursor: pointer;
   transition: background 0.15s;
 }
-.submit-btn:hover { background: var(--teal-dark); }
+
+.submit-btn:hover {
+  background: var(--teal-dark);
+}
 
 /* Sidebar */
+
 .side-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 1rem;
 }
-.side-head h2 { font-size: 1.05rem; margin: 0; }
+
+.side-head h2 {
+  font-size: 1.05rem;
+  margin: 0;
+}
 
 .count-badge {
   background: var(--teal);
@@ -156,9 +197,35 @@ textarea { min-height: 110px; resize: vertical; }
   border-radius: 20px;
 }
 
-.side-empty { font-size: 0.85rem; color: var(--ink-soft); }
+.side-empty {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
 
-.trial-list { list-style: none; margin: 0; padding: 0; }
+/* Homework 2 visible loading and error states */
+
+.state {
+  font-size: 0.85rem;
+  margin: 0 0 1rem;
+  padding: 0.7rem 0.8rem;
+  border-radius: 7px;
+}
+
+.state-loading {
+  color: var(--teal-dark);
+  background: #e3f1f3;
+}
+
+.state-error {
+  color: var(--err);
+  background: #fbe4e2;
+}
+
+.trial-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
 .trial-item {
   border: 1px solid var(--line);
@@ -167,8 +234,17 @@ textarea { min-height: 110px; resize: vertical; }
   margin-bottom: 0.6rem;
   animation: pop 0.25s ease;
 }
-.trial-item h3 { font-size: 0.9rem; margin: 0 0 0.25rem; }
-.trial-item .tspon { font-size: 0.78rem; color: var(--ink-soft); margin: 0 0 0.4rem; }
+
+.trial-item h3 {
+  font-size: 0.9rem;
+  margin: 0 0 0.25rem;
+}
+
+.trial-item .tspon {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  margin: 0 0 0.4rem;
+}
 
 .pill {
   display: inline-block;
@@ -177,16 +253,107 @@ textarea { min-height: 110px; resize: vertical; }
   padding: 0.15rem 0.55rem;
   border-radius: 20px;
 }
-.pill.recruiting { background: #e2f5ea; color: #0a7d4a; }
-.pill.active     { background: #fff3d9; color: #a56a00; }
-.pill.completed  { background: #e5eef5; color: #1f5c8a; }
-.pill.terminated { background: #fbe4e2; color: var(--err); }
 
-@keyframes pop {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
+.pill.recruiting {
+  background: #e2f5ea;
+  color: #0a7d4a;
 }
 
+.pill.active {
+  background: #fff3d9;
+  color: #a56a00;
+}
+
+.pill.completed {
+  background: #e5eef5;
+  color: #1f5c8a;
+}
+
+.pill.terminated {
+  background: #fbe4e2;
+  color: var(--err);
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet and mobile layout */
+
 @media (max-width: 760px) {
-  .layout { grid-template-columns: 1fr; }
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Homework 2 Part 1: specifically support 375px width */
+
+@media (max-width: 375px) {
+  .wrap {
+    padding: 1.5rem 0.75rem 2.5rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.65rem;
+  }
+
+  .page-head {
+    margin-bottom: 1.25rem;
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: 0.9rem;
+  }
+}
+/* Update and search controls */
+
+.management-form {
+  border-top: 1px solid var(--line);
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+}
+
+.management-form h3 {
+  font-size: 1rem;
+  margin: 0 0 1rem;
+}
+
+.management-form label {
+  margin-top: 0.75rem;
+}
+
+.management-form input {
+  margin-bottom: 0.25rem;
+}
+
+.clear-btn {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.65rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--teal-dark);
+  background: #e3f1f3;
+  border: 1px solid var(--teal);
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  color: #ffffff;
+  background: var(--teal-dark);
 }

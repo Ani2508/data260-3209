@@ -1,0 +1,14 @@
+DATA-260 Homework 2 Part 4
+Adversarial-input experiment
+Input: D:\data260-3209\code\reports\hw02\cases\adversarial_input.json
+Turn ceiling: 10
+
+run=001 turn_count=4 reached_ceiling=False latency_ms=88123.18 return_code=0 raw_file=D:\data260-3209\code\reports\hw02\raw\adversarial_run_001.txt
+run=002 turn_count=4 reached_ceiling=False latency_ms=43049.09 return_code=0 raw_file=D:\data260-3209\code\reports\hw02\raw\adversarial_run_002.txt
+run=003 turn_count=4 reached_ceiling=False latency_ms=42862.37 return_code=0 raw_file=D:\data260-3209\code\reports\hw02\raw\adversarial_run_003.txt
+run=004 turn_count=4 reached_ceiling=False latency_ms=45366.25 return_code=0 raw_file=D:\data260-3209\code\reports\hw02\raw\adversarial_run_004.txt
+run=005 turn_count=4 reached_ceiling=False latency_ms=45836.75 return_code=0 raw_file=D:\data260-3209\code\reports\hw02\raw\adversarial_run_005.txt
+
+SUMMARY
+runs_reaching_ceiling: 0/5
+ceiling_rate: 0.0000

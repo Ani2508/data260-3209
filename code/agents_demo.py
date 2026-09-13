@@ -12,11 +12,25 @@ hardcoded domain keywords.
 
 import argparse, json, os, re, sys, time
 from dataclasses import dataclass
-from typing import List, Dict, Any, Iterable, Tuple
+from typing import List, Dict, Any, Iterable, Tuple, TypedDict
+from langgraph.graph import StateGraph, END
+from pydantic import BaseModel, StrictStr, validator
 
 # Make src/ importable regardless of where the script is run from
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "src"))
 from model_client import ModelClient  # noqa: E402
+class AgentState(TypedDict):
+    title: str
+    content: str
+    email: str
+    strict: bool
+    task: str
+    llm: Any
+    planner_proposal: Dict[str, Any]
+    reviewer_feedback: Dict[str, Any]
+    turn_count: int
+    turn_ceiling: int
+    planner_attempts: int
 
 
 # Common English words to drop when mining tag candidates from the input text.
@@ -28,7 +42,33 @@ STOP = {
     "study", "trial",  # domain-neutral filler common to many inputs
 }
 
+class PlannerOutput(BaseModel):
+    tags: list[StrictStr]
+    summary: StrictStr
 
+    @validator("tags")
+    def validate_tags(cls, tags):
+        if len(tags) != 3:
+            raise ValueError("There must be exactly 3 tags.")
+
+        for tag in tags:
+            if not 3 <= len(tag) <= 30:
+                raise ValueError(
+                    "Each tag must contain between 3 and 30 characters."
+                )
+
+        return tags
+
+    @validator("summary")
+    def validate_summary(cls, summary):
+        word_count = len(summary.split())
+
+        if word_count > 25:
+            raise ValueError(
+                "The summary must contain at most 25 words."
+            )
+
+        return summary
 # -------------------------
 # Text cleanup + extraction
 # -------------------------
@@ -246,22 +286,317 @@ class SimpleAgent:
             "total": result.total_tokens,
         }
         return parsed
+        
+def planner_node(state: AgentState) -> Dict[str, Any]:
+    print("--- NODE: Planner ---")
+    planner_attempts = state.get("planner_attempts", 0) + 1
+        # Test mode: force one invalid Planner attempt.
+    # The next attempt runs normally and receives this error as feedback.
+    if (
+        os.environ.get("FORCE_PLANNER_INVALID") == "1"
+        and planner_attempts == 1
+    ):
+        validation_message = (
+            "There must be exactly 3 tags, and the summary "
+            "must contain at most 25 words."
+        )
+
+        print("--- TEST: Forced Planner validation failure ---")
+        print(validation_message)
+
+        return {
+            "planner_proposal": {},
+            "reviewer_feedback": {
+                "message": "Planner output failed validation.",
+                "data": {
+                    "tags": [],
+                    "summary": "",
+                    "issues": [validation_message],
+                },
+            },
+            "planner_attempts": planner_attempts,
+        }
+
+    previous_feedback = state.get("reviewer_feedback", {})
+    previous_issues = (
+        previous_feedback
+        .get("data", {})
+        .get("issues", [])
+    )
+
+    correction_message = ""
+
+    if previous_issues:
+        correction_message = (
+            "\nThe previous attempt failed validation. "
+            "Fix this problem:\n"
+            + "\n".join(previous_issues)
+        )
+
+    system_message = (
+        "You are the Planner. Return exactly one JSON object with this structure: "
+        '{"thought": "short explanation", '
+        '"message": "short message", '
+        '"data": {"tags": ["tag1", "tag2", "tag3"], '
+        '"summary": "summary"}}. '
+        "Tags must be strings between 3 and 30 characters. "
+        "There must be exactly 3 tags. "
+        "The summary must contain at most 25 words. "
+        "Do not add markdown or extra text."
+    )
+
+    user_message = (
+        f"Title: {state['title']}\n"
+        f"Content: {state['content']}\n"
+        f"Task: {state['task']}\n"
+        f"{correction_message}"
+    )
+
+    result = state["llm"].complete(
+        [
+            {
+                "role": "system",
+                "content": system_message,
+            },
+            {
+                "role": "user",
+                "content": user_message,
+            },
+        ]
+    )
+
+    try:
+        raw_output = json.loads(
+            extract_json_block(result.text)
+        )
+
+        raw_data = raw_output.get("data", {})
+
+        validated_output = PlannerOutput.model_validate(raw_data)
+
+        proposal = {
+            "thought": str(
+                raw_output.get("thought", "")
+            ),
+            "message": str(
+                raw_output.get(
+                    "message",
+                    "Planner output validated."
+                )
+            ),
+            "data": validated_output.model_dump(),
+            "_tokens": {
+                "input": result.input_tokens,
+                "output": result.output_tokens,
+                "total": result.total_tokens,
+            },
+        }
+
+        return {
+            "planner_proposal": proposal,
+            "reviewer_feedback": {},
+            "planner_attempts": planner_attempts,
+        }
+
+    except Exception as error:
+        validation_message = str(error)
+
+        print("--- Planner validation failed ---")
+        print(validation_message)
+
+        return {
+            "planner_proposal": {},
+            "reviewer_feedback": {
+                "message": "Planner output failed validation.",
+                "data": {
+                    "tags": [],
+                    "summary": "",
+                    "issues": [validation_message],
+                },
+            },
+             "planner_attempts": planner_attempts,
+        }
+    
+def reviewer_node(state: AgentState) -> Dict[str, Any]:
+    print("--- NODE: Reviewer ---")
+    
+        # Test mode for the Homework 2 correction-loop demonstration.
+    if os.environ.get("FORCE_REVIEW_ISSUE") == "1":
+        print("--- TEST: Reviewer forced an issue ---")
+
+        return {
+            "reviewer_feedback": {
+                "message": "Forced issue for loop testing.",
+                "data": {
+                    "tags": [],
+                    "summary": "",
+                    "issues": ["Forced test issue"]
+                }
+            }
+        }
+
+    planner_proposal = state.get("planner_proposal", {})
+
+    reviewer = SimpleAgent(
+        name="Reviewer",
+        system=(
+            "Review the Planner proposal. Check that there are exactly 3 "
+            "topical tags and that the summary has no more than 25 words. "
+            "If there are problems, explain them in data.issues and provide "
+            "corrected tags and summary."
+        ),
+        client=state["llm"],
+    )
+
+    conversation = [
+        {
+            "role": "Planner",
+            "content": json.dumps(planner_proposal)
+        }
+    ]
+
+    feedback = reviewer.respond(
+        conversation=conversation,
+        task=state["task"],
+        title=state["title"],
+        content=state["content"],
+        strict=state["strict"],
+    )
+
+    return {
+        "reviewer_feedback": feedback
+    }  
+def supervisor_node(state: AgentState) -> Dict[str, Any]:
+    print("--- NODE: Supervisor ---")
+
+    current_turn = state.get("turn_count", 0)
+
+    return {
+        "turn_count": current_turn + 1
+    }
 
 
+def router_logic(state: AgentState) -> str:
+    turn_count = state.get("turn_count", 0)
+    planner_proposal = state.get("planner_proposal")
+    reviewer_feedback = state.get("reviewer_feedback")
+
+    # Stop if the turn ceiling has been reached.
+    turn_ceiling = state.get("turn_ceiling", 10)
+
+    if turn_count >= turn_ceiling:
+        return "end"
+
+    # No Planner output yet: send the task to Planner.
+    if not planner_proposal:
+        return "planner"
+
+    # Planner has run, but Reviewer has not run yet.
+    if not reviewer_feedback:
+        return "reviewer"
+
+    # Reviewer found issues: loop back to Planner.
+    issues = reviewer_feedback.get("data", {}).get("issues", [])
+
+    if issues:
+        return "planner"
+
+    # Reviewer found no issues: finish.
+    return "end" 
+def build_graph():
+    graph = StateGraph(AgentState)
+
+    graph.add_node("supervisor", supervisor_node)
+    graph.add_node("planner", planner_node)
+    graph.add_node("reviewer", reviewer_node)
+
+    graph.set_entry_point("supervisor")
+
+    graph.add_conditional_edges(
+        "supervisor",
+        router_logic,
+        {
+            "planner": "planner",
+            "reviewer": "reviewer",
+            "end": END,
+        },
+    )
+
+    graph.add_edge("planner", "supervisor")
+    graph.add_edge("reviewer", "supervisor")
+
+    return graph.compile()    
 # -------------------------
 # CLI entrypoint
 # -------------------------
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--title", default="Your Trial Title Here")
-    ap.add_argument("--content", default="Your trial content goes here.")
-    ap.add_argument("--email", default="student@example.com")
-    ap.add_argument("--model", default=os.environ.get("OLLAMA_MODEL", "qwen3:8b"))
-    ap.add_argument("--base_url", default=os.environ.get("OLLAMA_URL", "http://localhost:11434"))
-    ap.add_argument("--temperature", type=float, default=0.0)
-    ap.add_argument("--strict", action="store_true")
+
+    ap.add_argument(
+        "--title",
+        default="Diabetes Drug Trial"
+    )
+
+    ap.add_argument(
+        "--content",
+        default=(
+            "A randomized clinical trial testing a new oral medication "
+            "for type 2 diabetes in adults."
+        )
+    )
+
+    ap.add_argument(
+        "--email",
+        default="student@example.com"
+    )
+
+    ap.add_argument(
+        "--model",
+        default=os.environ.get(
+            "OLLAMA_MODEL",
+            "qwen3:4b-instruct-2507-q4_K_M"
+        )
+    )
+
+    ap.add_argument(
+        "--base_url",
+        default=os.environ.get(
+            "OLLAMA_URL",
+            "http://localhost:11434"
+        )
+    )
+
+    ap.add_argument(
+        "--temperature",
+        type=float,
+        default=0.0
+    )
+
+    ap.add_argument(
+        "--strict",
+        action="store_true"
+    )
+    ap.add_argument(
+        "--input-file",
+        default=None
+    )
+
+    ap.add_argument(
+        "--turn-ceiling",
+        type=int,
+        default=10
+    )
+
     args = ap.parse_args()
+    if args.input_file:
+        with open(args.input_file, "r", encoding="utf-8") as f:
+            input_data = json.load(f)
+
+        args.title = input_data["title"]
+        args.content = input_data["content"]
+        args.email = input_data.get("email", args.email)
+        args.strict = input_data.get("strict", args.strict)
 
     try:
         client = ModelClient(
@@ -272,62 +607,82 @@ def main():
     except Exception:
         print(
             "Failed to initialize model client. Is Ollama running and the model pulled?\n"
-            "Try: `ollama serve` and `ollama pull qwen3:8b`.",
+            "Try: `ollama serve` and `ollama pull qwen3:4b-instruct-2507-q4_K_M`.",
             file=sys.stderr,
         )
         raise
 
-    planner = SimpleAgent(
-        name="Planner",
-        system=("Propose exactly 3 distinct, topical tags (prefer multi-word phrases) "
-                "and a one-line summary (<=25 words) for the given title and content. "
-                "Derive tags from the input text only."),
-        client=client,
-    )
-    reviewer = SimpleAgent(
-        name="Reviewer",
-        system=("Validate the planner's tags and summary: tags must be topical and "
-                "specific (not generic), summary <=25 words, no code or markdown. "
-                "List problems in data.issues; otherwise echo cleaned tags/summary."),
-        client=client,
-    )
-    finalizer = SimpleAgent(
-        name="Finalizer",
-        system=("Use the reviewer feedback to finalize. Output exactly 3 tags in "
-                "data.tags and the final summary in data.summary. Set data.issues to []."),
-        client=client,
-    )
-
     task = (
-        f'Given title "{args.title}" and content "{args.content}", produce exactly 3 '
-        f'topical tags and a one-sentence summary (<=25 words) in your own words.'
+        f'Given title "{args.title}" and content "{args.content}", '
+        "produce exactly 3 topical tags and a summary of no more than "
+        "25 words."
     )
 
-    transcript: List[Dict[str, str]] = []
-
-    t0 = time.time()
-    a = planner.respond(transcript, task, args.title, args.content, args.strict)
-    t1 = time.time()
-    transcript.append({"role": "Planner", "content": a.get("message", "")})
-    print(f"\n--- Planner ({int((t1 - t0)*1000)} ms) ---\n{json.dumps(a, indent=2)}")
-
-    t0 = time.time()
-    b = reviewer.respond(transcript, task, args.title, args.content, args.strict)
-    t1 = time.time()
-    transcript.append({"role": "Reviewer", "content": b.get("message", "")})
-    print(f"\n--- Reviewer ({int((t1 - t0)*1000)} ms) ---\n{json.dumps(b, indent=2)}")
-
-    final = finalizer.respond(transcript, task, args.title, args.content, args.strict)
-    print(f"\n=== Finalized Output ===\n{json.dumps(final, indent=2)}")
-
-    package = {
+    initial_state: AgentState = {
         "title": args.title,
-        "email": args.email,
         "content": args.content,
-        "agents": {"transcript": transcript, "final": final.get("data", {})},
-        "submissionDate": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "email": args.email,
+        "strict": args.strict,
+        "task": task,
+        "llm": client,
+        "planner_proposal": {},
+        "reviewer_feedback": {},
+        "turn_count": 0,
+        "turn_ceiling": args.turn_ceiling,
+        "planner_attempts": 0,
     }
-    print(f"\n=== Publish Package ===\n{json.dumps(package, indent=2)}")
+
+    graph = build_graph()
+
+    print("\n=== Stateful Agent Graph ===")
+    print(f"Model: {args.model}")
+    print(f"Title: {args.title}")
+    print("")
+
+    final_state = initial_state
+
+    for state in graph.stream(
+        initial_state,
+        stream_mode="values"
+    ):
+        final_state = state
+
+        print(
+            f"Turn count: {state.get('turn_count', 0)}"
+        )
+
+        if state.get("planner_proposal"):
+            print("Planner proposal updated.")
+
+        if state.get("reviewer_feedback"):
+            print("Reviewer feedback updated.")
+
+        print("")
+
+    print("=== Final Graph State ===")
+    print(
+        json.dumps(
+            {
+                "planner_proposal": final_state.get(
+                    "planner_proposal",
+                    {}
+                ),
+                "reviewer_feedback": final_state.get(
+                    "reviewer_feedback",
+                    {}
+                ),
+                "turn_count": final_state.get(
+                    "turn_count",
+                    0
+                ),
+                "turn_ceiling": final_state.get(
+                    "turn_ceiling",
+    10
+),
+            },
+            indent=2,
+        )
+    )
 
 
 if __name__ == "__main__":

@@ -1,0 +1,59 @@
+DATA-260 Homework 2 Part 4
+Reproducible Run Instructions
+
+Project root:
+D:\data260-3209
+
+Code directory:
+D:\data260-3209\code
+
+Model:
+qwen3:4b-instruct-2507-q4_K_M
+
+Python:
+Python 3.12
+
+Before normal experiments, clear forced test variables:
+
+set FORCE_PLANNER_INVALID=
+set FORCE_REVIEW_ISSUE=
+
+Check the main files:
+
+cd /d D:\data260-3209\code
+
+py -3.12 -m py_compile agents_demo.py ..\src\model_client.py
+
+Run the 30-run schema experiment:
+
+py -3.12 run_30_experiment.py
+
+Run the turn-ceiling comparison:
+
+py -3.12 run_ceiling_comparison.py
+
+Run the five adversarial tests:
+
+py -3.12 run_adversarial.py
+
+Fixed input:
+
+D:\data260-3209\reports\hw02\cases\schema_input.json
+
+Adversarial input:
+
+D:\data260-3209\reports\hw02\cases\adversarial_input.json
+
+Experiment outputs:
+
+D:\data260-3209\reports\hw02\RUN_LOG.txt
+D:\data260-3209\reports\hw02\CEILING_COMPARISON.txt
+D:\data260-3209\reports\hw02\ADVERSARIAL_LOG.txt
+
+Raw outputs:
+
+D:\data260-3209\reports\hw02\raw\
+
+Important:
+The experiments must use the frozen input files and the same model settings.
+Do not set FORCE_PLANNER_INVALID=1 or FORCE_REVIEW_ISSUE=1 during normal experiments.
