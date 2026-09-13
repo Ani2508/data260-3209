@@ -64,11 +64,13 @@ def validate_graph_output(output):
         return False, "Final Graph State was not found."
 
     final_text = output.split("=== Final Graph State ===", 1)[1]
-
+    
     try:
-        final_state = json.loads(final_text)
+        decoder = json.JSONDecoder()
+        final_state, _ = decoder.raw_decode(final_text.lstrip())
     except json.JSONDecodeError as error:
         return False, f"Final graph state was not valid JSON: {error}"
+
 
     planner = final_state.get("planner_proposal", {})
     planner_data = planner.get("data", {})

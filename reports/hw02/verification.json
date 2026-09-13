@@ -1,0 +1,39 @@
+{
+  "homework": "DATA-260 Homework 2",
+  "sid4": "3209",
+  "commit_hash": "ad34ce9bc4cb10971c6b6c206554c4945448c19b",
+  "tag": "v1.0.0",
+  "model": "qwen3:4b-instruct-2507-q4_K_M",
+  "configuration": {
+    "port_base": 8509,
+    "input_file": "D:\\data260-3209\\reports\\hw02\\cases\\schema_input.json",
+    "turn_ceiling": 10,
+    "forced_test_variables_cleared": true
+  },
+  "seed": 3209,
+  "verify_seed": 263209,
+  "generated_at_utc": "2026-09-13T23:22:16.882035+00:00",
+  "checks": [
+    {
+      "check": "Tagged commit exists",
+      "pass": true,
+      "details": "v1.0.0"
+    },
+    {
+      "check": "Frozen input exists",
+      "pass": true,
+      "details": "D:\\data260-3209\\reports\\hw02\\cases\\schema_input.json"
+    },
+    {
+      "check": "FastAPI backend responds on PORT_BASE",
+      "pass": true,
+      "details": "HTTP status: 200"
+    },
+    {
+      "check": "LangGraph smoke test finishes with valid output",
+      "pass": true,
+      "details": "Graph returned valid Planner output and reviewer issues were empty.; latency_ms=120600.26; return_code=0"
+    }
+  ],
+  "overall_pass": true
+}
