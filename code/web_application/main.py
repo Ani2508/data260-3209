@@ -1,16 +1,31 @@
-from typing import List
 from pathlib import Path
+from typing import List
 
 from fastapi import FastAPI, HTTPException
-from fastapi.responses import FileResponse, RedirectResponse
+from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
+from starlette.middleware.sessions import SessionMiddleware
+
+try:
+    from .auth import router as auth_router
+except ImportError:
+    from auth import router as auth_router
 
 
 app = FastAPI(title="Clinical Trial Listing API")
 
+app.add_middleware(
+    SessionMiddleware,
+    secret_key="hw3-session-secret-3209",
+    max_age=300,
+    same_site="lax",
+    https_only=True,
+)
+
+app.include_router(auth_router)
+
 BASE_DIR = Path(__file__).resolve().parent
-INDEX_FILE = BASE_DIR / "index.html"
 
 
 class TrialCreate(BaseModel):
@@ -27,11 +42,6 @@ class TrialUpdate(BaseModel):
 
 
 trials: List[dict] = []
-
-
-@app.get("/")
-def home():
-    return FileResponse(INDEX_FILE)
 
 
 @app.get("/api/trials")
@@ -68,21 +78,22 @@ def update_trial(trial_id: int, trial: TrialUpdate):
 
     raise HTTPException(
         status_code=404,
-        detail="Trial record not found"
+        detail="Trial record not found",
     )
+
+
 @app.delete("/api/trials/highest")
 def delete_highest_id_trial():
     if not trials:
         raise HTTPException(
             status_code=404,
-            detail="No trial records available"
+            detail="No trial records available",
         )
 
     highest_id_trial = max(trials, key=lambda item: item["id"])
     trials.remove(highest_id_trial)
 
     return RedirectResponse(url="/", status_code=303)
-
 
 
 @app.get("/api/trials/search")
@@ -92,16 +103,16 @@ def search_trials(q: str = ""):
     if not search_text:
         return trials
 
-    matching_trials = [
+    return [
         item
         for item in trials
         if search_text in item["trialTitle"].lower()
         or search_text in item["sponsor"].lower()
     ]
 
-    return matching_trials
+
 app.mount(
     "/",
     StaticFiles(directory=BASE_DIR, html=True),
-    name="static"
+    name="static",
 )
