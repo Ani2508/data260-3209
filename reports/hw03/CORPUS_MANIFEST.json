@@ -1,0 +1,23 @@
+{
+  "domain": "Clinical trial listings",
+  "domain_id": 1,
+  "access_date": "2026-09-17",
+  "total_bytes": 7964270,
+  "documents": [
+    {
+      "filename": "corpus/clinicaltrials_breast_cancer.json",
+      "bytes": 1692826,
+      "sha256": "8B2B780E6FDEE92852A950E024B868C520A64E5E2312BA354BF2F24C79A383C2"
+    },
+    {
+      "filename": "corpus/clinicaltrials_covid19.json",
+      "bytes": 4415388,
+      "sha256": "2FCFE27C8E8914EB6E03679F5129FC28F5732DBA8E85887CB0F8FAA48D47E439"
+    },
+    {
+      "filename": "corpus/clinicaltrials_diabetes.json",
+      "bytes": 1856056,
+      "sha256": "C7C9B2863874EA86DD383E3CEBBB1F82AEEF92FEEF8A03FDD8EF2822C61CA4E6"
+    }
+  ]
+}

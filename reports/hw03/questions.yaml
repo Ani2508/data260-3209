@@ -1,0 +1,24 @@
+- id: q1
+  question: "What was the overall study status of NCT00741390, the study evaluating blood volume and perceived pain during fingerstick blood glucose monitoring?"
+  expected_answer: "COMPLETED"
+  expected_source: "corpus/clinicaltrials_diabetes.json"
+
+- id: q2
+  question: "What was the overall study status of NCT04144023, the vaccine study before surgery for HER2-expressing ductal carcinoma in situ?"
+  expected_answer: "RECRUITING"
+  expected_source: "corpus/clinicaltrials_breast_cancer.json"
+
+- id: q3
+  question: "What was the overall study status of NCT04375410, the study about intensified handwashing and hand disinfection among children during the COVID-19 pandemic?"
+  expected_answer: "COMPLETED"
+  expected_source: "corpus/clinicaltrials_covid19.json"
+
+- id: q4
+  question: "Which drug is named in the title of NCT03704818, a study about effects on hypoglycemia?"
+  expected_answer: "Dapagliflozin"
+  expected_source: "corpus/clinicaltrials_diabetes.json"
+
+- id: q5
+  question: "What type of treatment or procedure is studied in NCT04817813, which examines long-term outcomes after breast cancer liver metastasis?"
+  expected_answer: "Liver metastasis surgery"
+  expected_source: "corpus/clinicaltrials_breast_cancer.json"
