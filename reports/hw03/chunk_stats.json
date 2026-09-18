@@ -1,0 +1,23 @@
+{
+  "documents": 300,
+  "techniques": {
+    "Token": {
+      "chunks": 1494,
+      "average_chunk_length_chars": 975.7777777777778,
+      "minimum_chunk_length_chars": 147,
+      "maximum_chunk_length_chars": 1427
+    },
+    "Semantic": {
+      "chunks": 820,
+      "average_chunk_length_chars": 1515.0536585365853,
+      "minimum_chunk_length_chars": 3,
+      "maximum_chunk_length_chars": 12408
+    },
+    "Sentence-window": {
+      "chunks": 7863,
+      "average_chunk_length_chars": 157.99872822078086,
+      "minimum_chunk_length_chars": 2,
+      "maximum_chunk_length_chars": 5351
+    }
+  }
+}

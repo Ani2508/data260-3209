@@ -1,0 +1,52 @@
+{
+  "technique": "Token",
+  "query_id": "q1",
+  "query": "What was the overall study status of NCT00741390, the study evaluating blood volume and perceived pain during fingerstick blood glucose monitoring?",
+  "query_embedding_dimension": 384,
+  "query_embedding_first_8": [
+    -0.07211301475763321,
+    -0.024431223049759865,
+    -0.06613186746835709,
+    0.05610841140151024,
+    -0.05628875643014908,
+    -0.05587322264909744,
+    0.004312762524932623,
+    0.15470018982887268
+  ],
+  "query_vector_shape": [
+    384
+  ],
+  "document_vector_shape": [
+    3,
+    384
+  ],
+  "retrieval_latency_ms": 85.79389998340048,
+  "results": [
+    {
+      "rank": 1,
+      "store_score": 0.7038398327314511,
+      "cosine_sim": 0.7296093749414017,
+      "chunk_len": 1179,
+      "preview": "Study ID: NCT00741390  Overall status: COMPLETED  Evaluation of Blood Volume and Perceived Pain During Fingerstick Monitoring of Blood Glucose When Using Differ",
+      "source": "corpus/clinicaltrials_diabetes.json"
+    },
+    {
+      "rank": 2,
+      "store_score": 0.6322120490035178,
+      "cosine_sim": 0.6054812497387186,
+      "chunk_len": 990,
+      "preview": "evaluate in Visit 2 (pain during lancing). The lancet/lancing device combinations assigned to each arm are shown in the Assigned Interventions Table below.  Con",
+      "source": "corpus/clinicaltrials_diabetes.json"
+    },
+    {
+      "rank": 3,
+      "store_score": 0.6173197573512237,
+      "cosine_sim": 0.5804007395009951,
+      "chunk_len": 1064,
+      "preview": "1hour 1H30, 2H, 2H30 and 3H post meal. Blood glucose will be measured with three different techniques: venous blood glucose measured with a COBAS 8000 automatic",
+      "source": "corpus/clinicaltrials_diabetes.json"
+    }
+  ],
+  "expected_answer": "COMPLETED",
+  "expected_source": "corpus/clinicaltrials_diabetes.json"
+}

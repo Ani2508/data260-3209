@@ -1,0 +1,52 @@
+{
+  "technique": "Semantic",
+  "query_id": "q4",
+  "query": "Which drug is named in the title of NCT03704818, a study about effects on hypoglycemia?",
+  "query_embedding_dimension": 384,
+  "query_embedding_first_8": [
+    6.961908366065472e-05,
+    0.03366794437170029,
+    -0.07190270721912384,
+    0.06643209606409073,
+    0.0014114778023213148,
+    -0.016972485929727554,
+    0.01590210385620594,
+    0.1514713615179062
+  ],
+  "query_vector_shape": [
+    384
+  ],
+  "document_vector_shape": [
+    3,
+    384
+  ],
+  "retrieval_latency_ms": 74.40560002578422,
+  "results": [
+    {
+      "rank": 1,
+      "store_score": 0.5763795618907352,
+      "cosine_sim": 0.5898578013113318,
+      "chunk_len": 787,
+      "preview": "Study ID: NCT00488527  Overall status: COMPLETED  Multicentric, Open Label Clinical Trial. Use of Optimal Method to Initiate and Maintain Lantus Therapy (Insuli",
+      "source": "corpus/clinicaltrials_diabetes.json"
+    },
+    {
+      "rank": 2,
+      "store_score": 0.5554968204500101,
+      "cosine_sim": 0.5521863426931799,
+      "chunk_len": 3125,
+      "preview": "Describe the adverse events Evaluate the safety of using the medication according to the incidence and relevance of the hypoglycemia events, (symptomatic, diurn",
+      "source": "corpus/clinicaltrials_diabetes.json"
+    },
+    {
+      "rank": 3,
+      "store_score": 0.5404205123813469,
+      "cosine_sim": 0.37040282153466464,
+      "chunk_len": 415,
+      "preview": "Sign an informed consent and assent.  Exclusion Criteria:  1. The disease is progresseing rapidly; 2. The patient is receiving therapy of other new drugs; 3. Ev",
+      "source": "corpus/clinicaltrials_diabetes.json"
+    }
+  ],
+  "expected_answer": "Dapagliflozin",
+  "expected_source": "corpus/clinicaltrials_diabetes.json"
+}

@@ -1,0 +1,45 @@
+{
+  "project": "DATA 260 HW3",
+  "checks": [
+    {
+      "check": "GET /",
+      "pass": true,
+      "details": {
+        "status": 200,
+        "location": null
+      }
+    },
+    {
+      "check": "GET /login",
+      "pass": true,
+      "details": {
+        "status": 200,
+        "location": null
+      }
+    },
+    {
+      "check": "GET /dashboard",
+      "pass": true,
+      "details": {
+        "status": 303,
+        "location": "/login"
+      }
+    },
+    {
+      "check": "Exactly 15 raw retrieval JSON files exist",
+      "pass": true,
+      "details": "Found 15 raw JSON files"
+    },
+    {
+      "check": "All raw files contain required retrieval fields",
+      "pass": true,
+      "details": "15 of 15 files passed"
+    },
+    {
+      "check": "Required HW3 metadata files exist",
+      "pass": true,
+      "details": "All required files exist"
+    }
+  ],
+  "overall_pass": true
+}

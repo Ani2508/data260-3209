@@ -1,0 +1,52 @@
+{
+  "technique": "Semantic",
+  "query_id": "q5",
+  "query": "What type of treatment or procedure is studied in NCT04817813, which examines long-term outcomes after breast cancer liver metastasis?",
+  "query_embedding_dimension": 384,
+  "query_embedding_first_8": [
+    -0.01756357029080391,
+    -0.01372707448899746,
+    -0.019433744251728058,
+    -0.04338538274168968,
+    0.00980775710195303,
+    -0.03185320273041725,
+    -0.10213389247655869,
+    0.0991542860865593
+  ],
+  "query_vector_shape": [
+    384
+  ],
+  "document_vector_shape": [
+    3,
+    384
+  ],
+  "retrieval_latency_ms": 82.35110001987778,
+  "results": [
+    {
+      "rank": 1,
+      "store_score": 0.7078329993715359,
+      "cosine_sim": 0.7105019352188072,
+      "chunk_len": 3264,
+      "preview": "Study ID: NCT04817813  Overall status: UNKNOWN  LIBREAST STUDY: Long-term Outcomes After Breast Cancer Liver Metastasis Surgery: an European, Retrospective, Sna",
+      "source": "corpus/clinicaltrials_breast_cancer.json"
+    },
+    {
+      "rank": 2,
+      "store_score": 0.6695921763227933,
+      "cosine_sim": 0.6325577453405196,
+      "chunk_len": 204,
+      "preview": "* Scheduled surgery for breast cancer liver metastases between January 1st 2010 and December 31st 2015 * American Society of Anesthesiologists (ASA) score I-III",
+      "source": "corpus/clinicaltrials_breast_cancer.json"
+    },
+    {
+      "rank": 3,
+      "store_score": 0.6440538672831712,
+      "cosine_sim": 0.5622213927644346,
+      "chunk_len": 2895,
+      "preview": "Each treatment cycle will last 3 weeks. Treating physician will select agent up to 41 patients in each cohort. Final primary endpoint analysis will use combined",
+      "source": "corpus/clinicaltrials_breast_cancer.json"
+    }
+  ],
+  "expected_answer": "Liver metastasis surgery",
+  "expected_source": "corpus/clinicaltrials_breast_cancer.json"
+}

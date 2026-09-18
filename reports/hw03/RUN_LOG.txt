@@ -1,0 +1,11 @@
+DATA-260 Homework 3 - Part 2 retrieval run
+Run started (UTC):  2026-09-18T04:35:46.233590+00:00
+Run finished (UTC): 2026-09-18T05:07:41.660707+00:00
+Duration seconds:   1915.4
+Embedding model:    sentence-transformers/all-MiniLM-L6-v2
+Documents loaded:   300
+Token chunks:       1494
+Sentence-window:    7863
+Semantic chunks:    820
+Questions:          5
+Results saved:      15
