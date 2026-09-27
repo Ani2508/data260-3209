@@ -1,0 +1,224 @@
+
+######################################################################
+Q1: What is a Phase I clinical trial?
+######################################################################
+
+--- Config A (No-RAG) ---
+A Phase I clinical trial is the first stage of human testing for a new drug or medical treatment. Its primary purpose is to evaluate the safety, tolerability, and pharmacokinetics (how the body processes the drug) of the treatment in a small group of people—typically between 20 and 100 healthy volunteers or patients with a specific condition.
+
+During Phase I trials, researchers aim to answer key questions such as:
+
+- What is the safe dosage range?
+- What are the side effects?
+- How is the drug absorbed, distributed, metabolized, and excreted by the body?
+
+These trials are primarily focused on safety, and while they may include limited data on effectiveness, the main goal is to determine whether the treatment can be safely administered to humans before moving on to later phases.
+
+Phase I trials are often conducted in a controlled, controlled environment and may involve a single dose or a few doses at increasing levels. They are usually the first step in the clinical development process and are essential before advancing to Phase II trials, which focus on effectiveness and optimal dosing in a larger group of patients.
+
+--- Config B (Basic-RAG) ---
+  [chunk   0] source=doc1_trial_phases.md           score=0.772
+  [chunk  24] source=doc5_trial_registration.md     score=0.697
+  [chunk   2] source=doc1_trial_phases.md           score=0.655
+Answer: A Phase I clinical trial is the first time a new treatment is given to humans. These trials are small, usually enrolling 20 to 100 healthy volunteers or patients. The main goal is to test safety: researchers look for side effects, determine a safe dosage range, and see how the drug is absorbed and processed by the body.
+
+--- Config C (Context-RAG) ---
+  [chunk   0] source=doc1_trial_phases.md           score=0.772
+  [chunk  24] source=doc5_trial_registration.md     score=0.697
+  [chunk   2] source=doc1_trial_phases.md           score=0.655
+Answer: A Phase I clinical trial is the first time a new treatment is given to humans. These trials are small, usually enrolling 20 to 100 healthy volunteers or patients. The main goal is to test safety: researchers look for side effects, determine a safe dosage range, and see how the drug is absorbed and metabolized [Source 1].
+
+######################################################################
+Q2: What must be included when a clinical trial is registered, and what happens if a trial is stopped early?
+######################################################################
+
+--- Config A (No-RAG) ---
+When a clinical trial is registered, the following key elements must typically be included to ensure transparency, accountability, and scientific integrity:
+
+1. **Trial Title** – A clear and descriptive title that identifies the study.
+2. **Trial Objective** – The primary and secondary objectives of the trial (e.g., to evaluate efficacy, safety, or cost-effectiveness).
+3. **Study Design** – The type of trial (e.g., randomized, double-blind, placebo-controlled), the phase (e.g., Phase I–III), and the methodology.
+4. **Intervention(s)** – A detailed description of the treatments, drugs, or procedures being tested.
+5. **Population and Sample Size** – The target population (e.g., age, gender, disease status), inclusion and exclusion criteria, and the number of participants.
+6. **Endpoints** – The specific outcomes being measured (e.g., survival rate, symptom improvement).
+7. **Location and Institution(s)** – The sites where the trial will be conducted.
+8. **Trial Duration** – The expected start and end dates.
+9. **Contact Information** – The principal investigator or sponsor and contact details for inquiries.
+10. **Registration Date** – The date when the trial was first registered.
+11. **Sponsor and Investigator Information** – The organization or individual responsible for the trial.
+12. **Protocol and Amendments** – A detailed protocol, including any updates or amendments made over time.
+13. **Trial Status** – Initial status (e.g., active, recruiting, completed).
+
+These details are required by regulatory bodies and registries such as ClinicalTrials.gov (in the U.S.) or the International Committee of Medical Journal Editors (ICMJE), which mandate registration to ensure public access and prevent unethical or undisclosed research.
+
+**What happens if a trial is stopped early?**
+
+If a clinical trial is stopped early—due to safety concerns, lack of efficacy, or other significant reasons—the following typically occurs:
+
+1. **Reason for Early Termination** – The reason must be clearly documented and communicated. Common reasons include:
+   - Safety issues (e.g., severe adverse events in participants).
+   - Lack of efficacy (the treatment fails to show benefit compared to control).
+   - Unethical concerns (e.g., harm to participants).
+   - Protocol violations or data integrity issues.
+   - Regulatory or legal actions.
+
+2. **Updated Trial Status** – The registration record must be updated to reflect the new status (e.g., "active, not recruiting," "completed," or "terminated early").
+
+3. **Public Disclosure** – The reason for stopping the trial must be disclosed in the public registry and often in the trial’s published results or a separate report.
+
+4. **Data Management and Reporting** – All collected data must be preserved and made available (as required by ethics and regulatory standards), and a final report is typically generated to summarize outcomes and explain the early termination.
+
+5. **Ethical and Regulatory Compliance** – The stopping must be justified and approved by an independent ethics committee or institutional review board (IRB), and the process must comply with Good Clinical Practice (GCP) guidelines.
+
+6. **Impact on Future Research** – Early termination may affect the credibility of the results, and the trial may be reevaluated or not published if it fails to meet scientific standards. However, transparent reporting helps maintain trust in medical research.
+
+In summary, registration requires comprehensive, publicly accessible details, and early termination must be justified, documented, and disclosed to maintain scientific integrity and participant safety.
+
+--- Config B (Basic-RAG) ---
+  [chunk  24] source=doc5_trial_registration.md     score=0.725
+  [chunk  14] source=doc3_trial_status.md           score=0.664
+  [chunk  22] source=doc5_trial_registration.md     score=0.637
+Answer: When a clinical trial is registered, it must include the following:
+
+- Eligibility criteria, describing who can and cannot join the trial.  
+- The sponsor or institution responsible for the trial.  
+- The current recruitment status of the trial.  
+- Contact information for the study team.  
+- The trial's phase, if it involves testing a drug or biologic.  
+
+If a trial is stopped early—such as due to early results showing a clear outcome (positive or negative), or because of an independent safety board recommending a halt—this can lead to issues like funding problems or the trial being discontinued. However, early stopping does not necessarily mean termination; it may only mean a temporary pause (classified as "Suspended"), with the possibility of resuming later. Importantly, if a trial is stopped early due to safety or efficacy concerns, it underscores the importance of transparency and independent oversight, which are enhanced by registration. Registration before enrollment ensures that the trial's progress and outcomes are publicly accessible, preventing selective reporting of only favorable results.
+
+--- Config C (Context-RAG) ---
+  [chunk  24] source=doc5_trial_registration.md     score=0.725
+  [chunk  14] source=doc3_trial_status.md           score=0.664
+  [chunk  22] source=doc5_trial_registration.md     score=0.637
+Answer: When a clinical trial is registered, it must include eligibility criteria, the sponsor or institution responsible for the trial, the current recruitment status, contact information for the study team, and the trial's phase (if it involves testing a drug or biologic) [Source 1]. If a trial is stopped early, it may happen due to issues such as no longer enrollment, funding problems, or an independent safety board recommending the trial stop because early results already show a clear outcome, positive or negative [Source 2].
+
+######################################################################
+Q3: What is a clinical trial phase?
+######################################################################
+
+--- Config A (No-RAG) ---
+A clinical trial phase refers to a specific stage in the process of testing a new medical treatment, drug, or device in human volunteers to evaluate its safety, efficacy, and optimal dosage. Clinical trials are typically divided into four phases, each with a distinct purpose and level of participant involvement:
+
+1. **Phase 1**: This phase involves a small group of healthy volunteers or patients (usually 20–100 people) to assess the safety, dosage range, and side effects of a new treatment. The primary goal is to determine the drug’s safety and identify any adverse reactions.
+
+2. **Phase 2**: In this phase, the treatment is tested on a larger group of patients (usually 100–300) who have the condition the treatment is intended to address. The focus shifts to evaluating the treatment’s effectiveness and further assessing its safety.
+
+3. **Phase 3**: This phase involves a much larger group of participants (often 300–3,000) to confirm the treatment’s effectiveness, monitor side effects, compare it to standard treatments, and collect data for regulatory approval. This phase is crucial for gathering enough evidence to support a drug or therapy being approved for public use.
+
+4. **Phase 4**: After a treatment has been approved and is available to the public, Phase 4 trials (also known as post-marketing surveillance) monitor the long-term effects and usage in a broader population. These trials help identify rare or long-term side effects that may not have been detected earlier.
+
+Each phase builds upon the previous one, ensuring that new medical interventions are both safe and effective before being made available to the general public.
+
+--- Config B (Basic-RAG) ---
+  [chunk   0] source=doc1_trial_phases.md           score=0.731
+  [chunk  24] source=doc5_trial_registration.md     score=0.730
+  [chunk  11] source=doc3_trial_status.md           score=0.645
+Answer: A clinical trial phase is a sequential stage in the process of testing a new drug or treatment in humans. Each phase answers a specific question and builds on the results of the previous phase. The phases are organized to progressively evaluate the safety, dosage, effectiveness, and overall suitability of a treatment. The main phases are:
+
+- **Phase I**: The first time a treatment is given to humans. These trials are small, typically involving 20 to 100 healthy volunteers or patients, and focus on testing safety, identifying side effects, determining a safe dosage range, and understanding how the drug is absorbed and metabolized.
+
+Other phases follow, addressing increasing complexity and scope, such as effectiveness in treating a specific condition and long-term benefits or risks. Together, these phases help ensure that new treatments are both safe and effective before being approved for widespread use.
+
+--- Config C (Context-RAG) ---
+  [chunk   0] source=doc1_trial_phases.md           score=0.731
+  [chunk  24] source=doc5_trial_registration.md     score=0.730
+  [chunk  11] source=doc3_trial_status.md           score=0.645
+Answer: A clinical trial phase is a sequential stage in the process of testing a new drug or treatment in humans, where each phase answers a different question and builds on the results of the previous phase [Source 1].
+
+######################################################################
+Q4: Why might a trial stop?
+######################################################################
+
+--- Config A (No-RAG) ---
+A trial might stop for a variety of reasons, depending on the type of trial (e.g., legal, scientific, medical, or clinical). Here are the most common reasons:
+
+1. **Legal Reasons (in a court case):**
+   - **Lack of evidence**: If there is insufficient evidence to support a claim, the trial may be dismissed or terminated.
+   - **Judicial dismissal**: A judge may rule that the case is not valid or is frivolous and dismiss it.
+   - **Withdrawal by a party**: A plaintiff or defendant may voluntarily withdraw their case.
+   - **Change in law or statute**: New legislation may render the case invalid or irrelevant.
+   - **Deadlock or hung jury**: In a criminal trial, if the jury cannot reach a unanimous verdict, the case may be dismissed or retried.
+
+2. **Scientific or Medical Reasons (in clinical trials):**
+   - **Safety concerns**: If adverse effects or risks to participants become too high, the trial may be halted to protect participants.
+   - **Lack of efficacy**: If the treatment or intervention shows no significant benefit over a placebo or standard care, the trial may be stopped.
+   - **Statistical significance**: The trial may be stopped early if results show a clear and significant effect (or lack thereof), based on statistical analysis.
+   - **Ethical concerns**: If the research raises ethical issues (e.g., participant harm, exploitation), the trial may be paused or terminated.
+   - **Failure to enroll participants**: If the trial fails to recruit enough participants to meet its enrollment goals, it may be discontinued.
+
+3. **Operational or Financial Reasons:**
+   - **Funding issues**: Lack of financial support may cause a trial to be suspended or ended.
+   - **Logistical problems**: Unforeseen challenges in data collection, site management, or participant recruitment can lead to a halt.
+
+4. **Regulatory or Compliance Reasons:**
+   - A regulatory body (like an ethics committee or FDA) may require a trial to stop if it fails to meet safety or compliance standards.
+
+5. **Voluntary Decision or Termination:**
+   - The researchers or sponsors may decide to end the trial due to strategic, practical, or scientific reasons.
+
+In all cases, stopping a trial is typically done with transparency and accountability, especially in medical or legal contexts, to ensure the integrity of the process and the protection of participants.
+
+So, a trial might stop due to **lack of evidence, safety concerns, ethical issues, financial problems, or a decision by the parties involved or regulatory bodies**.
+
+--- Config B (Basic-RAG) ---
+  [chunk  14] source=doc3_trial_status.md           score=0.615
+  [chunk  13] source=doc3_trial_status.md           score=0.548
+  [chunk  24] source=doc5_trial_registration.md     score=0.485
+Answer: A trial might stop for several reasons, including safety concerns identified during the trial, insufficient enrollment, funding problems, or an independent safety board recommending the trial stop due to early results showing a clear outcome—either positive or negative.
+
+--- Config C (Context-RAG) ---
+  [chunk  14] source=doc3_trial_status.md           score=0.615
+  [chunk  13] source=doc3_trial_status.md           score=0.548
+  [chunk  24] source=doc5_trial_registration.md     score=0.485
+Answer: A trial might stop due to safety concerns identified during the trial, insufficient enrollment, funding problems, or an independent safety board recommending the trial stop because early results already show a clear outcome, positive or negative [Source 2].
+
+######################################################################
+Q5: What is the average cost of running a Phase III clinical trial?
+######################################################################
+
+--- Config A (No-RAG) ---
+The average cost of running a Phase III clinical trial can vary significantly depending on the disease area, trial design, patient population, geography, and the specific pharmaceutical or biotech company conducting the trial. However, based on industry data and reports from sources such as the FDA, industry analyses (e.g., from PwC, McKinsey, and the Tufts Center for the Study of Drug Development), the **average cost of a Phase III clinical trial ranges from $100 million to $300 million**.
+
+- **Lower end** ($100–150 million): For some well-established, relatively common conditions with manageable patient recruitment and shorter durations.
+- **Higher end** ($200–300 million): For rare diseases, complex conditions (e.g., oncology, rare genetic disorders), or trials requiring extensive monitoring, global recruitment, or novel therapies.
+
+For example:
+- A 2020 study by the Tufts Center estimated that Phase III trials for small-molecule drugs average around $150 million.
+- In oncology or biologics, costs can exceed $300 million due to longer durations, more complex endpoints, and higher patient monitoring.
+
+Therefore, the **average cost of a Phase III clinical trial is generally estimated at approximately $150–200 million**.
+
+⚠️ Note: These figures are averages and do not include additional costs such as regulatory fees, data management, or post-trial analysis. They also exclude indirect costs like operational overhead or opportunity costs.
+
+--- Config B (Basic-RAG) ---
+  [chunk   2] source=doc1_trial_phases.md           score=0.549
+  [chunk   3] source=doc1_trial_phases.md           score=0.523
+  [chunk   0] source=doc1_trial_phases.md           score=0.512
+Answer: The context provided does not specify the average cost of running a Phase III clinical trial. While it mentions that Phase III trials "cost the most to run," it does not give a numerical value or average cost. Therefore, based on the given information, the average cost cannot be determined.
+
+--- Config C (Context-RAG) ---
+  [chunk   2] source=doc1_trial_phases.md           score=0.549
+  [chunk   3] source=doc1_trial_phases.md           score=0.523
+  [chunk   0] source=doc1_trial_phases.md           score=0.512
+Answer: I cannot answer this question from the provided documents
+
+######################################################################
+Q6: What is the capital of France?
+######################################################################
+
+--- Config A (No-RAG) ---
+The capital of France is Paris.
+
+--- Config B (Basic-RAG) ---
+  [chunk   5] source=doc1_trial_phases.md           score=0.093
+  [chunk   0] source=doc1_trial_phases.md           score=0.045
+  [chunk  23] source=doc5_trial_registration.md     score=0.032
+Answer: The capital of France is Paris.
+
+--- Config C (Context-RAG) ---
+  [chunk   5] source=doc1_trial_phases.md           score=0.093
+  [chunk   0] source=doc1_trial_phases.md           score=0.045
+  [chunk  23] source=doc5_trial_registration.md     score=0.032
+Answer: I cannot answer this question from the provided documents

@@ -1,0 +1,40 @@
+{
+  "homework": "DATA-260 HW4",
+  "SID4": 3209,
+  "commit_hash": "021493e483f4bb55c3de427728440d744928d215",
+  "model_configuration": "qwen3:4b-instruct-2507-q4_K_M via Ollama (documented substitute)",
+  "SEED": 3209,
+  "VERIFY_SEED": 263209,
+  "timestamp": "2026-09-26 23:02:21",
+  "checks": [
+    {
+      "check": "Backend responds on PORT_BASE 8509",
+      "pass": true
+    },
+    {
+      "check": "Register endpoint works",
+      "pass": true
+    },
+    {
+      "check": "Login sets HTTP-only session cookie",
+      "pass": true
+    },
+    {
+      "check": "Naive list endpoint returns data",
+      "pass": true
+    },
+    {
+      "check": "Fixed list endpoint returns data",
+      "pass": true
+    },
+    {
+      "check": "Create trial (POST) works",
+      "pass": true
+    },
+    {
+      "check": "Trials endpoint blocked without login",
+      "pass": true
+    }
+  ],
+  "all_checks_passed": true
+}

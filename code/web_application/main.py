@@ -1,118 +1,30 @@
 from pathlib import Path
-from typing import List
 
-from fastapi import FastAPI, HTTPException
-from fastapi.responses import RedirectResponse
+from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel
-from starlette.middleware.sessions import SessionMiddleware
 
-try:
-    from .auth import router as auth_router
-except ImportError:
-    from auth import router as auth_router
+import models  # noqa: F401  (registers tables)
+from auth import router as auth_router
+from database import Base, engine, query_count
+from trials import router as trials_router
 
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Clinical Trial Listing API")
-
-app.add_middleware(
-    SessionMiddleware,
-    secret_key="hw3-session-secret-3209",
-    max_age=300,
-    same_site="lax",
-    https_only=True,
-)
-
 app.include_router(auth_router)
+app.include_router(trials_router)
+
+
+@app.get("/api/debug/query-count")
+def get_query_count():
+    return {"queries": query_count["count"]}
+
+
+@app.post("/api/debug/reset-query-count")
+def reset_query_count():
+    query_count["count"] = 0
+    return {"queries": 0}
+
 
 BASE_DIR = Path(__file__).resolve().parent
-
-
-class TrialCreate(BaseModel):
-    trialTitle: str
-    sponsor: str
-    email: str = ""
-    content: str = ""
-    status: str = "Recruiting"
-
-
-class TrialUpdate(BaseModel):
-    trialTitle: str
-    sponsor: str
-
-
-trials: List[dict] = []
-
-
-@app.get("/api/trials")
-def get_trials():
-    return trials
-
-
-@app.post("/api/trials")
-def add_trial(trial: TrialCreate):
-    new_id = max((item["id"] for item in trials), default=0) + 1
-
-    new_trial = {
-        "id": new_id,
-        "trialTitle": trial.trialTitle,
-        "sponsor": trial.sponsor,
-        "email": trial.email,
-        "content": trial.content,
-        "status": trial.status,
-    }
-
-    trials.append(new_trial)
-
-    return RedirectResponse(url="/", status_code=303)
-
-
-@app.put("/api/trials/{trial_id}")
-def update_trial(trial_id: int, trial: TrialUpdate):
-    for item in trials:
-        if item["id"] == trial_id:
-            item["trialTitle"] = trial.trialTitle
-            item["sponsor"] = trial.sponsor
-
-            return RedirectResponse(url="/", status_code=303)
-
-    raise HTTPException(
-        status_code=404,
-        detail="Trial record not found",
-    )
-
-
-@app.delete("/api/trials/highest")
-def delete_highest_id_trial():
-    if not trials:
-        raise HTTPException(
-            status_code=404,
-            detail="No trial records available",
-        )
-
-    highest_id_trial = max(trials, key=lambda item: item["id"])
-    trials.remove(highest_id_trial)
-
-    return RedirectResponse(url="/", status_code=303)
-
-
-@app.get("/api/trials/search")
-def search_trials(q: str = ""):
-    search_text = q.strip().lower()
-
-    if not search_text:
-        return trials
-
-    return [
-        item
-        for item in trials
-        if search_text in item["trialTitle"].lower()
-        or search_text in item["sponsor"].lower()
-    ]
-
-
-app.mount(
-    "/",
-    StaticFiles(directory=BASE_DIR, html=True),
-    name="static",
-)
+app.mount("/", StaticFiles(directory=BASE_DIR, html=True), name="static")

@@ -1,0 +1,34 @@
+﻿=== HW4 RUN LOG ===
+SID4: 3209
+SEED: 3209
+VERIFY_SEED: 263209
+Local model: qwen3:4b-instruct-2507-q4_K_M via Ollama
+
+[2026-09-24 22:17:50] Ran seed_hw04.py from code/web_application/
+  Purpose: Seed 5,000 trial rows and 200 related trial_notes rows using SEED=3209
+  Output: Seeded 5000 trials and 200 trial_notes (SEED=3209)
+
+[2026-09-24 23:10:55] Ran measure_hw04.py from code/web_application/
+  Purpose: Measure naive vs fixed N+1 endpoints at page sizes 10/50/200, 30 requests each
+  Output: Saved 180 raw rows to reports/hw04/raw/n_plus_1_raw.csv
+  Output: Saved summary table to reports/hw04/raw/n_plus_1_summary.csv
+  Summary:
+    naive  page_size=10   sql_stmts=13   p50=22.30ms   p95=31.21ms   p99=37.71ms
+    naive  page_size=50   sql_stmts=53   p50=62.69ms   p95=67.80ms   p99=70.82ms
+    naive  page_size=200  sql_stmts=203  p50=524.23ms  p95=1060.91ms p99=1293.84ms
+    fixed  page_size=10   sql_stmts=4    p50=35.07ms   p95=62.96ms   p99=71.54ms
+    fixed  page_size=50   sql_stmts=4    p50=32.53ms   p95=53.07ms   p99=78.00ms
+    fixed  page_size=200  sql_stmts=4    p50=43.26ms   p95=51.34ms   p99=97.81ms
+
+[2026-09-26 22:45:04] Ran rag.py from code/rag/
+  Purpose: Build FAISS index from 5-document corpus, run 6 test questions through
+           3 RAG configurations (No-RAG, Basic-RAG, Context-RAG)
+  Output: Indexed 28 chunks from 5 documents
+  Output: Saved six-question results to reports/hw04/raw/rag_six_questions.txt
+
+[2026-09-26 22:48:13] Same run (rag.py) continued
+  Purpose: Run top_k sweep (k=1,3,5) on Q2, and save evaluation table
+  Output: Saved k-sweep results to reports/hw04/raw/rag_k_sweep.txt
+  Output: Saved evaluation table to reports/hw04/raw/rag_evaluation_table.csv
+
+=== End of log ===

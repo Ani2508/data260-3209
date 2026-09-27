@@ -1,0 +1,19 @@
+question,config,correct_retrieval,correct_answer,grounded,refused_when_needed
+Q1,A (No-RAG),N/A,Yes,No,N/A
+Q1,B (Basic-RAG),Yes,Yes,Yes,N/A
+Q1,C (Context-RAG),Yes,Yes,Yes,N/A
+Q2,A (No-RAG),N/A,Partial,No,N/A
+Q2,B (Basic-RAG),Yes,Yes,Yes,N/A
+Q2,C (Context-RAG),Yes,Yes,Yes,N/A
+Q3,A (No-RAG),N/A,Yes,No,N/A
+Q3,B (Basic-RAG),Yes,Yes,Yes,N/A
+Q3,C (Context-RAG),Yes,Yes,Yes,N/A
+Q4,A (No-RAG),N/A,Partial,No,N/A
+Q4,B (Basic-RAG),Yes,Yes,Yes,N/A
+Q4,C (Context-RAG),Yes,Yes,Yes,N/A
+Q5,A (No-RAG),N/A,No,No,No
+Q5,B (Basic-RAG),Yes,Yes,Yes,Partial
+Q5,C (Context-RAG),Yes,Yes,Yes,Yes
+Q6,A (No-RAG),N/A,Yes,No,No
+Q6,B (Basic-RAG),Yes,No,No,No
+Q6,C (Context-RAG),Yes,Yes,Yes,Yes

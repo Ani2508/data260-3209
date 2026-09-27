@@ -1,0 +1,30 @@
+Question: What must be included when a clinical trial is registered, and what happens if a trial is stopped early?
+
+
+------------------------------------------------------------
+top_k = 1
+------------------------------------------------------------
+  [chunk  24] source=doc5_trial_registration.md     score=0.725
+Answer: When a clinical trial is registered, it must include eligibility criteria, the sponsor or institution responsible for the trial, the current recruitment status of the trial, contact information for the study team, and the trial's phase if it involves testing a drug or biologic [Source 1]. However, the sources do not contain information about what happens if a trial is stopped early.
+
+I cannot answer this question from the provided documents
+
+------------------------------------------------------------
+top_k = 3
+------------------------------------------------------------
+  [chunk  24] source=doc5_trial_registration.md     score=0.725
+  [chunk  14] source=doc3_trial_status.md           score=0.664
+  [chunk  22] source=doc5_trial_registration.md     score=0.637
+Answer: When a clinical trial is registered, it must include eligibility criteria, the sponsor or institution responsible for the trial, the current recruitment status, contact information for the study team, and the trial's phase if it involves testing a drug or biologic [Source 1]. 
+
+If a trial is stopped early, it may happen due to issues such as lack of enrollment, funding problems, or an independent safety board recommending the trial stop because early results already show a clear outcome, positive or negative [Source 2].
+
+------------------------------------------------------------
+top_k = 5
+------------------------------------------------------------
+  [chunk  24] source=doc5_trial_registration.md     score=0.725
+  [chunk  14] source=doc3_trial_status.md           score=0.664
+  [chunk  22] source=doc5_trial_registration.md     score=0.637
+  [chunk  11] source=doc3_trial_status.md           score=0.634
+  [chunk  12] source=doc3_trial_status.md           score=0.626
+Answer: When a clinical trial is registered, it must include eligibility criteria, the sponsor or institution responsible for the trial, the current recruitment status of the trial, contact information for the study team, and the trial's phase if it involves testing a drug or biologic [Source 1]. If a trial is stopped early, it may happen due to issues such as enrollment problems, funding problems, or an independent safety board recommending the trial stop because early results already show a clear outcome, positive or negative [Source 2].

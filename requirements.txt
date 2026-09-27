@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+pymysql
+cryptography
+bcrypt
+python-dotenv
+jinja2
+python-multipart
+requests
+langchain-core
+langchain-ollama
