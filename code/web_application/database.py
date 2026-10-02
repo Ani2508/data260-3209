@@ -18,7 +18,8 @@ DB_URL = URL.create(
     database=os.getenv("DB_NAME", "s3209_rel"),
 )
 
-engine = create_engine(DB_URL)
+# DATABASE_URL (optional) lets tests/smoke checks point at a temporary database.
+engine = create_engine(os.getenv("DATABASE_URL") or DB_URL, pool_pre_ping=True)
 SessionLocal = sessionmaker(bind=engine, autocommit=False, autoflush=False)
 Base = declarative_base()
 

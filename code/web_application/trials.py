@@ -1,130 +1,120 @@
-from fastapi import APIRouter, Depends, HTTPException
-from pydantic import BaseModel, Field
-from sqlalchemy.orm import Session
+"""Primary entity (Trial) CRUD. HW5: nct_id, enrollment_slots, status, sponsor FK."""
+from fastapi import APIRouter, Depends, HTTPException, Query
+from sqlalchemy import func, or_
+from sqlalchemy.orm import Session, joinedload, selectinload
 
 from database import get_db
-from models import Trial
+from models import Sponsor, Trial, TrialNote
+from schemas import Page, TrialIn, TrialOut
 from security import require_user
-from models import Trial, TrialNote
-from sqlalchemy.orm import selectinload
-
 
 router = APIRouter(prefix="/api/trials", tags=["trials"],
                    dependencies=[Depends(require_user)])
 
 
-class TrialIn(BaseModel):
-    trialTitle: str = Field(min_length=1, max_length=255)
-    sponsor: str = Field(min_length=1, max_length=255)
+def trial_out(trial: Trial) -> dict:
+    return {
+        "id": trial.id, "trial_title": trial.trial_title, "nct_id": trial.nct_id,
+        "enrollment_slots": trial.enrollment_slots, "status": trial.status,
+        "sponsor_id": trial.sponsor_id,
+        "sponsor_name": trial.sponsor.name if trial.sponsor else None,
+        "created_at": trial.created_at, "updated_at": trial.updated_at,
+    }
 
 
-def to_dict(trial: Trial):
-    return {"id": trial.id, "trialTitle": trial.trial_title,
-            "sponsor": trial.sponsor}
-
-
-def clean(body: TrialIn):
-    title, sponsor = body.trialTitle.strip(), body.sponsor.strip()
-    if not title or not sponsor:
-        raise HTTPException(status_code=422, detail="Fields cannot be blank")
-    return title, sponsor
-
-
-def get_or_404(db_session_basede26: Session, trial_id: int) -> Trial:
-    trial = db_session_basede26.get(Trial, trial_id)
+def get_or_404(db: Session, trial_id: int) -> Trial:
+    trial = db.get(Trial, trial_id)
     if not trial:
-        raise HTTPException(status_code=404, detail="Trial record not found")
+        raise HTTPException(status_code=404, detail=f"Trial {trial_id} not found")
     return trial
 
 
-@router.get("")
-def list_trials(db_session_basede26: Session = Depends(get_db)):
-    rows = db_session_basede26.query(Trial).order_by(Trial.id.desc()).all()
-    return [to_dict(t) for t in rows]
+def check_refs(db: Session, body: TrialIn, exclude_id: int | None = None):
+    if not db.get(Sponsor, body.sponsor_id):
+        raise HTTPException(status_code=422,
+                            detail=f"sponsor_id {body.sponsor_id} does not exist")
+    q = db.query(Trial).filter(Trial.nct_id == body.nct_id)
+    if exclude_id is not None:
+        q = q.filter(Trial.id != exclude_id)
+    if q.first():
+        raise HTTPException(status_code=409,
+                            detail=f"nct_id '{body.nct_id}' is already registered")
 
 
-@router.get("/search")
-def search_trials(q: str = "", db_session_basede26: Session = Depends(get_db)):
-    query = db_session_basede26.query(Trial)
+@router.get("", response_model=Page[TrialOut])
+def list_trials(page: int = Query(1, ge=1), page_size: int = Query(20, ge=1, le=100),
+                db: Session = Depends(get_db)):
+    total = db.query(func.count(Trial.id)).scalar()
+    rows = (db.query(Trial).options(joinedload(Trial.sponsor))
+            .order_by(Trial.id.desc())
+            .offset((page - 1) * page_size).limit(page_size).all())
+    return {"items": [trial_out(t) for t in rows], "total": total,
+            "page": page, "page_size": page_size}
+
+
+@router.get("/search", response_model=list[TrialOut])
+def search_trials(q: str = "", db: Session = Depends(get_db)):
+    query = db.query(Trial).join(Sponsor).options(joinedload(Trial.sponsor))
     if q.strip():
         like = f"%{q.strip()}%"
-        query = query.filter(Trial.trial_title.like(like) | Trial.sponsor.like(like))
-    return [to_dict(t) for t in query.order_by(Trial.id.desc()).all()]
+        query = query.filter(or_(Trial.trial_title.like(like), Sponsor.name.like(like),
+                                 Trial.nct_id.like(like)))
+    return [trial_out(t) for t in query.order_by(Trial.id.desc()).limit(100).all()]
 
 
-@router.get("/{trial_id}")
-def get_trial(trial_id: int, db_session_basede26: Session = Depends(get_db)):
-    return to_dict(get_or_404(db_session_basede26, trial_id))
+@router.get("/{trial_id}", response_model=TrialOut)
+def get_trial(trial_id: int, db: Session = Depends(get_db)):
+    return trial_out(get_or_404(db, trial_id))
 
 
-@router.post("", status_code=201)
-def create_trial(body: TrialIn, db_session_basede26: Session = Depends(get_db)):
-    title, sponsor = clean(body)
-    trial = Trial(trial_title=title, sponsor=sponsor)
-    db_session_basede26.add(trial)
-    db_session_basede26.commit()
-    db_session_basede26.refresh(trial)
-    return to_dict(trial)
+@router.post("", status_code=201, response_model=TrialOut)
+def create_trial(body: TrialIn, db: Session = Depends(get_db)):
+    check_refs(db, body)
+    trial = Trial(**body.model_dump())
+    db.add(trial)
+    db.commit()
+    db.refresh(trial)
+    return trial_out(trial)
 
 
-@router.put("/{trial_id}")
-def update_trial(trial_id: int, body: TrialIn,
-                 db_session_basede26: Session = Depends(get_db)):
-    trial = get_or_404(db_session_basede26, trial_id)
-    trial.trial_title, trial.sponsor = clean(body)
-    db_session_basede26.commit()
-    return to_dict(trial)
+@router.put("/{trial_id}", response_model=TrialOut)
+def update_trial(trial_id: int, body: TrialIn, db: Session = Depends(get_db)):
+    trial = get_or_404(db, trial_id)
+    check_refs(db, body, exclude_id=trial_id)
+    for key, value in body.model_dump().items():
+        setattr(trial, key, value)
+    db.commit()
+    db.refresh(trial)
+    return trial_out(trial)
 
 
 @router.delete("/{trial_id}")
-def delete_trial(trial_id: int, db_session_basede26: Session = Depends(get_db)):
-    trial = get_or_404(db_session_basede26, trial_id)
-    db_session_basede26.delete(trial)
-    db_session_basede26.commit()
+def delete_trial(trial_id: int, db: Session = Depends(get_db)):
+    trial = get_or_404(db, trial_id)
+    db.delete(trial)
+    db.commit()
     return {"message": "Trial deleted", "id": trial_id}
 
-@router.get("/naive/list")
-def list_trials_naive(page_size: int = 10, db_session_basede26: Session = Depends(get_db)):
-    """Intentionally naive: 1 query for trials + 1 extra query PER trial for its notes."""
-    trials = (
-        db_session_basede26.query(Trial)
-        .order_by(Trial.id)
-        .limit(page_size)
-        .all()
-    )  # query #1
 
+# ---------- HW4 N+1 demo endpoints (kept, now read sponsor via the FK) ----------
+@router.get("/naive/list")
+def list_trials_naive(page_size: int = 10, db: Session = Depends(get_db)):
+    """Intentionally naive: 1 query for trials + 1 extra query PER trial for its notes."""
+    trials = db.query(Trial).options(joinedload(Trial.sponsor)) \
+        .order_by(Trial.id).limit(page_size).all()
     result = []
     for t in trials:
-        notes = (
-            db_session_basede26.query(TrialNote)
-            .filter(TrialNote.trial_id == t.id)
-            .all()
-        )  # 1 extra query per trial — this is the N+1 problem
-        result.append({
-            "id": t.id,
-            "trialTitle": t.trial_title,
-            "sponsor": t.sponsor,
-            "notes": [n.note_text for n in notes],
-        })
+        notes = db.query(TrialNote).filter(TrialNote.trial_id == t.id).all()  # N+1
+        result.append({"id": t.id, "trialTitle": t.trial_title,
+                       "sponsor": t.sponsor.name, "notes": [n.note_text for n in notes]})
     return result
 
-@router.get("/fixed/list")
-def list_trials_fixed(page_size: int = 10, db_session_basede26: Session = Depends(get_db)):
-    """Fixed: eager-loads notes with the trials in a small, constant number of queries."""
-    trials = (
-        db_session_basede26.query(Trial)
-        .options(selectinload(Trial.notes))
-        .order_by(Trial.id)
-        .limit(page_size)
-        .all()
-    )  # query #1: trials, query #2: all their notes in one IN(...) query
 
-    return [
-        {
-            "id": t.id,
-            "trialTitle": t.trial_title,
-            "sponsor": t.sponsor,
-            "notes": [n.note_text for n in t.notes],
-        }
-        for t in trials
-    ]
+@router.get("/fixed/list")
+def list_trials_fixed(page_size: int = 10, db: Session = Depends(get_db)):
+    """Fixed: eager-loads notes and sponsor in a small, constant number of queries."""
+    trials = (db.query(Trial)
+              .options(selectinload(Trial.notes), joinedload(Trial.sponsor))
+              .order_by(Trial.id).limit(page_size).all())
+    return [{"id": t.id, "trialTitle": t.trial_title, "sponsor": t.sponsor.name,
+             "notes": [n.note_text for n in t.notes]} for t in trials]

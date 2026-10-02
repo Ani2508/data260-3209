@@ -1,63 +1,39 @@
-import { useEffect, useState } from 'react'
-import { Link, useNavigate, useSearchParams } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate, useSearchParams } from 'react-router-dom'
+import { updateTrial } from '../store/trialsSlice'
+import TrialForm from './TrialForm.jsx'
 
-export default function UpdateRecord({ trials, onUpdate }) {
-  const [params] = useSearchParams()
-  const id = Number(params.get('id'))
+export default function UpdateRecord() {
+  const trials = useSelector((s) => s.trials.items)
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const [params, setParams] = useSearchParams()
+  const id = Number(params.get('id')) || ''
   const record = trials.find((t) => t.id === id)
 
-  const [trialTitle, setTrialTitle] = useState('')
-  const [sponsor, setSponsor] = useState('')
-  const [error, setError] = useState('')
-  const [busy, setBusy] = useState(false)
-  const navigate = useNavigate()
-
-  // Fill the form with the current values
-  useEffect(() => {
-    if (record) { setTrialTitle(record.trialTitle); setSponsor(record.sponsor) }
-  }, [record])
-
-  if (!record) {
-    return (
-      <section className="card narrow">
-        <p className="state state-error">Trial not found. Choose "Edit" from the list.</p>
-        <Link to="/">Back to list</Link>
-      </section>
-    )
-  }
-
-  async function handleSubmit(e) {
-    e.preventDefault()
-    const title = trialTitle.trim()
-    const spon = sponsor.trim()
-    if (!title || !spon) { setError('Both fields are required.'); return }
-    setBusy(true)
-    try {
-      await onUpdate(id, { trialTitle: title, sponsor: spon })
-      navigate('/')
-    } catch (err) {
-      setError(err.message)
-      setBusy(false)
-    }
+  async function handleUpdate(trial) {
+    await dispatch(updateTrial({ id, trial })).unwrap()
+    navigate('/')
   }
 
   return (
     <section className="card narrow">
-      <h2>Update Trial #{id}</h2>
-      <form onSubmit={handleSubmit} noValidate>
-        <div className="field">
-          <label htmlFor="trialTitle">Trial Title <span className="req">*</span></label>
-          <input id="trialTitle" value={trialTitle} onChange={(e) => setTrialTitle(e.target.value)} />
-        </div>
-        <div className="field">
-          <label htmlFor="sponsor">Sponsor / Institution <span className="req">*</span></label>
-          <input id="sponsor" value={sponsor} onChange={(e) => setSponsor(e.target.value)} />
-        </div>
-        {error && <p className="err">{error}</p>}
-        <button type="submit" className="submit-btn" disabled={busy}>
-          {busy ? 'Saving...' : 'Update Trial Listing'}
-        </button>
-      </form>
+      <h2>Update a Trial</h2>
+      <div className="field">
+        <label htmlFor="pick">Select trial by ID</label>
+        <select id="pick" value={id} onChange={(e) => setParams({ id: e.target.value })}>
+          <option value="">-- choose an ID --</option>
+          {trials.map((t) => <option key={t.id} value={t.id}>#{t.id} - {t.trial_title}</option>)}
+        </select>
+      </div>
+      {record && (
+        <TrialForm key={record.id} submitLabel={`Update Trial #${record.id}`} onSubmit={handleUpdate}
+          initial={{
+            trial_title: record.trial_title, nct_id: record.nct_id,
+            enrollment_slots: record.enrollment_slots, status: record.status,
+            sponsor_id: record.sponsor_id,
+          }} />
+      )}
     </section>
   )
 }
