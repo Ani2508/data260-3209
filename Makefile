@@ -15,3 +15,6 @@ docker-build:
 
 docker-run:
 	docker run -d -p 8509:8509 clinical-trial-app
+
+verify-hw05:
+	cd code && python3 verify_hw05.py

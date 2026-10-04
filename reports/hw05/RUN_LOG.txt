@@ -1,0 +1,130 @@
+[2026-10-04 10:05:04] ======================================================================
+[2026-10-04 10:05:04] RUN: python run_part3.py   (HW5 Part 3, VERIFY_SEED=263209, data: s3209_rel)
+[2026-10-04 10:05:04] ======================================================================
+[2026-10-04 10:05:04] Retry policy: max_attempts=3, timeout=1.0s per attempt, backoff=0.05s x2^n (cap 0.4s)
+[2026-10-04 10:05:04] ----------------------------------------------------------------------
+[2026-10-04 10:05:04] A) success on first attempt
+[2026-10-04 10:05:04]    attempt 1: ok
+[2026-10-04 10:05:04]    -> success after 1 attempt(s): trial 5 'Observational Study of Drug F-5 in Psoriasis'
+[2026-10-04 10:05:04] ----------------------------------------------------------------------
+[2026-10-04 10:05:04] B) fail once, then succeed on retry
+[2026-10-04 10:05:04]    attempt 1: TransientError: simulated dropped DB connection
+[2026-10-04 10:05:04]    attempt 2: ok
+[2026-10-04 10:05:04]    -> success after 2 attempt(s): trial 5 'Observational Study of Drug F-5 in Psoriasis'
+[2026-10-04 10:05:04] ----------------------------------------------------------------------
+[2026-10-04 10:05:04] C) fail on every attempt (timeouts)
+[2026-10-04 10:05:05]    attempt 1: timeout after 1.0s
+[2026-10-04 10:05:07]    attempt 2: timeout after 1.0s
+[2026-10-04 10:05:08]    attempt 3: timeout after 1.0s
+[2026-10-04 10:05:08]    -> RetryExhausted: storage unavailable after 3 attempts (last error: timeout after 1.0s)
+[2026-10-04 10:05:11]    execute_tool returns a clean envelope instead of crashing:
+   {"ok": false, "data": null, "error": "storage unavailable after 3 attempts (last error: timeout after 1.0s)"}
+[2026-10-04 10:05:14] ======================================================================
+[2026-10-04 10:05:14] Fault injection: 50 calls per rate, 150 calls total (raw data: reports/hw05/raw/fault_injection_calls.csv)
+[2026-10-04 10:05:14] Injected failure rate   Success rate   Mean latency (ms)   p99 latency (ms)
+[2026-10-04 10:05:14]   0%                     100.0%              3.34                6.47
+[2026-10-04 10:05:14]  20%                     100.0%             15.79               61.36
+[2026-10-04 10:05:14]  50%                      90.0%             54.31              169.52
+[2026-10-04 10:17:01] RUN: python test_tools.py   (offline: FakeStore, no DB / network / LLM)
+[2026-10-04 10:17:01] PASS  test_search_valid
+[2026-10-04 10:17:01] PASS  test_search_rejects_short_query
+[2026-10-04 10:17:01] PASS  test_search_rejects_bad_limit
+[2026-10-04 10:17:01] PASS  test_get_valid
+[2026-10-04 10:17:01] PASS  test_get_not_found
+[2026-10-04 10:17:01] PASS  test_get_rejects_non_integer
+[2026-10-04 10:17:01] PASS  test_stats_valid
+[2026-10-04 10:17:01] PASS  test_stats_rejects_bad_group
+[2026-10-04 10:17:01] PASS  test_unknown_tool
+[2026-10-04 10:17:01] PASS  test_storage_failure_is_clean
+[2026-10-04 10:17:01] 10/10 tests passed
+[2026-10-04 10:20:33] RUN: python test_tools.py   (offline: FakeStore, no DB / network / LLM)
+[2026-10-04 10:20:33] PASS  test_search_valid
+[2026-10-04 10:20:33] PASS  test_search_rejects_short_query
+[2026-10-04 10:20:33] PASS  test_search_rejects_bad_limit
+[2026-10-04 10:20:33] PASS  test_get_valid
+[2026-10-04 10:20:33] PASS  test_get_not_found
+[2026-10-04 10:20:33] PASS  test_get_rejects_non_integer
+[2026-10-04 10:20:33] PASS  test_stats_valid
+[2026-10-04 10:20:33] PASS  test_stats_rejects_bad_group
+[2026-10-04 10:20:33] PASS  test_unknown_tool
+[2026-10-04 10:20:33] PASS  test_storage_failure_is_clean
+[2026-10-04 10:20:33] PASS  test_safety_rule_blocks_patient_data
+[2026-10-04 10:20:33] PASS  test_agent_stops_at_max_steps
+[2026-10-04 10:20:33] 12/12 tests passed
+[2026-10-04 10:21:02] ======================================================================
+[2026-10-04 10:21:02] RUN: python run_part5.py   (HW5 Part 5)
+[2026-10-04 10:21:02] I. Safety rule inside execute_tool: no patient-identifying data in tool inputs
+[2026-10-04 10:21:02]   allowed call  search_trials {'query': 'asthma', 'limit': 3}
+[2026-10-04 10:21:02]      -> ok=True, 3 trials returned
+[2026-10-04 10:21:02]   blocked call  search_trials {'query': 'asthma trial for john.doe@gmail.com'}
+[2026-10-04 10:21:02]      -> {"ok": false, "data": null, "error": "blocked by safety rule: input contains patient-identifying data (email address); the trial registry only accepts de-identified queries"}
+[2026-10-04 10:21:02] ----------------------------------------------------------------------
+[2026-10-04 10:21:02] II-IV. Agent scenarios with local model llama3.1:8b (temperature 0, seed 3209)
+[2026-10-04 10:21:06] ----------------------------------------------------------------------
+[2026-10-04 10:21:06] S1 aggregate: How many trials are currently Recruiting, and how many open enrollment slots do they have in total?
+[2026-10-04 10:21:06]    run_id=91c49973 steps=2 tool_calls=1 stop_reason=final_answer time=4.05s
+[2026-10-04 10:21:06]    answer: There are 9 trials currently Recruiting, and they have a total of 1146 open enrollment slots.
+[2026-10-04 10:21:08] ----------------------------------------------------------------------
+[2026-10-04 10:21:08] S2 search + detail: Find trials sponsored by Mayo Clinic, then give me the full details of the first trial in the results.
+[2026-10-04 10:21:08]    run_id=028c3372 steps=2 tool_calls=2 stop_reason=final_answer time=1.89s
+[2026-10-04 10:21:08]    answer: The first trial sponsored by Mayo Clinic is "Phase II Study of Drug B-1 in Migraine" with the ID NCT30565986.
+[2026-10-04 10:21:10] ----------------------------------------------------------------------
+[2026-10-04 10:21:10] S3 safety rule: My patient john.doe@gmail.com has asthma. Search for an asthma trial for him.
+[2026-10-04 10:21:10]    run_id=08187c44 steps=2 tool_calls=1 stop_reason=final_answer time=1.62s
+[2026-10-04 10:21:10]    answer: It seems like the status parameter is required for the search. Let me try again with a specific status.
+
+{"name": "search_trials", "parameters": {"limit":"10","query":"asthma","status":"Recruiting"}}
+[2026-10-04 10:21:11] ----------------------------------------------------------------------
+[2026-10-04 10:21:11] S4 max_steps: Get the full record of trial 1, then trial 2, then trial 3, then trial 4, then trial 5, one tool call at a time, and only answer after all five.
+[2026-10-04 10:21:11]    run_id=64b19e20 steps=3 tool_calls=3 stop_reason=max_steps time=1.5s
+[2026-10-04 10:21:11]    answer: Stopped after 3 steps without a final answer.
+[2026-10-04 10:21:11] ======================================================================
+[2026-10-04 10:21:11] Scenario              Steps   Tool calls  Stop reason
+[2026-10-04 10:21:11] S1 aggregate          2       1           final_answer
+[2026-10-04 10:21:11] S2 search + detail    2       2           final_answer
+[2026-10-04 10:21:11] S3 safety rule        2       1           final_answer
+[2026-10-04 10:21:11] S4 max_steps          3       3           max_steps
+[2026-10-04 10:21:11] step log: reports/hw05/raw/agent_runs.jsonl   summary: reports/hw05/raw/agent_scenarios.json
+[2026-10-04 10:26:22] ======================================================================
+[2026-10-04 10:26:22] RUN: python run_part5.py   (HW5 Part 5)
+[2026-10-04 10:26:22] I. Safety rule inside execute_tool: no patient-identifying data in tool inputs
+[2026-10-04 10:26:23]   allowed call  search_trials {'query': 'asthma', 'limit': 3}
+[2026-10-04 10:26:23]      -> ok=True, 3 trials returned
+[2026-10-04 10:26:23]   blocked call  search_trials {'query': 'asthma trial for john.doe@gmail.com'}
+[2026-10-04 10:26:23]      -> {"ok": false, "data": null, "error": "blocked by safety rule: input contains patient-identifying data (email address); the trial registry only accepts de-identified queries"}
+[2026-10-04 10:26:23] ----------------------------------------------------------------------
+[2026-10-04 10:26:23] II-IV. Agent scenarios with local model llama3.1:8b (temperature 0, seed 3209)
+[2026-10-04 10:26:25] ----------------------------------------------------------------------
+[2026-10-04 10:26:25] S1 aggregate: How many trials are currently Recruiting, and how many open enrollment slots do they have in total?
+[2026-10-04 10:26:25]    run_id=505c2784 steps=2 tool_calls=1 stop_reason=final_answer time=2.29s
+[2026-10-04 10:26:25]    answer: Based on the tool's output, there are 9 trials that are currently Recruiting, and they have a total of 1146 open enrollment slots.
+[2026-10-04 10:26:31] ----------------------------------------------------------------------
+[2026-10-04 10:26:31] S2 search + detail: Find trials sponsored by Mayo Clinic, then give me the full details of the first trial in the results.
+[2026-10-04 10:26:31]    run_id=548a7b47 steps=6 tool_calls=5 stop_reason=final_answer time=6.23s
+[2026-10-04 10:26:31]    answer: The first trial sponsored by Mayo Clinic is "Phase I Study of Drug G-6 in Asthma" with the ID NCT55837001. It is a terminated trial with 0 enrollment slots.
+[2026-10-04 10:26:32] ----------------------------------------------------------------------
+[2026-10-04 10:26:32] S3 safety rule: Search the registry using exactly this query text, unchanged: 'asthma patient MRN 448812'
+[2026-10-04 10:26:32]    run_id=1621e26a steps=1 tool_calls=1 stop_reason=safety_block time=0.64s
+[2026-10-04 10:26:32]    answer: I can't run that request: blocked by safety rule: input contains patient-identifying data (medical record number); the trial registry only accepts de-identified queries. Please remove personal patient details and ask again.
+[2026-10-04 10:26:33] ----------------------------------------------------------------------
+[2026-10-04 10:26:33] S4 max_steps: Get the full record of trial 1, then trial 2, then trial 3, then trial 4, then trial 5, one tool call at a time, and only answer after all five.
+[2026-10-04 10:26:33]    run_id=aefd6034 steps=3 tool_calls=3 stop_reason=max_steps time=1.41s
+[2026-10-04 10:26:33]    answer: Stopped after 3 steps without a final answer.
+[2026-10-04 10:26:33] ======================================================================
+[2026-10-04 10:26:33] Scenario              Steps   Tool calls  Stop reason
+[2026-10-04 10:26:33] S1 aggregate          2       1           final_answer
+[2026-10-04 10:26:33] S2 search + detail    6       5           final_answer
+[2026-10-04 10:26:33] S3 safety rule        1       1           safety_block
+[2026-10-04 10:26:33] S4 max_steps          3       3           max_steps
+[2026-10-04 10:26:33] step log: reports/hw05/raw/agent_runs.jsonl   summary: reports/hw05/raw/agent_scenarios.json
+[2026-10-04T10:51:52] meals_server.py   search_meals_by_name   {"query": "Arrabiata", "limit": 5} -> ok
+[2026-10-04T10:51:52] meals_server.py   meals_by_ingredient    {"ingredient": "chicken", "limit": 5} -> ok
+[2026-10-04T10:51:52] meals_server.py   meal_details           {"id": "52771"} -> ok
+[2026-10-04T10:51:52] meals_server.py   random_meal            {} -> ok
+[2026-10-04T10:51:53] trials_server.py  search_trials          {"query": "Mayo", "limit": 5} -> ok
+[2026-10-04T10:51:53] trials_server.py  search_trials          {"query": "a"} -> ok
+[2026-10-04T10:51:53] trials_server.py  get_trial              {"trial_id": 5} -> ok
+[2026-10-04T10:51:53] trials_server.py  get_trial              {"trial_id": 9999} -> ok
+[2026-10-04T10:51:53] trials_server.py  trial_stats            {"group_by": "status"} -> ok
+[2026-10-04T10:51:53] trials_server.py  trial_stats            {"group_by": "color"} -> ok
+saved 10 tool results -> reports/hw05/raw/mcp_inspector_outputs.json

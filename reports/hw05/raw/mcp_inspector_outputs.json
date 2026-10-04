@@ -1,0 +1,339 @@
+[
+  {
+    "timestamp": "2026-10-04T10:51:52",
+    "server": "meals_server",
+    "tool": "search_meals_by_name",
+    "input": {
+      "query": "Arrabiata",
+      "limit": 5
+    },
+    "is_error": false,
+    "output": {
+      "results": [
+        {
+          "id": "52771",
+          "name": "Spicy Arrabiata Penne",
+          "area": "Italian",
+          "category": "Vegetarian",
+          "thumb": "https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-04T10:51:52",
+    "server": "meals_server",
+    "tool": "meals_by_ingredient",
+    "input": {
+      "ingredient": "chicken",
+      "limit": 5
+    },
+    "is_error": false,
+    "output": {
+      "results": [
+        {
+          "id": "52940",
+          "name": "Brown Stew Chicken",
+          "thumb": "https://www.themealdb.com/images/media/meals/sypxpx1515365095.jpg"
+        },
+        {
+          "id": "53161",
+          "name": "Chicken & chorizo rice pot",
+          "thumb": "https://www.themealdb.com/images/media/meals/fk80jp1763280767.jpg"
+        },
+        {
+          "id": "52846",
+          "name": "Chicken & mushroom Hotpot",
+          "thumb": "https://www.themealdb.com/images/media/meals/uuuspp1511297945.jpg"
+        },
+        {
+          "id": "52796",
+          "name": "Chicken Alfredo Primavera",
+          "thumb": "https://www.themealdb.com/images/media/meals/syqypv1486981727.jpg"
+        },
+        {
+          "id": "52934",
+          "name": "Chicken Basquaise",
+          "thumb": "https://www.themealdb.com/images/media/meals/wruvqv1511880994.jpg"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-04T10:51:52",
+    "server": "meals_server",
+    "tool": "meal_details",
+    "input": {
+      "id": "52771"
+    },
+    "is_error": false,
+    "output": {
+      "id": "52771",
+      "name": "Spicy Arrabiata Penne",
+      "category": "Vegetarian",
+      "area": "Italian",
+      "instructions": "Bring a large pot of water to a boil. Add kosher salt to the boiling water, then add the pasta. Cook according to the package instructions, about 9 minutes.\r\nIn a large skillet over medium-high heat, add the olive oil and heat until the oil starts to shimmer. Add the garlic and cook, stirring, until fragrant, 1 to 2 minutes. Add the chopped tomatoes, red chile flakes, Italian seasoning and salt and pepper to taste. Bring to a boil and cook for 5 minutes. Remove from the heat and add the chopped basil.\r\nDrain the pasta and add it to the sauce. Garnish with Parmigiano-Reggiano flakes and more basil and serve warm.",
+      "image": "https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg",
+      "source": null,
+      "youtube": "https://www.youtube.com/watch?v=1IszT_guI08",
+      "ingredients": [
+        {
+          "name": "penne rigate",
+          "measure": "1 pound"
+        },
+        {
+          "name": "olive oil",
+          "measure": "1/4 cup"
+        },
+        {
+          "name": "garlic",
+          "measure": "3 cloves"
+        },
+        {
+          "name": "chopped tomatoes",
+          "measure": "1 tin"
+        },
+        {
+          "name": "red chilli flakes",
+          "measure": "1/2 teaspoon"
+        },
+        {
+          "name": "italian seasoning",
+          "measure": "1/2 teaspoon"
+        },
+        {
+          "name": "basil",
+          "measure": "6 leaves"
+        },
+        {
+          "name": "Parmigiano-Reggiano",
+          "measure": "sprinkling"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-04T10:51:52",
+    "server": "meals_server",
+    "tool": "random_meal",
+    "input": {},
+    "is_error": false,
+    "output": {
+      "id": "53389",
+      "name": "Apple Potato Mash (Hete bliksem) ",
+      "category": "Side",
+      "area": "Netherlands",
+      "instructions": "Clean and peel the potatoes and cut them into even size chunks. Boil them in salted water for about 10 min and then add the cleaned and chopped apples into the boiling water. Add the cinnamon stick as well. Leave to boil for another 10 minutes or until both apples and potatoes are to your liking. I like mine to be fairly chunky but that is a personal preference\r\nIn the mean time bake the streaky bacon in a dry frying pan until crispy and set aside to drain on paper towels.\r\nSlice a few apple pieces and melt a little butter in a fryin pan. Add the apple slices to it and add a bit of maple syrup into the pan as well as some cinnamon. Let it simmer until the apple is soft.\r\nPrepare a plate with one whisked egg and one plate with sesame seeds. Cut your cheese into the required size. The smaller it is, the easier it is too handle.\r\nDip the cheese into the egg and make sure it coats all sides. Then dip the cheese into the sesame seeds and make sure it is covered everywhere.\r\nHeat a non stick frying pan on high until nice and hot. Put the cheese slice in and bake until the sesame seeds are brown. You have to do this rather quickly or the cheese will melt completely. Turn and bake the other side.\r\nDrain the apples and potatoes and mash them together. Taste and add cinnamon and salt where needed. Remove the cinnamon stick before mashing",
+      "image": "https://www.themealdb.com/images/media/meals/pa03n41777540582.jpg",
+      "source": "https://insimoneskitchen.com/hete-bliksem-recipe-hot-lightning/#recipe",
+      "youtube": "",
+      "ingredients": [
+        {
+          "name": "Apples",
+          "measure": "250g"
+        },
+        {
+          "name": "Potatoes",
+          "measure": "250g"
+        },
+        {
+          "name": "Cinnamon Stick",
+          "measure": "1"
+        },
+        {
+          "name": "Maple Syrup",
+          "measure": "1 tsp"
+        },
+        {
+          "name": "Ground Cinnamon",
+          "measure": "Sprinkling"
+        },
+        {
+          "name": "Bacon",
+          "measure": "4"
+        },
+        {
+          "name": "Cheese",
+          "measure": "200g"
+        },
+        {
+          "name": "Salt",
+          "measure": "Pinch"
+        },
+        {
+          "name": "Egg",
+          "measure": "1"
+        },
+        {
+          "name": "Sesame Seed",
+          "measure": "50g"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-04T10:51:53",
+    "server": "trials_server",
+    "tool": "search_trials",
+    "input": {
+      "query": "Mayo",
+      "limit": 5
+    },
+    "is_error": false,
+    "output": {
+      "ok": true,
+      "data": {
+        "count": 5,
+        "results": [
+          {
+            "id": 6,
+            "trial_title": "Phase I Study of Drug G-6 in Asthma",
+            "nct_id": "NCT55837001",
+            "status": "Terminated",
+            "enrollment_slots": 0,
+            "sponsor": "Mayo Clinic"
+          },
+          {
+            "id": 9,
+            "trial_title": "Phase II Study of Drug J-9 in Migraine",
+            "nct_id": "NCT10856964",
+            "status": "Active - Not Recruiting",
+            "enrollment_slots": 0,
+            "sponsor": "Mayo Clinic"
+          },
+          {
+            "id": 13,
+            "trial_title": "Phase II Study of Drug N-13 in Asthma",
+            "nct_id": "NCT13478632",
+            "status": "Active - Not Recruiting",
+            "enrollment_slots": 0,
+            "sponsor": "Mayo Clinic"
+          },
+          {
+            "id": 16,
+            "trial_title": "Phase III Study of Drug Q-16 in Hypertension",
+            "nct_id": "NCT77975834",
+            "status": "Completed",
+            "enrollment_slots": 0,
+            "sponsor": "Mayo Clinic"
+          },
+          {
+            "id": 22,
+            "trial_title": "Phase III Study of Drug W-22 in Major Depression",
+            "nct_id": "NCT73882879",
+            "status": "Completed",
+            "enrollment_slots": 0,
+            "sponsor": "Mayo Clinic"
+          }
+        ]
+      },
+      "error": null
+    }
+  },
+  {
+    "timestamp": "2026-10-04T10:51:53",
+    "server": "trials_server",
+    "tool": "search_trials",
+    "input": {
+      "query": "a"
+    },
+    "is_error": false,
+    "output": {
+      "ok": false,
+      "data": null,
+      "error": "query is required and must be a string of at least 2 characters"
+    }
+  },
+  {
+    "timestamp": "2026-10-04T10:51:53",
+    "server": "trials_server",
+    "tool": "get_trial",
+    "input": {
+      "trial_id": 5
+    },
+    "is_error": false,
+    "output": {
+      "ok": true,
+      "data": {
+        "id": 5,
+        "trial_title": "Observational Study of Drug F-5 in Psoriasis",
+        "nct_id": "NCT69258056",
+        "status": "Completed",
+        "enrollment_slots": 0,
+        "sponsor_id": 4,
+        "sponsor": "Johns Hopkins Medicine",
+        "sponsor_country": "USA",
+        "created_at": "2026-10-04 09:40:12",
+        "updated_at": "2026-10-04 09:40:12"
+      },
+      "error": null
+    }
+  },
+  {
+    "timestamp": "2026-10-04T10:51:53",
+    "server": "trials_server",
+    "tool": "get_trial",
+    "input": {
+      "trial_id": 9999
+    },
+    "is_error": false,
+    "output": {
+      "ok": false,
+      "data": null,
+      "error": "trial 9999 not found"
+    }
+  },
+  {
+    "timestamp": "2026-10-04T10:51:53",
+    "server": "trials_server",
+    "tool": "trial_stats",
+    "input": {
+      "group_by": "status"
+    },
+    "is_error": false,
+    "output": {
+      "ok": true,
+      "data": {
+        "group_by": "status",
+        "groups": [
+          {
+            "grp": "Completed",
+            "trials": 14,
+            "open_slots": 0
+          },
+          {
+            "grp": "Recruiting",
+            "trials": 9,
+            "open_slots": 1146
+          },
+          {
+            "grp": "Terminated",
+            "trials": 9,
+            "open_slots": 0
+          },
+          {
+            "grp": "Active - Not Recruiting",
+            "trials": 8,
+            "open_slots": 0
+          }
+        ],
+        "total_trials": 40
+      },
+      "error": null
+    }
+  },
+  {
+    "timestamp": "2026-10-04T10:51:53",
+    "server": "trials_server",
+    "tool": "trial_stats",
+    "input": {
+      "group_by": "color"
+    },
+    "is_error": false,
+    "output": {
+      "ok": false,
+      "data": null,
+      "error": "group_by must be one of ['status', 'sponsor']"
+    }
+  }
+]

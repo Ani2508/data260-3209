@@ -6,3 +6,4 @@ code/web_application/.env
 .env
 __pycache__/
 .venv/
+.DS_Store

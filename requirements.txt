@@ -10,3 +10,5 @@ python-multipart
 requests
 langchain-core
 langchain-ollama
+mcp[cli]<2
+httpx
