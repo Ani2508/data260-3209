@@ -128,3 +128,17 @@
 [2026-10-04T10:51:53] trials_server.py  trial_stats            {"group_by": "status"} -> ok
 [2026-10-04T10:51:53] trials_server.py  trial_stats            {"group_by": "color"} -> ok
 saved 10 tool results -> reports/hw05/raw/mcp_inspector_outputs.json
+cd code && python3 verify_hw05.py
+HW5 verification 2026-10-04T15:06:44
+[PASS] FastAPI backend responds on PORT_BASE 8509 - GET /docs -> 200
+[PASS] Register + login sets session cookie - login -> 200
+[PASS] Sponsors list is paginated - 200, total=8
+[PASS] Relationship endpoint returns only that sponsor's trials - sponsor 1 -> 3 trials
+[PASS] Validation (422) and delete-protection (409) - bad NCT -> 422, delete sponsor with trials -> 409
+[PASS] meals MCP server starts and lists its 4 tools - tools=['meal_details', 'meals_by_ingredient', 'random_meal', 'search_meals_by_name']
+[PASS] s3209_trials MCP server answers a tool call with {ok,data,error} - tools=['get_trial', 'search_trials', 'trial_stats'], trial_stats ok=True
+[PASS] s3209_trials MCP server rejects an invalid call cleanly - trial 999999 not found
+[PASS] Offline test suite passes - [2026-10-04 15:06:46] 12/12 tests passed
+[PASS] Fault injection is reproducible with VERIFY_SEED - same 50-call sequence twice, failures=22
+[PASS] Safety rule blocks patient-identifying input - blocked by safety rule: input contains patient-identifying data (medical record 
+11/11 checks passed -> reports/hw05/verification.json
