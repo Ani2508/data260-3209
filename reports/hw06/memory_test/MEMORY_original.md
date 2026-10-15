@@ -1,0 +1,55 @@
+# MEMORY.md - durable facts (s3209)
+<!-- last_consolidated: 2026-10-01T09:00:00 -->
+<!-- format: - [YYYY-MM-DD] key: value {src=protocol|team|chat} -->
+
+## Facts (unconsolidated test file: 55 lines)
+- [2026-09-01] project.name: data260-3209 clinical trial listing system {src=team}
+- [2026-09-01] project.port: FastAPI backend runs on PORT_BASE 8509 {src=protocol}
+- [2026-09-01] project.prefix: s3209 {src=team}
+- [2026-09-01] model.local: qwen3:8b via Ollama {src=chat}
+- [2026-09-02] db.relational: MySQL database s3209_rel {src=team}
+- [2026-09-02] db.document: MongoDB database s3209_doc {src=team}
+- [2026-09-03] user.role: trial coordinator at a university hospital {src=chat}
+- [2026-09-03] trial.nct_id: NCT05512874 {src=protocol}
+- [2026-09-04] trial.drug: oral GLP-1 agonist {src=protocol}
+- [2026-09-04] trial.condition: type 2 diabetes in adults {src=protocol}
+- [2026-09-05] site.pi: Dr. Helen Okafor {src=chat}
+- [2026-09-05] site.city: Sacramento {src=chat}
+- [2026-09-06] trial.target: 240 participants across all sites {src=protocol}
+- [2026-09-07] user.preference: short answers with bullet points {src=chat}
+- [2026-09-08] project.prefix: s3209 {src=team}
+- [2026-09-09] safety.warfarin: extra INR checks for participants on warfarin {src=protocol}
+- [2026-09-10] irb.review_due: 2027-03-14 {src=team}
+- [2026-09-10] irb.packet_ready: 2027-03-01 {src=team}
+- [2026-09-11] trial.phase: Phase II {src=protocol}
+- [2026-09-12] site.pi: Dr. Helen Okafor {src=chat}
+- [2026-09-12] trial.randomization: 1:1 drug versus placebo {src=protocol}
+- [2026-09-13] trial.blinding: double-blind {src=protocol}
+- [2026-09-14] ae.review: adverse events reviewed weekly {src=team}
+- [2026-09-15] trial.enrolled: 52 participants {src=chat}
+- [2026-09-15] db.document: MongoDB database s3209_doc {src=team}
+- [2026-09-16] trial.nct_id: NCT05512874. {src=protocol}
+- [2026-09-17] site.city: sacramento {src=chat}
+- [2026-09-18] safety.warfarin: Extra INR checks for participants on warfarin {src=protocol}
+- [2026-09-19] trial.target: 240 participants across all sites {src=protocol}
+- [2026-09-20] model.local: llama3.1:8b via Ollama {src=team}
+- [2026-09-21] embed.model: nomic-embed-text {src=team}
+- [2026-09-22] memory.short_term_n: 12 messages {src=team}
+- [2026-09-22] trial.phase: phase II {src=protocol}
+- [2026-09-23] irb.packet_ready: 2027-03-01 {src=team}
+- [2026-09-24] embed.model: nomic-embed-text {src=team}
+- [2026-09-25] analysis.primary: intention-to-treat {src=protocol}
+- [2026-09-26] project.port: FastAPI backend runs on PORT_BASE 8509 {src=protocol}
+- [2026-09-27] trial.drug: oral GLP-1 agonist {src=protocol}
+- [2026-09-28] memory.short_term_n: 12 messages {src=team}
+- [2026-09-29] user.preference: short answers with bullet points {src=chat}
+- [2026-09-30] site.pi: Dr. Helen Okafor {src=chat}
+- [2026-10-01] user.role: Trial coordinator at a university hospital {src=chat}
+- [2026-10-02] project.port: backend runs on port 8000 {src=chat}
+- [2026-10-04] project.repo: github.com/Ani2508/data260-3209 {src=team}
+- [2026-10-05] ae.review: adverse events reviewed weekly {src=team}
+- [2026-10-06] analysis.primary: intention-to-treat {src=protocol}
+- [2026-10-08] trial.enrolled: 61 participants {src=chat}
+- [2026-10-09] project.repo: github.com/Ani2508/data260-3209 {src=team}
+- [2026-10-10] site.pi: Dr. Helen Okafur {src=chat}
+- [2026-10-11] irb.review_due: 2027-03-04 {src=chat}

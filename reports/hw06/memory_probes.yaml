@@ -1,0 +1,45 @@
+# HW6 Part 3 - memory probes (written before any test run)
+# Each probe is asked after the 30-message conversation, in the same session.
+# Scoring is automatic and objective: case-insensitive keyword groups.
+#   A criterion is met when ANY of its keywords appears in the reply (no letter/digit right
+#   before it and no digit right after it, so "March 1" does not match "March 14").
+
+rubric:
+  "5": "All criteria met - correct, complete recall"
+  "4": "Most criteria met (>= 75%)"
+  "3": "Half of the criteria met - partial recall"
+  "2": "No criterion met, but the model honestly says it does not know (no invented value)"
+  "1": "No criterion met and the reply invents or states a wrong value"
+scoring: "score = 1 + round(4 * met / total); if met == 0 and the reply abstains -> 2"
+abstain_keywords: ["don't know", "do not know", "not mentioned", "didn't mention", "did not mention", "no information", "not sure", "haven't mentioned", "have not mentioned", "not provided", "don't have"]
+
+probes:
+  - id: P1
+    question: "What is the registration number of the trial I am coordinating?"
+    planted_at_message: 2
+    criteria:
+      - ["NCT05512874", "05512874"]
+  - id: P2
+    question: "What is our enrollment target, and how many participants are enrolled so far?"
+    planted_at_message: 8
+    criteria:
+      - ["240"]
+      - ["61"]
+  - id: P3
+    question: "Where is our main site, and who is the site principal investigator?"
+    planted_at_message: 14
+    criteria:
+      - ["Sacramento"]
+      - ["Okafor"]
+  - id: P4
+    question: "Which medication did I flag as a safety concern, and what extra check is needed?"
+    planted_at_message: 20
+    criteria:
+      - ["warfarin"]
+      - ["INR"]
+  - id: P5
+    question: "When is our IRB continuing review due, and when must the renewal packet be ready?"
+    planted_at_message: 26
+    criteria:
+      - ["March 14", "Mar 14", "14 March", "3/14"]
+      - ["March 1", "Mar 1", "1 March", "3/1"]

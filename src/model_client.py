@@ -78,7 +78,7 @@ class ModelClient:
     """Thin wrapper around one ChatOllama instance."""
 
     def __init__(self, model=None, base_url=None, temperature=0.0,
-                 num_ctx=4096, force_json=True, disable_thinking=True):
+                 num_ctx=4096, force_json=True, disable_thinking=True, **options):
         self.model = model or os.environ.get(
     "OLLAMA_MODEL", "qwen3:4b-instruct-2507-q4_K_M"
 )
@@ -89,6 +89,8 @@ class ModelClient:
                       temperature=temperature, num_ctx=num_ctx)
         if force_json:
             kwargs["format"] = "json"
+        # optional Ollama options (HW6): seed, num_predict, keep_alive, ...
+        kwargs.update({k: v for k, v in options.items() if v is not None})
         self.llm = ChatOllama(**kwargs)
 
     def complete(self, messages, tools=None):

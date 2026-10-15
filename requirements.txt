@@ -12,3 +12,5 @@ langchain-core
 langchain-ollama
 mcp[cli]<2
 httpx
+pymongo
+pyyaml
