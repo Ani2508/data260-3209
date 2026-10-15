@@ -790,3 +790,20 @@
 [2026-10-15 13:08:30] [PASS] AGENT.md has >=5 instructions in >=3 categories and is loaded - 20 instructions, categories=['Project description', 'Technology stack', 'Coding conventions', 'Testing approach', 'Prohibited actions']
 [2026-10-15 13:08:30] [PASS] Remove temporary verification data - removed 9 temporary docs for verify_263209_4625
 [2026-10-15 13:08:30] 12/12 checks passed -> reports/hw06/verification.json
+[2026-10-15 15:23:30] ======================================================================
+[2026-10-15 15:23:30] RUN: make verify-hw06 (HW6 smoke test)   run by: Ani Taraiya
+[2026-10-15 15:23:30] HW6 verification 2026-10-15T15:23:30 | run by Ani Taraiya
+[2026-10-15 15:23:30] [PASS] FastAPI backend responds on PORT_BASE 8509 - GET /docs -> 200
+[2026-10-15 15:23:30] [PASS] MongoDB CRUD round trip on s3209_doc.trials - POST/GET/PUT/DELETE/GET -> [201, 200, 200, 204, 404], default status=recruiting
+[2026-10-15 15:23:30] [PASS] Validation errors return 422/400 with messages - missing/enum/type/bad id -> [422, 422, 422, 400]
+[2026-10-15 15:23:34] [PASS] POST /api/chat returns a reply and the memory used - reply 29 chars, short-term=4
+[2026-10-15 15:23:34] [PASS] Per-request token/latency usage is reported - {'completion_tokens': 11, 'episodic_tokens': 34, 'latency_ms': 315.9, 'long_term_tokens': 0, 'prompt_tokens': 206, 'short_term_tokens': 68, 'system_primer_tokens': 74}
+[2026-10-15 15:23:34] [PASS] Episodic facts are retrieved with similarity scores - 3 facts retrieved
+[2026-10-15 15:23:34] [PASS] GET /api/memory/{user_id} returns messages, summaries, facts - 6 messages, 3 facts
+[2026-10-15 15:23:34] [PASS] GET /api/aggregate/{user_id} returns daily counts - daily counts=[{'messages': 6, 'user_messages': 3, 'date': '2026-10-15'}]
+[2026-10-15 15:23:34] [PASS] memory_probes.yaml has 5 probes and a 1-5 rubric - 5 probes, rubric levels ['1', '2', '3', '4', '5']
+[2026-10-15 15:23:34] [PASS] Part 3 raw summary covers all settings - settings in summary: ['compress', 'n12', 'n30', 'n4']
+[2026-10-15 15:23:34] [PASS] MEMORY.md consolidation 55 -> <40 lines, explicit contradictions - 55 -> 38 lines, dup merged=19, contradictions=5, suspect=1
+[2026-10-15 15:23:34] [PASS] AGENT.md has >=5 instructions in >=3 categories and is loaded - 20 instructions, categories=['Project description', 'Technology stack', 'Coding conventions', 'Testing approach', 'Prohibited actions']
+[2026-10-15 15:23:34] [PASS] Remove temporary verification data - removed 9 temporary docs for verify_263209_4625
+[2026-10-15 15:23:34] 12/12 checks passed -> reports/hw06/verification.json

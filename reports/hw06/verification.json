@@ -1,7 +1,7 @@
 {
   "homework": "HW6",
   "sid4": 3209,
-  "commit": "79ef0c523f316068075cc9a397d1d68d3418e4f8",
+  "commit": "cc885f66b43d352036dd0e6b42af94d65bb4f214",
   "model": "llama3.1:8b (Ollama, temperature 0, seed 3209); embeddings nomic-embed-text",
   "config": {
     "SHORT_TERM_N": 12,
@@ -13,7 +13,7 @@
   "verify_seed": 263209,
   "port_base": 8509,
   "prefix": "s3209",
-  "timestamp": "2026-10-15T13:08:30",
+  "timestamp": "2026-10-15T15:23:34",
   "checks": [
     {
       "check": "FastAPI backend responds on PORT_BASE 8509",
@@ -38,7 +38,7 @@
     {
       "check": "Per-request token/latency usage is reported",
       "pass": true,
-      "detail": "{'completion_tokens': 11, 'episodic_tokens': 34, 'latency_ms': 309.7, 'long_term_tokens': 0, 'prompt_tokens': 206, 'short_term_tokens': 68, 'system_primer_tokens': 74}"
+      "detail": "{'completion_tokens': 11, 'episodic_tokens': 34, 'latency_ms': 315.9, 'long_term_tokens': 0, 'prompt_tokens': 206, 'short_term_tokens': 68, 'system_primer_tokens': 74}"
     },
     {
       "check": "Episodic facts are retrieved with similarity scores",
