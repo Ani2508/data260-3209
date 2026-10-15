@@ -20,6 +20,7 @@ from model_client import ModelClient  # noqa: E402
 SYSTEM_PRIMER = (
     "You are TrialMate, an assistant for a clinical trial coordinator. "
     "Answer in at most 4 short sentences. Use the remembered context below when it is relevant. "
+    "When the user shares a new detail, briefly confirm you noted it. "
     "If a detail was never mentioned, say you do not know instead of guessing."
 )
 
@@ -63,12 +64,16 @@ def _hash_embed(text: str, dim: int = 256) -> list:
     return vec
 
 
-def embed(texts: list) -> list:
+def embed(texts: list, kind: str = "document") -> list:
+    """kind='query' for the current message, 'document' for stored facts (nomic task prefixes)."""
     if not texts:
         return []
+    prefix = ("search_query: " if kind == "query" else "search_document: ") \
+        if "nomic" in config.EMBED_MODEL else ""
     try:
         r = requests.post(f"{config.OLLAMA_URL}/api/embed",
-                          json={"model": config.EMBED_MODEL, "input": texts}, timeout=60)
+                          json={"model": config.EMBED_MODEL, "input": [prefix + t for t in texts]},
+                          timeout=60)
         r.raise_for_status()
         _embed_backend["name"] = config.EMBED_MODEL
         return [[float(x) for x in v] for v in r.json()["embeddings"]]
@@ -97,14 +102,20 @@ def retrieve_episodes(db, user_id: str, query_vec: list, k: int = config.EPISODE
 
 # ------------------------------------------------------------------ episodic extraction
 EXTRACT_PROMPT = (
-    "Extract up to 3 short, durable facts about the user or their clinical trial from the message "
-    "(names, IDs, numbers, dates, places, preferences, decisions). Ignore questions and small talk. "
+    "You store long-term memories. Extract up to 3 facts that the USER STATES about themselves, their "
+    "trial or their work (names, IDs, numbers, dates, places, decisions). Copy the user's details "
+    "exactly; never add advice, general knowledge or facts the user did not say. Questions, greetings "
+    "and requests contain no facts. "
     'Return JSON only: {"facts": [{"fact": "<max 20 words>", "importance": <0..1>}]}. '
-    'Return {"facts": []} if there is nothing worth remembering.'
+    'Examples: "Our site is in Fresno." -> {"facts": [{"fact": "Main site is in Fresno", "importance": 0.8}]}; '
+    '"How do I report an adverse event?" -> {"facts": []}'
 )
+META_FACT = re.compile(r"^(you|the user) (asked|requested|want(ed)?|mentioned|said)\b", re.I)
 
 
 def extract_episodes(message: str, aux=None) -> list:
+    if message.strip().endswith("?"):          # pure questions carry no new facts
+        return []
     res = _client("json").complete([{"role": "system", "content": EXTRACT_PROMPT},
                                     {"role": "user", "content": message}])
     _add_aux(aux, res)
@@ -114,7 +125,7 @@ def extract_episodes(message: str, aux=None) -> list:
         return []
     out = []
     for f in facts[:config.MAX_FACTS_PER_MESSAGE]:
-        if isinstance(f, dict) and str(f.get("fact", "")).strip():
+        if isinstance(f, dict) and str(f.get("fact", "")).strip() and not META_FACT.match(str(f["fact"]).strip()):
             imp = f.get("importance", 0.5)
             imp = min(1.0, max(0.0, float(imp))) if isinstance(imp, (int, float)) else 0.5
             out.append({"fact": str(f["fact"]).strip()[:300], "importance": imp})
@@ -281,7 +292,7 @@ def chat_turn(db, user_id: str, session_id: str, message: str, short_term_n=None
     sess_sum = latest_summary(db, user_id, "session", session_id)
     life_sum = latest_summary(db, user_id, "user")
     # 4. episodic retrieval
-    qvec = embed([message])[0]
+    qvec = embed([message], kind="query")[0]
     episodes = retrieve_episodes(db, user_id, qvec)
     # 5. compose prompt + call the model through the adapter
     messages, sections = build_prompt(sess_sum, life_sum, episodes, window, message)

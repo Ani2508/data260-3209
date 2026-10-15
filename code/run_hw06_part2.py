@@ -7,6 +7,7 @@ from datetime import datetime
 from pathlib import Path
 
 import requests
+from pymongo import MongoClient
 
 ROOT = Path(__file__).resolve().parents[1]
 HW = ROOT / "reports" / "hw06"
@@ -39,6 +40,10 @@ def log(msg):
 def main():
     log("=" * 78)
     log(f"RUN: python3 code/run_hw06_part2.py   (HW6 Part 2, user={USER})   run by: Ani Taraiya")
+    db = MongoClient("mongodb://localhost:27017")["s3209_doc"]       # start the demo user fresh
+    removed = sum(db[c].delete_many({"user_id": USER}).deleted_count
+                  for c in ("messages", "summaries", "episodes"))
+    log(f"reset demo user {USER}: removed {removed} old docs")
     turns = []
     for i, msg in enumerate(MESSAGES, 1):
         r = requests.post(f"{BASE}/api/chat", json={"user_id": USER, "session_id": SESSION,
