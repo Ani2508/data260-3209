@@ -30,10 +30,10 @@ SETTINGS = {                       # name -> (SHORT_TERM_N, policy)
     "n4": (4, "none"),
     "n12": (12, "none"),
     "n30": (30, "none"),
-    "compress": (12, "compress"),  # memory-saving policy applied to the N=12 window
+    "compress": (30, "compress"),  # memory-saving policy applied to the N=30 window
 }
 LABELS = {"n4": "SHORT_TERM_N=4", "n12": "SHORT_TERM_N=12", "n30": "SHORT_TERM_N=30",
-          "compress": "Compression policy (N=12 + compress)"}
+          "compress": "Compression policy (N=30 + compress)"}
 PRICE_IN, PRICE_OUT = 1.0 / 1e6, 5.0 / 1e6     # $ per token
 CONVERSATIONS = 10_000
 
@@ -148,10 +148,10 @@ def write_outputs(rows, scores, summary):
         json.dump(scores, f, indent=2)
     with open(RAW / "part3_summary.json", "w") as f:
         json.dump(summary, f, indent=2)
-    if "n12" in summary and "compress" in summary:
-        a, b = summary["n12"], summary["compress"]
+    if "n30" in summary and "compress" in summary:
+        a, b = summary["n30"], summary["compress"]
         comp = {
-            "baseline": "SHORT_TERM_N=12, no policy",
+            "baseline": "SHORT_TERM_N=30, no policy",
             "policy": "compress: keep newest 4 messages verbatim, older assistant replies -> first "
                       "sentence (<=120 chars), older user messages -> 200 chars, evict oldest until "
                       "window <= 500 est. tokens",
@@ -164,6 +164,9 @@ def write_outputs(rows, scores, summary):
             "policy_probe_quality": b["probe_quality"],
             "baseline_latency_ms": a["mean_latency_ms"],
             "policy_latency_ms": b["mean_latency_ms"],
+            "short_term_saving_pct": round(100 * (1 - b["mean_short_term_tokens"] / a["mean_short_term_tokens"]), 1),
+            "baseline_cost_10k_all_calls_usd": a["cost_10k_all_calls_usd"],
+            "policy_cost_10k_all_calls_usd": b["cost_10k_all_calls_usd"],
         }
         with open(RAW / "part3_compression_comparison.json", "w") as f:
             json.dump(comp, f, indent=2)
