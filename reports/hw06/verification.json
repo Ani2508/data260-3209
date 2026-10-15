@@ -1,0 +1,81 @@
+{
+  "homework": "HW6",
+  "sid4": 3209,
+  "commit": "79ef0c523f316068075cc9a397d1d68d3418e4f8",
+  "model": "llama3.1:8b (Ollama, temperature 0, seed 3209); embeddings nomic-embed-text",
+  "config": {
+    "SHORT_TERM_N": 12,
+    "SUMMARIZE_EVERY_USER_MSGS": 5,
+    "EPISODES_TOP_K": 3,
+    "NUM_CTX": 8192
+  },
+  "seed": 3209,
+  "verify_seed": 263209,
+  "port_base": 8509,
+  "prefix": "s3209",
+  "timestamp": "2026-10-15T13:08:30",
+  "checks": [
+    {
+      "check": "FastAPI backend responds on PORT_BASE 8509",
+      "pass": true,
+      "detail": "GET /docs -> 200"
+    },
+    {
+      "check": "MongoDB CRUD round trip on s3209_doc.trials",
+      "pass": true,
+      "detail": "POST/GET/PUT/DELETE/GET -> [201, 200, 200, 204, 404], default status=recruiting"
+    },
+    {
+      "check": "Validation errors return 422/400 with messages",
+      "pass": true,
+      "detail": "missing/enum/type/bad id -> [422, 422, 422, 400]"
+    },
+    {
+      "check": "POST /api/chat returns a reply and the memory used",
+      "pass": true,
+      "detail": "reply 29 chars, short-term=4"
+    },
+    {
+      "check": "Per-request token/latency usage is reported",
+      "pass": true,
+      "detail": "{'completion_tokens': 11, 'episodic_tokens': 34, 'latency_ms': 309.7, 'long_term_tokens': 0, 'prompt_tokens': 206, 'short_term_tokens': 68, 'system_primer_tokens': 74}"
+    },
+    {
+      "check": "Episodic facts are retrieved with similarity scores",
+      "pass": true,
+      "detail": "3 facts retrieved"
+    },
+    {
+      "check": "GET /api/memory/{user_id} returns messages, summaries, facts",
+      "pass": true,
+      "detail": "6 messages, 3 facts"
+    },
+    {
+      "check": "GET /api/aggregate/{user_id} returns daily counts",
+      "pass": true,
+      "detail": "daily counts=[{'messages': 6, 'user_messages': 3, 'date': '2026-10-15'}]"
+    },
+    {
+      "check": "memory_probes.yaml has 5 probes and a 1-5 rubric",
+      "pass": true,
+      "detail": "5 probes, rubric levels ['1', '2', '3', '4', '5']"
+    },
+    {
+      "check": "Part 3 raw summary covers all settings",
+      "pass": true,
+      "detail": "settings in summary: ['compress', 'n12', 'n30', 'n4']"
+    },
+    {
+      "check": "MEMORY.md consolidation 55 -> <40 lines, explicit contradictions",
+      "pass": true,
+      "detail": "55 -> 38 lines, dup merged=19, contradictions=5, suspect=1"
+    },
+    {
+      "check": "AGENT.md has >=5 instructions in >=3 categories and is loaded",
+      "pass": true,
+      "detail": "20 instructions, categories=['Project description', 'Technology stack', 'Coding conventions', 'Testing approach', 'Prohibited actions']"
+    }
+  ],
+  "passed": 12,
+  "total": 12
+}

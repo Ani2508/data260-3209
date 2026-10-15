@@ -32,23 +32,30 @@ hw06-part2:
 hw06-part3:
 	python3 code/run_hw06_memory_cost.py
 
+LOG6 = reports/hw06/RUN_LOG.txt
+STAMP = echo "[$$(date '+%Y-%m-%d %H:%M:%S')] ======================================================================" >> $(LOG6); echo "[$$(date '+%Y-%m-%d %H:%M:%S')] RUN: $(1)   run by: Ani Taraiya" >> $(LOG6)
+
 hw06-consolidate:
 	cp reports/hw06/memory_test/MEMORY_original.md reports/hw06/memory_test/MEMORY_consolidated.md
-	python3 code/hw6_memory_cli.py --memory reports/hw06/memory_test/MEMORY_consolidated.md \
+	@$(call STAMP,make hw06-consolidate (HW6 Part 4 consolidation test))
+	python3 -u code/hw6_memory_cli.py --memory reports/hw06/memory_test/MEMORY_consolidated.md \
 		--cmd "/memory" \
 		--cmd "Who is the site PI for our trial?" \
 		--cmd "What port does the backend run on?" \
 		--cmd "/compact" \
-		--cmd "/memory"
+		--cmd "/memory" 2>&1 | python3 code/tslog.py $(LOG6)
 
 hw06-dream:
-	python3 code/hw6_memory_cli.py --cmd "/help" \
+	@$(call STAMP,make hw06-dream (HW6 Part 4 /help /dream /memory))
+	python3 -u code/hw6_memory_cli.py --cmd "/help" \
 		--cmd "Our trial NCT05512874 has 61 of 240 participants enrolled." \
 		--cmd "The IRB continuing review is due on 2027-03-14 and the main site is Sacramento." \
-		--cmd "/dream" --cmd "/memory"
+		--cmd "/dream" --cmd "/memory" 2>&1 | python3 code/tslog.py $(LOG6)
 
 hw06-agent-check:
-	python3 code/hw6_agent_check.py
+	@$(call STAMP,make hw06-agent-check (HW6 Part 4 AGENT.md verification))
+	python3 -u code/hw6_agent_check.py 2>&1 | python3 code/tslog.py $(LOG6)
 
 verify-hw06:
-	python3 code/verify_hw06.py
+	@$(call STAMP,make verify-hw06 (HW6 smoke test))
+	python3 -u code/verify_hw06.py 2>&1 | python3 code/tslog.py $(LOG6)

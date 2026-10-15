@@ -1,0 +1,151 @@
+{
+  "timestamp": "2026-10-15T13:08:27",
+  "model": "llama3.1:8b",
+  "task": "Write a Python function days_until_irb_review(due_date, today) that takes two ISO date strings (YYYY-MM-DD) and returns the number of days from today until the IRB continuing review is due (negative if overdue). Follow every rule in AGENT.md. After the function, add the tests that AGENT.md requires. Return only Python code in one ```python block.",
+  "final_passed": 6,
+  "total": 10,
+  "attempts": [
+    {
+      "attempt": 1,
+      "file": "generated_function_attempt1.py",
+      "passed": 7,
+      "total": 10,
+      "tokens": {
+        "in": 543,
+        "out": 474
+      },
+      "checks": [
+        {
+          "agent_md_rule": "snake_case function names",
+          "pass": true,
+          "detail": [
+            "days_until_irb_review"
+          ]
+        },
+        {
+          "agent_md_rule": "type hints on every parameter and the return value",
+          "pass": true,
+          "detail": {
+            "due_date": "str",
+            "today": "str",
+            "return": "int"
+          }
+        },
+        {
+          "agent_md_rule": "one-line docstring that states what it returns",
+          "pass": false,
+          "detail": "Calculate the number of days until the IRB continuing review is due.\n\nArgs:\n- due_date (str): ISO date string (YYYY-MM-D"
+        },
+        {
+          "agent_md_rule": "no print() in library code",
+          "pass": true,
+          "detail": "0 print call(s)"
+        },
+        {
+          "agent_md_rule": "validates input and raises ValueError",
+          "pass": true,
+          "detail": "2 raise statement(s)"
+        },
+        {
+          "agent_md_rule": "standard library only / no direct model API",
+          "pass": true,
+          "detail": [
+            "datetime",
+            "unittest"
+          ]
+        },
+        {
+          "agent_md_rule": "at least three plain assert tests",
+          "pass": false,
+          "detail": "0 plain assert(s), 5 unittest assert call(s)"
+        },
+        {
+          "agent_md_rule": "no hard-coded secrets",
+          "pass": true,
+          "detail": []
+        },
+        {
+          "agent_md_rule": "tests run offline and pass",
+          "pass": true,
+          "detail": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK"
+        },
+        {
+          "agent_md_rule": "independent behaviour check (13 / -13 / ValueError)",
+          "pass": false,
+          "detail": "ValueError: Due date is in the past."
+        }
+      ]
+    },
+    {
+      "attempt": 2,
+      "file": "generated_function_attempt2.py",
+      "passed": 6,
+      "total": 10,
+      "tokens": {
+        "in": 1131,
+        "out": 576
+      },
+      "checks": [
+        {
+          "agent_md_rule": "snake_case function names",
+          "pass": true,
+          "detail": [
+            "days_until_irb_review"
+          ]
+        },
+        {
+          "agent_md_rule": "type hints on every parameter and the return value",
+          "pass": true,
+          "detail": {
+            "due_date": "str",
+            "today": "str",
+            "return": "int"
+          }
+        },
+        {
+          "agent_md_rule": "one-line docstring that states what it returns",
+          "pass": false,
+          "detail": "Calculate the number of days until the IRB continuing review is due.\n\nArgs:\n- due_date (str): ISO date string (YYYY-MM-D"
+        },
+        {
+          "agent_md_rule": "no print() in library code",
+          "pass": true,
+          "detail": "0 print call(s)"
+        },
+        {
+          "agent_md_rule": "validates input and raises ValueError",
+          "pass": true,
+          "detail": "2 raise statement(s)"
+        },
+        {
+          "agent_md_rule": "standard library only / no direct model API",
+          "pass": true,
+          "detail": [
+            "datetime",
+            "unittest"
+          ]
+        },
+        {
+          "agent_md_rule": "at least three plain assert tests",
+          "pass": false,
+          "detail": "0 plain assert(s), 7 unittest assert call(s)"
+        },
+        {
+          "agent_md_rule": "no hard-coded secrets",
+          "pass": true,
+          "detail": []
+        },
+        {
+          "agent_md_rule": "tests run offline and pass",
+          "pass": false,
+          "detail": "rror(\"Due date is in the past or today.\")\nValueError: Due date is in the past or today.\n\n----------------------------------------------------------------------\nRan 7 tests in 0.000s\n\nFAILED (errors=2)"
+        },
+        {
+          "agent_md_rule": "independent behaviour check (13 / -13 / ValueError)",
+          "pass": false,
+          "detail": "ValueError: Due date is in the past or today."
+        }
+      ]
+    }
+  ]
+}

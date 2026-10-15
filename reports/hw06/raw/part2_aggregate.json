@@ -1,0 +1,30 @@
+{
+  "user_id": "ani_demo",
+  "daily_message_counts": [
+    {
+      "messages": 24,
+      "user_messages": 12,
+      "date": "2026-10-15"
+    }
+  ],
+  "recent_summaries": [
+    {
+      "session_id": null,
+      "scope": "user",
+      "text": "- Ani is a clinical trial coordinator.\n- Study ID: NCT05512874\n- Study type: Phase II trial of an oral GLP-1 drug for type 2 diabetes.\n- Target participants: 240\n- Current enrollment: 61 participants\n- Main site location: Sacramento\n- Principal Investigator (PI): Dr. Helen Okafor\n- Participants on warfarin require extra INR checks during the study",
+      "created_at": "2026-10-15T18:29:31.157000"
+    },
+    {
+      "session_id": "ani-demo-s1",
+      "scope": "session",
+      "text": "- Study ID: NCT05512874\n- Study type: Phase II trial of an oral GLP-1 drug for type 2 diabetes\n- Target participants: 240\n- Current enrollment: 61 participants\n- Main site location: Sacramento\n- Principal Investigator (PI): Dr. Helen Okafor\n- Participants on warfarin require extra INR checks during the study\n- IRB continuing review deadline: March 14\n- Sponsor monitor typically requests: participant consent, study procedures, adverse event reports, source data verification, and study site audits",
+      "created_at": "2026-10-15T18:29:29.265000"
+    },
+    {
+      "session_id": "ani-demo-s1",
+      "scope": "session",
+      "text": "- Ani is a clinical trial coordinator.\n- Study ID: NCT05512874\n- Study type: Phase II trial of an oral GLP-1 drug for type 2 diabetes.\n- Target participants: 240\n- Current enrollment: 61 participants\n- Main site location: Sacramento\n- Principal Investigator (PI): Dr. Helen Okafor",
+      "created_at": "2026-10-15T18:29:20.090000"
+    }
+  ]
+}

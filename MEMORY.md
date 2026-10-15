@@ -12,3 +12,8 @@
 - [2026-09-21] embed.model: nomic-embed-text {src=team}
 - [2026-09-22] memory.short_term_n: 12 messages {src=team}
 - [2026-10-09] project.repo: github.com/Ani2508/data260-3209 {src=team}
+- [2026-10-15] trial_id: NCT05512874 {src=chat}
+- [2026-10-15] enrolled_participants: 61 {src=chat}
+- [2026-10-15] total_participants: 240 {src=chat}
+- [2026-10-15] irb_due_date: 2027-03-14 {src=chat}
+- [2026-10-15] main_site: Sacramento {src=chat}

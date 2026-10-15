@@ -7,3 +7,6 @@ code/web_application/.env
 __pycache__/
 .venv/
 .DS_Store
+
+# HW6 working screenshots (used only inside the report)
+reports/hw06/Snippets/

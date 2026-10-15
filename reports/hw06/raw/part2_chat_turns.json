@@ -1,0 +1,1087 @@
+[
+  {
+    "reply": "Nice to meet you, Ani. I'm TrialMate, your assistant. I'll help you track your study and stay organized. What's the name of your study?",
+    "session_id": "ani-demo-s1",
+    "used": {
+      "short_term": {
+        "count": 0,
+        "messages": []
+      },
+      "long_term": {
+        "session_summary": null,
+        "lifetime_summary": null
+      },
+      "episodic_facts": []
+    },
+    "usage": {
+      "prompt_tokens": 99,
+      "completion_tokens": 36,
+      "system_primer_tokens": 74,
+      "long_term_tokens": 0,
+      "episodic_tokens": 0,
+      "short_term_tokens": 0,
+      "current_message_tokens": 19,
+      "prompt_tokens_est": 93,
+      "aux_prompt_tokens": 179,
+      "aux_completion_tokens": 6,
+      "latency_ms": 2201.5,
+      "model_latency_ms": 1605.9,
+      "short_term_n": 12,
+      "policy": "none",
+      "window_messages": 0,
+      "summary_created": {
+        "session_summary": false,
+        "lifetime_summary": false
+      },
+      "embed_backend": "nomic-embed-text"
+    },
+    "new_episodes": []
+  },
+  {
+    "reply": "I've noted the study ID and details. I'll keep track of NCT05512874. What's the next task or question you have regarding the trial?",
+    "session_id": "ani-demo-s1",
+    "used": {
+      "short_term": {
+        "count": 2,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Hi, I'm Ani, a clinical trial coordinator. I need help tracking my study."
+          },
+          {
+            "role": "assistant",
+            "content": "Nice to meet you, Ani. I'm TrialMate, your assistant. I'll help you track your study and stay organized. What's the name of your study?"
+          }
+        ]
+      },
+      "long_term": {
+        "session_summary": null,
+        "lifetime_summary": null
+      },
+      "episodic_facts": []
+    },
+    "usage": {
+      "prompt_tokens": 171,
+      "completion_tokens": 34,
+      "system_primer_tokens": 74,
+      "long_term_tokens": 0,
+      "episodic_tokens": 0,
+      "short_term_tokens": 53,
+      "current_message_tokens": 21,
+      "prompt_tokens_est": 148,
+      "aux_prompt_tokens": 187,
+      "aux_completion_tokens": 85,
+      "latency_ms": 2416.6,
+      "model_latency_ms": 708.2,
+      "short_term_n": 12,
+      "policy": "none",
+      "window_messages": 2,
+      "summary_created": {
+        "session_summary": false,
+        "lifetime_summary": false
+      },
+      "embed_backend": "nomic-embed-text"
+    },
+    "new_episodes": [
+      {
+        "fact": "Study ID is NCT05512874",
+        "importance": 1.0,
+        "score": null
+      },
+      {
+        "fact": "Trial is Phase II",
+        "importance": 0.8,
+        "score": null
+      },
+      {
+        "fact": "Drug is oral GLP-1",
+        "importance": 0.8,
+        "score": null
+      }
+    ]
+  },
+  {
+    "reply": "I've noted the enrollment status. You have 61 participants enrolled out of a target of 240. What's the next update or task you'd like to discuss?",
+    "session_id": "ani-demo-s1",
+    "used": {
+      "short_term": {
+        "count": 4,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Hi, I'm Ani, a clinical trial coordinator. I need help tracking my study."
+          },
+          {
+            "role": "assistant",
+            "content": "Nice to meet you, Ani. I'm TrialMate, your assistant. I'll help you track your study and stay organized. What's the name of your study?"
+          },
+          {
+            "role": "user",
+            "content": "My study is NCT05512874, a Phase II trial of an oral GLP-1 drug for type 2 diabetes."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted the study ID and details. I'll keep track of NCT05512874. What's the next task or question you have regarding the trial?"
+          }
+        ]
+      },
+      "long_term": {
+        "session_summary": null,
+        "lifetime_summary": null
+      },
+      "episodic_facts": [
+        {
+          "fact": "Trial is Phase II",
+          "importance": 0.8,
+          "score": 0.5243
+        },
+        {
+          "fact": "Study ID is NCT05512874",
+          "importance": 1.0,
+          "score": 0.49
+        },
+        {
+          "fact": "Drug is oral GLP-1",
+          "importance": 0.8,
+          "score": 0.4624
+        }
+      ]
+    },
+    "usage": {
+      "prompt_tokens": 262,
+      "completion_tokens": 35,
+      "system_primer_tokens": 74,
+      "long_term_tokens": 0,
+      "episodic_tokens": 27,
+      "short_term_tokens": 107,
+      "current_message_tokens": 16,
+      "prompt_tokens_est": 224,
+      "aux_prompt_tokens": 175,
+      "aux_completion_tokens": 44,
+      "latency_ms": 1776.9,
+      "model_latency_ms": 831.8,
+      "short_term_n": 12,
+      "policy": "none",
+      "window_messages": 4,
+      "summary_created": {
+        "session_summary": false,
+        "lifetime_summary": false
+      },
+      "embed_backend": "nomic-embed-text"
+    },
+    "new_episodes": [
+      {
+        "fact": "240 participants are desired in total",
+        "importance": 0.9,
+        "score": null
+      },
+      {
+        "fact": "61 participants are currently enrolled",
+        "importance": 0.8,
+        "score": null
+      }
+    ]
+  },
+  {
+    "reply": "For a screening visit in a Phase II trial of an oral GLP-1 drug, I recommend verifying the participant's eligibility, reviewing their medical history, and confirming their informed consent.",
+    "session_id": "ani-demo-s1",
+    "used": {
+      "short_term": {
+        "count": 6,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Hi, I'm Ani, a clinical trial coordinator. I need help tracking my study."
+          },
+          {
+            "role": "assistant",
+            "content": "Nice to meet you, Ani. I'm TrialMate, your assistant. I'll help you track your study and stay organized. What's the name of your study?"
+          },
+          {
+            "role": "user",
+            "content": "My study is NCT05512874, a Phase II trial of an oral GLP-1 drug for type 2 diabetes."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted the study ID and details. I'll keep track of NCT05512874. What's the next task or question you have regarding the trial?"
+          },
+          {
+            "role": "user",
+            "content": "We want 240 participants in total and 61 are enrolled so far."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted the enrollment status. You have 61 participants enrolled out of a target of 240. What's the next update or task you'd like to discuss?"
+          }
+        ]
+      },
+      "long_term": {
+        "session_summary": null,
+        "lifetime_summary": null
+      },
+      "episodic_facts": [
+        {
+          "fact": "Trial is Phase II",
+          "importance": 0.8,
+          "score": 0.5137
+        },
+        {
+          "fact": "Drug is oral GLP-1",
+          "importance": 0.8,
+          "score": 0.4634
+        },
+        {
+          "fact": "Study ID is NCT05512874",
+          "importance": 1.0,
+          "score": 0.4457
+        }
+      ]
+    },
+    "usage": {
+      "prompt_tokens": 315,
+      "completion_tokens": 38,
+      "system_primer_tokens": 74,
+      "long_term_tokens": 0,
+      "episodic_tokens": 27,
+      "short_term_tokens": 160,
+      "current_message_tokens": 12,
+      "prompt_tokens_est": 273,
+      "aux_prompt_tokens": 0,
+      "aux_completion_tokens": 0,
+      "latency_ms": 923.9,
+      "model_latency_ms": 912.6,
+      "short_term_n": 12,
+      "policy": "none",
+      "window_messages": 6,
+      "summary_created": {
+        "session_summary": false,
+        "lifetime_summary": false
+      },
+      "embed_backend": "nomic-embed-text"
+    },
+    "new_episodes": []
+  },
+  {
+    "reply": "I've noted the main site location and the Principal Investigator's (PI) name. I'll keep this information in mind for future reference.",
+    "session_id": "ani-demo-s1",
+    "used": {
+      "short_term": {
+        "count": 8,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Hi, I'm Ani, a clinical trial coordinator. I need help tracking my study."
+          },
+          {
+            "role": "assistant",
+            "content": "Nice to meet you, Ani. I'm TrialMate, your assistant. I'll help you track your study and stay organized. What's the name of your study?"
+          },
+          {
+            "role": "user",
+            "content": "My study is NCT05512874, a Phase II trial of an oral GLP-1 drug for type 2 diabetes."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted the study ID and details. I'll keep track of NCT05512874. What's the next task or question you have regarding the trial?"
+          },
+          {
+            "role": "user",
+            "content": "We want 240 participants in total and 61 are enrolled so far."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted the enrollment status. You have 61 participants enrolled out of a target of 240. What's the next update or task you'd like to discuss?"
+          },
+          {
+            "role": "user",
+            "content": "What should I check before a screening visit?"
+          },
+          {
+            "role": "assistant",
+            "content": "For a screening visit in a Phase II trial of an oral GLP-1 drug, I recommend verifying the participant's eligibility, reviewing their medical history, and confirming their informed consent."
+          }
+        ]
+      },
+      "long_term": {
+        "session_summary": null,
+        "lifetime_summary": null
+      },
+      "episodic_facts": [
+        {
+          "fact": "Trial is Phase II",
+          "importance": 0.8,
+          "score": 0.4833
+        },
+        {
+          "fact": "61 participants are currently enrolled",
+          "importance": 0.8,
+          "score": 0.4643
+        },
+        {
+          "fact": "Drug is oral GLP-1",
+          "importance": 0.8,
+          "score": 0.4623
+        }
+      ]
+    },
+    "usage": {
+      "prompt_tokens": 377,
+      "completion_tokens": 30,
+      "system_primer_tokens": 74,
+      "long_term_tokens": 0,
+      "episodic_tokens": 31,
+      "short_term_tokens": 220,
+      "current_message_tokens": 16,
+      "prompt_tokens_est": 341,
+      "aux_prompt_tokens": 520,
+      "aux_completion_tokens": 122,
+      "latency_ms": 3591.4,
+      "model_latency_ms": 845.9,
+      "short_term_n": 12,
+      "policy": "none",
+      "window_messages": 8,
+      "summary_created": {
+        "session_summary": true,
+        "lifetime_summary": false
+      },
+      "embed_backend": "nomic-embed-text"
+    },
+    "new_episodes": [
+      {
+        "fact": "Main site is in Sacramento",
+        "importance": 0.8,
+        "score": null
+      },
+      {
+        "fact": "PI is Dr. Helen Okafor",
+        "importance": 0.8,
+        "score": null
+      }
+    ]
+  },
+  {
+    "reply": "For a serious adverse event (SAE) in a clinical trial, you should immediately notify the Institutional Review Board (IRB), the sponsor, and the Principal Investigator (PI), Dr. Helen Okafor. You should also document the event thoroughly and follow the trial's SAE reporting procedures.",
+    "session_id": "ani-demo-s1",
+    "used": {
+      "short_term": {
+        "count": 10,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Hi, I'm Ani, a clinical trial coordinator. I need help tracking my study."
+          },
+          {
+            "role": "assistant",
+            "content": "Nice to meet you, Ani. I'm TrialMate, your assistant. I'll help you track your study and stay organized. What's the name of your study?"
+          },
+          {
+            "role": "user",
+            "content": "My study is NCT05512874, a Phase II trial of an oral GLP-1 drug for type 2 diabetes."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted the study ID and details. I'll keep track of NCT05512874. What's the next task or question you have regarding the trial?"
+          },
+          {
+            "role": "user",
+            "content": "We want 240 participants in total and 61 are enrolled so far."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted the enrollment status. You have 61 participants enrolled out of a target of 240. What's the next update or task you'd like to discuss?"
+          },
+          {
+            "role": "user",
+            "content": "What should I check before a screening visit?"
+          },
+          {
+            "role": "assistant",
+            "content": "For a screening visit in a Phase II trial of an oral GLP-1 drug, I recommend verifying the participant's eligibility, reviewing their medical history, and confirming their informed consent."
+          },
+          {
+            "role": "user",
+            "content": "Our main site is in Sacramento and the PI is Dr. Helen Okafor."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted the main site location and the Principal Investigator's (PI) name. I'll keep this information in mind for future reference."
+          }
+        ]
+      },
+      "long_term": {
+        "session_summary": "- Ani is a clinical trial coordinator.\n- Study ID: NCT05512874\n- Study type: Phase II trial of an oral GLP-1 drug for type 2 diabetes.\n- Target participants: 240\n- Current enrollment: 61 participants\n- Main site location: Sacramento\n- Principal Investigator (PI): Dr. Helen Okafor",
+        "lifetime_summary": null
+      },
+      "episodic_facts": [
+        {
+          "fact": "PI is Dr. Helen Okafor",
+          "importance": 0.8,
+          "score": 0.5105
+        },
+        {
+          "fact": "Trial is Phase II",
+          "importance": 0.8,
+          "score": 0.4936
+        },
+        {
+          "fact": "240 participants are desired in total",
+          "importance": 0.9,
+          "score": 0.4679
+        }
+      ]
+    },
+    "usage": {
+      "prompt_tokens": 510,
+      "completion_tokens": 62,
+      "system_primer_tokens": 74,
+      "long_term_tokens": 79,
+      "episodic_tokens": 32,
+      "short_term_tokens": 270,
+      "current_message_tokens": 10,
+      "prompt_tokens_est": 465,
+      "aux_prompt_tokens": 0,
+      "aux_completion_tokens": 0,
+      "latency_ms": 1562.0,
+      "model_latency_ms": 1545.2,
+      "short_term_n": 12,
+      "policy": "none",
+      "window_messages": 10,
+      "summary_created": {
+        "session_summary": false,
+        "lifetime_summary": false
+      },
+      "embed_backend": "nomic-embed-text"
+    },
+    "new_episodes": []
+  },
+  {
+    "reply": "I've noted that participants on warfarin require extra INR checks during the study. This is an important safety consideration for the trial.",
+    "session_id": "ani-demo-s1",
+    "used": {
+      "short_term": {
+        "count": 12,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Hi, I'm Ani, a clinical trial coordinator. I need help tracking my study."
+          },
+          {
+            "role": "assistant",
+            "content": "Nice to meet you, Ani. I'm TrialMate, your assistant. I'll help you track your study and stay organized. What's the name of your study?"
+          },
+          {
+            "role": "user",
+            "content": "My study is NCT05512874, a Phase II trial of an oral GLP-1 drug for type 2 diabetes."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted the study ID and details. I'll keep track of NCT05512874. What's the next task or question you have regarding the trial?"
+          },
+          {
+            "role": "user",
+            "content": "We want 240 participants in total and 61 are enrolled so far."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted the enrollment status. You have 61 participants enrolled out of a target of 240. What's the next update or task you'd like to discuss?"
+          },
+          {
+            "role": "user",
+            "content": "What should I check before a screening visit?"
+          },
+          {
+            "role": "assistant",
+            "content": "For a screening visit in a Phase II trial of an oral GLP-1 drug, I recommend verifying the participant's eligibility, reviewing their medical history, and confirming their informed consent."
+          },
+          {
+            "role": "user",
+            "content": "Our main site is in Sacramento and the PI is Dr. Helen Okafor."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted the main site location and the Principal Investigator's (PI) name. I'll keep this information in mind for future reference."
+          },
+          {
+            "role": "user",
+            "content": "How do I report a serious adverse event?"
+          },
+          {
+            "role": "assistant",
+            "content": "For a serious adverse event (SAE) in a clinical trial, you should immediately notify the Institutional Review Board (IRB), the sponsor, and the Principal Investigator (PI), Dr. Helen Okafor. You should also document the event thoroughly and follow the trial's SAE reporting procedures."
+          }
+        ]
+      },
+      "long_term": {
+        "session_summary": "- Ani is a clinical trial coordinator.\n- Study ID: NCT05512874\n- Study type: Phase II trial of an oral GLP-1 drug for type 2 diabetes.\n- Target participants: 240\n- Current enrollment: 61 participants\n- Main site location: Sacramento\n- Principal Investigator (PI): Dr. Helen Okafor",
+        "lifetime_summary": null
+      },
+      "episodic_facts": [
+        {
+          "fact": "61 participants are currently enrolled",
+          "importance": 0.8,
+          "score": 0.56
+        },
+        {
+          "fact": "PI is Dr. Helen Okafor",
+          "importance": 0.8,
+          "score": 0.5502
+        },
+        {
+          "fact": "240 participants are desired in total",
+          "importance": 0.9,
+          "score": 0.548
+        }
+      ]
+    },
+    "usage": {
+      "prompt_tokens": 597,
+      "completion_tokens": 29,
+      "system_primer_tokens": 74,
+      "long_term_tokens": 79,
+      "episodic_tokens": 37,
+      "short_term_tokens": 352,
+      "current_message_tokens": 16,
+      "prompt_tokens_est": 558,
+      "aux_prompt_tokens": 174,
+      "aux_completion_tokens": 30,
+      "latency_ms": 1617.8,
+      "model_latency_ms": 922.5,
+      "short_term_n": 12,
+      "policy": "none",
+      "window_messages": 12,
+      "summary_created": {
+        "session_summary": false,
+        "lifetime_summary": false
+      },
+      "embed_backend": "nomic-embed-text"
+    },
+    "new_episodes": [
+      {
+        "fact": "Participants on warfarin need extra INR checks during the study",
+        "importance": 1.0,
+        "score": null
+      }
+    ]
+  },
+  {
+    "reply": "\"Reminder: Week-4 visit for NCT05512874. Please confirm participant's INR check for warfarin users and review any new adverse events.\"",
+    "session_id": "ani-demo-s1",
+    "used": {
+      "short_term": {
+        "count": 12,
+        "messages": [
+          {
+            "role": "user",
+            "content": "My study is NCT05512874, a Phase II trial of an oral GLP-1 drug for type 2 diabetes."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted the study ID and details. I'll keep track of NCT05512874. What's the next task or question you have regarding the trial?"
+          },
+          {
+            "role": "user",
+            "content": "We want 240 participants in total and 61 are enrolled so far."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted the enrollment status. You have 61 participants enrolled out of a target of 240. What's the next update or task you'd like to discuss?"
+          },
+          {
+            "role": "user",
+            "content": "What should I check before a screening visit?"
+          },
+          {
+            "role": "assistant",
+            "content": "For a screening visit in a Phase II trial of an oral GLP-1 drug, I recommend verifying the participant's eligibility, reviewing their medical history, and confirming their informed consent."
+          },
+          {
+            "role": "user",
+            "content": "Our main site is in Sacramento and the PI is Dr. Helen Okafor."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted the main site location and the Principal Investigator's (PI) name. I'll keep this information in mind for future reference."
+          },
+          {
+            "role": "user",
+            "content": "How do I report a serious adverse event?"
+          },
+          {
+            "role": "assistant",
+            "content": "For a serious adverse event (SAE) in a clinical trial, you should immediately notify the Institutional Review Board (IRB), the sponsor, and the Principal Investigator (PI), Dr. Helen Okafor. You should also document the event thoroughly and follow the trial's SAE reporting procedures."
+          },
+          {
+            "role": "user",
+            "content": "Participants on warfarin need extra INR checks during the study."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted that participants on warfarin require extra INR checks during the study. This is an important safety consideration for the trial."
+          }
+        ]
+      },
+      "long_term": {
+        "session_summary": "- Ani is a clinical trial coordinator.\n- Study ID: NCT05512874\n- Study type: Phase II trial of an oral GLP-1 drug for type 2 diabetes.\n- Target participants: 240\n- Current enrollment: 61 participants\n- Main site location: Sacramento\n- Principal Investigator (PI): Dr. Helen Okafor",
+        "lifetime_summary": null
+      },
+      "episodic_facts": [
+        {
+          "fact": "Participants on warfarin need extra INR checks during the study",
+          "importance": 1.0,
+          "score": 0.5102
+        },
+        {
+          "fact": "Trial is Phase II",
+          "importance": 0.8,
+          "score": 0.4835
+        },
+        {
+          "fact": "PI is Dr. Helen Okafor",
+          "importance": 0.8,
+          "score": 0.4766
+        }
+      ]
+    },
+    "usage": {
+      "prompt_tokens": 588,
+      "completion_tokens": 34,
+      "system_primer_tokens": 74,
+      "long_term_tokens": 79,
+      "episodic_tokens": 38,
+      "short_term_tokens": 350,
+      "current_message_tokens": 13,
+      "prompt_tokens_est": 554,
+      "aux_prompt_tokens": 173,
+      "aux_completion_tokens": 6,
+      "latency_ms": 1242.3,
+      "model_latency_ms": 1034.6,
+      "short_term_n": 12,
+      "policy": "none",
+      "window_messages": 12,
+      "summary_created": {
+        "session_summary": false,
+        "lifetime_summary": false
+      },
+      "embed_backend": "nomic-embed-text"
+    },
+    "new_episodes": []
+  },
+  {
+    "reply": "I've noted the IRB continuing review deadline for NCT05512874 as March 14.",
+    "session_id": "ani-demo-s1",
+    "used": {
+      "short_term": {
+        "count": 12,
+        "messages": [
+          {
+            "role": "user",
+            "content": "We want 240 participants in total and 61 are enrolled so far."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted the enrollment status. You have 61 participants enrolled out of a target of 240. What's the next update or task you'd like to discuss?"
+          },
+          {
+            "role": "user",
+            "content": "What should I check before a screening visit?"
+          },
+          {
+            "role": "assistant",
+            "content": "For a screening visit in a Phase II trial of an oral GLP-1 drug, I recommend verifying the participant's eligibility, reviewing their medical history, and confirming their informed consent."
+          },
+          {
+            "role": "user",
+            "content": "Our main site is in Sacramento and the PI is Dr. Helen Okafor."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted the main site location and the Principal Investigator's (PI) name. I'll keep this information in mind for future reference."
+          },
+          {
+            "role": "user",
+            "content": "How do I report a serious adverse event?"
+          },
+          {
+            "role": "assistant",
+            "content": "For a serious adverse event (SAE) in a clinical trial, you should immediately notify the Institutional Review Board (IRB), the sponsor, and the Principal Investigator (PI), Dr. Helen Okafor. You should also document the event thoroughly and follow the trial's SAE reporting procedures."
+          },
+          {
+            "role": "user",
+            "content": "Participants on warfarin need extra INR checks during the study."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted that participants on warfarin require extra INR checks during the study. This is an important safety consideration for the trial."
+          },
+          {
+            "role": "user",
+            "content": "Give me a short reminder text for a week-4 visit."
+          },
+          {
+            "role": "assistant",
+            "content": "\"Reminder: Week-4 visit for NCT05512874. Please confirm participant's INR check for warfarin users and review any new adverse events.\""
+          }
+        ]
+      },
+      "long_term": {
+        "session_summary": "- Ani is a clinical trial coordinator.\n- Study ID: NCT05512874\n- Study type: Phase II trial of an oral GLP-1 drug for type 2 diabetes.\n- Target participants: 240\n- Current enrollment: 61 participants\n- Main site location: Sacramento\n- Principal Investigator (PI): Dr. Helen Okafor",
+        "lifetime_summary": null
+      },
+      "episodic_facts": [
+        {
+          "fact": "Participants on warfarin need extra INR checks during the study",
+          "importance": 1.0,
+          "score": 0.5316
+        },
+        {
+          "fact": "Trial is Phase II",
+          "importance": 0.8,
+          "score": 0.4997
+        },
+        {
+          "fact": "PI is Dr. Helen Okafor",
+          "importance": 0.8,
+          "score": 0.4816
+        }
+      ]
+    },
+    "usage": {
+      "prompt_tokens": 573,
+      "completion_tokens": 21,
+      "system_primer_tokens": 74,
+      "long_term_tokens": 79,
+      "episodic_tokens": 38,
+      "short_term_tokens": 343,
+      "current_message_tokens": 12,
+      "prompt_tokens_est": 546,
+      "aux_prompt_tokens": 172,
+      "aux_completion_tokens": 27,
+      "latency_ms": 1291.8,
+      "model_latency_ms": 682.5,
+      "short_term_n": 12,
+      "policy": "none",
+      "window_messages": 12,
+      "summary_created": {
+        "session_summary": false,
+        "lifetime_summary": false
+      },
+      "embed_backend": "nomic-embed-text"
+    },
+    "new_episodes": [
+      {
+        "fact": "IRB continuing review is due on March 14",
+        "importance": 1.0,
+        "score": null
+      }
+    ]
+  },
+  {
+    "reply": "A sponsor monitor typically requests documentation of participant consent, study procedures, and adverse event reports, as well as source data verification and study site audits.",
+    "session_id": "ani-demo-s1",
+    "used": {
+      "short_term": {
+        "count": 12,
+        "messages": [
+          {
+            "role": "user",
+            "content": "What should I check before a screening visit?"
+          },
+          {
+            "role": "assistant",
+            "content": "For a screening visit in a Phase II trial of an oral GLP-1 drug, I recommend verifying the participant's eligibility, reviewing their medical history, and confirming their informed consent."
+          },
+          {
+            "role": "user",
+            "content": "Our main site is in Sacramento and the PI is Dr. Helen Okafor."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted the main site location and the Principal Investigator's (PI) name. I'll keep this information in mind for future reference."
+          },
+          {
+            "role": "user",
+            "content": "How do I report a serious adverse event?"
+          },
+          {
+            "role": "assistant",
+            "content": "For a serious adverse event (SAE) in a clinical trial, you should immediately notify the Institutional Review Board (IRB), the sponsor, and the Principal Investigator (PI), Dr. Helen Okafor. You should also document the event thoroughly and follow the trial's SAE reporting procedures."
+          },
+          {
+            "role": "user",
+            "content": "Participants on warfarin need extra INR checks during the study."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted that participants on warfarin require extra INR checks during the study. This is an important safety consideration for the trial."
+          },
+          {
+            "role": "user",
+            "content": "Give me a short reminder text for a week-4 visit."
+          },
+          {
+            "role": "assistant",
+            "content": "\"Reminder: Week-4 visit for NCT05512874. Please confirm participant's INR check for warfarin users and review any new adverse events.\""
+          },
+          {
+            "role": "user",
+            "content": "The IRB continuing review is due on March 14."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted the IRB continuing review deadline for NCT05512874 as March 14."
+          }
+        ]
+      },
+      "long_term": {
+        "session_summary": "- Ani is a clinical trial coordinator.\n- Study ID: NCT05512874\n- Study type: Phase II trial of an oral GLP-1 drug for type 2 diabetes.\n- Target participants: 240\n- Current enrollment: 61 participants\n- Main site location: Sacramento\n- Principal Investigator (PI): Dr. Helen Okafor",
+        "lifetime_summary": null
+      },
+      "episodic_facts": [
+        {
+          "fact": "Participants on warfarin need extra INR checks during the study",
+          "importance": 1.0,
+          "score": 0.5783
+        },
+        {
+          "fact": "PI is Dr. Helen Okafor",
+          "importance": 0.8,
+          "score": 0.5205
+        },
+        {
+          "fact": "Trial is Phase II",
+          "importance": 0.8,
+          "score": 0.5135
+        }
+      ]
+    },
+    "usage": {
+      "prompt_tokens": 554,
+      "completion_tokens": 30,
+      "system_primer_tokens": 74,
+      "long_term_tokens": 79,
+      "episodic_tokens": 38,
+      "short_term_tokens": 321,
+      "current_message_tokens": 14,
+      "prompt_tokens_est": 526,
+      "aux_prompt_tokens": 649,
+      "aux_completion_tokens": 209,
+      "latency_ms": 5322.6,
+      "model_latency_ms": 850.7,
+      "short_term_n": 12,
+      "policy": "none",
+      "window_messages": 12,
+      "summary_created": {
+        "session_summary": true,
+        "lifetime_summary": true
+      },
+      "embed_backend": "nomic-embed-text"
+    },
+    "new_episodes": []
+  },
+  {
+    "reply": "You mentioned the main site is in Sacramento and the Principal Investigator (PI) is Dr. Helen Okafor.",
+    "session_id": "ani-demo-s1",
+    "used": {
+      "short_term": {
+        "count": 12,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Our main site is in Sacramento and the PI is Dr. Helen Okafor."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted the main site location and the Principal Investigator's (PI) name. I'll keep this information in mind for future reference."
+          },
+          {
+            "role": "user",
+            "content": "How do I report a serious adverse event?"
+          },
+          {
+            "role": "assistant",
+            "content": "For a serious adverse event (SAE) in a clinical trial, you should immediately notify the Institutional Review Board (IRB), the sponsor, and the Principal Investigator (PI), Dr. Helen Okafor. You should also document the event thoroughly and follow the trial's SAE reporting procedures."
+          },
+          {
+            "role": "user",
+            "content": "Participants on warfarin need extra INR checks during the study."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted that participants on warfarin require extra INR checks during the study. This is an important safety consideration for the trial."
+          },
+          {
+            "role": "user",
+            "content": "Give me a short reminder text for a week-4 visit."
+          },
+          {
+            "role": "assistant",
+            "content": "\"Reminder: Week-4 visit for NCT05512874. Please confirm participant's INR check for warfarin users and review any new adverse events.\""
+          },
+          {
+            "role": "user",
+            "content": "The IRB continuing review is due on March 14."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted the IRB continuing review deadline for NCT05512874 as March 14."
+          },
+          {
+            "role": "user",
+            "content": "What documents does a sponsor monitor usually ask for?"
+          },
+          {
+            "role": "assistant",
+            "content": "A sponsor monitor typically requests documentation of participant consent, study procedures, and adverse event reports, as well as source data verification and study site audits."
+          }
+        ]
+      },
+      "long_term": {
+        "session_summary": "- Study ID: NCT05512874\n- Study type: Phase II trial of an oral GLP-1 drug for type 2 diabetes\n- Target participants: 240\n- Current enrollment: 61 participants\n- Main site location: Sacramento\n- Principal Investigator (PI): Dr. Helen Okafor\n- Participants on warfarin require extra INR checks during the study\n- IRB continuing review deadline: March 14\n- Sponsor monitor typically requests: participant consent, study procedures, adverse event reports, source data verification, and study site audits",
+        "lifetime_summary": "- Ani is a clinical trial coordinator.\n- Study ID: NCT05512874\n- Study type: Phase II trial of an oral GLP-1 drug for type 2 diabetes.\n- Target participants: 240\n- Current enrollment: 61 participants\n- Main site location: Sacramento\n- Principal Investigator (PI): Dr. Helen Okafor\n- Participants on warfarin require extra INR checks during the study"
+      },
+      "episodic_facts": [
+        {
+          "fact": "PI is Dr. Helen Okafor",
+          "importance": 0.8,
+          "score": 0.6401
+        },
+        {
+          "fact": "Main site is in Sacramento",
+          "importance": 0.8,
+          "score": 0.5914
+        },
+        {
+          "fact": "Trial is Phase II",
+          "importance": 0.8,
+          "score": 0.5074
+        }
+      ]
+    },
+    "usage": {
+      "prompt_tokens": 677,
+      "completion_tokens": 25,
+      "system_primer_tokens": 74,
+      "long_term_tokens": 229,
+      "episodic_tokens": 29,
+      "short_term_tokens": 320,
+      "current_message_tokens": 10,
+      "prompt_tokens_est": 662,
+      "aux_prompt_tokens": 0,
+      "aux_completion_tokens": 0,
+      "latency_ms": 1048.0,
+      "model_latency_ms": 1030.0,
+      "short_term_n": 12,
+      "policy": "none",
+      "window_messages": 12,
+      "summary_created": {
+        "session_summary": false,
+        "lifetime_summary": false
+      },
+      "embed_backend": "nomic-embed-text"
+    },
+    "new_episodes": []
+  },
+  {
+    "reply": "Here's a summary of what I know about your trial:\n\n\u2022 Study ID: NCT05512874\n\u2022 Study type: Phase II trial of an oral GLP-1 drug for type 2 diabetes\n\u2022 Main site location: Sacramento, led by Principal Investigator Dr. Helen Okafor",
+    "session_id": "ani-demo-s1",
+    "used": {
+      "short_term": {
+        "count": 12,
+        "messages": [
+          {
+            "role": "user",
+            "content": "How do I report a serious adverse event?"
+          },
+          {
+            "role": "assistant",
+            "content": "For a serious adverse event (SAE) in a clinical trial, you should immediately notify the Institutional Review Board (IRB), the sponsor, and the Principal Investigator (PI), Dr. Helen Okafor. You should also document the event thoroughly and follow the trial's SAE reporting procedures."
+          },
+          {
+            "role": "user",
+            "content": "Participants on warfarin need extra INR checks during the study."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted that participants on warfarin require extra INR checks during the study. This is an important safety consideration for the trial."
+          },
+          {
+            "role": "user",
+            "content": "Give me a short reminder text for a week-4 visit."
+          },
+          {
+            "role": "assistant",
+            "content": "\"Reminder: Week-4 visit for NCT05512874. Please confirm participant's INR check for warfarin users and review any new adverse events.\""
+          },
+          {
+            "role": "user",
+            "content": "The IRB continuing review is due on March 14."
+          },
+          {
+            "role": "assistant",
+            "content": "I've noted the IRB continuing review deadline for NCT05512874 as March 14."
+          },
+          {
+            "role": "user",
+            "content": "What documents does a sponsor monitor usually ask for?"
+          },
+          {
+            "role": "assistant",
+            "content": "A sponsor monitor typically requests documentation of participant consent, study procedures, and adverse event reports, as well as source data verification and study site audits."
+          },
+          {
+            "role": "user",
+            "content": "Which site and PI did I mention earlier?"
+          },
+          {
+            "role": "assistant",
+            "content": "You mentioned the main site is in Sacramento and the Principal Investigator (PI) is Dr. Helen Okafor."
+          }
+        ]
+      },
+      "long_term": {
+        "session_summary": "- Study ID: NCT05512874\n- Study type: Phase II trial of an oral GLP-1 drug for type 2 diabetes\n- Target participants: 240\n- Current enrollment: 61 participants\n- Main site location: Sacramento\n- Principal Investigator (PI): Dr. Helen Okafor\n- Participants on warfarin require extra INR checks during the study\n- IRB continuing review deadline: March 14\n- Sponsor monitor typically requests: participant consent, study procedures, adverse event reports, source data verification, and study site audits",
+        "lifetime_summary": "- Ani is a clinical trial coordinator.\n- Study ID: NCT05512874\n- Study type: Phase II trial of an oral GLP-1 drug for type 2 diabetes.\n- Target participants: 240\n- Current enrollment: 61 participants\n- Main site location: Sacramento\n- Principal Investigator (PI): Dr. Helen Okafor\n- Participants on warfarin require extra INR checks during the study"
+      },
+      "episodic_facts": [
+        {
+          "fact": "Trial is Phase II",
+          "importance": 0.8,
+          "score": 0.5642
+        },
+        {
+          "fact": "IRB continuing review is due on March 14",
+          "importance": 1.0,
+          "score": 0.4791
+        },
+        {
+          "fact": "Participants on warfarin need extra INR checks during the study",
+          "importance": 1.0,
+          "score": 0.4575
+        }
+      ]
+    },
+    "usage": {
+      "prompt_tokens": 678,
+      "completion_tokens": 62,
+      "system_primer_tokens": 74,
+      "long_term_tokens": 229,
+      "episodic_tokens": 43,
+      "short_term_tokens": 306,
+      "current_message_tokens": 14,
+      "prompt_tokens_est": 666,
+      "aux_prompt_tokens": 173,
+      "aux_completion_tokens": 38,
+      "latency_ms": 2277.9,
+      "model_latency_ms": 1472.5,
+      "short_term_n": 12,
+      "policy": "none",
+      "window_messages": 12,
+      "summary_created": {
+        "session_summary": false,
+        "lifetime_summary": false
+      },
+      "embed_backend": "nomic-embed-text"
+    },
+    "new_episodes": []
+  }
+]

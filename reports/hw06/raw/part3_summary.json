@@ -1,0 +1,114 @@
+{
+  "n4": {
+    "label": "SHORT_TERM_N=4",
+    "mean_prompt_tokens_per_turn": 484.4,
+    "mean_prompt_tokens_est_per_turn": 541.4,
+    "mean_short_term_tokens": 118.4,
+    "mean_long_term_tokens": 285.0,
+    "mean_episodic_tokens": 47.6,
+    "mean_completion_tokens": 36.2,
+    "mean_latency_ms": 2256.1,
+    "mean_model_latency_ms": 877.8,
+    "probe_quality": 5,
+    "probe_scores": [
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "tokens_per_conversation": {
+      "reply_in": 14533.0,
+      "reply_out": 1087.0,
+      "all_calls_in": 21223.0,
+      "all_calls_out": 2982.0
+    },
+    "cost_10k_reply_only_usd": 199.68,
+    "cost_10k_all_calls_usd": 361.33,
+    "probe_turn_mean_prompt_tokens": 730.6
+  },
+  "n12": {
+    "label": "SHORT_TERM_N=12",
+    "mean_prompt_tokens_per_turn": 628.7,
+    "mean_prompt_tokens_est_per_turn": 678.1,
+    "mean_short_term_tokens": 328.2,
+    "mean_long_term_tokens": 211.8,
+    "mean_episodic_tokens": 47.6,
+    "mean_completion_tokens": 35.2,
+    "mean_latency_ms": 2106.6,
+    "mean_model_latency_ms": 996.0,
+    "probe_quality": 5,
+    "probe_scores": [
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "tokens_per_conversation": {
+      "reply_in": 18861.0,
+      "reply_out": 1056.0,
+      "all_calls_in": 24751.0,
+      "all_calls_out": 2586.0
+    },
+    "cost_10k_reply_only_usd": 241.41,
+    "cost_10k_all_calls_usd": 376.81,
+    "probe_turn_mean_prompt_tokens": 822.0
+  },
+  "n30": {
+    "label": "SHORT_TERM_N=30",
+    "mean_prompt_tokens_per_turn": 941.3,
+    "mean_prompt_tokens_est_per_turn": 999.7,
+    "mean_short_term_tokens": 612.4,
+    "mean_long_term_tokens": 249.2,
+    "mean_episodic_tokens": 47.6,
+    "mean_completion_tokens": 30.9,
+    "mean_latency_ms": 2266.9,
+    "mean_model_latency_ms": 1136.4,
+    "probe_quality": 5,
+    "probe_scores": [
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "tokens_per_conversation": {
+      "reply_in": 28239.0,
+      "reply_out": 926.0,
+      "all_calls_in": 34346.0,
+      "all_calls_out": 2497.0
+    },
+    "cost_10k_reply_only_usd": 328.69,
+    "cost_10k_all_calls_usd": 468.31,
+    "probe_turn_mean_prompt_tokens": 1186.6
+  },
+  "compress": {
+    "label": "Compression policy (N=30 + compress)",
+    "mean_prompt_tokens_per_turn": 740.2,
+    "mean_prompt_tokens_est_per_turn": 751.6,
+    "mean_short_term_tokens": 394.5,
+    "mean_long_term_tokens": 219,
+    "mean_episodic_tokens": 47.6,
+    "mean_completion_tokens": 24.4,
+    "mean_latency_ms": 1988.5,
+    "mean_model_latency_ms": 901.9,
+    "probe_quality": 5,
+    "probe_scores": [
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "tokens_per_conversation": {
+      "reply_in": 22207,
+      "reply_out": 732,
+      "all_calls_in": 27783,
+      "all_calls_out": 2182
+    },
+    "cost_10k_reply_only_usd": 258.67,
+    "cost_10k_all_calls_usd": 386.93,
+    "probe_turn_mean_prompt_tokens": 976.2
+  }
+}

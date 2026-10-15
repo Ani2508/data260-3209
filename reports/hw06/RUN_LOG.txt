@@ -1,0 +1,792 @@
+[2026-10-15 10:55:30] ==============================================================================
+[2026-10-15 10:55:30] RUN: python3 code/run_hw06_part1.py   (HW6 Part 1, db s3209_doc.trials)   run by: Ani Taraiya
+[2026-10-15 10:55:30] POST Oral GLP-1 Agonist in Ty      -> 201
+[2026-10-15 10:55:30] POST Low-Dose Aspirin After S      -> 201
+[2026-10-15 10:55:30] POST Sleep Quality in Long CO      -> 201
+[2026-10-15 10:55:30] GET /api/doc/trials                -> 200
+[2026-10-15 10:55:30] GET /api/doc/trials/{id}           -> 200
+[2026-10-15 10:55:30] PUT /api/doc/trials/{id}           -> 200
+[2026-10-15 10:55:30] POST temporary trial               -> id 6ad1139292abfb4c088c7513 (default status=recruiting)
+[2026-10-15 10:55:30] DELETE /api/doc/trials/{id}        -> 204
+[2026-10-15 10:55:30] GET deleted id                     -> 404
+[2026-10-15 10:55:30] GET /api/doc/trials/not-an-id      -> 400
+[2026-10-15 10:55:30] --- validation tests
+[2026-10-15 10:55:30] POST missing required title        -> 422
+[2026-10-15 10:55:30] POST invalid enum (status)         -> 422
+[2026-10-15 10:55:30] POST wrong type (start_date)       -> 422
+[2026-10-15 10:55:30] POST title over 100 chars          -> 422
+[2026-10-15 10:55:30] ==============================================================================
+[2026-10-15 10:55:30] RUN: python3 code/run_hw06_part2.py   (HW6 Part 2, user=ani_demo)   run by: Ani Taraiya
+[2026-10-15 10:55:47] [01] user: Hi, I'm Ani, a clinical trial coordinator. I need help tracking my study.
+[2026-10-15 10:55:47]      assistant: Welcome, Ani! I'm TrialMate, your assistant. I can help you track participant enrollment, monitor study milestones, and send reminders for upcoming events. What
+[2026-10-15 10:55:47]      used: short-term=0 msgs | session summary=no | facts=[]
+[2026-10-15 10:55:47]      tokens prompt=85 completion=43 latency=17193 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 10:55:50] [02] user: My study is NCT05512874, a Phase II trial of an oral GLP-1 drug for type 2 diabetes.
+[2026-10-15 10:55:50]      assistant: I have the study details saved. I can provide you with participant enrollment updates, study schedule reminders, and other relevant information for NCT05512874.
+[2026-10-15 10:55:50]      used: short-term=2 msgs | session summary=no | facts=[]
+[2026-10-15 10:55:50]      tokens prompt=164 completion=43 latency=2449 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 10:55:52] [03] user: We want 240 participants in total and 61 are enrolled so far.
+[2026-10-15 10:55:52]      assistant: You're about 75% of the way to your target. I can help you track the remaining enrollment milestones and send reminders to your site teams to ensure you meet th
+[2026-10-15 10:55:52]      used: short-term=4 msgs | session summary=no | facts=['Phase II trial', 'NCT05512874', 'Oral GLP-1 drug']
+[2026-10-15 10:55:52]      tokens prompt=259 completion=53 latency=2164 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 10:55:54] [04] user: What should I check before a screening visit?
+[2026-10-15 10:55:54]      assistant: Before a screening visit, I recommend verifying the participant's eligibility criteria, confirming their medical history and current medications, and reviewing 
+[2026-10-15 10:55:54]      used: short-term=6 msgs | session summary=no | facts=['Phase II trial', '240 participants targeted for the clinical trial.', 'Oral GLP-1 drug']
+[2026-10-15 10:55:54]      tokens prompt=333 completion=37 latency=2642 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 10:55:58] [05] user: Our main site is in Sacramento and the PI is Dr. Helen Okafor.
+[2026-10-15 10:55:58]      assistant: I have the main site information saved. I can provide you with updates on participant enrollment, study progress, and other relevant information for Dr. Okafor'
+[2026-10-15 10:55:58]      used: short-term=8 msgs | session summary=no | facts=['Screening visit: confirm eligibility, review medical history, and discuss trial requirements.', 'Review and sign informed consent form before screening visit.', '240 participants targeted for the clinical trial.']
+[2026-10-15 10:55:58]      tokens prompt=410 completion=37 latency=3784 ms new_summary={'session_summary': True, 'lifetime_summary': False}
+[2026-10-15 10:56:01] [06] user: How do I report a serious adverse event?
+[2026-10-15 10:56:01]      assistant: I don't know the specific procedures for reporting serious adverse events for your study. I recommend checking the study protocol or contacting the sponsor or r
+[2026-10-15 10:56:01]      used: short-term=10 msgs | session summary=yes | facts=['Review and sign informed consent form before screening visit.', 'Bring required documents, such as insurance cards and identification, to screening visit.', 'Screening visit: confirm eligibility, review medical history, and discuss trial requirements.']
+[2026-10-15 10:56:01]      tokens prompt=554 completion=36 latency=2809 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 10:56:03] [07] user: Participants on warfarin need extra INR checks during the study.
+[2026-10-15 10:56:03]      assistant: I don't have any information about specific requirements for participants on warfarin. I recommend reviewing the study protocol or consulting with the PI, Dr. O
+[2026-10-15 10:56:03]      used: short-term=12 msgs | session summary=yes | facts=['Screening visit: confirm eligibility, review medical history, and discuss trial requirements.', 'Bring required documents, such as insurance cards and identification, to screening visit.', 'Review and sign informed consent form before screening visit.']
+[2026-10-15 10:56:03]      tokens prompt=613 completion=47 latency=2014 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 10:56:04] [08] user: Give me a short reminder text for a week-4 visit.
+[2026-10-15 10:56:04]      assistant: "Reminder: Week-4 visit scheduled for participants. Please confirm participant attendance and ensure all required documents are up-to-date."
+[2026-10-15 10:56:04]      used: short-term=12 msgs | session summary=yes | facts=['Screening visit: confirm eligibility, review medical history, and discuss trial requirements.', 'Bring required documents, such as insurance cards and identification, to screening visit.', 'Review and sign informed consent form before screening visit.']
+[2026-10-15 10:56:04]      tokens prompt=611 completion=26 latency=1374 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 10:56:06] [09] user: The IRB continuing review is due on March 14.
+[2026-10-15 10:56:06]      assistant: I'll send a reminder to the team to prepare and submit the continuing review application for NCT05512874 by the deadline of March 14.
+[2026-10-15 10:56:06]      used: short-term=12 msgs | session summary=yes | facts=['Screening visit: confirm eligibility, review medical history, and discuss trial requirements.', 'Review and sign informed consent form before screening visit.', 'Participants on warfarin need extra INR checks during the study.']
+[2026-10-15 10:56:06]      tokens prompt=578 completion=31 latency=1588 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 10:56:13] [10] user: What documents does a sponsor monitor usually ask for?
+[2026-10-15 10:56:13]      assistant: Typically, a sponsor monitor may request documents such as participant consent forms, case report forms, source documents, and any other relevant study records.
+[2026-10-15 10:56:13]      used: short-term=12 msgs | session summary=yes | facts=['Bring required documents, such as insurance cards and identification, to screening visit.', 'Screening visit: confirm eligibility, review medical history, and discuss trial requirements.', 'Review and sign informed consent form before screening visit.']
+[2026-10-15 10:56:13]      tokens prompt=552 completion=30 latency=6622 ms new_summary={'session_summary': True, 'lifetime_summary': True}
+[2026-10-15 10:56:14] [11] user: Which site and PI did I mention earlier?
+[2026-10-15 10:56:14]      assistant: The main site is in Sacramento and the PI is Dr. Helen Okafor.
+[2026-10-15 10:56:14]      used: short-term=12 msgs | session summary=yes | facts=['PI is Dr. Helen Okafor', 'Main site is in Sacramento', 'Review and sign informed consent form before screening visit.']
+[2026-10-15 10:56:14]      tokens prompt=682 completion=18 latency=1123 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 10:56:17] [12] user: Summarize what you know about my trial in three bullets.
+[2026-10-15 10:56:17]      assistant: Here's a summary of what I know about your trial:
+[2026-10-15 10:56:17]
+[2026-10-15 10:56:17]      • Study ID: NCT05512874
+[2026-10-15 10:56:17]      • Study type: Phase II trial of an oral GLP-1 drug for type 2 diabetes
+[2026-10-15 10:56:17]      • Target parti
+[2026-10-15 10:56:17]      used: short-term=12 msgs | session summary=yes | facts=['Screening visit: confirm eligibility, review medical history, and discuss trial requirements.', 'Phase II trial', '240 participants targeted for the clinical trial.']
+[2026-10-15 10:56:17]      tokens prompt=662 completion=56 latency=2783 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 10:56:17] GET /api/memory/ani_demo: 16 messages, 20 facts, session summary=yes, lifetime summary=yes
+[2026-10-15 10:56:17] GET /api/aggregate/ani_demo: [{'messages': 24, 'user_messages': 12, 'date': '2026-10-15'}]
+[2026-10-15 10:58:20] ==============================================================================
+[2026-10-15 10:58:20] RUN: python3 code/run_hw06_part2.py   (HW6 Part 2, user=ani_demo)   run by: Ani Taraiya
+[2026-10-15 10:58:20] reset demo user ani_demo: removed 47 old docs
+[2026-10-15 10:58:21] [01] user: Hi, I'm Ani, a clinical trial coordinator. I need help tracking my study.
+[2026-10-15 10:58:21]      assistant: Nice to meet you, Ani. I'm TrialMate, your assistant. I'll help you track your study and stay organized. What's the name of your study?
+[2026-10-15 10:58:21]      used: short-term=0 msgs | session summary=no | facts=[]
+[2026-10-15 10:58:21]      tokens prompt=99 completion=36 latency=1120 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 10:58:23] [02] user: My study is NCT05512874, a Phase II trial of an oral GLP-1 drug for type 2 diabetes.
+[2026-10-15 10:58:23]      assistant: I've noted the study ID and details. I'll keep track of NCT05512874. What's the next task or question you have regarding the trial?
+[2026-10-15 10:58:23]      used: short-term=2 msgs | session summary=no | facts=[]
+[2026-10-15 10:58:23]      tokens prompt=171 completion=34 latency=2481 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 10:58:25] [03] user: We want 240 participants in total and 61 are enrolled so far.
+[2026-10-15 10:58:25]      assistant: I've noted the enrollment status. You have 61 participants enrolled out of a target of 240. What's the next update or task you'd like to discuss?
+[2026-10-15 10:58:25]      used: short-term=4 msgs | session summary=no | facts=['Trial is Phase II', 'Study ID is NCT05512874', 'Drug is oral GLP-1']
+[2026-10-15 10:58:25]      tokens prompt=262 completion=35 latency=1810 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 10:58:26] [04] user: What should I check before a screening visit?
+[2026-10-15 10:58:26]      assistant: For a screening visit in a Phase II trial of an oral GLP-1 drug, I recommend verifying the participant's eligibility, reviewing their medical history, and confi
+[2026-10-15 10:58:26]      used: short-term=6 msgs | session summary=no | facts=['Trial is Phase II', 'Drug is oral GLP-1', 'Study ID is NCT05512874']
+[2026-10-15 10:58:26]      tokens prompt=315 completion=38 latency=961 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 10:58:30] [05] user: Our main site is in Sacramento and the PI is Dr. Helen Okafor.
+[2026-10-15 10:58:30]      assistant: I've noted the main site location and the Principal Investigator's (PI) name. I'll keep this information in mind for future reference.
+[2026-10-15 10:58:30]      used: short-term=8 msgs | session summary=no | facts=['Trial is Phase II', '61 participants are currently enrolled', 'Drug is oral GLP-1']
+[2026-10-15 10:58:30]      tokens prompt=377 completion=30 latency=3577 ms new_summary={'session_summary': True, 'lifetime_summary': False}
+[2026-10-15 10:58:31] [06] user: How do I report a serious adverse event?
+[2026-10-15 10:58:31]      assistant: For a serious adverse event (SAE) in a clinical trial, you should immediately notify the Institutional Review Board (IRB), the sponsor, and the Principal Invest
+[2026-10-15 10:58:31]      used: short-term=10 msgs | session summary=yes | facts=['PI is Dr. Helen Okafor', 'Trial is Phase II', '240 participants are desired in total']
+[2026-10-15 10:58:31]      tokens prompt=510 completion=62 latency=1570 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 10:58:33] [07] user: Participants on warfarin need extra INR checks during the study.
+[2026-10-15 10:58:33]      assistant: I've noted that participants on warfarin require extra INR checks during the study. This is an important safety consideration for the trial.
+[2026-10-15 10:58:33]      used: short-term=12 msgs | session summary=yes | facts=['61 participants are currently enrolled', 'PI is Dr. Helen Okafor', '240 participants are desired in total']
+[2026-10-15 10:58:33]      tokens prompt=597 completion=29 latency=1589 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 10:58:34] [08] user: Give me a short reminder text for a week-4 visit.
+[2026-10-15 10:58:34]      assistant: "Reminder: Week-4 visit for NCT05512874. Please confirm participant's INR check for warfarin users and review any new adverse events."
+[2026-10-15 10:58:34]      used: short-term=12 msgs | session summary=yes | facts=['Participants on warfarin need extra INR checks during the study', 'Trial is Phase II', 'PI is Dr. Helen Okafor']
+[2026-10-15 10:58:34]      tokens prompt=588 completion=34 latency=1216 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 10:58:35] [09] user: The IRB continuing review is due on March 14.
+[2026-10-15 10:58:35]      assistant: I've noted the IRB continuing review deadline for NCT05512874 as March 14.
+[2026-10-15 10:58:35]      used: short-term=12 msgs | session summary=yes | facts=['Participants on warfarin need extra INR checks during the study', 'Trial is Phase II', 'PI is Dr. Helen Okafor']
+[2026-10-15 10:58:35]      tokens prompt=573 completion=21 latency=1292 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 10:58:41] [10] user: What documents does a sponsor monitor usually ask for?
+[2026-10-15 10:58:41]      assistant: A sponsor monitor typically requests documentation of participant consent, study procedures, and adverse event reports, as well as source data verification and 
+[2026-10-15 10:58:41]      used: short-term=12 msgs | session summary=yes | facts=['Participants on warfarin need extra INR checks during the study', 'PI is Dr. Helen Okafor', 'Trial is Phase II']
+[2026-10-15 10:58:41]      tokens prompt=554 completion=30 latency=5393 ms new_summary={'session_summary': True, 'lifetime_summary': True}
+[2026-10-15 10:58:42] [11] user: Which site and PI did I mention earlier?
+[2026-10-15 10:58:42]      assistant: You mentioned the main site is in Sacramento and the Principal Investigator (PI) is Dr. Helen Okafor.
+[2026-10-15 10:58:42]      used: short-term=12 msgs | session summary=yes | facts=['PI is Dr. Helen Okafor', 'Main site is in Sacramento', 'Trial is Phase II']
+[2026-10-15 10:58:42]      tokens prompt=677 completion=25 latency=1126 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 10:58:44] [12] user: Summarize what you know about my trial in three bullets.
+[2026-10-15 10:58:44]      assistant: Here's a summary of what I know about your trial:
+[2026-10-15 10:58:44]
+[2026-10-15 10:58:44]      • Study ID: NCT05512874
+[2026-10-15 10:58:44]      • Study type: Phase II trial of an oral GLP-1 drug for type 2 diabetes
+[2026-10-15 10:58:44]      • Main site lo
+[2026-10-15 10:58:44]      used: short-term=12 msgs | session summary=yes | facts=['Trial is Phase II', 'IRB continuing review is due on March 14', 'Participants on warfarin need extra INR checks during the study']
+[2026-10-15 10:58:44]      tokens prompt=678 completion=62 latency=2344 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 10:58:44] GET /api/memory/ani_demo: 16 messages, 9 facts, session summary=yes, lifetime summary=yes
+[2026-10-15 10:58:44] GET /api/aggregate/ani_demo: [{'messages': 24, 'user_messages': 12, 'date': '2026-10-15'}]
+[2026-10-15 10:58:44] ==============================================================================
+[2026-10-15 10:58:44] RUN: python3 code/run_hw06_memory_cost.py   (HW6 Part 3)   run by: Ani Taraiya
+[2026-10-15 10:58:44] backend http://localhost:8509  conversation=30 msgs  probes=5  stamp=10151058
+[2026-10-15 10:58:44] --- SHORT_TERM_N=4  user_id=cost_n4_10151058  policy=none
+[2026-10-15 10:58:45]   turn 01  prompt=  100  completion=  26  window= 0  latency=     698 ms
+[2026-10-15 10:58:47]   turn 02  prompt=  166  completion=  44  window= 2  latency=    2185 ms
+[2026-10-15 10:58:48]   turn 03  prompt=  279  completion=  50  window= 4  latency=    1137 ms
+[2026-10-15 10:58:49]   turn 04  prompt=  292  completion=  39  window= 4  latency=     929 ms
+[2026-10-15 10:58:53]   turn 05  prompt=  267  completion=  53  window= 4  latency=    3209 ms
+[2026-10-15 10:58:53]   turn 06  prompt=  364  completion=   6  window= 4  latency=     402 ms
+[2026-10-15 10:58:54]   turn 07  prompt=  332  completion=  50  window= 4  latency=    1240 ms
+[2026-10-15 10:58:56]   turn 08  prompt=  338  completion=  20  window= 4  latency=    1561 ms
+[2026-10-15 10:58:56]   turn 09  prompt=  359  completion=  26  window= 4  latency=     679 ms
+[2026-10-15 10:59:03]   turn 10  prompt=  334  completion=  27  window= 4  latency=    6470 ms
+[2026-10-15 10:59:04]   turn 11  prompt=  527  completion=   6  window= 4  latency=     575 ms
+[2026-10-15 10:59:05]   turn 12  prompt=  510  completion=  59  window= 4  latency=    1232 ms
+[2026-10-15 10:59:06]   turn 13  prompt=  542  completion=  51  window= 4  latency=    1162 ms
+[2026-10-15 10:59:08]   turn 14  prompt=  592  completion=  26  window= 4  latency=    1692 ms
+[2026-10-15 10:59:14]   turn 15  prompt=  542  completion=  54  window= 4  latency=    5903 ms
+[2026-10-15 10:59:15]   turn 16  prompt=  613  completion=  57  window= 4  latency=    1301 ms
+[2026-10-15 10:59:18]   turn 17  prompt=  637  completion=  66  window= 4  latency=    2735 ms
+[2026-10-15 10:59:19]   turn 18  prompt=  651  completion=  68  window= 4  latency=    1504 ms
+[2026-10-15 10:59:20]   turn 19  prompt=  672  completion=  39  window= 4  latency=     958 ms
+[2026-10-15 10:59:28]   turn 20  prompt=  666  completion=  31  window= 4  latency=    8214 ms
+[2026-10-15 10:59:29]   turn 21  prompt=  581  completion=   6  window= 4  latency=     502 ms
+[2026-10-15 10:59:29]   turn 22  prompt=  545  completion=   6  window= 4  latency=     306 ms
+[2026-10-15 10:59:30]   turn 23  prompt=  499  completion=  60  window= 4  latency=    1245 ms
+[2026-10-15 10:59:32]   turn 24  prompt=  549  completion=  45  window= 4  latency=    1682 ms
+[2026-10-15 10:59:36]   turn 25  prompt=  591  completion=   6  window= 4  latency=    3832 ms
+[2026-10-15 10:59:38]   turn 26  prompt=  587  completion=  27  window= 4  latency=    1748 ms
+[2026-10-15 10:59:38]   turn 27  prompt=  584  completion=   6  window= 4  latency=     306 ms
+[2026-10-15 10:59:39]   turn 28  prompt=  576  completion=  62  window= 4  latency=    1379 ms
+[2026-10-15 10:59:40]   turn 29  prompt=  596  completion=  46  window= 4  latency=    1078 ms
+[2026-10-15 10:59:52]   turn 30  prompt=  642  completion=  25  window= 4  latency=   11819 ms
+[2026-10-15 10:59:53]   P1 score=5 (1/1)  reply: 'The trial registration number is NCT05512874.'
+[2026-10-15 10:59:54]   P2 score=5 (2/2)  reply: 'Our enrollment target is 240 participants across all sites, and we currently have 61 participants enrolled.'
+[2026-10-15 10:59:54]   P3 score=5 (2/2)  reply: 'Our main site is located in Sacramento, and the site principal investigator is Dr. Helen Okafor.'
+[2026-10-15 10:59:55]   P4 score=5 (2/2)  reply: 'You flagged warfarin as a safety concern. Participants taking warfarin need extra INR checks due to possible i'
+[2026-10-15 11:00:00]   P5 score=5 (2/2)  reply: 'Our IRB continuing review is due on March 14, and the renewal packet must be ready by March 1.'
+[2026-10-15 11:00:00] --- SHORT_TERM_N=12  user_id=cost_n12_10151058  policy=none
+[2026-10-15 11:00:01]   turn 01  prompt=  100  completion=  26  window= 0  latency=     588 ms
+[2026-10-15 11:00:03]   turn 02  prompt=  166  completion=  44  window= 2  latency=    2125 ms
+[2026-10-15 11:00:04]   turn 03  prompt=  279  completion=  50  window= 4  latency=    1096 ms
+[2026-10-15 11:00:05]   turn 04  prompt=  347  completion=  38  window= 6  latency=     919 ms
+[2026-10-15 11:00:08]   turn 05  prompt=  405  completion=  57  window= 8  latency=    2781 ms
+[2026-10-15 11:00:08]   turn 06  prompt=  573  completion=  16  window=10  latency=     695 ms
+[2026-10-15 11:00:09]   turn 07  prompt=  608  completion=  32  window=12  latency=     911 ms
+[2026-10-15 11:00:11]   turn 08  prompt=  614  completion=  32  window=12  latency=    1974 ms
+[2026-10-15 11:00:12]   turn 09  prompt=  592  completion=  19  window=12  latency=     841 ms
+[2026-10-15 11:00:18]   turn 10  prompt=  550  completion=  38  window=12  latency=    5446 ms
+[2026-10-15 11:00:20]   turn 11  prompt=  680  completion=  81  window=12  latency=    2184 ms
+[2026-10-15 11:00:21]   turn 12  prompt=  708  completion=  54  window=12  latency=    1465 ms
+[2026-10-15 11:00:23]   turn 13  prompt=  741  completion=  63  window=12  latency=    1621 ms
+[2026-10-15 11:00:25]   turn 14  prompt=  781  completion=  23  window=12  latency=    1840 ms
+[2026-10-15 11:00:28]   turn 15  prompt=  748  completion=  50  window=12  latency=    3264 ms
+[2026-10-15 11:00:29]   turn 16  prompt=  769  completion=  36  window=12  latency=    1156 ms
+[2026-10-15 11:00:32]   turn 17  prompt=  770  completion=  52  window=12  latency=    2655 ms
+[2026-10-15 11:00:33]   turn 18  prompt=  735  completion=  50  window=12  latency=    1347 ms
+[2026-10-15 11:00:35]   turn 19  prompt=  736  completion=  52  window=12  latency=    1384 ms
+[2026-10-15 11:00:42]   turn 20  prompt=  747  completion=  31  window=12  latency=    7421 ms
+[2026-10-15 11:00:43]   turn 21  prompt=  819  completion=   6  window=12  latency=     796 ms
+[2026-10-15 11:00:43]   turn 22  prompt=  779  completion=   6  window=12  latency=     509 ms
+[2026-10-15 11:00:44]   turn 23  prompt=  744  completion=  26  window=12  latency=     811 ms
+[2026-10-15 11:00:46]   turn 24  prompt=  714  completion=  33  window=12  latency=    1574 ms
+[2026-10-15 11:00:50]   turn 25  prompt=  698  completion=   6  window=12  latency=    4069 ms
+[2026-10-15 11:00:52]   turn 26  prompt=  684  completion=  26  window=12  latency=    1848 ms
+[2026-10-15 11:00:52]   turn 27  prompt=  679  completion=   6  window=12  latency=     406 ms
+[2026-10-15 11:00:53]   turn 28  prompt=  671  completion=  41  window=12  latency=    1073 ms
+[2026-10-15 11:00:54]   turn 29  prompt=  703  completion=  33  window=12  latency=     927 ms
+[2026-10-15 11:01:04]   turn 30  prompt=  721  completion=  29  window=12  latency=    9471 ms
+[2026-10-15 11:01:04]   P1 score=5 (1/1)  reply: 'The trial registration number is NCT05512874.'
+[2026-10-15 11:01:05]   P2 score=5 (2/2)  reply: 'Our enrollment target is 240 participants across all sites, and we currently have 61 participants enrolled.'
+[2026-10-15 11:01:06]   P3 score=5 (2/2)  reply: 'Our main site is in Sacramento, and Dr. Helen Okafor is the site principal investigator.'
+[2026-10-15 11:01:06]   P4 score=5 (2/2)  reply: 'You flagged warfarin as a safety concern, and participants taking warfarin need extra INR checks.'
+[2026-10-15 11:01:13]   P5 score=5 (2/2)  reply: 'Our IRB continuing review is due on March 14, and the renewal packet must be ready by March 1.'
+[2026-10-15 11:01:13] --- SHORT_TERM_N=30  user_id=cost_n30_10151058  policy=none
+[2026-10-15 11:01:14]   turn 01  prompt=  100  completion=  26  window= 0  latency=     599 ms
+[2026-10-15 11:01:16]   turn 02  prompt=  166  completion=  44  window= 2  latency=    2113 ms
+[2026-10-15 11:01:17]   turn 03  prompt=  279  completion=  50  window= 4  latency=    1116 ms
+[2026-10-15 11:01:18]   turn 04  prompt=  347  completion=  39  window= 6  latency=     792 ms
+[2026-10-15 11:01:21]   turn 05  prompt=  406  completion=  57  window= 8  latency=    2994 ms
+[2026-10-15 11:01:22]   turn 06  prompt=  586  completion=  13  window=10  latency=     710 ms
+[2026-10-15 11:01:23]   turn 07  prompt=  618  completion=  35  window=12  latency=     954 ms
+[2026-10-15 11:01:25]   turn 08  prompt=  682  completion=  33  window=14  latency=    1986 ms
+[2026-10-15 11:01:25]   turn 09  prompt=  745  completion=  13  window=16  latency=     724 ms
+[2026-10-15 11:01:32]   turn 10  prompt=  776  completion=  53  window=18  latency=    6257 ms
+[2026-10-15 11:01:33]   turn 11  prompt=  995  completion=  13  window=20  latency=    1039 ms
+[2026-10-15 11:01:34]   turn 12  prompt= 1032  completion=  36  window=22  latency=    1276 ms
+[2026-10-15 11:01:35]   turn 13  prompt= 1086  completion=  13  window=24  latency=     861 ms
+[2026-10-15 11:01:37]   turn 14  prompt= 1127  completion=  11  window=26  latency=    1899 ms
+[2026-10-15 11:01:41]   turn 15  prompt= 1143  completion=  13  window=28  latency=    4844 ms
+[2026-10-15 11:01:43]   turn 16  prompt= 1249  completion=  39  window=30  latency=    1559 ms
+[2026-10-15 11:01:46]   turn 17  prompt= 1254  completion=  56  window=30  latency=    3069 ms
+[2026-10-15 11:01:47]   turn 18  prompt= 1243  completion=  19  window=30  latency=    1077 ms
+[2026-10-15 11:01:49]   turn 19  prompt= 1210  completion=  55  window=30  latency=    1749 ms
+[2026-10-15 11:01:56]   turn 20  prompt= 1248  completion=  19  window=30  latency=    7517 ms
+[2026-10-15 11:01:58]   turn 21  prompt= 1169  completion=  36  window=30  latency=    1674 ms
+[2026-10-15 11:01:59]   turn 22  prompt= 1188  completion=  18  window=30  latency=    1052 ms
+[2026-10-15 11:02:01]   turn 23  prompt= 1164  completion=  45  window=30  latency=    1569 ms
+[2026-10-15 11:02:03]   turn 24  prompt= 1162  completion=  38  window=30  latency=    2071 ms
+[2026-10-15 11:02:08]   turn 25  prompt= 1190  completion=  15  window=30  latency=    4844 ms
+[2026-10-15 11:02:10]   turn 26  prompt= 1216  completion=  23  window=30  latency=    2204 ms
+[2026-10-15 11:02:11]   turn 27  prompt= 1236  completion=  14  window=30  latency=     985 ms
+[2026-10-15 11:02:12]   turn 28  prompt= 1203  completion=  17  window=30  latency=    1067 ms
+[2026-10-15 11:02:13]   turn 29  prompt= 1207  completion=  17  window=30  latency=    1063 ms
+[2026-10-15 11:02:21]   turn 30  prompt= 1212  completion=  66  window=30  latency=    8342 ms
+[2026-10-15 11:02:23]   P1 score=5 (1/1)  reply: 'The registration number of the trial is NCT05512874.'
+[2026-10-15 11:02:24]   P2 score=5 (2/2)  reply: 'Our enrollment target is 240 participants across all sites, and currently, 61 participants are enrolled.'
+[2026-10-15 11:02:25]   P3 score=5 (2/2)  reply: 'Our main site is located in Sacramento, and the site principal investigator is Dr. Helen Okafor.'
+[2026-10-15 11:02:26]   P4 score=5 (2/2)  reply: 'You flagged warfarin as a safety concern, and the extra check needed is an INR (International Normalized Ratio'
+[2026-10-15 11:02:30]   P5 score=5 (2/2)  reply: 'Our IRB continuing review is due on March 14, and the renewal packet must be ready by March 1.'
+[2026-10-15 11:02:30] --- Compression policy (N=12 + compress)  user_id=cost_compress_10151058  policy=compress
+[2026-10-15 11:02:31]   turn 01  prompt=  100  completion=  26  window= 0  latency=     589 ms
+[2026-10-15 11:02:33]   turn 02  prompt=  166  completion=  44  window= 2  latency=    2136 ms
+[2026-10-15 11:02:34]   turn 03  prompt=  279  completion=  50  window= 4  latency=    1105 ms
+[2026-10-15 11:02:35]   turn 04  prompt=  332  completion=  29  window= 6  latency=     757 ms
+[2026-10-15 11:02:37]   turn 05  prompt=  361  completion=  48  window= 8  latency=    2696 ms
+[2026-10-15 11:02:38]   turn 06  prompt=  493  completion=  13  window=10  latency=     647 ms
+[2026-10-15 11:02:39]   turn 07  prompt=  520  completion=  20  window=12  latency=     733 ms
+[2026-10-15 11:02:40]   turn 08  prompt=  505  completion=  13  window=12  latency=    1552 ms
+[2026-10-15 11:02:41]   turn 09  prompt=  484  completion=  13  window=12  latency=     542 ms
+[2026-10-15 11:02:46]   turn 10  prompt=  460  completion=  23  window=12  latency=    5023 ms
+[2026-10-15 11:02:47]   turn 11  prompt=  595  completion=  42  window=12  latency=    1289 ms
+[2026-10-15 11:02:49]   turn 12  prompt=  617  completion=  58  window=12  latency=    1408 ms
+[2026-10-15 11:02:50]   turn 13  prompt=  657  completion=  49  window=12  latency=    1234 ms
+[2026-10-15 11:02:52]   turn 14  prompt=  676  completion=  23  window=12  latency=    1738 ms
+[2026-10-15 11:02:56]   turn 15  prompt=  633  completion=  24  window=12  latency=    4624 ms
+[2026-10-15 11:02:57]   turn 16  prompt=  704  completion=  32  window=12  latency=    1070 ms
+[2026-10-15 11:02:59]   turn 17  prompt=  711  completion=   6  window=12  latency=    1710 ms
+[2026-10-15 11:03:00]   turn 18  prompt=  686  completion=  28  window=12  latency=     826 ms
+[2026-10-15 11:03:01]   turn 19  prompt=  684  completion=  36  window=12  latency=     977 ms
+[2026-10-15 11:03:11]   turn 20  prompt=  715  completion=  31  window=12  latency=   10528 ms
+[2026-10-15 11:03:12]   turn 21  prompt=  853  completion=   6  window=12  latency=     715 ms
+[2026-10-15 11:03:12]   turn 22  prompt=  830  completion=   6  window=12  latency=     412 ms
+[2026-10-15 11:03:13]   turn 23  prompt=  799  completion=   6  window=12  latency=     405 ms
+[2026-10-15 11:03:14]   turn 24  prompt=  795  completion=  29  window=12  latency=    1486 ms
+[2026-10-15 11:03:20]   turn 25  prompt=  802  completion=   6  window=12  latency=    5800 ms
+[2026-10-15 11:03:22]   turn 26  prompt=  796  completion=  26  window=12  latency=    1841 ms
+[2026-10-15 11:03:22]   turn 27  prompt=  789  completion=   6  window=12  latency=     403 ms
+[2026-10-15 11:03:24]   turn 28  prompt=  781  completion=  51  window=12  latency=    1264 ms
+[2026-10-15 11:03:25]   turn 29  prompt=  823  completion=  36  window=12  latency=     987 ms
+[2026-10-15 11:03:36]   turn 30  prompt=  864  completion=  24  window=12  latency=   11710 ms
+[2026-10-15 11:03:37]   P1 score=5 (1/1)  reply: 'The registration number of the trial is NCT05512874.'
+[2026-10-15 11:03:38]   P2 score=5 (2/2)  reply: 'Our enrollment target is 240 participants across all sites, and 61 participants are currently enrolled.'
+[2026-10-15 11:03:39]   P3 score=5 (2/2)  reply: 'Our main site is in Sacramento, and the site principal investigator is Dr. Helen Okafor.'
+[2026-10-15 11:03:40]   P4 score=5 (2/2)  reply: 'You flagged warfarin as a safety concern, and participants taking this medication need extra INR checks.'
+[2026-10-15 11:03:46]   P5 score=5 (2/2)  reply: 'Our IRB continuing review is due on March 14, and the renewal packet must be ready by March 1.'
+[2026-10-15 11:03:46] ------------------------------------------------------------------------------
+[2026-10-15 11:03:46] Setting                                  Prompt tok/turn  Latency ms Probe (1-5)
+[2026-10-15 11:03:46] SHORT_TERM_N=4                                     484.4      2256.1        5.00
+[2026-10-15 11:03:46] SHORT_TERM_N=12                                    628.7      2106.6        5.00
+[2026-10-15 11:03:46] SHORT_TERM_N=30                                    941.3      2266.9        5.00
+[2026-10-15 11:03:46] Compression policy (N=12 + compress)               617.0      2207.0        5.00
+[2026-10-15 11:03:46] ------------------------------------------------------------------------------
+[2026-10-15 11:03:46] Cost of 10,000 x 30-turn conversations ($1/M input, $5/M output)
+[2026-10-15 11:03:46] SHORT_TERM_N=4                           reply-only $   199.68   all calls $   361.33
+[2026-10-15 11:03:46] SHORT_TERM_N=12                          reply-only $   241.41   all calls $   376.81
+[2026-10-15 11:03:46] SHORT_TERM_N=30                          reply-only $   328.69   all calls $   468.31
+[2026-10-15 11:03:46] Compression policy (N=12 + compress)     reply-only $   225.30   all calls $   390.37
+[2026-10-15 11:03:46] total wall time 302 s
+[2026-10-15 11:16:01] ==============================================================================
+[2026-10-15 11:16:01] RUN: python3 code/run_hw06_part1.py   (HW6 Part 1, db s3209_doc.trials)   run by: Ani Taraiya
+[2026-10-15 11:16:20] ==============================================================================
+[2026-10-15 11:16:20] RUN: python3 code/run_hw06_part1.py   (HW6 Part 1, db s3209_doc.trials)   run by: Ani Taraiya
+[2026-10-15 11:16:20] GET /api/doc/trials                -> 200
+[2026-10-15 11:16:20] GET /api/doc/trials/{id}           -> 200
+[2026-10-15 11:16:20] PUT /api/doc/trials/{id}           -> 200
+[2026-10-15 11:16:20] POST temporary trial               -> id 6ad11874bc56c8b7c71e8d6f (default status=recruiting)
+[2026-10-15 11:16:20] DELETE /api/doc/trials/{id}        -> 204
+[2026-10-15 11:16:20] GET deleted id                     -> 404
+[2026-10-15 11:16:20] GET /api/doc/trials/not-an-id      -> 400
+[2026-10-15 11:16:20] --- validation tests
+[2026-10-15 11:16:20] POST missing required title        -> 422
+[2026-10-15 11:16:20] POST invalid enum (status)         -> 422
+[2026-10-15 11:16:20] POST wrong type (start_date)       -> 422
+[2026-10-15 11:16:20] POST title over 100 chars          -> 422
+[2026-10-15 11:29:09] ==============================================================================
+[2026-10-15 11:29:09] RUN: python3 code/run_hw06_part2.py   (HW6 Part 2, user=ani_demo)   run by: Ani Taraiya
+[2026-10-15 11:29:09] reset demo user ani_demo: removed 36 old docs
+[2026-10-15 11:29:11] [01] user: Hi, I'm Ani, a clinical trial coordinator. I need help tracking my study.
+[2026-10-15 11:29:11]      assistant: Nice to meet you, Ani. I'm TrialMate, your assistant. I'll help you track your study and stay organized. What's the name of your study?
+[2026-10-15 11:29:11]      used: short-term=0 msgs | session summary=no | facts=[]
+[2026-10-15 11:29:11]      tokens prompt=99 completion=36 latency=2202 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 11:29:13] [02] user: My study is NCT05512874, a Phase II trial of an oral GLP-1 drug for type 2 diabetes.
+[2026-10-15 11:29:13]      assistant: I've noted the study ID and details. I'll keep track of NCT05512874. What's the next task or question you have regarding the trial?
+[2026-10-15 11:29:13]      used: short-term=2 msgs | session summary=no | facts=[]
+[2026-10-15 11:29:13]      tokens prompt=171 completion=34 latency=2417 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 11:29:15] [03] user: We want 240 participants in total and 61 are enrolled so far.
+[2026-10-15 11:29:15]      assistant: I've noted the enrollment status. You have 61 participants enrolled out of a target of 240. What's the next update or task you'd like to discuss?
+[2026-10-15 11:29:15]      used: short-term=4 msgs | session summary=no | facts=['Trial is Phase II', 'Study ID is NCT05512874', 'Drug is oral GLP-1']
+[2026-10-15 11:29:15]      tokens prompt=262 completion=35 latency=1777 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 11:29:16] [04] user: What should I check before a screening visit?
+[2026-10-15 11:29:16]      assistant: For a screening visit in a Phase II trial of an oral GLP-1 drug, I recommend verifying the participant's eligibility, reviewing their medical history, and confi
+[2026-10-15 11:29:16]      used: short-term=6 msgs | session summary=no | facts=['Trial is Phase II', 'Drug is oral GLP-1', 'Study ID is NCT05512874']
+[2026-10-15 11:29:16]      tokens prompt=315 completion=38 latency=924 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 11:29:20] [05] user: Our main site is in Sacramento and the PI is Dr. Helen Okafor.
+[2026-10-15 11:29:20]      assistant: I've noted the main site location and the Principal Investigator's (PI) name. I'll keep this information in mind for future reference.
+[2026-10-15 11:29:20]      used: short-term=8 msgs | session summary=no | facts=['Trial is Phase II', '61 participants are currently enrolled', 'Drug is oral GLP-1']
+[2026-10-15 11:29:20]      tokens prompt=377 completion=30 latency=3591 ms new_summary={'session_summary': True, 'lifetime_summary': False}
+[2026-10-15 11:29:21] [06] user: How do I report a serious adverse event?
+[2026-10-15 11:29:21]      assistant: For a serious adverse event (SAE) in a clinical trial, you should immediately notify the Institutional Review Board (IRB), the sponsor, and the Principal Invest
+[2026-10-15 11:29:21]      used: short-term=10 msgs | session summary=yes | facts=['PI is Dr. Helen Okafor', 'Trial is Phase II', '240 participants are desired in total']
+[2026-10-15 11:29:21]      tokens prompt=510 completion=62 latency=1562 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 11:29:23] [07] user: Participants on warfarin need extra INR checks during the study.
+[2026-10-15 11:29:23]      assistant: I've noted that participants on warfarin require extra INR checks during the study. This is an important safety consideration for the trial.
+[2026-10-15 11:29:23]      used: short-term=12 msgs | session summary=yes | facts=['61 participants are currently enrolled', 'PI is Dr. Helen Okafor', '240 participants are desired in total']
+[2026-10-15 11:29:23]      tokens prompt=597 completion=29 latency=1618 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 11:29:24] [08] user: Give me a short reminder text for a week-4 visit.
+[2026-10-15 11:29:24]      assistant: "Reminder: Week-4 visit for NCT05512874. Please confirm participant's INR check for warfarin users and review any new adverse events."
+[2026-10-15 11:29:24]      used: short-term=12 msgs | session summary=yes | facts=['Participants on warfarin need extra INR checks during the study', 'Trial is Phase II', 'PI is Dr. Helen Okafor']
+[2026-10-15 11:29:24]      tokens prompt=588 completion=34 latency=1242 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 11:29:25] [09] user: The IRB continuing review is due on March 14.
+[2026-10-15 11:29:25]      assistant: I've noted the IRB continuing review deadline for NCT05512874 as March 14.
+[2026-10-15 11:29:25]      used: short-term=12 msgs | session summary=yes | facts=['Participants on warfarin need extra INR checks during the study', 'Trial is Phase II', 'PI is Dr. Helen Okafor']
+[2026-10-15 11:29:25]      tokens prompt=573 completion=21 latency=1292 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 11:29:31] [10] user: What documents does a sponsor monitor usually ask for?
+[2026-10-15 11:29:31]      assistant: A sponsor monitor typically requests documentation of participant consent, study procedures, and adverse event reports, as well as source data verification and 
+[2026-10-15 11:29:31]      used: short-term=12 msgs | session summary=yes | facts=['Participants on warfarin need extra INR checks during the study', 'PI is Dr. Helen Okafor', 'Trial is Phase II']
+[2026-10-15 11:29:31]      tokens prompt=554 completion=30 latency=5323 ms new_summary={'session_summary': True, 'lifetime_summary': True}
+[2026-10-15 11:29:32] [11] user: Which site and PI did I mention earlier?
+[2026-10-15 11:29:32]      assistant: You mentioned the main site is in Sacramento and the Principal Investigator (PI) is Dr. Helen Okafor.
+[2026-10-15 11:29:32]      used: short-term=12 msgs | session summary=yes | facts=['PI is Dr. Helen Okafor', 'Main site is in Sacramento', 'Trial is Phase II']
+[2026-10-15 11:29:32]      tokens prompt=677 completion=25 latency=1048 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 11:29:34] [12] user: Summarize what you know about my trial in three bullets.
+[2026-10-15 11:29:34]      assistant: Here's a summary of what I know about your trial:
+[2026-10-15 11:29:34]
+[2026-10-15 11:29:34]      • Study ID: NCT05512874
+[2026-10-15 11:29:34]      • Study type: Phase II trial of an oral GLP-1 drug for type 2 diabetes
+[2026-10-15 11:29:34]      • Main site lo
+[2026-10-15 11:29:34]      used: short-term=12 msgs | session summary=yes | facts=['Trial is Phase II', 'IRB continuing review is due on March 14', 'Participants on warfarin need extra INR checks during the study']
+[2026-10-15 11:29:34]      tokens prompt=678 completion=62 latency=2278 ms new_summary={'session_summary': False, 'lifetime_summary': False}
+[2026-10-15 11:29:34] GET /api/memory/ani_demo: 16 messages, 9 facts, session summary=yes, lifetime summary=yes
+[2026-10-15 11:29:34] GET /api/aggregate/ani_demo: [{'messages': 24, 'user_messages': 12, 'date': '2026-10-15'}]
+[2026-10-15 11:50:21] ==============================================================================
+[2026-10-15 11:50:21] RUN: python3 code/run_hw06_memory_cost.py   (HW6 Part 3)   run by: Ani Taraiya
+[2026-10-15 11:50:21] backend http://localhost:8509  conversation=30 msgs  probes=5  stamp=10151150
+[2026-10-15 11:50:21] --- Compression policy (N=30 + compress)  user_id=cost_compress_10151150  policy=compress
+[2026-10-15 11:50:23]   turn 01  prompt=  100  completion=  26  window= 0  latency=    1413 ms
+[2026-10-15 11:50:25]   turn 02  prompt=  166  completion=  44  window= 2  latency=    2249 ms
+[2026-10-15 11:50:26]   turn 03  prompt=  279  completion=  50  window= 4  latency=    1129 ms
+[2026-10-15 11:50:27]   turn 04  prompt=  332  completion=  29  window= 6  latency=     747 ms
+[2026-10-15 11:50:30]   turn 05  prompt=  361  completion=  48  window= 8  latency=    2878 ms
+[2026-10-15 11:50:31]   turn 06  prompt=  493  completion=  13  window=10  latency=     641 ms
+[2026-10-15 11:50:31]   turn 07  prompt=  520  completion=  20  window=12  latency=     711 ms
+[2026-10-15 11:50:33]   turn 08  prompt=  545  completion=  13  window=14  latency=    1523 ms
+[2026-10-15 11:50:33]   turn 09  prompt=  588  completion=  13  window=16  latency=     667 ms
+[2026-10-15 11:50:39]   turn 10  prompt=  619  completion=  23  window=18  latency=    5274 ms
+[2026-10-15 11:50:40]   turn 11  prompt=  796  completion=  13  window=20  latency=     940 ms
+[2026-10-15 11:50:41]   turn 12  prompt=  833  completion=  21  window=22  latency=     870 ms
+[2026-10-15 11:50:42]   turn 13  prompt=  872  completion=  44  window=24  latency=    1348 ms
+[2026-10-15 11:50:44]   turn 14  prompt=  868  completion=  11  window=23  latency=    1750 ms
+[2026-10-15 11:50:47]   turn 15  prompt=  856  completion=  13  window=24  latency=    3453 ms
+[2026-10-15 11:50:48]   turn 16  prompt=  897  completion=  26  window=26  latency=     988 ms
+[2026-10-15 11:50:51]   turn 17  prompt=  889  completion=  34  window=26  latency=    2442 ms
+[2026-10-15 11:50:52]   turn 18  prompt=  882  completion=  26  window=25  latency=    1001 ms
+[2026-10-15 11:50:53]   turn 19  prompt=  903  completion=  38  window=26  latency=    1250 ms
+[2026-10-15 11:51:02]   turn 20  prompt=  889  completion=  19  window=24  latency=    9380 ms
+[2026-10-15 11:51:04]   turn 21  prompt= 1014  completion=  36  window=24  latency=    1479 ms
+[2026-10-15 11:51:04]   turn 22  prompt= 1007  completion=  13  window=23  latency=     737 ms
+[2026-10-15 11:51:05]   turn 23  prompt= 1005  completion=  13  window=24  latency=     748 ms
+[2026-10-15 11:51:07]   turn 24  prompt= 1021  completion=  30  window=26  latency=    1732 ms
+[2026-10-15 11:51:09]   turn 25  prompt= 1021  completion=  13  window=25  latency=    2320 ms
+[2026-10-15 11:51:11]   turn 26  prompt=  887  completion=  13  window=26  latency=    1769 ms
+[2026-10-15 11:51:12]   turn 27  prompt=  880  completion=  13  window=26  latency=     729 ms
+[2026-10-15 11:51:12]   turn 28  prompt=  880  completion=  13  window=27  latency=     726 ms
+[2026-10-15 11:51:13]   turn 29  prompt=  896  completion=  13  window=28  latency=     731 ms
+[2026-10-15 11:51:21]   turn 30  prompt=  908  completion=  51  window=28  latency=    8028 ms
+[2026-10-15 11:51:22]   P1 score=5 (1/1)  reply: 'The registration number of the trial is NCT05512874.'
+[2026-10-15 11:51:23]   P2 score=5 (2/2)  reply: 'Our enrollment target is 240 participants across all sites, and 61 participants are currently enrolled.'
+[2026-10-15 11:51:24]   P3 score=5 (2/2)  reply: 'Our main site is located in Sacramento, and the site principal investigator is Dr. Helen Okafor.'
+[2026-10-15 11:51:25]   P4 score=5 (2/2)  reply: 'You flagged warfarin as a safety concern, and participants taking this medication need extra INR checks due to'
+[2026-10-15 11:51:29]   P5 score=5 (2/2)  reply: 'Our IRB continuing review is due on March 14, and the renewal packet must be ready by March 1.'
+[2026-10-15 11:51:29] ------------------------------------------------------------------------------
+[2026-10-15 11:51:29] Setting                                  Prompt tok/turn  Latency ms Probe (1-5)
+[2026-10-15 11:51:29] SHORT_TERM_N=4                                     484.4      2256.1        5.00
+[2026-10-15 11:51:29] SHORT_TERM_N=12                                    628.7      2106.6        5.00
+[2026-10-15 11:51:29] SHORT_TERM_N=30                                    941.3      2266.9        5.00
+[2026-10-15 11:51:29] Compression policy (N=30 + compress)               740.2      1988.5        5.00
+[2026-10-15 11:51:29] ------------------------------------------------------------------------------
+[2026-10-15 11:51:29] Cost of 10,000 x 30-turn conversations ($1/M input, $5/M output)
+[2026-10-15 11:51:29] SHORT_TERM_N=4                           reply-only $   199.68   all calls $   361.33
+[2026-10-15 11:51:29] SHORT_TERM_N=12                          reply-only $   241.41   all calls $   376.81
+[2026-10-15 11:51:29] SHORT_TERM_N=30                          reply-only $   328.69   all calls $   468.31
+[2026-10-15 11:51:29] Compression policy (N=30 + compress)     reply-only $   258.67   all calls $   386.93
+[2026-10-15 11:51:29] total wall time 68 s
+[2026-10-15 13:07:56] ======================================================================
+[2026-10-15 13:07:56] RUN: make hw06-consolidate (HW6 Part 4 consolidation test)   run by: Ani Taraiya
+[2026-10-15 13:07:56] File-memory chat | run by Ani Taraiya | model llama3.1:8b
+[2026-10-15 13:07:56] AGENT.md: 27 lines | MEMORY.md: 52 lines | consolidation due: True ['52 content lines > 40', 'last consolidated 14 days, 4:07:56.287083 ago (> 24h)']
+[2026-10-15 13:07:56] you> /memory
+[2026-10-15 13:07:56] # MEMORY.md - durable facts (s3209)
+[2026-10-15 13:07:56] <!-- last_consolidated: 2026-10-01T09:00:00 -->
+[2026-10-15 13:07:56] <!-- format: - [YYYY-MM-DD] key: value {src=protocol|team|chat} -->
+[2026-10-15 13:07:56] 
+[2026-10-15 13:07:56] ## Facts (unconsolidated test file: 55 lines)
+[2026-10-15 13:07:56] - [2026-09-01] project.name: data260-3209 clinical trial listing system {src=team}
+[2026-10-15 13:07:56] - [2026-09-01] project.port: FastAPI backend runs on PORT_BASE 8509 {src=protocol}
+[2026-10-15 13:07:56] - [2026-09-01] project.prefix: s3209 {src=team}
+[2026-10-15 13:07:56] - [2026-09-01] model.local: qwen3:8b via Ollama {src=chat}
+[2026-10-15 13:07:56] - [2026-09-02] db.relational: MySQL database s3209_rel {src=team}
+[2026-10-15 13:07:56] - [2026-09-02] db.document: MongoDB database s3209_doc {src=team}
+[2026-10-15 13:07:56] - [2026-09-03] user.role: trial coordinator at a university hospital {src=chat}
+[2026-10-15 13:07:56] - [2026-09-03] trial.nct_id: NCT05512874 {src=protocol}
+[2026-10-15 13:07:56] - [2026-09-04] trial.drug: oral GLP-1 agonist {src=protocol}
+[2026-10-15 13:07:56] - [2026-09-04] trial.condition: type 2 diabetes in adults {src=protocol}
+[2026-10-15 13:07:56] - [2026-09-05] site.pi: Dr. Helen Okafor {src=chat}
+[2026-10-15 13:07:56] - [2026-09-05] site.city: Sacramento {src=chat}
+[2026-10-15 13:07:56] - [2026-09-06] trial.target: 240 participants across all sites {src=protocol}
+[2026-10-15 13:07:56] - [2026-09-07] user.preference: short answers with bullet points {src=chat}
+[2026-10-15 13:07:56] - [2026-09-08] project.prefix: s3209 {src=team}
+[2026-10-15 13:07:56] - [2026-09-09] safety.warfarin: extra INR checks for participants on warfarin {src=protocol}
+[2026-10-15 13:07:56] - [2026-09-10] irb.review_due: 2027-03-14 {src=team}
+[2026-10-15 13:07:56] - [2026-09-10] irb.packet_ready: 2027-03-01 {src=team}
+[2026-10-15 13:07:56] - [2026-09-11] trial.phase: Phase II {src=protocol}
+[2026-10-15 13:07:56] - [2026-09-12] site.pi: Dr. Helen Okafor {src=chat}
+[2026-10-15 13:07:56] - [2026-09-12] trial.randomization: 1:1 drug versus placebo {src=protocol}
+[2026-10-15 13:07:56] - [2026-09-13] trial.blinding: double-blind {src=protocol}
+[2026-10-15 13:07:56] - [2026-09-14] ae.review: adverse events reviewed weekly {src=team}
+[2026-10-15 13:07:56] - [2026-09-15] trial.enrolled: 52 participants {src=chat}
+[2026-10-15 13:07:56] - [2026-09-15] db.document: MongoDB database s3209_doc {src=team}
+[2026-10-15 13:07:56] - [2026-09-16] trial.nct_id: NCT05512874. {src=protocol}
+[2026-10-15 13:07:56] - [2026-09-17] site.city: sacramento {src=chat}
+[2026-10-15 13:07:56] - [2026-09-18] safety.warfarin: Extra INR checks for participants on warfarin {src=protocol}
+[2026-10-15 13:07:56] - [2026-09-19] trial.target: 240 participants across all sites {src=protocol}
+[2026-10-15 13:07:56] - [2026-09-20] model.local: llama3.1:8b via Ollama {src=team}
+[2026-10-15 13:07:56] - [2026-09-21] embed.model: nomic-embed-text {src=team}
+[2026-10-15 13:07:56] - [2026-09-22] memory.short_term_n: 12 messages {src=team}
+[2026-10-15 13:07:56] - [2026-09-22] trial.phase: phase II {src=protocol}
+[2026-10-15 13:07:56] - [2026-09-23] irb.packet_ready: 2027-03-01 {src=team}
+[2026-10-15 13:07:56] - [2026-09-24] embed.model: nomic-embed-text {src=team}
+[2026-10-15 13:07:56] - [2026-09-25] analysis.primary: intention-to-treat {src=protocol}
+[2026-10-15 13:07:56] - [2026-09-26] project.port: FastAPI backend runs on PORT_BASE 8509 {src=protocol}
+[2026-10-15 13:07:56] - [2026-09-27] trial.drug: oral GLP-1 agonist {src=protocol}
+[2026-10-15 13:07:56] - [2026-09-28] memory.short_term_n: 12 messages {src=team}
+[2026-10-15 13:07:56] - [2026-09-29] user.preference: short answers with bullet points {src=chat}
+[2026-10-15 13:07:56] - [2026-09-30] site.pi: Dr. Helen Okafor {src=chat}
+[2026-10-15 13:07:56] - [2026-10-01] user.role: Trial coordinator at a university hospital {src=chat}
+[2026-10-15 13:07:56] - [2026-10-02] project.port: backend runs on port 8000 {src=chat}
+[2026-10-15 13:07:56] - [2026-10-04] project.repo: github.com/Ani2508/data260-3209 {src=team}
+[2026-10-15 13:07:56] - [2026-10-05] ae.review: adverse events reviewed weekly {src=team}
+[2026-10-15 13:07:56] - [2026-10-06] analysis.primary: intention-to-treat {src=protocol}
+[2026-10-15 13:07:56] - [2026-10-08] trial.enrolled: 61 participants {src=chat}
+[2026-10-15 13:07:56] - [2026-10-09] project.repo: github.com/Ani2508/data260-3209 {src=team}
+[2026-10-15 13:07:56] - [2026-10-10] site.pi: Dr. Helen Okafur {src=chat}
+[2026-10-15 13:07:56] - [2026-10-11] irb.review_due: 2027-03-04 {src=chat}
+[2026-10-15 13:07:56] ------------------------------------------------------------
+[2026-10-15 13:07:56] file: MEMORY_consolidated.md
+[2026-10-15 13:07:56] content lines: 52  facts: 50
+[2026-10-15 13:07:56] last consolidated: 2026-10-01 09:00:00
+[2026-10-15 13:07:56] consolidation due: True  52 content lines > 40; last consolidated 14 days, 4:07:56.287221 ago (> 24h)
+[2026-10-15 13:07:56] you> Who is the site PI for our trial?
+[2026-10-15 13:07:58] assistant> The site PI for our trial is Dr. Helen Okafor.
+[2026-10-15 13:07:58]    [tokens in=1712 out=15]
+[2026-10-15 13:07:58] you> What port does the backend run on?
+[2026-10-15 13:07:58] assistant> The FastAPI backend runs on PORT_BASE 8509.
+[2026-10-15 13:07:58]    [tokens in=1744 out=13]
+[2026-10-15 13:07:58] you> /compact
+[2026-10-15 13:08:00] /compact report
+[2026-10-15 13:08:00]   MEMORY.md content lines : 52 -> 34
+[2026-10-15 13:08:00]   MEMORY.md facts         : 50 -> 26
+[2026-10-15 13:08:00]   duplicates merged       : 19
+[2026-10-15 13:08:00]   contradictions resolved : 5
+[2026-10-15 13:08:00]     project.port: kept 'FastAPI backend runs on PORT_BASE 8509' over 'backend runs on port 8000' (higher source)
+[2026-10-15 13:08:00]     model.local: kept 'llama3.1:8b via Ollama' over 'qwen3:8b via Ollama' (higher source)
+[2026-10-15 13:08:00]     site.pi: kept 'Dr. Helen Okafur' over 'Dr. Helen Okafor' (newer date)
+[2026-10-15 13:08:00]     irb.review_due: kept '2027-03-14' over '2027-03-04' (higher source)
+[2026-10-15 13:08:00]     trial.enrolled: kept '61 participants' over '52 participants' (newer date)
+[2026-10-15 13:08:00]   SUSPECT  site.pi: kept 'Dr. Helen Okafur' (x1) but dropped 'Dr. Helen Okafor' had x3 confirmations - review manually
+[2026-10-15 13:08:00]   chat messages           : 4 -> 1
+[2026-10-15 13:08:00] you> /memory
+[2026-10-15 13:08:00] # MEMORY.md - durable facts (s3209)
+[2026-10-15 13:08:00] <!-- last_consolidated: 2026-10-15T13:07:58 -->
+[2026-10-15 13:08:00] <!-- format: - [YYYY-MM-DD] key: value {src=protocol|team|chat} -->
+[2026-10-15 13:08:00] 
+[2026-10-15 13:08:00] ## Facts
+[2026-10-15 13:08:00] - [2026-09-01] project.name: data260-3209 clinical trial listing system {src=team}
+[2026-10-15 13:08:00] - [2026-09-26] project.port: FastAPI backend runs on PORT_BASE 8509 {src=protocol} <!-- merged x2 -->
+[2026-10-15 13:08:00] - [2026-09-08] project.prefix: s3209 {src=team} <!-- merged x2 -->
+[2026-10-15 13:08:00] - [2026-09-20] model.local: llama3.1:8b via Ollama {src=team}
+[2026-10-15 13:08:00] - [2026-09-02] db.relational: MySQL database s3209_rel {src=team}
+[2026-10-15 13:08:00] - [2026-09-15] db.document: MongoDB database s3209_doc {src=team} <!-- merged x2 -->
+[2026-10-15 13:08:00] - [2026-10-01] user.role: trial coordinator at a university hospital {src=chat} <!-- merged x2 -->
+[2026-10-15 13:08:00] - [2026-09-16] trial.nct_id: NCT05512874 {src=protocol} <!-- merged x2 -->
+[2026-10-15 13:08:00] - [2026-09-27] trial.drug: oral GLP-1 agonist {src=protocol} <!-- merged x2 -->
+[2026-10-15 13:08:00] - [2026-09-04] trial.condition: type 2 diabetes in adults {src=protocol}
+[2026-10-15 13:08:00] - [2026-10-10] site.pi: Dr. Helen Okafur {src=chat}
+[2026-10-15 13:08:00] - [2026-09-17] site.city: Sacramento {src=chat} <!-- merged x2 -->
+[2026-10-15 13:08:00] - [2026-09-19] trial.target: 240 participants across all sites {src=protocol} <!-- merged x2 -->
+[2026-10-15 13:08:00] - [2026-09-29] user.preference: short answers with bullet points {src=chat} <!-- merged x2 -->
+[2026-10-15 13:08:00] - [2026-09-18] safety.warfarin: extra INR checks for participants on warfarin {src=protocol} <!-- merged x2 -->
+[2026-10-15 13:08:00] - [2026-09-10] irb.review_due: 2027-03-14 {src=team}
+[2026-10-15 13:08:00] - [2026-09-23] irb.packet_ready: 2027-03-01 {src=team} <!-- merged x2 -->
+[2026-10-15 13:08:00] - [2026-09-22] trial.phase: Phase II {src=protocol} <!-- merged x2 -->
+[2026-10-15 13:08:00] - [2026-09-12] trial.randomization: 1:1 drug versus placebo {src=protocol}
+[2026-10-15 13:08:00] - [2026-09-13] trial.blinding: double-blind {src=protocol}
+[2026-10-15 13:08:00] - [2026-10-05] ae.review: adverse events reviewed weekly {src=team} <!-- merged x2 -->
+[2026-10-15 13:08:00] - [2026-10-08] trial.enrolled: 61 participants {src=chat}
+[2026-10-15 13:08:00] - [2026-09-24] embed.model: nomic-embed-text {src=team} <!-- merged x2 -->
+[2026-10-15 13:08:00] - [2026-09-28] memory.short_term_n: 12 messages {src=team} <!-- merged x2 -->
+[2026-10-15 13:08:00] - [2026-10-06] analysis.primary: intention-to-treat {src=protocol} <!-- merged x2 -->
+[2026-10-15 13:08:00] - [2026-10-09] project.repo: github.com/Ani2508/data260-3209 {src=team} <!-- merged x2 -->
+[2026-10-15 13:08:00] 
+[2026-10-15 13:08:00] ## Resolved contradictions
+[2026-10-15 13:08:00] - project.port: kept "FastAPI backend runs on PORT_BASE 8509" (protocol, 2026-09-26) over "backend runs on port 8000" (chat, 2026-10-02) - higher source
+[2026-10-15 13:08:00] - model.local: kept "llama3.1:8b via Ollama" (team, 2026-09-20) over "qwen3:8b via Ollama" (chat, 2026-09-01) - higher source
+[2026-10-15 13:08:00] - site.pi: kept "Dr. Helen Okafur" (chat, 2026-10-10) over "Dr. Helen Okafor" (chat, 2026-09-30) - newer date SUSPECT: dropped value had more confirmations
+[2026-10-15 13:08:00] - irb.review_due: kept "2027-03-14" (team, 2026-09-10) over "2027-03-04" (chat, 2026-10-11) - higher source
+[2026-10-15 13:08:00] - trial.enrolled: kept "61 participants" (chat, 2026-10-08) over "52 participants" (chat, 2026-09-15) - newer date
+[2026-10-15 13:08:00] ------------------------------------------------------------
+[2026-10-15 13:08:00] file: MEMORY_consolidated.md
+[2026-10-15 13:08:00] content lines: 34  facts: 26
+[2026-10-15 13:08:00] last consolidated: 2026-10-15 13:07:58
+[2026-10-15 13:08:00] consolidation due: False  
+[2026-10-15 13:08:00] ======================================================================
+[2026-10-15 13:08:00] RUN: make hw06-dream (HW6 Part 4 /help /dream /memory)   run by: Ani Taraiya
+[2026-10-15 13:08:00] File-memory chat | run by Ani Taraiya | model llama3.1:8b
+[2026-10-15 13:08:00] AGENT.md: 27 lines | MEMORY.md: 11 lines | consolidation due: False []
+[2026-10-15 13:08:00] you> /help
+[2026-10-15 13:08:00] Commands
+[2026-10-15 13:08:00]   /memory   show MEMORY.md (content lines, last consolidation, whether consolidation is due)
+[2026-10-15 13:08:00]   /compact  consolidate MEMORY.md (merge duplicates, resolve contradictions) and compact the
+[2026-10-15 13:08:00]             chat history into one summary message; prints before/after counts
+[2026-10-15 13:08:00]   /dream    extract durable facts from the recent conversation and append them to MEMORY.md
+[2026-10-15 13:08:00]   /help     show this help
+[2026-10-15 13:08:00]   /exit     quit
+[2026-10-15 13:08:00] Anything else is sent to the model with AGENT.md + MEMORY.md in the system prompt.
+[2026-10-15 13:08:00] you> Our trial NCT05512874 has 61 of 240 participants enrolled.
+[2026-10-15 13:08:02] assistant> Here's the information about the trial:
+[2026-10-15 13:08:02] 
+[2026-10-15 13:08:02] * Trial ID: NCT05512874
+[2026-10-15 13:08:02] * Number of enrolled participants: 61
+[2026-10-15 13:08:02] * Total number of participants: 240
+[2026-10-15 13:08:02] 
+[2026-10-15 13:08:02] I'll make sure to keep this information in mind as we work on the clinical trial listing system. What would you like to do next?
+[2026-10-15 13:08:02]    [tokens in=754 out=65]
+[2026-10-15 13:08:02] you> The IRB continuing review is due on 2027-03-14 and the main site is Sacramento.
+[2026-10-15 13:08:04] assistant> Here's the updated information:
+[2026-10-15 13:08:04] 
+[2026-10-15 13:08:04] * Trial ID: NCT05512874
+[2026-10-15 13:08:04] * Number of enrolled participants: 61
+[2026-10-15 13:08:04] * Total number of participants: 240
+[2026-10-15 13:08:04] * IRB continuing review due date: 2027-03-14
+[2026-10-15 13:08:04] * Main site: Sacramento
+[2026-10-15 13:08:04] 
+[2026-10-15 13:08:04] I'll make sure to note the IRB continuing review due date and the main site for this trial. Is there any other information you'd like to add or would you like me to perform a specific task related to this trial?
+[2026-10-15 13:08:04]    [tokens in=850 out=103]
+[2026-10-15 13:08:04] you> /dream
+[2026-10-15 13:08:06] /dream: 5 candidate facts, 5 new lines added to MEMORY.md
+[2026-10-15 13:08:06]   + - [2026-10-15] trial_id: NCT05512874 {src=chat}
+[2026-10-15 13:08:06]   + - [2026-10-15] enrolled_participants: 61 {src=chat}
+[2026-10-15 13:08:06]   + - [2026-10-15] total_participants: 240 {src=chat}
+[2026-10-15 13:08:06]   + - [2026-10-15] irb_due_date: 2027-03-14 {src=chat}
+[2026-10-15 13:08:06]   + - [2026-10-15] main_site: Sacramento {src=chat}
+[2026-10-15 13:08:06] you> /memory
+[2026-10-15 13:08:06] # MEMORY.md - durable facts (s3209)
+[2026-10-15 13:08:06] <!-- last_consolidated: 2026-10-15T09:00:00 -->
+[2026-10-15 13:08:06] <!-- format: - [YYYY-MM-DD] key: value {src=protocol|team|chat} -->
+[2026-10-15 13:08:06] 
+[2026-10-15 13:08:06] ## Facts
+[2026-10-15 13:08:06] - [2026-09-01] project.name: data260-3209 clinical trial listing system {src=team}
+[2026-10-15 13:08:06] - [2026-09-01] project.port: FastAPI backend runs on PORT_BASE 8509 {src=protocol}
+[2026-10-15 13:08:06] - [2026-09-01] project.prefix: s3209 {src=team}
+[2026-10-15 13:08:06] - [2026-09-02] db.relational: MySQL database s3209_rel {src=team}
+[2026-10-15 13:08:06] - [2026-09-02] db.document: MongoDB database s3209_doc {src=team}
+[2026-10-15 13:08:06] - [2026-09-20] model.local: llama3.1:8b via Ollama {src=team}
+[2026-10-15 13:08:06] - [2026-09-21] embed.model: nomic-embed-text {src=team}
+[2026-10-15 13:08:06] - [2026-09-22] memory.short_term_n: 12 messages {src=team}
+[2026-10-15 13:08:06] - [2026-10-09] project.repo: github.com/Ani2508/data260-3209 {src=team}
+[2026-10-15 13:08:06] - [2026-10-15] trial_id: NCT05512874 {src=chat}
+[2026-10-15 13:08:06] - [2026-10-15] enrolled_participants: 61 {src=chat}
+[2026-10-15 13:08:06] - [2026-10-15] total_participants: 240 {src=chat}
+[2026-10-15 13:08:06] - [2026-10-15] irb_due_date: 2027-03-14 {src=chat}
+[2026-10-15 13:08:06] - [2026-10-15] main_site: Sacramento {src=chat}
+[2026-10-15 13:08:06] ------------------------------------------------------------
+[2026-10-15 13:08:06] file: MEMORY.md
+[2026-10-15 13:08:06] content lines: 16  facts: 14
+[2026-10-15 13:08:06] last consolidated: 2026-10-15 09:00:00
+[2026-10-15 13:08:06] consolidation due: False  
+[2026-10-15 13:08:06] ======================================================================
+[2026-10-15 13:08:06] RUN: make hw06-agent-check (HW6 Part 4 AGENT.md verification)   run by: Ani Taraiya
+[2026-10-15 13:08:06] AGENT.md compliance check | run by Ani Taraiya | model llama3.1:8b
+[2026-10-15 13:08:16] ======================================================================
+[2026-10-15 13:08:16] Attempt 1: generated_function_attempt1.py
+[2026-10-15 13:08:16] ----------------------------------------------------------------------
+[2026-10-15 13:08:16] from datetime import datetime, timedelta
+[2026-10-15 13:08:16] 
+[2026-10-15 13:08:16] def days_until_irb_review(due_date: str, today: str) -> int:
+[2026-10-15 13:08:16]     """
+[2026-10-15 13:08:16]     Calculate the number of days until the IRB continuing review is due.
+[2026-10-15 13:08:16] 
+[2026-10-15 13:08:16]     Args:
+[2026-10-15 13:08:16]     - due_date (str): ISO date string (YYYY-MM-DD) of the IRB continuing review due date.
+[2026-10-15 13:08:16]     - today (str): ISO date string (YYYY-MM-DD) of the current date.
+[2026-10-15 13:08:16] 
+[2026-10-15 13:08:16]     Returns:
+[2026-10-15 13:08:16]     - int: The number of days from today until the IRB continuing review is due (negative if overdue).
+[2026-10-15 13:08:16]     """
+[2026-10-15 13:08:16]     try:
+[2026-10-15 13:08:16]         due_date = datetime.fromisoformat(due_date)
+[2026-10-15 13:08:16]         today = datetime.fromisoformat(today)
+[2026-10-15 13:08:16]     except ValueError as e:
+[2026-10-15 13:08:16]         raise ValueError("Invalid date format. Please use YYYY-MM-DD.") from e
+[2026-10-15 13:08:16] 
+[2026-10-15 13:08:16]     if due_date < today:
+[2026-10-15 13:08:16]         raise ValueError("Due date is in the past.")
+[2026-10-15 13:08:16] 
+[2026-10-15 13:08:16]     return (due_date - today).days
+[2026-10-15 13:08:16] 
+[2026-10-15 13:08:16] # Test cases
+[2026-10-15 13:08:16] import unittest
+[2026-10-15 13:08:16] 
+[2026-10-15 13:08:16] class TestDaysUntilIRBReview(unittest.TestCase):
+[2026-10-15 13:08:16]     def test_due_date_today(self):
+[2026-10-15 13:08:16]         due_date = "2024-03-16"
+[2026-10-15 13:08:16]         today = "2024-03-16"
+[2026-10-15 13:08:16]         self.assertEqual(days_until_irb_review(due_date, today), 0)
+[2026-10-15 13:08:16] 
+[2026-10-15 13:08:16]     def test_due_date_tomorrow(self):
+[2026-10-15 13:08:16]         due_date = "2024-03-17"
+[2026-10-15 13:08:16]         today = "2024-03-16"
+[2026-10-15 13:08:16]         self.assertEqual(days_until_irb_review(due_date, today), 1)
+[2026-10-15 13:08:16] 
+[2026-10-15 13:08:16]     def test_due_date_yesterday(self):
+[2026-10-15 13:08:16]         due_date = "2024-03-16"
+[2026-10-15 13:08:16]         today = "2024-03-17"
+[2026-10-15 13:08:16]         with self.assertRaises(ValueError):
+[2026-10-15 13:08:16]             days_until_irb_review(due_date, today)
+[2026-10-15 13:08:16] 
+[2026-10-15 13:08:16]     def test_invalid_date_format(self):
+[2026-10-15 13:08:16]         due_date = "2024/03/16"
+[2026-10-15 13:08:16]         today = "2024-03-16"
+[2026-10-15 13:08:16]         with self.assertRaises(ValueError):
+[2026-10-15 13:08:16]             days_until_irb_review(due_date, today)
+[2026-10-15 13:08:16] 
+[2026-10-15 13:08:16]     def test_due_date_in_the_past(self):
+[2026-10-15 13:08:16]         due_date = "2024-03-16"
+[2026-10-15 13:08:16]         today = "2025-03-16"
+[2026-10-15 13:08:16]         with self.assertRaises(ValueError):
+[2026-10-15 13:08:16]             days_until_irb_review(due_date, today)
+[2026-10-15 13:08:16] 
+[2026-10-15 13:08:16] if __name__ == "__main__":
+[2026-10-15 13:08:16]     unittest.main()
+[2026-10-15 13:08:16] 
+[2026-10-15 13:08:16] ----------------------------------------------------------------------
+[2026-10-15 13:08:16] [PASS] snake_case function names  (['days_until_irb_review'])
+[2026-10-15 13:08:16] [PASS] type hints on every parameter and the return value  ({'due_date': 'str', 'today': 'str', 'return': 'int'})
+[2026-10-15 13:08:16] [FAIL] one-line docstring that states what it returns  (Calculate the number of days until the IRB continuing review is due.
+[2026-10-15 13:08:16] 
+[2026-10-15 13:08:16] )
+[2026-10-15 13:08:16] [PASS] no print() in library code  (0 print call(s))
+[2026-10-15 13:08:16] [PASS] validates input and raises ValueError  (2 raise statement(s))
+[2026-10-15 13:08:16] [PASS] standard library only / no direct model API  (['datetime', 'unittest'])
+[2026-10-15 13:08:16] [FAIL] at least three plain assert tests  (0 plain assert(s), 5 unittest assert call(s))
+[2026-10-15 13:08:16] [PASS] no hard-coded secrets  ([])
+[2026-10-15 13:08:16] [PASS] tests run offline and pass  (.....
+[2026-10-15 13:08:16] ----------------------------------------------------------------)
+[2026-10-15 13:08:16] [FAIL] independent behaviour check (13 / -13 / ValueError)  (ValueError: Due date is in the past.)
+[2026-10-15 13:08:16] 7/10 AGENT.md rules satisfied
+[2026-10-15 13:08:27] ======================================================================
+[2026-10-15 13:08:27] Attempt 2: generated_function_attempt2.py
+[2026-10-15 13:08:27] ----------------------------------------------------------------------
+[2026-10-15 13:08:27] from datetime import datetime, timedelta
+[2026-10-15 13:08:27] 
+[2026-10-15 13:08:27] def days_until_irb_review(due_date: str, today: str) -> int:
+[2026-10-15 13:08:27]     """
+[2026-10-15 13:08:27]     Calculate the number of days until the IRB continuing review is due.
+[2026-10-15 13:08:27] 
+[2026-10-15 13:08:27]     Args:
+[2026-10-15 13:08:27]     - due_date (str): ISO date string (YYYY-MM-DD) of the IRB continuing review due date.
+[2026-10-15 13:08:27]     - today (str): ISO date string (YYYY-MM-DD) of the current date.
+[2026-10-15 13:08:27] 
+[2026-10-15 13:08:27]     Returns:
+[2026-10-15 13:08:27]     - int: The number of days from today until the IRB continuing review is due (negative if overdue).
+[2026-10-15 13:08:27]     """
+[2026-10-15 13:08:27]     try:
+[2026-10-15 13:08:27]         due_date = datetime.fromisoformat(due_date)
+[2026-10-15 13:08:27]         today = datetime.fromisoformat(today)
+[2026-10-15 13:08:27]     except ValueError as e:
+[2026-10-15 13:08:27]         raise ValueError("Invalid date format. Please use YYYY-MM-DD.") from e
+[2026-10-15 13:08:27] 
+[2026-10-15 13:08:27]     if due_date <= today:
+[2026-10-15 13:08:27]         raise ValueError("Due date is in the past or today.")
+[2026-10-15 13:08:27] 
+[2026-10-15 13:08:27]     return (due_date - today).days
+[2026-10-15 13:08:27] 
+[2026-10-15 13:08:27] # Test cases
+[2026-10-15 13:08:27] import unittest
+[2026-10-15 13:08:27] 
+[2026-10-15 13:08:27] class TestDaysUntilIRBReview(unittest.TestCase):
+[2026-10-15 13:08:27]     def test_due_date_today(self):
+[2026-10-15 13:08:27]         due_date = "2024-03-16"
+[2026-10-15 13:08:27]         today = "2024-03-16"
+[2026-10-15 13:08:27]         self.assertEqual(days_until_irb_review(due_date, today), 0)
+[2026-10-15 13:08:27] 
+[2026-10-15 13:08:27]     def test_due_date_tomorrow(self):
+[2026-10-15 13:08:27]         due_date = "2024-03-17"
+[2026-10-15 13:08:27]         today = "2024-03-16"
+[2026-10-15 13:08:27]         self.assertEqual(days_until_irb_review(due_date, today), 1)
+[2026-10-15 13:08:27] 
+[2026-10-15 13:08:27]     def test_due_date_yesterday(self):
+[2026-10-15 13:08:27]         due_date = "2024-03-16"
+[2026-10-15 13:08:27]         today = "2024-03-17"
+[2026-10-15 13:08:27]         with self.assertRaises(ValueError):
+[2026-10-15 13:08:27]             days_until_irb_review(due_date, today)
+[2026-10-15 13:08:27] 
+[2026-10-15 13:08:27]     def test_due_date_in_the_past(self):
+[2026-10-15 13:08:27]         due_date = "2024-03-16"
+[2026-10-15 13:08:27]         today = "2025-03-16"
+[2026-10-15 13:08:27]         with self.assertRaises(ValueError):
+[2026-10-15 13:08:27]             days_until_irb_review(due_date, today)
+[2026-10-15 13:08:27] 
+[2026-10-15 13:08:27]     def test_due_date_today_exact(self):
+[2026-10-15 13:08:27]         due_date = "2024-03-16"
+[2026-10-15 13:08:27]         today = "2024-03-16"
+[2026-10-15 13:08:27]         self.assertEqual(days_until_irb_review(due_date, today), 0)
+[2026-10-15 13:08:27] 
+[2026-10-15 13:08:27]     def test_due_date_tomorrow_exact(self):
+[2026-10-15 13:08:27]         due_date = "2024-03-17"
+[2026-10-15 13:08:27]         today = "2024-03-16"
+[2026-10-15 13:08:27]         self.assertEqual(days_until_irb_review(due_date, today), 1)
+[2026-10-15 13:08:27] 
+[2026-10-15 13:08:27]     def test_invalid_date_format(self):
+[2026-10-15 13:08:27]         due_date = "2024/03/16"
+[2026-10-15 13:08:27]         today = "2024-03-16"
+[2026-10-15 13:08:27]         with self.assertRaises(ValueError):
+[2026-10-15 13:08:27]             days_until_irb_review(due_date, today)
+[2026-10-15 13:08:27] 
+[2026-10-15 13:08:27] if __name__ == "__main__":
+[2026-10-15 13:08:27]     unittest.main()
+[2026-10-15 13:08:27] 
+[2026-10-15 13:08:27] ----------------------------------------------------------------------
+[2026-10-15 13:08:27] [PASS] snake_case function names  (['days_until_irb_review'])
+[2026-10-15 13:08:27] [PASS] type hints on every parameter and the return value  ({'due_date': 'str', 'today': 'str', 'return': 'int'})
+[2026-10-15 13:08:27] [FAIL] one-line docstring that states what it returns  (Calculate the number of days until the IRB continuing review is due.
+[2026-10-15 13:08:27] 
+[2026-10-15 13:08:27] )
+[2026-10-15 13:08:27] [PASS] no print() in library code  (0 print call(s))
+[2026-10-15 13:08:27] [PASS] validates input and raises ValueError  (2 raise statement(s))
+[2026-10-15 13:08:27] [PASS] standard library only / no direct model API  (['datetime', 'unittest'])
+[2026-10-15 13:08:27] [FAIL] at least three plain assert tests  (0 plain assert(s), 7 unittest assert call(s))
+[2026-10-15 13:08:27] [PASS] no hard-coded secrets  ([])
+[2026-10-15 13:08:27] [FAIL] tests run offline and pass  (rror("Due date is in the past or today.")
+[2026-10-15 13:08:27] ValueError: Due date is in t)
+[2026-10-15 13:08:27] [FAIL] independent behaviour check (13 / -13 / ValueError)  (ValueError: Due date is in the past or today.)
+[2026-10-15 13:08:27] 6/10 AGENT.md rules satisfied
+[2026-10-15 13:08:27] ======================================================================
+[2026-10-15 13:08:27] RUN: make verify-hw06 (HW6 smoke test)   run by: Ani Taraiya
+[2026-10-15 13:08:27] HW6 verification 2026-10-15T13:08:27 | run by Ani Taraiya
+[2026-10-15 13:08:27] [PASS] FastAPI backend responds on PORT_BASE 8509 - GET /docs -> 200
+[2026-10-15 13:08:27] [PASS] MongoDB CRUD round trip on s3209_doc.trials - POST/GET/PUT/DELETE/GET -> [201, 200, 200, 204, 404], default status=recruiting
+[2026-10-15 13:08:27] [PASS] Validation errors return 422/400 with messages - missing/enum/type/bad id -> [422, 422, 422, 400]
+[2026-10-15 13:08:30] [PASS] POST /api/chat returns a reply and the memory used - reply 29 chars, short-term=4
+[2026-10-15 13:08:30] [PASS] Per-request token/latency usage is reported - {'completion_tokens': 11, 'episodic_tokens': 34, 'latency_ms': 309.7, 'long_term_tokens': 0, 'prompt_tokens': 206, 'short_term_tokens': 68, 'system_primer_tokens': 74}
+[2026-10-15 13:08:30] [PASS] Episodic facts are retrieved with similarity scores - 3 facts retrieved
+[2026-10-15 13:08:30] [PASS] GET /api/memory/{user_id} returns messages, summaries, facts - 6 messages, 3 facts
+[2026-10-15 13:08:30] [PASS] GET /api/aggregate/{user_id} returns daily counts - daily counts=[{'messages': 6, 'user_messages': 3, 'date': '2026-10-15'}]
+[2026-10-15 13:08:30] [PASS] memory_probes.yaml has 5 probes and a 1-5 rubric - 5 probes, rubric levels ['1', '2', '3', '4', '5']
+[2026-10-15 13:08:30] [PASS] Part 3 raw summary covers all settings - settings in summary: ['compress', 'n12', 'n30', 'n4']
+[2026-10-15 13:08:30] [PASS] MEMORY.md consolidation 55 -> <40 lines, explicit contradictions - 55 -> 38 lines, dup merged=19, contradictions=5, suspect=1
+[2026-10-15 13:08:30] [PASS] AGENT.md has >=5 instructions in >=3 categories and is loaded - 20 instructions, categories=['Project description', 'Technology stack', 'Coding conventions', 'Testing approach', 'Prohibited actions']
+[2026-10-15 13:08:30] [PASS] Remove temporary verification data - removed 9 temporary docs for verify_263209_4625
+[2026-10-15 13:08:30] 12/12 checks passed -> reports/hw06/verification.json

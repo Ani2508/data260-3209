@@ -1,0 +1,96 @@
+{
+  "list": [
+    {
+      "id": "6ad1139292abfb4c088c7512",
+      "title": "Sleep Quality in Long COVID",
+      "description": null,
+      "status": "completed",
+      "phase": "observational",
+      "start_date": "2025-09-01T10:00:00",
+      "created_at": "2026-10-15T17:55:30.383000",
+      "updated_at": "2026-10-15T17:55:30.383000"
+    },
+    {
+      "id": "6ad1139292abfb4c088c7511",
+      "title": "Low-Dose Aspirin After Stent Placement",
+      "description": "Compares 75 mg vs 150 mg aspirin for 12 months.",
+      "status": "active",
+      "phase": "phase_3",
+      "start_date": "2026-06-15T08:30:00",
+      "created_at": "2026-10-15T17:55:30.381000",
+      "updated_at": "2026-10-15T17:55:30.381000"
+    },
+    {
+      "id": "6ad1139292abfb4c088c7510",
+      "title": "Oral GLP-1 Agonist in Type 2 Diabetes",
+      "description": "Enrollment opened at 3 sites.",
+      "status": "active",
+      "phase": "phase_2",
+      "start_date": "2026-11-02T09:00:00",
+      "created_at": "2026-10-15T17:55:30.379000",
+      "updated_at": "2026-10-15T17:55:30.389000"
+    }
+  ],
+  "get_one": {
+    "id": "6ad1139292abfb4c088c7510",
+    "title": "Oral GLP-1 Agonist in Type 2 Diabetes",
+    "description": "Enrollment opened at 3 sites.",
+    "status": "active",
+    "phase": "phase_2",
+    "start_date": "2026-11-02T09:00:00",
+    "created_at": "2026-10-15T17:55:30.379000",
+    "updated_at": "2026-10-15T17:55:30.389000"
+  },
+  "update": {
+    "id": "6ad1139292abfb4c088c7510",
+    "title": "Oral GLP-1 Agonist in Type 2 Diabetes",
+    "description": "Enrollment opened at 3 sites.",
+    "status": "active",
+    "phase": "phase_2",
+    "start_date": "2026-11-02T09:00:00",
+    "created_at": "2026-10-15T17:55:30.379000",
+    "updated_at": "2026-10-15T18:16:20.822000"
+  },
+  "after_delete": {
+    "detail": "Trial 6ad11874bc56c8b7c71e8d6f not found"
+  },
+  "bad_id": {
+    "detail": "'not-an-id' is not a valid ObjectId"
+  },
+  "missing required title": {
+    "detail": "Validation failed",
+    "errors": [
+      {
+        "field": "title",
+        "message": "Field required"
+      }
+    ]
+  },
+  "invalid enum (status)": {
+    "detail": "Validation failed",
+    "errors": [
+      {
+        "field": "status",
+        "message": "Input should be 'recruiting', 'active', 'completed', 'suspended' or 'withdrawn'"
+      }
+    ]
+  },
+  "wrong type (start_date)": {
+    "detail": "Validation failed",
+    "errors": [
+      {
+        "field": "start_date",
+        "message": "Input should be a valid datetime or date, invalid character in year"
+      }
+    ]
+  },
+  "title over 100 chars": {
+    "detail": "Validation failed",
+    "errors": [
+      {
+        "field": "title",
+        "message": "String should have at most 100 characters"
+      }
+    ]
+  }
+}

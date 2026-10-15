@@ -1,0 +1,171 @@
+{
+  "user_id": "ani_demo",
+  "recent_messages": [
+    {
+      "session_id": "ani-demo-s1",
+      "role": "user",
+      "content": "Our main site is in Sacramento and the PI is Dr. Helen Okafor.",
+      "created_at": "2026-10-15T18:29:16.501000"
+    },
+    {
+      "session_id": "ani-demo-s1",
+      "role": "assistant",
+      "content": "I've noted the main site location and the Principal Investigator's (PI) name. I'll keep this information in mind for future reference.",
+      "created_at": "2026-10-15T18:29:17.357000"
+    },
+    {
+      "session_id": "ani-demo-s1",
+      "role": "user",
+      "content": "How do I report a serious adverse event?",
+      "created_at": "2026-10-15T18:29:20.099000"
+    },
+    {
+      "session_id": "ani-demo-s1",
+      "role": "assistant",
+      "content": "For a serious adverse event (SAE) in a clinical trial, you should immediately notify the Institutional Review Board (IRB), the sponsor, and the Principal Investigator (PI), Dr. Helen Okafor. You should also document the event thoroughly and follow the trial's SAE reporting procedures.",
+      "created_at": "2026-10-15T18:29:21.658000"
+    },
+    {
+      "session_id": "ani-demo-s1",
+      "role": "user",
+      "content": "Participants on warfarin need extra INR checks during the study.",
+      "created_at": "2026-10-15T18:29:21.667000"
+    },
+    {
+      "session_id": "ani-demo-s1",
+      "role": "assistant",
+      "content": "I've noted that participants on warfarin require extra INR checks during the study. This is an important safety consideration for the trial.",
+      "created_at": "2026-10-15T18:29:22.603000"
+    },
+    {
+      "session_id": "ani-demo-s1",
+      "role": "user",
+      "content": "Give me a short reminder text for a week-4 visit.",
+      "created_at": "2026-10-15T18:29:23.289000"
+    },
+    {
+      "session_id": "ani-demo-s1",
+      "role": "assistant",
+      "content": "\"Reminder: Week-4 visit for NCT05512874. Please confirm participant's INR check for warfarin users and review any new adverse events.\"",
+      "created_at": "2026-10-15T18:29:24.337000"
+    },
+    {
+      "session_id": "ani-demo-s1",
+      "role": "user",
+      "content": "The IRB continuing review is due on March 14.",
+      "created_at": "2026-10-15T18:29:24.538000"
+    },
+    {
+      "session_id": "ani-demo-s1",
+      "role": "assistant",
+      "content": "I've noted the IRB continuing review deadline for NCT05512874 as March 14.",
+      "created_at": "2026-10-15T18:29:25.234000"
+    },
+    {
+      "session_id": "ani-demo-s1",
+      "role": "user",
+      "content": "What documents does a sponsor monitor usually ask for?",
+      "created_at": "2026-10-15T18:29:25.835000"
+    },
+    {
+      "session_id": "ani-demo-s1",
+      "role": "assistant",
+      "content": "A sponsor monitor typically requests documentation of participant consent, study procedures, and adverse event reports, as well as source data verification and study site audits.",
+      "created_at": "2026-10-15T18:29:26.698000"
+    },
+    {
+      "session_id": "ani-demo-s1",
+      "role": "user",
+      "content": "Which site and PI did I mention earlier?",
+      "created_at": "2026-10-15T18:29:31.164000"
+    },
+    {
+      "session_id": "ani-demo-s1",
+      "role": "assistant",
+      "content": "You mentioned the main site is in Sacramento and the Principal Investigator (PI) is Dr. Helen Okafor.",
+      "created_at": "2026-10-15T18:29:32.209000"
+    },
+    {
+      "session_id": "ani-demo-s1",
+      "role": "user",
+      "content": "Summarize what you know about my trial in three bullets.",
+      "created_at": "2026-10-15T18:29:32.218000"
+    },
+    {
+      "session_id": "ani-demo-s1",
+      "role": "assistant",
+      "content": "Here's a summary of what I know about your trial:\n\n\u2022 Study ID: NCT05512874\n\u2022 Study type: Phase II trial of an oral GLP-1 drug for type 2 diabetes\n\u2022 Main site location: Sacramento, led by Principal Investigator Dr. Helen Okafor",
+      "created_at": "2026-10-15T18:29:33.703000"
+    }
+  ],
+  "session_summary": {
+    "user_id": "ani_demo",
+    "session_id": "ani-demo-s1",
+    "scope": "session",
+    "text": "- Study ID: NCT05512874\n- Study type: Phase II trial of an oral GLP-1 drug for type 2 diabetes\n- Target participants: 240\n- Current enrollment: 61 participants\n- Main site location: Sacramento\n- Principal Investigator (PI): Dr. Helen Okafor\n- Participants on warfarin require extra INR checks during the study\n- IRB continuing review deadline: March 14\n- Sponsor monitor typically requests: participant consent, study procedures, adverse event reports, source data verification, and study site audits",
+    "created_at": "2026-10-15T18:29:29.265000"
+  },
+  "lifetime_summary": {
+    "user_id": "ani_demo",
+    "session_id": null,
+    "scope": "user",
+    "text": "- Ani is a clinical trial coordinator.\n- Study ID: NCT05512874\n- Study type: Phase II trial of an oral GLP-1 drug for type 2 diabetes.\n- Target participants: 240\n- Current enrollment: 61 participants\n- Main site location: Sacramento\n- Principal Investigator (PI): Dr. Helen Okafor\n- Participants on warfarin require extra INR checks during the study",
+    "created_at": "2026-10-15T18:29:31.157000"
+  },
+  "episodic_facts": [
+    {
+      "session_id": "ani-demo-s1",
+      "fact": "IRB continuing review is due on March 14",
+      "importance": 1.0,
+      "created_at": "2026-10-15T18:29:25.828000"
+    },
+    {
+      "session_id": "ani-demo-s1",
+      "fact": "Participants on warfarin need extra INR checks during the study",
+      "importance": 1.0,
+      "created_at": "2026-10-15T18:29:23.283000"
+    },
+    {
+      "session_id": "ani-demo-s1",
+      "fact": "PI is Dr. Helen Okafor",
+      "importance": 0.8,
+      "created_at": "2026-10-15T18:29:18.335000"
+    },
+    {
+      "session_id": "ani-demo-s1",
+      "fact": "Main site is in Sacramento",
+      "importance": 0.8,
+      "created_at": "2026-10-15T18:29:18.334000"
+    },
+    {
+      "session_id": "ani-demo-s1",
+      "fact": "61 participants are currently enrolled",
+      "importance": 0.8,
+      "created_at": "2026-10-15T18:29:15.570000"
+    },
+    {
+      "session_id": "ani-demo-s1",
+      "fact": "240 participants are desired in total",
+      "importance": 0.9,
+      "created_at": "2026-10-15T18:29:15.569000"
+    },
+    {
+      "session_id": "ani-demo-s1",
+      "fact": "Drug is oral GLP-1",
+      "importance": 0.8,
+      "created_at": "2026-10-15T18:29:13.785000"
+    },
+    {
+      "session_id": "ani-demo-s1",
+      "fact": "Trial is Phase II",
+      "importance": 0.8,
+      "created_at": "2026-10-15T18:29:13.784000"
+    },
+    {
+      "session_id": "ani-demo-s1",
+      "fact": "Study ID is NCT05512874",
+      "importance": 1.0,
+      "created_at": "2026-10-15T18:29:13.783000"
+    }
+  ]
+}

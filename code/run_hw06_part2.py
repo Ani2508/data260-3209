@@ -52,7 +52,7 @@ def main():
         b = r.json()
         u = b["usage"]
         log(f"[{i:02d}] user: {msg}")
-        log(f"     assistant: {b['reply'][:160]}")
+        log(f"     assistant: {' '.join(b['reply'].split())[:160]}")
         log(f"     used: short-term={b['used']['short_term']['count']} msgs | "
             f"session summary={'yes' if b['used']['long_term']['session_summary'] else 'no'} | "
             f"facts={[e['fact'] for e in b['used']['episodic_facts']]}")

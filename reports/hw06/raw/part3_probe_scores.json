@@ -1,0 +1,282 @@
+[
+  {
+    "setting": "n4",
+    "probe": "P1",
+    "question": "What is the registration number of the trial I am coordinating?",
+    "score": 5,
+    "criteria_met": 1,
+    "criteria_total": 1,
+    "reply": "The trial registration number is NCT05512874.",
+    "episodic_facts": [
+      "Trial NCT05512874 is registered",
+      "Enrollment target is 240 participants across all sites",
+      "61 participants are currently enrolled"
+    ]
+  },
+  {
+    "setting": "n4",
+    "probe": "P2",
+    "question": "What is our enrollment target, and how many participants are enrolled so far?",
+    "score": 5,
+    "criteria_met": 2,
+    "criteria_total": 2,
+    "reply": "Our enrollment target is 240 participants across all sites, and we currently have 61 participants enrolled.",
+    "episodic_facts": [
+      "Enrollment target is 240 participants across all sites",
+      "61 participants are currently enrolled",
+      "One way to improve participant retention is to provide incentives"
+    ]
+  },
+  {
+    "setting": "n4",
+    "probe": "P3",
+    "question": "Where is our main site, and who is the site principal investigator?",
+    "score": 5,
+    "criteria_met": 2,
+    "criteria_total": 2,
+    "reply": "Our main site is located in Sacramento, and the site principal investigator is Dr. Helen Okafor.",
+    "episodic_facts": [
+      "Site principal investigator is Dr. Helen Okafor",
+      "Main site is in Sacramento",
+      "Enrollment target is 240 participants across all sites"
+    ]
+  },
+  {
+    "setting": "n4",
+    "probe": "P4",
+    "question": "Which medication did I flag as a safety concern, and what extra check is needed?",
+    "score": 5,
+    "criteria_met": 2,
+    "criteria_total": 2,
+    "reply": "You flagged warfarin as a safety concern. Participants taking warfarin need extra INR checks due to possible interaction with the study drug.",
+    "episodic_facts": [
+      "Participants taking warfarin need extra INR checks",
+      "Example: A patient is given a medication that is not listed in their treatment plan.",
+      "Trial NCT05512874 tests oral GLP-1 drug in adults with type 2 diabetes"
+    ]
+  },
+  {
+    "setting": "n4",
+    "probe": "P5",
+    "question": "When is our IRB continuing review due, and when must the renewal packet be ready?",
+    "score": 5,
+    "criteria_met": 2,
+    "criteria_total": 2,
+    "reply": "Our IRB continuing review is due on March 14, and the renewal packet must be ready by March 1.",
+    "episodic_facts": [
+      "IRB continuing review is due on March 14",
+      "Renewal packet must be ready by March 1",
+      "Participants taking warfarin need extra INR checks"
+    ]
+  },
+  {
+    "setting": "n12",
+    "probe": "P1",
+    "question": "What is the registration number of the trial I am coordinating?",
+    "score": 5,
+    "criteria_met": 1,
+    "criteria_total": 1,
+    "reply": "The trial registration number is NCT05512874.",
+    "episodic_facts": [
+      "Trial NCT05512874 is registered",
+      "Enrollment target is 240 participants across all sites",
+      "61 participants are currently enrolled"
+    ]
+  },
+  {
+    "setting": "n12",
+    "probe": "P2",
+    "question": "What is our enrollment target, and how many participants are enrolled so far?",
+    "score": 5,
+    "criteria_met": 2,
+    "criteria_total": 2,
+    "reply": "Our enrollment target is 240 participants across all sites, and we currently have 61 participants enrolled.",
+    "episodic_facts": [
+      "Enrollment target is 240 participants across all sites",
+      "61 participants are currently enrolled",
+      "One way to improve participant retention is to provide incentives"
+    ]
+  },
+  {
+    "setting": "n12",
+    "probe": "P3",
+    "question": "Where is our main site, and who is the site principal investigator?",
+    "score": 5,
+    "criteria_met": 2,
+    "criteria_total": 2,
+    "reply": "Our main site is in Sacramento, and Dr. Helen Okafor is the site principal investigator.",
+    "episodic_facts": [
+      "Site principal investigator is Dr. Helen Okafor",
+      "Main site is in Sacramento",
+      "Enrollment target is 240 participants across all sites"
+    ]
+  },
+  {
+    "setting": "n12",
+    "probe": "P4",
+    "question": "Which medication did I flag as a safety concern, and what extra check is needed?",
+    "score": 5,
+    "criteria_met": 2,
+    "criteria_total": 2,
+    "reply": "You flagged warfarin as a safety concern, and participants taking warfarin need extra INR checks.",
+    "episodic_facts": [
+      "Participants taking warfarin need extra INR checks",
+      "Example: A patient is given a medication that is not listed in their treatment plan.",
+      "Trial NCT05512874 tests oral GLP-1 drug in adults with type 2 diabetes"
+    ]
+  },
+  {
+    "setting": "n12",
+    "probe": "P5",
+    "question": "When is our IRB continuing review due, and when must the renewal packet be ready?",
+    "score": 5,
+    "criteria_met": 2,
+    "criteria_total": 2,
+    "reply": "Our IRB continuing review is due on March 14, and the renewal packet must be ready by March 1.",
+    "episodic_facts": [
+      "IRB continuing review is due on March 14",
+      "Renewal packet must be ready by March 1",
+      "Participants taking warfarin need extra INR checks"
+    ]
+  },
+  {
+    "setting": "n30",
+    "probe": "P1",
+    "question": "What is the registration number of the trial I am coordinating?",
+    "score": 5,
+    "criteria_met": 1,
+    "criteria_total": 1,
+    "reply": "The registration number of the trial is NCT05512874.",
+    "episodic_facts": [
+      "Trial NCT05512874 is registered",
+      "Enrollment target is 240 participants across all sites",
+      "61 participants are currently enrolled"
+    ]
+  },
+  {
+    "setting": "n30",
+    "probe": "P2",
+    "question": "What is our enrollment target, and how many participants are enrolled so far?",
+    "score": 5,
+    "criteria_met": 2,
+    "criteria_total": 2,
+    "reply": "Our enrollment target is 240 participants across all sites, and currently, 61 participants are enrolled.",
+    "episodic_facts": [
+      "Enrollment target is 240 participants across all sites",
+      "61 participants are currently enrolled",
+      "One way to improve participant retention is to provide incentives"
+    ]
+  },
+  {
+    "setting": "n30",
+    "probe": "P3",
+    "question": "Where is our main site, and who is the site principal investigator?",
+    "score": 5,
+    "criteria_met": 2,
+    "criteria_total": 2,
+    "reply": "Our main site is located in Sacramento, and the site principal investigator is Dr. Helen Okafor.",
+    "episodic_facts": [
+      "Site principal investigator is Dr. Helen Okafor",
+      "Main site is in Sacramento",
+      "Enrollment target is 240 participants across all sites"
+    ]
+  },
+  {
+    "setting": "n30",
+    "probe": "P4",
+    "question": "Which medication did I flag as a safety concern, and what extra check is needed?",
+    "score": 5,
+    "criteria_met": 2,
+    "criteria_total": 2,
+    "reply": "You flagged warfarin as a safety concern, and the extra check needed is an INR (International Normalized Ratio) check.",
+    "episodic_facts": [
+      "Participants taking warfarin need extra INR checks",
+      "Example: A patient is given a medication that is not listed in their treatment plan.",
+      "Trial NCT05512874 tests oral GLP-1 drug in adults with type 2 diabetes"
+    ]
+  },
+  {
+    "setting": "n30",
+    "probe": "P5",
+    "question": "When is our IRB continuing review due, and when must the renewal packet be ready?",
+    "score": 5,
+    "criteria_met": 2,
+    "criteria_total": 2,
+    "reply": "Our IRB continuing review is due on March 14, and the renewal packet must be ready by March 1.",
+    "episodic_facts": [
+      "IRB continuing review is due on March 14",
+      "Renewal packet must be ready by March 1",
+      "Participants taking warfarin need extra INR checks"
+    ]
+  },
+  {
+    "setting": "compress",
+    "probe": "P1",
+    "question": "What is the registration number of the trial I am coordinating?",
+    "score": 5,
+    "criteria_met": 1,
+    "criteria_total": 1,
+    "reply": "The registration number of the trial is NCT05512874.",
+    "episodic_facts": [
+      "Trial NCT05512874 is registered",
+      "Enrollment target is 240 participants across all sites",
+      "61 participants are currently enrolled"
+    ]
+  },
+  {
+    "setting": "compress",
+    "probe": "P2",
+    "question": "What is our enrollment target, and how many participants are enrolled so far?",
+    "score": 5,
+    "criteria_met": 2,
+    "criteria_total": 2,
+    "reply": "Our enrollment target is 240 participants across all sites, and 61 participants are currently enrolled.",
+    "episodic_facts": [
+      "Enrollment target is 240 participants across all sites",
+      "61 participants are currently enrolled",
+      "One way to improve participant retention is to provide incentives"
+    ]
+  },
+  {
+    "setting": "compress",
+    "probe": "P3",
+    "question": "Where is our main site, and who is the site principal investigator?",
+    "score": 5,
+    "criteria_met": 2,
+    "criteria_total": 2,
+    "reply": "Our main site is located in Sacramento, and the site principal investigator is Dr. Helen Okafor.",
+    "episodic_facts": [
+      "Site principal investigator is Dr. Helen Okafor",
+      "Main site is in Sacramento",
+      "Enrollment target is 240 participants across all sites"
+    ]
+  },
+  {
+    "setting": "compress",
+    "probe": "P4",
+    "question": "Which medication did I flag as a safety concern, and what extra check is needed?",
+    "score": 5,
+    "criteria_met": 2,
+    "criteria_total": 2,
+    "reply": "You flagged warfarin as a safety concern, and participants taking this medication need extra INR checks due to a possible interaction with the study drug.",
+    "episodic_facts": [
+      "Participants taking warfarin need extra INR checks",
+      "Example: A patient is given a medication that is not listed in their treatment plan.",
+      "Trial NCT05512874 tests oral GLP-1 drug in adults with type 2 diabetes"
+    ]
+  },
+  {
+    "setting": "compress",
+    "probe": "P5",
+    "question": "When is our IRB continuing review due, and when must the renewal packet be ready?",
+    "score": 5,
+    "criteria_met": 2,
+    "criteria_total": 2,
+    "reply": "Our IRB continuing review is due on March 14, and the renewal packet must be ready by March 1.",
+    "episodic_facts": [
+      "IRB continuing review is due on March 14",
+      "Renewal packet must be ready by March 1",
+      "Participants taking warfarin need extra INR checks"
+    ]
+  }
+]
