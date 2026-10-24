@@ -1,0 +1,35 @@
+{
+  "description": "HW7 Part 2 fixed verification cases (s3209_rel). Each needs >= 2 tool calls with no follow-up prompt.",
+  "tasks": {
+    "A": {
+      "title": "Search, then detail-lookup the first result",
+      "prompt": "Search for Diabetes trials, then give me the full details of the first result.",
+      "expected_chain": [
+        "search_trials",
+        "get_trial"
+      ]
+    },
+    "B": {
+      "title": "Aggregate question, then one supporting example",
+      "prompt": "How many trials are currently Recruiting? Then search for one recruiting Migraine trial and give it as a supporting example.",
+      "expected_chain": [
+        "trial_stats",
+        "search_trials"
+      ]
+    },
+    "C": {
+      "title": "Compare two entities: search plus two detail lookups",
+      "prompt": "Compare the first two Hypertension trials: search for Hypertension, then look up both trials and compare their status and enrollment slots.",
+      "expected_chain": [
+        "search_trials",
+        "get_trial",
+        "get_trial"
+      ]
+    }
+  },
+  "error_case": {
+    "title": "Nonexistent id",
+    "prompt": "Show me the full details of trial 99999.",
+    "trial_id": 99999
+  }
+}

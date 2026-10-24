@@ -40,7 +40,7 @@ call() {  # call "<label>" <method> <path> [token] [json-body]
 login() { curl -s -X POST "$BASE/auth/login" -H 'Content-Type: application/json' \
   -d "{\"username\":\"$1\",\"password\":\"$PW\"}" | "$PY" -c 'import json,sys;print(json.load(sys.stdin)["access_token"])'; }
 
-header() { echo; echo "================ HW7 Part 1.$1: $2 ================"; echo "s3209   $(date '+%Y-%m-%d %H:%M:%S')   API: $BASE"; }
+header() { echo; echo "================ HW7 Part 1.$1: $2 ================"; echo "Run by: Ani Taraiya (s3209)   $(date '+%Y-%m-%d %H:%M:%S')   API: $BASE"; }
 want() { [ "$ONLY" = all ] || [ "$ONLY" = "$1" ]; }
 
 if want 1; then

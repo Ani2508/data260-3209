@@ -12,13 +12,13 @@ before answering, which is very slow on CPU. We disable that by appending
 
 import os
 from dataclasses import dataclass, field
-from typing import List, Dict, Any, Optional
+from typing import Any
 
 try:
     from langchain_ollama import ChatOllama
 except ImportError:
     from langchain_community.chat_models import ChatOllama
-from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
+from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
 
 
 @dataclass
@@ -44,6 +44,9 @@ def _to_lc_messages(messages, disable_thinking: bool = True):
             out.append(SystemMessage(content=content))
         elif role == "assistant":
             out.append(AIMessage(content=content))
+        elif role == "tool":
+            # HW7: a tool result goes back to the model as a labelled observation
+            out.append(HumanMessage(content=f"TOOL RESULT ({m.get('name', 'tool')}): {content}"))
         else:
             out.append(HumanMessage(content=content))
     # If there was no system message at all, prepend one carrying the switch

@@ -71,3 +71,15 @@ hw07-migrate:
 hw07-part1:
 	@$(call STAMP7,make hw07-part1 S=$(S) (HW7 Part 1 JWT + RBAC demo))
 	bash code/hw07_part1_demo.sh $(S) 2>&1 | python3 code/tslog.py $(LOG7)
+
+hw07-part2-test:
+	@$(call STAMP7,make hw07-part2-test (HW7 Part 2 offline tests))
+	cd code/mcp_servers && python3 -u test_agent_loop.py 2>&1 | python3 ../tslog.py ../../$(LOG7)
+
+hw07-part2:
+	@$(call STAMP7,make hw07-part2 T=$(T) (HW7 Part 2 tasks A B C + nonexistent id))
+	python3 -u code/run_hw07_part2.py demo $(if $(T),--task $(T)) 2>&1 | python3 code/tslog.py $(LOG7)
+
+hw07-part2-rel:
+	@$(call STAMP7,make hw07-part2-rel (HW7 Part 2 reliability, 21 attempts))
+	python3 -u code/run_hw07_part2.py reliability -n 21 2>&1 | python3 code/tslog.py $(LOG7)

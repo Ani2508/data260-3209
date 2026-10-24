@@ -1,0 +1,18 @@
+{
+  "attempts": 21,
+  "temperature": 0.7,
+  "seeds": "263209..263229",
+  "model": "llama3.1:8b",
+  "tool_call_slots": 52,
+  "well_formed_before_repair": 48,
+  "well_formed_after_repair": 52,
+  "rate_before_repair": 0.923,
+  "rate_after_repair": 1.0,
+  "chains_complete": 21,
+  "failures_by_type": {
+    "malformed_arguments": 2,
+    "unknown_tool": 2,
+    "text_when_tool_required": 0,
+    "lost_multi_step_chain": 0
+  }
+}
