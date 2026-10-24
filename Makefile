@@ -83,3 +83,15 @@ hw07-part2:
 hw07-part2-rel:
 	@$(call STAMP7,make hw07-part2-rel (HW7 Part 2 reliability, 21 attempts))
 	python3 -u code/run_hw07_part2.py reliability -n 21 2>&1 | python3 code/tslog.py $(LOG7)
+
+hw07-part3-test:
+	@$(call STAMP7,make hw07-part3-test (HW7 Part 3 offline tests))
+	cd code/mcp_servers && python3 -u test_reflexion.py 2>&1 | python3 ../tslog.py ../../$(LOG7)
+
+hw07-part3:
+	@$(call STAMP7,make hw07-part3 (HW7 Part 3 original vs Reflexion))
+	python3 -u code/run_hw07_part3.py compare -n 5 2>&1 | python3 code/tslog.py $(LOG7)
+
+hw07-part3-show:
+	@$(call STAMP7,make hw07-part3-show (HW7 Part 3 stored reflection))
+	python3 -u code/run_hw07_part3.py show 2>&1 | python3 code/tslog.py $(LOG7)
