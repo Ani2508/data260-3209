@@ -1,10 +1,17 @@
 import axios from 'axios'
+import { tokenStore } from '../api'
 
 // One axios instance for the FastAPI backend (Vite proxies /api -> :8509).
 export const http = axios.create({
   baseURL: '/api',
-  withCredentials: true, // send the HTTP-only session cookie
   timeout: 10000,
+})
+
+// HW7: attach the JWT access token to every request.
+http.interceptors.request.use((config) => {
+  const token = tokenStore.get()
+  if (token) config.headers.Authorization = `Bearer ${token}`
+  return config
 })
 
 // Turn any axios error into a short, readable message for the UI.

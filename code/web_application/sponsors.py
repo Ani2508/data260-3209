@@ -1,4 +1,8 @@
-"""HW5 Part 1: CRUD for the related entity (Sponsor) + relationship query."""
+"""HW5 Part 1: CRUD for the related entity (Sponsor) + relationship query.
+
+HW7 access control matches trials: read = any role, create/update = writer or
+moderator, delete = moderator only.
+"""
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy import func
 from sqlalchemy.orm import Session, joinedload
@@ -6,7 +10,7 @@ from sqlalchemy.orm import Session, joinedload
 from database import get_db
 from models import Sponsor, Trial
 from schemas import Page, SponsorIn, SponsorOut, TrialOut
-from security import require_user
+from security import MODERATOR_ONLY, WRITE_ROLES, require_user
 from trials import trial_out
 
 router = APIRouter(prefix="/api/sponsors", tags=["sponsors"],
@@ -29,7 +33,8 @@ def ensure_email_free(db: Session, email: str, exclude_id: int | None = None):
                             detail=f"contact_email '{email}' is already used by another sponsor")
 
 
-@router.post("", status_code=201, response_model=SponsorOut)
+@router.post("", status_code=201, response_model=SponsorOut,
+             dependencies=[Depends(WRITE_ROLES)])
 def create_sponsor(body: SponsorIn, db: Session = Depends(get_db)):
     ensure_email_free(db, body.contact_email)
     sponsor = Sponsor(**body.model_dump())
@@ -53,7 +58,8 @@ def get_sponsor(sponsor_id: int, db: Session = Depends(get_db)):
     return get_sponsor_or_404(db, sponsor_id)
 
 
-@router.put("/{sponsor_id}", response_model=SponsorOut)
+@router.put("/{sponsor_id}", response_model=SponsorOut,
+            dependencies=[Depends(WRITE_ROLES)])
 def update_sponsor(sponsor_id: int, body: SponsorIn, db: Session = Depends(get_db)):
     sponsor = get_sponsor_or_404(db, sponsor_id)
     ensure_email_free(db, body.contact_email, exclude_id=sponsor_id)
@@ -64,7 +70,7 @@ def update_sponsor(sponsor_id: int, body: SponsorIn, db: Session = Depends(get_d
     return sponsor
 
 
-@router.delete("/{sponsor_id}")
+@router.delete("/{sponsor_id}", dependencies=[Depends(MODERATOR_ONLY)])
 def delete_sponsor(sponsor_id: int, db: Session = Depends(get_db)):
     sponsor = get_sponsor_or_404(db, sponsor_id)
     linked = db.query(func.count(Trial.id)).filter(Trial.sponsor_id == sponsor_id).scalar()

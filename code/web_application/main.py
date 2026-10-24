@@ -32,7 +32,9 @@ app = FastAPI(title="Clinical Trial Listing API")
 app.add_middleware(CORSMiddleware, allow_origins=config.CORS_ORIGINS,
                    allow_methods=["*"], allow_headers=["*"], allow_credentials=True)
 
-app.include_router(auth_router)
+app.include_router(auth_router)                       # HW7: /auth/login, /auth/me
+app.include_router(auth_router, prefix="/api",         # same JWT routes for the React app
+                   include_in_schema=False)
 app.include_router(trials_router)
 app.include_router(sponsors_router)
 app.include_router(doc_trials_router)
@@ -69,7 +71,8 @@ def mongo_down(request: Request, exc: ServerSelectionTimeoutError):
 @app.exception_handler(Exception)
 def server_error(request: Request, exc: Exception):
     log.exception("Unhandled error")
-    return JSONResponse(status_code=500, content={"detail": f"Internal server error: {type(exc).__name__}"})
+    return JSONResponse(status_code=500,
+                        content={"detail": f"Internal server error: {type(exc).__name__}"})
 
 
 @app.exception_handler(IntegrityError)

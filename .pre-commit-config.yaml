@@ -1,0 +1,9 @@
+# HW7 Part 1 - run Ruff on every commit (install once: pre-commit install)
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.9
+    hooks:
+      - id: ruff
+        name: ruff lint
+        args: [--output-format=concise]
+        files: ^(code|src)/.*\.py$

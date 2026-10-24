@@ -1,0 +1,13 @@
+# HW7 Part 1 - Ruff lint configuration (run by pre-commit on every commit)
+line-length = 100
+target-version = "py312"
+extend-exclude = ["code/frontend", "reports", "corpus", ".venv"]
+# Folders that hold our own modules, so import sorting treats them as first-party
+src = [".", "src", "code", "code/web_application", "code/mcp_servers"]
+
+[lint]
+# E/W pycodestyle, F pyflakes (unused imports/variables, undefined names),
+# I import order, B bugbear (likely bugs), UP pyupgrade
+select = ["E", "W", "F", "I", "B", "UP"]
+ignore = ["B008"]  # FastAPI's Depends(...) in argument defaults is the intended pattern
+

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function Login({ user, onLogin }) {
-  const [email, setEmail] = useState('')
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [busy, setBusy] = useState(false)
@@ -13,9 +13,9 @@ export default function Login({ user, onLogin }) {
   async function handleSubmit(e) {
     e.preventDefault()
     setError('')
-    if (!email.trim() || !password) { setError('Email and password are required.'); return }
+    if (!username.trim() || !password) { setError('Username and password are required.'); return }
     setBusy(true)
-    try { await onLogin(email.trim(), password) }
+    try { await onLogin(username.trim(), password) }
     catch (err) { setError(err.message) }
     finally { setBusy(false) }
   }
@@ -25,9 +25,9 @@ export default function Login({ user, onLogin }) {
       <h2>Log in</h2>
       <form onSubmit={handleSubmit} noValidate>
         <div className="field">
-          <label htmlFor="email">Email <span className="req">*</span></label>
-          <input id="email" type="email" value={email}
-                 onChange={(e) => setEmail(e.target.value)} placeholder="you@sjsu.edu" />
+          <label htmlFor="username">Username <span className="req">*</span></label>
+          <input id="username" value={username} autoComplete="username"
+                 onChange={(e) => setUsername(e.target.value)} placeholder="s3209_writer" />
         </div>
         <div className="field">
           <label htmlFor="password">Password <span className="req">*</span></label>

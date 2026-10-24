@@ -25,7 +25,7 @@ export default function App() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  // On page load: is there a valid session cookie?
+  // On page load: is there a stored, still-valid JWT?
   useEffect(() => {
     api.me()
       .then(setUser)
@@ -40,8 +40,8 @@ export default function App() {
     dispatch(fetchSponsors())
   }, [user, dispatch])
 
-  async function handleLogin(email, password) {
-    setUser(await api.login(email, password))
+  async function handleLogin(username, password) {
+    setUser(await api.login(username, password))
   }
 
   async function handleLogout() {
@@ -70,7 +70,7 @@ export default function App() {
             <div className="nav-links">
               {user ? (
                 <>
-                  <span className="nav-user">Signed in as <strong>{user.name}</strong></span>
+                  <span className="nav-user">Signed in as <strong>{user.username}</strong> ({user.role})</span>
                   <button className="btn-small" onClick={handleLogout}>Log out</button>
                 </>
               ) : (

@@ -3,8 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { api } from '../api'
 
 export default function Register({ user, onLogin }) {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [busy, setBusy] = useState(false)
@@ -15,12 +14,12 @@ export default function Register({ user, onLogin }) {
   async function handleSubmit(e) {
     e.preventDefault()
     setError('')
-    if (!name.trim() || !email.trim() || !password) { setError('All fields are required.'); return }
-    if (password.length < 6) { setError('Password must be at least 6 characters.'); return }
+    if (!username.trim() || !password) { setError('All fields are required.'); return }
+    if (password.length < 8) { setError('Password must be at least 8 characters.'); return }
     setBusy(true)
     try {
-      await api.register(name.trim(), email.trim(), password)
-      await onLogin(email.trim(), password)
+      await api.register(username.trim(), password)
+      await onLogin(username.trim(), password)
     } catch (err) {
       setError(err.message)
       setBusy(false)
@@ -32,18 +31,14 @@ export default function Register({ user, onLogin }) {
       <h2>Create an account</h2>
       <form onSubmit={handleSubmit} noValidate>
         <div className="field">
-          <label htmlFor="name">Name <span className="req">*</span></label>
-          <input id="name" value={name} onChange={(e) => setName(e.target.value)} />
-        </div>
-        <div className="field">
-          <label htmlFor="email">Email <span className="req">*</span></label>
-          <input id="email" type="email" value={email}
-                 onChange={(e) => setEmail(e.target.value)} placeholder="you@sjsu.edu" />
+          <label htmlFor="username">Username <span className="req">*</span></label>
+          <input id="username" value={username} autoComplete="username"
+                 onChange={(e) => setUsername(e.target.value)} placeholder="3-50 letters, digits, _ . -" />
         </div>
         <div className="field">
           <label htmlFor="password">Password <span className="req">*</span></label>
           <input id="password" type="password" value={password}
-                 onChange={(e) => setPassword(e.target.value)} placeholder="At least 6 characters" />
+                 onChange={(e) => setPassword(e.target.value)} placeholder="At least 8 characters" />
         </div>
         {error && <p className="err">{error}</p>}
         <button type="submit" className="submit-btn" disabled={busy}>

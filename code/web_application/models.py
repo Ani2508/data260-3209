@@ -1,11 +1,10 @@
-from datetime import datetime
-
-from sqlalchemy import Column, DateTime, ForeignKey, Integer, String, func
+from sqlalchemy import Column, DateTime, Enum, ForeignKey, Integer, String, func
 from sqlalchemy.orm import relationship
 
 from database import Base
 
 TRIAL_STATUSES = ("Recruiting", "Active - Not Recruiting", "Completed", "Terminated")
+ROLES = ("reader", "writer", "moderator")  # HW7 role-based access control
 
 
 class Sponsor(Base):
@@ -44,23 +43,17 @@ class Trial(Base):
 
 
 class User(Base):
+    """HW7 users table: id, username (unique), bcrypt password_hash, role."""
     __tablename__ = "users"
     id = Column(Integer, primary_key=True, autoincrement=True)
-    name = Column(String(100), nullable=False)
-    email = Column(String(255), unique=True, nullable=False)
+    username = Column(String(100), unique=True, nullable=False)
     password_hash = Column(String(255), nullable=False)   # bcrypt hash, never plain text
-    sessions = relationship("UserSession", back_populates="user",
-                            cascade="all, delete-orphan")
-
-
-class UserSession(Base):
-    __tablename__ = "sessions"
-    id = Column(String(64), primary_key=True)  # opaque session token
-    user_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"),
-                     nullable=False)
-    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
-    expires_at = Column(DateTime, nullable=False)
-    user = relationship("User", back_populates="sessions")
+    role = Column(Enum(*ROLES, name="user_role"), nullable=False,
+                  default="reader", server_default="reader")
+    # Legacy HW4 profile columns, nullable since HW7 (kept so old rows survive).
+    name = Column(String(100), nullable=True)
+    email = Column(String(255), unique=True, nullable=True)
+    created_at = Column(DateTime, nullable=False, server_default=func.now())
 
 
 class TrialNote(Base):

@@ -1,4 +1,8 @@
-"""Primary entity (Trial) CRUD. HW5: nct_id, enrollment_slots, status, sponsor FK."""
+"""Primary entity (Trial) CRUD. HW5: nct_id, enrollment_slots, status, sponsor FK.
+
+HW7 access control (JWT bearer): list/read = any authenticated role,
+create/update = writer or moderator, delete = moderator only.
+"""
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy import func, or_
 from sqlalchemy.orm import Session, joinedload, selectinload
@@ -6,7 +10,7 @@ from sqlalchemy.orm import Session, joinedload, selectinload
 from database import get_db
 from models import Sponsor, Trial, TrialNote
 from schemas import Page, TrialIn, TrialOut
-from security import require_user
+from security import MODERATOR_ONLY, WRITE_ROLES, require_user
 
 router = APIRouter(prefix="/api/trials", tags=["trials"],
                    dependencies=[Depends(require_user)])
@@ -67,7 +71,8 @@ def get_trial(trial_id: int, db: Session = Depends(get_db)):
     return trial_out(get_or_404(db, trial_id))
 
 
-@router.post("", status_code=201, response_model=TrialOut)
+@router.post("", status_code=201, response_model=TrialOut,
+             dependencies=[Depends(WRITE_ROLES)])
 def create_trial(body: TrialIn, db: Session = Depends(get_db)):
     check_refs(db, body)
     trial = Trial(**body.model_dump())
@@ -77,7 +82,7 @@ def create_trial(body: TrialIn, db: Session = Depends(get_db)):
     return trial_out(trial)
 
 
-@router.put("/{trial_id}", response_model=TrialOut)
+@router.put("/{trial_id}", response_model=TrialOut, dependencies=[Depends(WRITE_ROLES)])
 def update_trial(trial_id: int, body: TrialIn, db: Session = Depends(get_db)):
     trial = get_or_404(db, trial_id)
     check_refs(db, body, exclude_id=trial_id)
@@ -88,7 +93,7 @@ def update_trial(trial_id: int, body: TrialIn, db: Session = Depends(get_db)):
     return trial_out(trial)
 
 
-@router.delete("/{trial_id}")
+@router.delete("/{trial_id}", dependencies=[Depends(MODERATOR_ONLY)])
 def delete_trial(trial_id: int, db: Session = Depends(get_db)):
     trial = get_or_404(db, trial_id)
     db.delete(trial)

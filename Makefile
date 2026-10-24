@@ -59,3 +59,15 @@ hw06-agent-check:
 verify-hw06:
 	@$(call STAMP,make verify-hw06 (HW6 smoke test))
 	python3 -u code/verify_hw06.py 2>&1 | python3 code/tslog.py $(LOG6)
+
+# ---------------- HW7 ----------------
+LOG7 = reports/hw07/RUN_LOG.txt
+STAMP7 = mkdir -p reports/hw07/raw; echo "[$$(date '+%Y-%m-%d %H:%M:%S')] ======================================================================" >> $(LOG7); echo "[$$(date '+%Y-%m-%d %H:%M:%S')] RUN: $(1)   run by: Ani Taraiya" >> $(LOG7)
+
+hw07-migrate:
+	@$(call STAMP7,make hw07-migrate (HW7 Part 1 users table + role users))
+	cd code/web_application && python3 -u migrate_hw07.py 2>&1 | python3 ../tslog.py ../../$(LOG7)
+
+hw07-part1:
+	@$(call STAMP7,make hw07-part1 S=$(S) (HW7 Part 1 JWT + RBAC demo))
+	bash code/hw07_part1_demo.sh $(S) 2>&1 | python3 code/tslog.py $(LOG7)
