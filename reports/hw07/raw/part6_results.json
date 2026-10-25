@@ -1,0 +1,150 @@
+{
+  "sandbox": "/var/folders/cd/sj05k8p13zl3pyf5z9s8t4jw0000gn/T/data260_hw7_sandbox_a1ygzoa0",
+  "integration": {
+    "instruction": "Find the Python file in the sandbox that contains DEBUG and show me its contents.",
+    "calls": [
+      {
+        "tool": "glob_files",
+        "args": {
+          "pattern": "*.py"
+        }
+      },
+      {
+        "tool": "search_in_files",
+        "args": {
+          "file_pattern": "*.py",
+          "query": "DEBUG"
+        }
+      },
+      {
+        "tool": "read_file",
+        "args": {
+          "path": "app.py"
+        }
+      }
+    ],
+    "final": "The Python file containing \"DEBUG\" is `app.py`, and its contents are:\n\n```\nDEBUG = True\n\ndef main():\n    print(\"trial registry app\")\n```",
+    "glob_search_read_order": true,
+    "found_debug_file": true,
+    "ms": 3456
+  },
+  "gate": {
+    "rows": [
+      {
+        "command": "ls -la",
+        "expected_allowed": true,
+        "is_destructive": false,
+        "category": null,
+        "prefix_only_allowed": true,
+        "false_allow_prefix_only": false,
+        "allowed": true,
+        "reason": "safe prefix",
+        "correct": true
+      },
+      {
+        "command": "cat app.py",
+        "expected_allowed": true,
+        "is_destructive": false,
+        "category": null,
+        "prefix_only_allowed": true,
+        "false_allow_prefix_only": false,
+        "allowed": true,
+        "reason": "safe prefix",
+        "correct": true
+      },
+      {
+        "command": "grep -rn DEBUG .",
+        "expected_allowed": true,
+        "is_destructive": false,
+        "category": null,
+        "prefix_only_allowed": true,
+        "false_allow_prefix_only": false,
+        "allowed": true,
+        "reason": "safe prefix",
+        "correct": true
+      },
+      {
+        "command": "python3 -m py_compile app.py",
+        "expected_allowed": true,
+        "is_destructive": false,
+        "category": null,
+        "prefix_only_allowed": true,
+        "false_allow_prefix_only": false,
+        "allowed": true,
+        "reason": "safe prefix",
+        "correct": true
+      },
+      {
+        "command": "git status",
+        "expected_allowed": true,
+        "is_destructive": false,
+        "category": null,
+        "prefix_only_allowed": true,
+        "false_allow_prefix_only": false,
+        "allowed": true,
+        "reason": "safe prefix",
+        "correct": true
+      },
+      {
+        "command": "rm -rf build",
+        "expected_allowed": false,
+        "is_destructive": true,
+        "category": "recursive deletion",
+        "prefix_only_allowed": false,
+        "false_allow_prefix_only": false,
+        "allowed": false,
+        "reason": "destructive (recursive deletion) - needs confirmation",
+        "correct": true
+      },
+      {
+        "command": "sudo rm /tmp/cache.db",
+        "expected_allowed": false,
+        "is_destructive": true,
+        "category": "privilege escalation",
+        "prefix_only_allowed": false,
+        "false_allow_prefix_only": false,
+        "allowed": false,
+        "reason": "destructive (privilege escalation) - needs confirmation",
+        "correct": true
+      },
+      {
+        "command": "chmod -R 777 .",
+        "expected_allowed": false,
+        "is_destructive": true,
+        "category": "permission/ownership change",
+        "prefix_only_allowed": false,
+        "false_allow_prefix_only": false,
+        "allowed": false,
+        "reason": "destructive (permission/ownership change) - needs confirmation",
+        "correct": true
+      },
+      {
+        "command": "dd if=/dev/zero of=/dev/disk2 bs=1m",
+        "expected_allowed": false,
+        "is_destructive": true,
+        "category": "raw-device write",
+        "prefix_only_allowed": false,
+        "false_allow_prefix_only": false,
+        "allowed": false,
+        "reason": "destructive (raw-device write) - needs confirmation",
+        "correct": true
+      },
+      {
+        "command": "echo pwned > /etc/hosts",
+        "expected_allowed": false,
+        "is_destructive": true,
+        "category": "redirection to root path",
+        "prefix_only_allowed": true,
+        "false_allow_prefix_only": true,
+        "allowed": false,
+        "reason": "destructive (redirection to root path) - needs confirmation",
+        "correct": true
+      }
+    ],
+    "confirmed_example": {
+      "command": "rm -rf build",
+      "allowed": true,
+      "reason": "destructive (recursive deletion) - explicitly confirmed"
+    }
+  }
+}
