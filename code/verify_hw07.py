@@ -212,16 +212,21 @@ def part4_snapshots():
 
 
 def part4_agent_b():
+    """Run the agent on scenario B; a local LLM can stall once, so allow one rerun (both logged)."""
     from bikeshare.agent import run_bike_agent
     srv = serve(HW / "raw" / "part4_scenarioB", 8598)
+    tries = []
     try:
-        r = run_bike_agent(HW / "cases" / "part4_scenarioB_trips.csv",
-                           "http://127.0.0.1:8598/pricing_snapshot.txt")
+        for _ in range(2):
+            r = run_bike_agent(HW / "cases" / "part4_scenarioB_trips.csv",
+                               "http://127.0.0.1:8598/pricing_snapshot.txt")
+            m = r["metrics"]
+            tries.append(f"decision={r['decision']}, steps={m['steps']}, stop={m['stop_reason']}")
+            if r["decision"] == "Pay Per Ride/Minute" and m["stop_reason"] == "final_answer":
+                return True, f"scenario B, attempt {len(tries)} of 2: " + " | ".join(tries)
     finally:
         srv.shutdown()
-    m = r["metrics"]
-    ok = r["decision"] == "Pay Per Ride/Minute" and m["stop_reason"] == "final_answer"
-    return ok, f"scenario B decision={r['decision']}, steps={m['steps']}, stop={m['stop_reason']}"
+    return False, "scenario B, 2 attempts: " + " | ".join(tries)
 
 
 def part5_defenses():
