@@ -1,0 +1,27 @@
+{
+  "scenario": "B_pay_per_use_wins",
+  "file": "reports/hw07/cases/part4_scenarioB_trips.csv",
+  "rows": 520,
+  "riders": 260,
+  "rides_per_rider": 2.0,
+  "first_start": "2026-09-01 08:24:21.092",
+  "last_start": "2026-09-30 23:20:42.037",
+  "avg_duration_min": 7.97,
+  "median_duration_min": 7.76,
+  "max_duration_min": 14.97,
+  "over_30_min": 0,
+  "over_45_min": 0,
+  "ebike_share": 0.0,
+  "member_casual": {
+    "member": 0,
+    "casual": 520
+  },
+  "csv_sha256": "8c0f980423db104bc016b1c6f133d7cff84f60c059e711250273cf9da93d0404",
+  "source": {
+    "url": "https://s3.amazonaws.com/tripdata/JC-202609-citibike-tripdata.csv.zip",
+    "zip_sha256": "d04ae5e667fba05b1a9bd7dafd95d85afab21a8069bed9b35ac5867469fc9414",
+    "downloaded_at": "2026-10-24T12:56:44",
+    "valid_trips_in_month": 106472,
+    "note": "rider_id is assigned by this script (public data has no rider id)"
+  }
+}

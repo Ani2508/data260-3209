@@ -12,6 +12,7 @@ from sqlalchemy.exc import IntegrityError, OperationalError
 import config
 import models  # noqa: F401  (registers tables)
 from auth import router as auth_router
+from bikeshare_routes import router as bikeshare_router
 from chat_routes import router as chat_router
 from database import Base, engine, query_count
 from doc_trials import router as doc_trials_router
@@ -39,6 +40,7 @@ app.include_router(trials_router)
 app.include_router(sponsors_router)
 app.include_router(doc_trials_router)
 app.include_router(chat_router)
+app.include_router(bikeshare_router)            # HW7 Part 4: /bikeshare UI
 
 
 @app.on_event("startup")

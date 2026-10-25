@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bike-Share Plan Advisor</title>
+<style>
+  :root {
+    --bg: #f4f5f2; --panel: #ffffff; --ink: #1d2320; --muted: #66706a; --line: #dfe3dd;
+    --accent: #0b6e4f; --accent-soft: #e2f1ea; --warn: #9a5b00; --warn-soft: #fbefdc;
+    --call: #24508f; --obs: #4b5a52; --mono: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 14px/1.5 -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  header { padding: 18px 28px; border-bottom: 1px solid var(--line); background: var(--panel); }
+  header h1 { margin: 0; font-size: 20px; letter-spacing: -0.01em; }
+  header p { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+  main { max-width: 1320px; margin: 0 auto; padding: 18px 28px 40px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px; }
+  form { display: grid; grid-template-columns: 1fr 1.4fr auto; gap: 12px; align-items: end; }
+  label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; font-weight: 600; }
+  input[type=text], input[type=file] { width: 100%; padding: 8px 10px; border: 1px solid var(--line);
+         border-radius: 7px; background: #fbfcfa; font: inherit; }
+  button { padding: 9px 22px; border: 0; border-radius: 7px; background: var(--accent); color: #fff;
+           font-weight: 600; font-size: 14px; cursor: pointer; }
+  button:disabled { opacity: .55; cursor: wait; }
+  #status { margin-top: 10px; color: var(--muted); font-size: 13px; min-height: 18px; }
+  .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 14px 0; }
+  .metric { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; }
+  .metric .k { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+  .metric .v { font-size: 18px; font-weight: 650; margin-top: 2px; }
+  .grid { display: grid; grid-template-columns: 1fr 1.25fr; gap: 14px; align-items: start; }
+  h2 { font-size: 14px; margin: 0 0 10px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+  h3 { font-size: 13px; margin: 16px 0 6px; }
+  ol.timeline { list-style: none; margin: 0; padding: 0; max-height: 760px; overflow: auto; }
+  .ev { border-left: 3px solid var(--line); padding: 6px 10px; margin-bottom: 6px; background: #fafbf9; border-radius: 0 6px 6px 0; }
+  .ev.call { border-color: var(--call); }
+  .ev.obs { border-color: var(--obs); }
+  .ev .head { font-size: 12px; font-weight: 650; }
+  .ev.call .head { color: var(--call); }
+  .ev .t { color: var(--muted); font-weight: 400; margin-left: 6px; }
+  .ev pre { margin: 4px 0 0; font: 11.5px/1.4 var(--mono); white-space: pre-wrap; word-break: break-word; color: #333; }
+  .decision { display: inline-block; padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: 15px;
+              background: var(--accent-soft); color: var(--accent); }
+  .decision.ppu { background: var(--warn-soft); color: var(--warn); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--line); }
+  th { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  tr.win td { font-weight: 700; color: var(--accent); }
+  ul { margin: 4px 0; padding-left: 18px; }
+  .cite { font-size: 12.5px; }
+  .cite code { font-family: var(--mono); font-size: 11.5px; color: var(--muted); }
+  .quote { font-size: 12.5px; color: #333; margin: 2px 0; }
+  .empty { color: var(--muted); font-style: italic; }
+  @media (max-width: 900px) { form, .grid, .metrics { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Bike-Share Plan Advisor</h1>
+  <p>Citi Bike (NYC) &middot; LangChain ReAct/MRKL agent with csv_sql, policy_retriever, calculator &middot; s3209 &middot; Ani Taraiya</p>
+</header>
+<main>
+  <div class="card">
+    <form id="f">
+      <div><label for="csv">Trip CSV</label><input id="csv" type="file" accept=".csv" required></div>
+      <div><label for="url">Pricing page URL</label>
+        <input id="url" type="text" value="https://citibikenyc.com/pricing" required></div>
+      <button id="run" type="submit">Run</button>
+    </form>
+    <div id="status"></div>
+  </div>
+
+  <div class="metrics">
+    <div class="metric"><div class="k">Decision</div><div class="v" id="m-dec">&ndash;</div></div>
+    <div class="metric"><div class="k">Step count</div><div class="v" id="m-steps">&ndash;</div></div>
+    <div class="metric"><div class="k">Total time</div><div class="v" id="m-time">&ndash;</div></div>
+    <div class="metric"><div class="k">Stop reason</div><div class="v" id="m-stop">&ndash;</div></div>
+  </div>
+
+  <div class="grid">
+    <section class="card">
+      <h2>Tool-call timeline</h2>
+      <ol class="timeline" id="timeline"><li class="empty">Run the agent to see tool calls and observations.</li></ol>
+    </section>
+    <section class="card" id="results">
+      <h2>Results</h2>
+      <div class="empty">No result yet.</div>
+    </section>
+  </div>
+</main>
+<script>
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const money = (v) => (typeof v === "number" ? "$" + v.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) : esc(v ?? "–"));
+
+function shortObs(ev) {
+  try {
+    const o = JSON.parse(ev.content);
+    if (!o.success) return "error: " + o.error;
+    const d = o.data || {};
+    if (d.passages) return d.passages.map(p => `[${p.id}] (${p.score}) ${p.text.replace(/<\/?untrusted_page_text>/g, "")}`).join("\n");
+    if (d.rows) return `${d.row_count} row(s): ` + JSON.stringify(d.rows.slice(0, 3)) + (d.row_count > 3 ? " ..." : "");
+    if ("value" in d) return `value = ${d.value}${d.units ? " " + d.units : ""}`;
+    return JSON.stringify(d).slice(0, 300);
+  } catch { return String(ev.content).slice(0, 300); }
+}
+
+function renderTimeline(tl) {
+  if (!tl.length) { $("timeline").innerHTML = '<li class="empty">No tool calls.</li>'; return; }
+  let n = 0;
+  $("timeline").innerHTML = tl.map(ev => {
+    const isCall = ev.type === "tool_call";
+    if (isCall) n += 1;
+    const body = isCall ? JSON.stringify(ev.args, null, 1) : shortObs(ev);
+    return `<li class="ev ${isCall ? "call" : "obs"}"><div class="head">${isCall ? "Step " + n + " · call" : "observation"} · ${esc(ev.tool)}<span class="t">${(ev.t_ms / 1000).toFixed(1)} s</span></div><pre>${esc(body)}</pre></li>`;
+  }).join("");
+}
+
+function renderResults(r) {
+  const f = r.final || {};
+  const ppu = f.pay_per_use_total, mem = f.membership_total;
+  const memWins = (r.decision || "").startsWith("Buy");
+  const weekly = r.weekly || [];
+  const cols = weekly.length ? Object.keys(weekly[0]) : [];
+  const cites = (r.citations || []).map(c =>
+    `<div class="cite"><a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.url)}</a> &middot; captured ${esc(c.accessed_at)}<br><code>SHA-256 ${esc(c.sha256)}</code></div>`).join("");
+  const cited = new Set((((r.final || {}).justification) || "").match(/P\d+/g) || []);
+  const quotes = (r.passages || []).filter(p => cited.has(p.id)).map(p => `<div class="quote">[${esc(p.id)}] ${esc(p.text)}</div>`).join("");
+  $("results").innerHTML = `
+    <h2>Results</h2>
+    <div class="decision ${memWins ? "" : "ppu"}">${esc(r.decision || "No decision")}</div>
+    <h3>Cost comparison</h3>
+    <table>
+      <tr><th>Plan</th><th class="num">Total</th></tr>
+      <tr class="${memWins ? "" : "win"}"><td>Pay per ride / minute</td><td class="num">${money(ppu)}</td></tr>
+      <tr class="${memWins ? "win" : ""}"><td>Monthly membership (fees ${money(f.membership_fees)} + residual ${money(f.member_residual_charges)})</td><td class="num">${money(mem)}</td></tr>
+      <tr><td>Break-even rides per rider per month</td><td class="num">${esc(f.break_even_rides_per_rider_month ?? "–")}</td></tr>
+      <tr><td>Actual rides per rider per month</td><td class="num">${esc(f.actual_rides_per_rider_month ?? "–")}</td></tr>
+    </table>
+    <h3>Justification</h3><p>${esc(f.justification || r.final_text || "")}</p>
+    <h3>Weekly usage (pay-per-use spend)</h3>
+    ${weekly.length ? `<table><tr>${cols.map(c => `<th class="${c === "week_start" ? "" : "num"}">${esc(c)}</th>`).join("")}</tr>
+      ${weekly.map(w => `<tr>${cols.map(c => `<td class="${c === "week_start" ? "" : "num"}">${esc(w[c])}</td>`).join("")}</tr>`).join("")}</table>`
+      : '<div class="empty">The agent did not run a weekly query.</div>'}
+    <h3>Assumptions and caveats</h3>
+    <ul>${(f.assumptions || []).map(a => `<li>${esc(a)}</li>`).join("") || '<li class="empty">none given</li>'}
+        ${(r.data_notes || []).map(a => `<li>${esc(a)}</li>`).join("")}</ul>
+    <h3>Citations</h3>${cites || '<div class="empty">none</div>'}${quotes}`;
+}
+
+$("f").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const file = $("csv").files[0];
+  if (!file) return;
+  const fd = new FormData();
+  fd.append("file", file);
+  fd.append("url", $("url").value.trim());
+  $("run").disabled = true;
+  $("status").textContent = `Running the agent on ${file.name} ... (about 30-90 s with the local model)`;
+  const t0 = performance.now();
+  try {
+    const res = await fetch("/api/bikeshare/run", {method: "POST", body: fd});
+    const r = await res.json();
+    if (!res.ok) throw new Error(r.detail || res.status);
+    renderTimeline(r.timeline || []);
+    renderResults(r);
+    $("m-dec").textContent = r.decision || "–";
+    $("m-steps").textContent = r.metrics.steps;
+    $("m-time").textContent = (r.metrics.total_ms / 1000).toFixed(1) + " s";
+    $("m-stop").textContent = r.metrics.stop_reason;
+    $("status").textContent = `Done: ${file.name} · evidence saved to ${r.evidence_dir} · page round trip ${((performance.now() - t0) / 1000).toFixed(1)} s`;
+  } catch (err) {
+    $("status").textContent = "Error: " + err.message;
+  } finally {
+    $("run").disabled = false;
+  }
+});
+</script>
+</body>
+</html>

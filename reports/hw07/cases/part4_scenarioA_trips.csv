@@ -1,0 +1,521 @@
+ride_id,rider_id,rideable_type,started_at,ended_at,start_station_name,end_station_name,member_casual
+A7D74CFF95613271,rider_006,classic_bike,2026-09-01 06:39:31.232,2026-09-01 06:59:06.097,Danforth Light Rail,Grove St PATH,member
+2F93EB9203B014F9,rider_004,classic_bike,2026-09-01 08:47:43.537,2026-09-01 08:57:18.425,Dr. Lena Edwards Park,Grove St PATH,member
+CF0F96D6A8365D82,rider_005,classic_bike,2026-09-01 08:56:14.086,2026-09-01 09:06:24.971,Willow Ave & 12 St,Willow Ave & 12 St,member
+240B316505C89954,rider_006,electric_bike,2026-09-01 09:54:45.522,2026-09-01 10:05:43.721,Marin Light Rail,Morris Canal,member
+8D20B0EE3FE3E038,rider_007,classic_bike,2026-09-01 12:15:14.310,2026-09-01 12:25:30.240,Union St,Lafayette Park,member
+71043A81B5E946AE,rider_003,classic_bike,2026-09-01 13:14:34.126,2026-09-01 13:22:53.162,Columbus Park - Clinton St & 9 St,River St & 1 St,member
+19D35C90219AF932,rider_001,electric_bike,2026-09-01 15:29:32.781,2026-09-01 15:37:45.457,Hudson Pl & Hoboken Terminal,Mama Johnson Field - 4 St & Jackson St,member
+76310B6D7AC2A957,rider_004,electric_bike,2026-09-01 15:46:27.615,2026-09-01 15:55:33.091,Newark Ave,Pershing Field,member
+BCFC418EFB959027,rider_001,electric_bike,2026-09-01 15:46:30.244,2026-09-01 15:55:20.397,4 St & Grand St,Pershing Field,member
+C74D9AA04FC01BE7,rider_007,classic_bike,2026-09-01 15:59:30.721,2026-09-01 16:14:59.419,Bloomfield St & 15 St,Southwest Park - Jackson St & Observer Hwy,member
+B378B7720BDC1F5B,rider_007,classic_bike,2026-09-01 16:42:23.211,2026-09-01 16:57:31.985,Southwest Park - Jackson St & Observer Hwy,2 St & Park Ave,member
+D416FD93EB36E786,rider_008,electric_bike,2026-09-01 18:23:32.299,2026-09-01 18:32:28.685,Bergen Ave & Sip Ave,Astor Place,member
+D5AEDC945171D6E0,rider_006,classic_bike,2026-09-01 22:06:49.361,2026-09-01 22:15:26.232,South Waterfront Walkway - Sinatra Dr & 1 St,Mama Johnson Field - 4 St & Jackson St,member
+032C6136C529A10F,rider_003,classic_bike,2026-09-02 05:39:22.357,2026-09-02 05:47:59.996,9 St HBLR - Jackson St & 8 St,Hudson Pl & Hoboken Terminal,member
+A2915058B39E8E46,rider_006,electric_bike,2026-09-02 06:30:58.600,2026-09-02 06:40:41.209,Hamilton Park,Oakland Ave,member
+BB5839DE01A3F83F,rider_008,classic_bike,2026-09-02 07:40:15.613,2026-09-02 07:55:27.331,12 St & Sinatra Dr N,W 44 St & 11 Ave,member
+E63CA7AD896A27E1,rider_006,classic_bike,2026-09-02 10:07:00.674,2026-09-02 10:15:42.929,Essex Light Rail,Hamilton Park,member
+ACC0632438072B16,rider_002,classic_bike,2026-09-02 10:36:05.304,2026-09-02 10:49:08.250,Heights Elevator,Warren St,member
+F6EEE10154065F60,rider_008,classic_bike,2026-09-02 10:43:24.839,2026-09-02 10:58:05.847,York St & Marin Blvd,Hamilton Park,member
+EB64F07318134215,rider_002,classic_bike,2026-09-02 13:07:43.510,2026-09-02 13:24:03.591,Columbus Drive,9 St HBLR - Jackson St & 8 St,member
+F2CE372A88063730,rider_004,electric_bike,2026-09-02 15:46:13.975,2026-09-02 15:59:20.464,Hamilton Park,Bergen Ave,member
+F0E46096CD889206,rider_003,electric_bike,2026-09-02 16:05:27.666,2026-09-02 16:21:11.497,Monmouth & 6th,14 St Ferry - 14 St & Shipyard Ln,member
+20C6D74A29DBF026,rider_004,electric_bike,2026-09-02 16:41:28.671,2026-09-02 16:51:56.914,Church Sq Park - 5 St & Park Ave,Hoboken Ave at Monmouth St,member
+C353FCDE68493DE5,rider_004,classic_bike,2026-09-02 17:38:24.991,2026-09-02 17:59:50.471,Marin Light Rail,Bergen Ave & Sip Ave,member
+93F1871CF5A62776,rider_002,classic_bike,2026-09-02 18:46:09.212,2026-09-02 18:58:40.404,Washington St,4 St & River St,member
+5C11E6EB48F5CB5E,rider_004,classic_bike,2026-09-02 18:54:04.436,2026-09-02 19:11:40.282,Brunswick St,Newport Pkwy,member
+5A9A33627AF0A972,rider_003,electric_bike,2026-09-02 19:02:30.261,2026-09-02 19:15:35.707,5 Corners Library,Lafayette Park,member
+0952B2F51FB1078B,rider_003,classic_bike,2026-09-02 19:03:08.062,2026-09-02 19:32:51.510,Willow Ave & 12 St,Brunswick St,member
+F03D06D9CC3C747A,rider_002,electric_bike,2026-09-02 20:22:48.732,2026-09-02 20:31:18.526,Marshall St & 2 St,Jersey & 3rd,member
+6C5EB61F10CF5EEB,rider_004,classic_bike,2026-09-02 21:26:20.100,2026-09-02 21:43:48.423,Newark Ave,Warren St,member
+14F53B551167B7CA,rider_008,electric_bike,2026-09-03 07:48:47.412,2026-09-03 07:58:20.080,West Side Ave Light Rail,Bergen Ave & Sip Ave,member
+9289821F2C5BBFE0,rider_005,classic_bike,2026-09-03 08:41:36.018,2026-09-03 08:49:44.836,South Waterfront Walkway - Sinatra Dr & 1 St,Clinton St & 7 St,member
+FF5145C1CC3057AA,rider_006,classic_bike,2026-09-03 09:05:06.164,2026-09-03 09:24:56.893,Bergen Ave & Sip Ave,City Hall - Washington St & 1 St,member
+52EED5D4155F53E0,rider_004,classic_bike,2026-09-03 09:31:37.871,2026-09-03 09:48:15.266,8 St & Washington St,Grand St & 14 St,member
+E80B5EB4092A31B0,rider_005,classic_bike,2026-09-03 10:40:04.229,2026-09-03 10:53:37.826,McGinley Square,Washington St & Morgan St,member
+CFEA7FD2C82B120E,rider_006,electric_bike,2026-09-03 11:06:31.724,2026-09-03 11:19:59.621,Madison St & 10 St,12 St & Sinatra Dr N,member
+A5F36F20AF912273,rider_004,electric_bike,2026-09-03 11:39:00.532,2026-09-03 11:51:55.215,Riverview Park,Washington St,member
+D739DB1F0803C696,rider_006,classic_bike,2026-09-03 13:18:21.508,2026-09-03 13:34:22.754,Bergen Ave & Sip Ave,7 St & Monroe St,member
+BBEA33B85620E0A6,rider_007,electric_bike,2026-09-03 13:48:04.059,2026-09-03 14:00:59.533,Newport PATH,Willow Ave & 12 St,member
+0042664894F9F375,rider_006,electric_bike,2026-09-03 13:52:30.246,2026-09-03 14:00:31.201,Hamilton Park,Paulus Hook,member
+F2AC8B018121258D,rider_005,electric_bike,2026-09-03 14:20:19.215,2026-09-03 14:29:48.995,Leonard Gordon Park,City Hall - Washington St & 1 St,member
+AE0FB3F1CE1C3A62,rider_003,classic_bike,2026-09-03 14:25:20.348,2026-09-03 14:39:53.094,Bloomfield St & 15 St,Bloomfield St & 15 St,member
+6524BE3F0CC1306B,rider_008,electric_bike,2026-09-03 14:54:31.642,2026-09-03 15:05:26.743,Stevens - River Ter & 6 St,Riverview Park,member
+95F4D119E75BF3C0,rider_001,classic_bike,2026-09-03 15:16:25.428,2026-09-03 15:24:41.705,Montgomery St,Warren St,member
+80EC570ECEE5F632,rider_006,electric_bike,2026-09-03 15:51:13.344,2026-09-03 16:01:51.529,Hudson Pl & Hoboken Terminal,Columbus Drive,member
+98D2E51E51142BBD,rider_006,electric_bike,2026-09-03 15:51:18.283,2026-09-03 16:05:57.292,Newport PATH,Hilltop,member
+6E02EDD72E0C2650,rider_008,classic_bike,2026-09-03 16:55:58.100,2026-09-03 17:04:41.938,7 St & Monroe St,City Hall - Washington St & 1 St,member
+57DEE6AEF442956F,rider_006,classic_bike,2026-09-03 16:56:31.949,2026-09-03 17:08:31.032,Grove St PATH,Pacific Ave & Communipaw Ave,member
+7C04A176A29FF886,rider_006,electric_bike,2026-09-03 17:10:47.674,2026-09-03 17:26:44.188,Astor Place,Bergen Ave & Sip Ave,member
+BD293AB52DC0A15C,rider_001,electric_bike,2026-09-03 17:17:58.794,2026-09-03 17:36:46.357,Manila & 1st,Manila & 1st,member
+60EFD994DB5F6A69,rider_001,classic_bike,2026-09-03 17:32:34.916,2026-09-03 17:41:29.955,Grove St PATH,Dr. Lena Edwards Park,member
+C0C3F3A7CBE9D9C1,rider_004,electric_bike,2026-09-03 17:35:38.305,2026-09-03 17:50:59.352,Adams St & 12 St,Brunswick St,member
+22C31BFF94B97417,rider_005,electric_bike,2026-09-03 18:09:59.947,2026-09-03 18:18:17.142,Newport PATH,Columbus Park - Clinton St & 9 St,member
+2CA084B3341B95CF,rider_007,electric_bike,2026-09-03 18:10:14.988,2026-09-03 18:19:50.964,Bergen Ave,Warren St,member
+CDD220B9FEFCA4D5,rider_004,electric_bike,2026-09-03 18:21:33.667,2026-09-03 18:31:14.748,Grand St,City Hall,member
+E17B237A7B51DF88,rider_002,electric_bike,2026-09-03 19:39:45.613,2026-09-03 19:49:01.969,Carteret Ave & Arlington Ave,Hamilton Park,member
+37B7AA3EE49A16D7,rider_008,classic_bike,2026-09-03 21:45:22.663,2026-09-03 22:10:18.760,Warren St,Newark St & Washington St,member
+B1D3E1E1DD1B89FC,rider_004,electric_bike,2026-09-03 22:51:58.625,2026-09-03 23:01:22.824,Grand St,Astor Place,member
+76A33119818A8E02,rider_001,electric_bike,2026-09-04 00:40:17.730,2026-09-04 00:48:24.969,Hoboken Terminal - Hudson St & Hudson Pl,Warren St,member
+21E98651D7053761,rider_008,classic_bike,2026-09-04 07:22:10.007,2026-09-04 07:31:18.479,Lafayette Park,Grove St PATH,member
+1EF409123163B1A3,rider_008,electric_bike,2026-09-04 07:58:31.213,2026-09-04 08:11:35.508,Hoboken Terminal - Hudson St & Hudson Pl,Southwest Park - Jackson St & Observer Hwy,member
+E3A4C40B9982D642,rider_004,classic_bike,2026-09-04 09:37:36.063,2026-09-04 09:47:36.444,Southwest Park - Jackson St & Observer Hwy,Brunswick St,member
+D9F85C4679DA2D11,rider_008,classic_bike,2026-09-04 10:44:25.662,2026-09-04 10:56:52.113,Brunswick St,Southwest Park - Jackson St & Observer Hwy,member
+A9BC18A43496FC59,rider_003,electric_bike,2026-09-04 11:30:03.765,2026-09-04 11:49:52.052,Journal Square,Newport PATH,member
+39BB8728524567E8,rider_002,electric_bike,2026-09-04 12:16:56.379,2026-09-04 12:26:47.193,Paulus Hook,Carteret Ave & Arlington Ave,member
+05A05F1ADAA59413,rider_005,electric_bike,2026-09-04 12:47:43.527,2026-09-04 12:57:13.153,Danforth Ave & JFK Blvd,Bergen Ave & Sip Ave,member
+78A2AA3B0B51E000,rider_006,electric_bike,2026-09-04 13:08:58.893,2026-09-04 13:18:43.219,Newport PATH,5 Corners Library,member
+751D4AECF2D4C0E3,rider_008,classic_bike,2026-09-04 13:21:58.570,2026-09-04 13:35:19.939,Church Sq Park - 5 St & Park Ave,Newport Pkwy,member
+9F9DD5F8EC06C16A,rider_005,classic_bike,2026-09-04 16:00:13.131,2026-09-04 16:09:17.125,Hudson Pl & Hoboken Terminal,11 St & Washington St,member
+BE81D115511F5464,rider_005,electric_bike,2026-09-04 16:06:14.466,2026-09-04 16:18:42.038,Exchange Pl,Madison St & 10 St,member
+636B9855F6C18A1B,rider_002,electric_bike,2026-09-04 16:21:37.084,2026-09-04 16:30:27.794,Baldwin at Montgomery,Essex Light Rail,member
+DA74E28728661026,rider_002,electric_bike,2026-09-04 17:54:04.276,2026-09-04 18:02:43.635,Madison St & 10 St,Hoboken Terminal - Hudson St & Hudson Pl,member
+A68D25FA8C2F6EEA,rider_001,classic_bike,2026-09-04 18:20:22.311,2026-09-04 18:29:18.263,Hudson Pl & Hoboken Terminal,12 St & Sinatra Dr N,member
+A38EDA603418F162,rider_001,classic_bike,2026-09-04 18:58:57.536,2026-09-04 19:14:16.488,Morris Canal,City Hall,member
+72CCAD29250A2AD3,rider_007,electric_bike,2026-09-04 19:39:31.604,2026-09-04 19:53:10.179,Washington St,8 St & Washington St,member
+FF508A908C6B9BA5,rider_001,electric_bike,2026-09-04 19:59:55.283,2026-09-04 20:15:57.089,Columbus Park - Clinton St & 9 St,Hamilton Park,member
+045C88B305F27483,rider_004,electric_bike,2026-09-04 21:48:00.410,2026-09-04 22:03:46.490,City Hall - Washington St & 1 St,Brunswick St,member
+7245DF0289BD5FA2,rider_006,electric_bike,2026-09-04 22:06:27.615,2026-09-04 22:14:59.115,Pacific Ave & Communipaw Ave,Newark Ave,member
+9CABB8F0544DA1ED,rider_002,electric_bike,2026-09-05 09:39:19.816,2026-09-05 09:52:45.880,Liberty Light Rail,2 St & Park Ave,member
+C1D75AE57AFC1544,rider_001,electric_bike,2026-09-05 12:51:11.980,2026-09-05 13:05:40.142,Church Sq Park - 5 St & Park Ave,Marin Light Rail,member
+ABD591068CBB72EB,rider_001,electric_bike,2026-09-05 14:19:45.488,2026-09-05 14:32:05.840,Exchange Pl,Fairmount Ave,member
+DBED419D9E68E91E,rider_007,classic_bike,2026-09-05 14:31:16.479,2026-09-05 14:54:18.894,Jersey & 6th St,Hamilton Park,member
+E7156F7B4F54246C,rider_003,electric_bike,2026-09-05 15:06:05.361,2026-09-05 15:47:46.215,Liberty Light Rail,Van Vorst Park,member
+D471491DE216329D,rider_005,classic_bike,2026-09-05 16:47:18.084,2026-09-05 17:05:57.931,Hilltop,Newport PATH,member
+1D64A55549C95051,rider_003,classic_bike,2026-09-05 17:02:48.138,2026-09-05 17:24:21.497,Marshall St & 2 St,Communipaw & Berry Lane,member
+DC185727AA1FCEB5,rider_006,electric_bike,2026-09-05 20:09:25.635,2026-09-05 20:18:14.586,Union St,Carteret Ave & Arlington Ave,member
+6D6FA267FA3A73A3,rider_003,electric_bike,2026-09-05 20:12:15.311,2026-09-05 20:29:58.030,Bergen Ave & Sip Ave,West Side Ave Light Rail,member
+4942AA8F0A1AAF8D,rider_005,electric_bike,2026-09-05 20:36:06.384,2026-09-05 20:44:48.012,Lincoln Park,Bergen Ave & Sip Ave,member
+F1BFDCC66E17A886,rider_001,classic_bike,2026-09-05 20:39:44.785,2026-09-05 21:00:54.339,Pershing Field,Pershing Field,member
+53C183058878EB67,rider_004,electric_bike,2026-09-06 10:14:26.509,2026-09-06 10:24:29.016,Bergen Ave & Sip Ave,Hamilton Park,member
+37F13EC6A33B39AD,rider_008,classic_bike,2026-09-06 11:26:16.874,2026-09-06 11:39:21.536,Newark St & Washington St,Newport Pkwy,member
+53E3E7496E1DB011,rider_007,classic_bike,2026-09-06 11:58:44.565,2026-09-06 12:07:50.056,Marin Light Rail,Dr. Lena Edwards Park,member
+F3DA085E509E3728,rider_004,electric_bike,2026-09-06 12:44:32.554,2026-09-06 12:53:50.060,Newark Ave,Bergen Ave & Sip Ave,member
+A9A8E7E331F3851B,rider_008,electric_bike,2026-09-06 13:27:37.582,2026-09-06 13:35:39.431,Newport PATH,Brunswick & 6th,member
+E7E41AEFF414E090,rider_001,electric_bike,2026-09-06 13:28:58.856,2026-09-06 13:38:28.641,Union St & Bergen Ave,Baldwin at Montgomery,member
+2AD6AC03AE9128EF,rider_004,classic_bike,2026-09-06 13:49:54.419,2026-09-06 13:58:18.829,Arlington Ave & Bramhall Ave,Grove St PATH,member
+2C06B759111165A1,rider_006,classic_bike,2026-09-06 14:00:48.927,2026-09-06 14:11:08.742,Hamilton Park,Marshall St & 2 St,member
+04413B96C75F1AAF,rider_005,electric_bike,2026-09-06 15:08:34.450,2026-09-06 15:17:39.613,12 St & Sinatra Dr N,Hudson Pl & Hoboken Terminal,member
+186B0A2EE9D49510,rider_007,electric_bike,2026-09-06 15:35:20.968,2026-09-06 15:43:23.993,Bloomfield St & 15 St,Hudson Pl & Hoboken Terminal,member
+D37128D7360C3414,rider_007,classic_bike,2026-09-06 15:47:52.866,2026-09-06 16:00:04.283,Brunswick St,Washington St & Morgan St,member
+AAEE947CEF6FAE31,rider_001,electric_bike,2026-09-06 15:57:54.870,2026-09-06 16:06:11.241,Pershing Field,11 St & Washington St,member
+F55973C7A3FED104,rider_008,electric_bike,2026-09-06 18:02:10.345,2026-09-06 18:12:21.174,Washington St,Arlington Ave & Bramhall Ave,member
+F3079BF5D681AA45,rider_004,electric_bike,2026-09-06 18:08:01.661,2026-09-06 18:16:57.009,11 St & Washington St,Newark St & Washington St,member
+06F6B36EB373769C,rider_003,classic_bike,2026-09-06 18:30:21.838,2026-09-06 18:45:03.062,4 St & River St,Newport PATH,member
+C660F4EDBB144108,rider_002,classic_bike,2026-09-07 10:49:38.159,2026-09-07 11:02:36.974,Montgomery St,Hamilton Park,member
+8337DE6D460AD78E,rider_001,classic_bike,2026-09-07 12:18:20.450,2026-09-07 12:54:45.480,12 St & Sinatra Dr N,12 St & Sinatra Dr N,member
+DD2224394467AFC7,rider_002,classic_bike,2026-09-07 13:16:21.907,2026-09-07 13:30:18.354,River St & 1 St,Washington St & Morgan St,member
+4A76E151C7AF3B56,rider_001,classic_bike,2026-09-07 13:29:37.395,2026-09-07 14:38:35.311,12 St & Sinatra Dr N,12 St & Sinatra Dr N,member
+10FC30043B60AD56,rider_006,classic_bike,2026-09-07 16:01:12.604,2026-09-07 16:46:40.938,Marin Light Rail,Morris Canal,member
+A083A51FE67A42DD,rider_005,classic_bike,2026-09-07 16:26:33.734,2026-09-07 17:07:19.904,Newark Ave,Newark Ave,member
+C5C6C112F27B361D,rider_003,electric_bike,2026-09-07 17:56:45.016,2026-09-07 18:05:54.227,2 St & Park Ave,14 St Ferry - 14 St & Shipyard Ln,member
+B912581AA3E17068,rider_001,electric_bike,2026-09-07 18:22:22.187,2026-09-07 19:20:25.028,Madison St & 10 St,,member
+5014AD56C01F323A,rider_004,electric_bike,2026-09-07 20:10:16.749,2026-09-07 20:24:27.668,City Hall - Washington St & 1 St,Washington St,member
+C7469CE3754FEF5E,rider_003,classic_bike,2026-09-07 20:11:16.966,2026-09-07 20:29:11.246,4 St & River St,Washington St & Morgan St,member
+A031CD246E2CBED0,rider_003,classic_bike,2026-09-07 21:29:37.218,2026-09-07 21:39:21.891,South Waterfront Walkway - Sinatra Dr & 1 St,12 St & Sinatra Dr N,member
+4D376584ED750905,rider_002,electric_bike,2026-09-08 08:54:11.913,2026-09-08 09:06:46.950,Leonard Gordon Park,Grand St,member
+7ED36130594084EF,rider_002,classic_bike,2026-09-08 09:02:56.020,2026-09-08 09:12:22.374,Jersey & 6th St,Essex Light Rail,member
+397E4B70EA8E97CE,rider_008,electric_bike,2026-09-08 10:17:14.811,2026-09-08 10:35:08.643,Hoboken Ave at Monmouth St,8 St & Washington St,member
+354BED2D07AF6C5F,rider_005,electric_bike,2026-09-08 10:17:26.064,2026-09-08 10:33:09.895,Jackson Square,Grand St,member
+7B85D7D9E08951FA,rider_006,classic_bike,2026-09-08 11:00:53.404,2026-09-08 11:14:31.005,Hoboken Terminal - Hudson St & Hudson Pl,Brunswick & 6th,member
+39883ACE24DE8850,rider_002,classic_bike,2026-09-08 12:26:05.504,2026-09-08 12:35:25.880,Adams St & 2 St,Newport PATH,member
+6C98EAAA89FC2301,rider_006,electric_bike,2026-09-08 13:43:40.871,2026-09-08 13:52:06.464,8 St & Washington St,River St & 1 St,member
+5AB6DEDA0E08A4DE,rider_005,electric_bike,2026-09-08 15:03:10.157,2026-09-08 15:27:54.211,Columbus Park - Clinton St & 9 St,14 St Ferry - 14 St & Shipyard Ln,member
+73C3C36BFCED4BE6,rider_007,electric_bike,2026-09-08 17:08:16.165,2026-09-08 17:28:10.910,City Hall,Hoboken Terminal - Hudson St & Hudson Pl,member
+04A8C0236D9EA558,rider_001,classic_bike,2026-09-08 17:19:06.145,2026-09-08 17:30:34.429,Hudson Pl & Hoboken Terminal,11 St & Washington St,member
+CC4F266F5764C594,rider_002,classic_bike,2026-09-08 17:33:07.680,2026-09-08 17:50:53.640,Hamilton Park,Bergen Ave & Sip Ave,member
+211687C8B440839D,rider_002,classic_bike,2026-09-08 17:38:43.279,2026-09-08 17:48:00.199,Hudson Pl & Hoboken Terminal,12 St & Sinatra Dr N,member
+D108A5452D6198B7,rider_004,classic_bike,2026-09-08 17:54:54.450,2026-09-08 18:04:31.759,River St & 1 St,Bloomfield St & 15 St,member
+0D318B10AAEFD919,rider_001,classic_bike,2026-09-08 18:09:21.747,2026-09-08 18:21:56.957,Brunswick St,Lincoln Park,member
+C3DFE3B11232533C,rider_001,classic_bike,2026-09-08 18:17:17.002,2026-09-08 18:27:48.728,Grove St PATH,Baldwin at Montgomery,member
+C8CA014DBCB15CC7,rider_001,electric_bike,2026-09-08 18:39:38.391,2026-09-08 18:57:10.341,Hoboken Ave at Monmouth St,Mallory Ave & Roosevelt Ave,member
+78F3F4B7C0BFDE8A,rider_007,electric_bike,2026-09-08 19:08:17.690,2026-09-08 19:18:42.050,Heights Elevator,Newark Ave,member
+DE74D5A92EAE1E65,rider_008,electric_bike,2026-09-08 20:38:44.658,2026-09-08 20:48:18.440,Pershing Field,Journal Square,member
+E57FA588E639C6D7,rider_005,electric_bike,2026-09-08 21:31:27.337,2026-09-08 21:43:45.325,Columbus Park - Clinton St & 9 St,Hamilton Park,member
+2EE4E5B226CB5D8D,rider_002,classic_bike,2026-09-08 22:06:53.255,2026-09-08 22:17:50.298,Hudson Pl & Hoboken Terminal,14 St Ferry - 14 St & Shipyard Ln,member
+38E88DBCA2E9472B,rider_006,classic_bike,2026-09-08 22:12:29.795,2026-09-08 22:21:07.752,Bergen Ave & Sip Ave,Lincoln Park,member
+24D5DB0E19E5820E,rider_005,electric_bike,2026-09-08 22:12:41.350,2026-09-08 22:40:02.640,Adams St & 12 St,Journal Square,member
+5BD62BE1D952407C,rider_008,classic_bike,2026-09-09 06:38:44.073,2026-09-09 06:58:39.532,Journal Square,Adams St & 2 St,member
+F560A60B1FB29487,rider_001,classic_bike,2026-09-09 08:16:03.055,2026-09-09 08:27:01.143,Pacific Ave & Communipaw Ave,Grove St PATH,member
+7763FCE224ADF34D,rider_008,electric_bike,2026-09-09 08:17:33.411,2026-09-09 08:27:52.213,9 St HBLR - Jackson St & 8 St,River St & 1 St,member
+533EFC277E371641,rider_003,electric_bike,2026-09-09 08:39:32.234,2026-09-09 08:51:58.560,Culver Ave & JFK Blvd,Journal Square,member
+840E57CB5E6920C2,rider_001,classic_bike,2026-09-09 08:59:23.026,2026-09-09 09:27:06.894,Mallory Ave & Roosevelt Ave,Washington St,member
+7F42A9F1FDBF0D75,rider_002,classic_bike,2026-09-09 09:04:32.576,2026-09-09 09:13:02.312,Paulus Hook,Warren St,member
+C21237B17BD1DF4F,rider_003,classic_bike,2026-09-09 09:08:18.317,2026-09-09 09:19:42.651,JC Medical Center,JC Medical Center,member
+C37E27BC0DFE1014,rider_008,electric_bike,2026-09-09 11:20:37.645,2026-09-09 11:28:49.391,Newark St & Washington St,Grove St PATH,member
+472CDAEDDEEA71F5,rider_008,classic_bike,2026-09-09 12:44:49.621,2026-09-09 12:57:12.990,Van Vorst Park,Glenwood Ave,member
+81E36E03A60C9B0D,rider_003,electric_bike,2026-09-09 13:48:39.762,2026-09-09 14:09:43.976,Carteret Ave & Arlington Ave,Exchange Pl,member
+38A6F6AA381C9230,rider_005,classic_bike,2026-09-09 17:44:43.885,2026-09-09 17:52:48.169,Grove St PATH,Dr. Lena Edwards Park,member
+E4CA2C6F7420F0D1,rider_005,electric_bike,2026-09-09 17:55:36.534,2026-09-09 18:05:42.229,Morris Canal,Newport PATH,member
+97D1A9CAE6C55B78,rider_003,electric_bike,2026-09-09 17:57:04.107,2026-09-09 18:26:11.762,Newark St & Washington St,River St & 1 St,member
+C6FE9B308722A8DD,rider_007,electric_bike,2026-09-09 18:01:18.799,2026-09-09 18:16:49.849,Paulus Hook,Brunswick St,member
+C49B8F2FE04B7D00,rider_005,electric_bike,2026-09-09 18:01:56.629,2026-09-09 18:19:14.522,Warren St,Dey St,member
+F924AD5C753BD950,rider_001,electric_bike,2026-09-09 18:07:01.815,2026-09-09 18:21:18.833,Lafayette Park,Grant Ave & MLK Dr,member
+E5C3F6C1A8C61E3F,rider_008,classic_bike,2026-09-09 18:17:10.038,2026-09-09 18:26:43.096,14 St Ferry - 14 St & Shipyard Ln,Madison St & 10 St,member
+627CDD1E19A2910D,rider_008,electric_bike,2026-09-09 19:13:32.819,2026-09-09 19:24:24.642,Adams St & 2 St,12 St & Sinatra Dr N,member
+6DC13AC78689A581,rider_007,classic_bike,2026-09-09 19:40:23.234,2026-09-09 19:50:56.314,Pershing Field,Brunswick St,member
+4462B1D59B4579B3,rider_007,classic_bike,2026-09-09 19:47:31.452,2026-09-09 20:10:11.287,Monmouth & 6th,2 St & Park Ave,member
+BC652EB0F7D85B30,rider_003,classic_bike,2026-09-09 20:16:33.243,2026-09-09 20:25:58.622,Newport PATH,Madison St & 1 St,member
+AAB91F70B1454C9D,rider_001,electric_bike,2026-09-09 21:16:22.656,2026-09-09 21:29:00.056,Lafayette Park,Newport Pkwy,member
+7F94285E2B4210BF,rider_003,classic_bike,2026-09-09 21:25:35.168,2026-09-09 21:37:52.617,Bergen Ave,Brunswick St,member
+69BE3F94649533E0,rider_003,classic_bike,2026-09-10 04:45:21.802,2026-09-10 04:53:44.196,Pershing Field,Journal Square,member
+5AB114AE20350190,rider_002,classic_bike,2026-09-10 08:41:13.331,2026-09-10 08:53:41.232,Bergen Ave & Sip Ave,Hamilton Park,member
+4EEB2062B77B55C9,rider_002,electric_bike,2026-09-10 10:27:07.114,2026-09-10 10:56:33.987,Warren St,Warren St,member
+4F9E2EE37473A038,rider_005,electric_bike,2026-09-10 11:39:18.525,2026-09-10 11:48:45.776,Washington St & Morgan St,Brunswick & 6th,member
+C3641994057989FC,rider_003,electric_bike,2026-09-10 12:22:30.693,2026-09-10 12:39:55.264,8 St & Washington St,8 St & Washington St,member
+CF587083AE699750,rider_004,classic_bike,2026-09-10 12:41:37.413,2026-09-10 12:53:31.849,5 Corners Library,Oakland Ave,member
+CE362A446A553C78,rider_004,classic_bike,2026-09-10 13:52:55.308,2026-09-10 14:15:32.461,Glenwood Ave,Dixon Mills,member
+C0828116922530DE,rider_004,classic_bike,2026-09-10 16:06:08.653,2026-09-10 16:16:39.389,Lafayette Park,Lincoln Park,member
+84FA0DB41292059C,rider_003,classic_bike,2026-09-10 16:17:39.462,2026-09-10 17:00:36.483,Washington St,Liberty Light Rail,member
+6BCAB659F55018E6,rider_005,electric_bike,2026-09-10 16:50:46.955,2026-09-10 17:00:16.071,5 Corners Library,Brunswick St,member
+6A38134EF9235470,rider_007,classic_bike,2026-09-10 17:48:30.458,2026-09-10 17:58:19.030,Hudson Pl & Hoboken Terminal,9 St HBLR - Jackson St & 8 St,member
+E702AB6609C0A695,rider_008,electric_bike,2026-09-10 18:30:48.293,2026-09-10 19:13:24.319,Hamilton Park,Bergen Ave & Sip Ave,member
+5DBF36512421F0FD,rider_005,electric_bike,2026-09-10 19:33:48.012,2026-09-10 19:44:45.666,Hudson Pl & Hoboken Terminal,Brunswick & 6th,member
+7F49F50898D0F816,rider_003,electric_bike,2026-09-10 20:15:17.169,2026-09-10 20:33:43.917,Hilltop,4 St & River St,member
+C8774E6A97BBEDD0,rider_003,classic_bike,2026-09-10 21:42:58.084,2026-09-10 21:52:28.811,Grove St PATH,Essex Light Rail,member
+561922F9A1ADA811,rider_004,electric_bike,2026-09-11 06:41:26.313,2026-09-11 06:54:57.475,Bergen Ave & Stegman St,Exchange Pl,member
+390874D2DD80C402,rider_006,classic_bike,2026-09-11 06:45:27.165,2026-09-11 06:53:58.884,Adams St & 12 St,Marshall St & 2 St,member
+C94C70F496D8F127,rider_005,electric_bike,2026-09-11 07:08:40.840,2026-09-11 07:20:19.481,Pershing Field,Hudson Pl & Hoboken Terminal,member
+0D2FFB128060A9EE,rider_007,electric_bike,2026-09-11 08:26:28.757,2026-09-11 08:35:35.315,Bergen Ave & Sip Ave,Mallory Ave & Roosevelt Ave,member
+383E590AECC7E5FC,rider_001,classic_bike,2026-09-11 10:39:05.974,2026-09-11 10:48:35.541,Clinton St & Newark St,Hudson Pl & Hoboken Terminal,member
+7F7A5797798BF719,rider_005,electric_bike,2026-09-11 11:30:16.791,2026-09-11 11:40:34.615,Stegman St & Ocean Ave,Exchange Pl,member
+D704668C80F22948,rider_005,classic_bike,2026-09-11 14:14:07.576,2026-09-11 14:22:15.101,12 St & Sinatra Dr N,Hudson Pl & Hoboken Terminal,member
+93DF299B2F4238F9,rider_007,electric_bike,2026-09-11 14:14:50.377,2026-09-11 14:23:45.173,Bloomfield St & 15 St,Newark St & Washington St,member
+3829B457C316ABC0,rider_005,classic_bike,2026-09-11 18:42:12.474,2026-09-11 19:00:14.724,Columbus Drive,Hilltop,member
+B91A14D9EEB15D9C,rider_003,electric_bike,2026-09-11 18:51:19.898,2026-09-11 19:11:52.441,Brunswick St,Christ Hospital,member
+E37911D4818682C5,rider_006,electric_bike,2026-09-11 19:19:26.483,2026-09-11 19:29:50.559,Pershing Field,Clinton St & 7 St,member
+D33BA0335C456EC6,rider_005,electric_bike,2026-09-11 20:53:52.891,2026-09-11 21:02:57.550,City Hall,Dr. Lena Edwards Park,member
+68B1B007CF4AAC5F,rider_002,classic_bike,2026-09-11 21:09:13.066,2026-09-11 21:20:35.686,Hoboken Ave at Monmouth St,Hudson Pl & Hoboken Terminal,member
+927D80AEDF4BD53A,rider_006,electric_bike,2026-09-11 21:39:09.940,2026-09-11 22:04:54.671,Hudson Pl & Hoboken Terminal,City Hall - Washington St & 1 St,member
+40DB306EFC049772,rider_001,classic_bike,2026-09-12 00:01:19.643,2026-09-12 00:14:59.258,Hudson Pl & Hoboken Terminal,Manila & 1st,member
+6871B58F461AFD47,rider_001,electric_bike,2026-09-12 10:45:19.738,2026-09-12 10:54:02.329,Hudson Pl & Hoboken Terminal,Adams St & 12 St,member
+A9A829A264FE1F98,rider_007,classic_bike,2026-09-12 10:53:00.876,2026-09-12 11:02:55.478,Hoboken Ave at Monmouth St,4 St & Grand St,member
+08F982746E2CC37A,rider_002,classic_bike,2026-09-12 11:23:35.192,2026-09-12 11:37:04.900,Exchange Pl,Brunswick & 6th,member
+3C3781989B9B8E3A,rider_005,classic_bike,2026-09-12 11:24:27.988,2026-09-12 11:45:35.805,Grand St & 14 St,River St & 1 St,member
+17B259B05CFBC88C,rider_005,classic_bike,2026-09-12 11:49:03.183,2026-09-12 12:18:01.059,12 St & Sinatra Dr N,12 St & Sinatra Dr N,member
+62E10164BC5C2B78,rider_004,electric_bike,2026-09-12 11:59:51.317,2026-09-12 12:16:58.596,Exchange Pl,8 St & Washington St,member
+28E81AA2879A3DCB,rider_004,classic_bike,2026-09-12 12:08:10.588,2026-09-12 12:20:25.013,Hamilton Park,Stevens - River Ter & 6 St,member
+B98F5541504AEC8C,rider_007,classic_bike,2026-09-12 12:37:12.463,2026-09-12 12:56:27.971,Van Vorst Park,Newark Ave,member
+95EEC5C11660C55C,rider_005,classic_bike,2026-09-12 12:44:14.820,2026-09-12 13:16:12.814,Columbus Park - Clinton St & 9 St,Jersey & 3rd,member
+499D087A7E79D829,rider_004,classic_bike,2026-09-12 12:50:45.153,2026-09-12 13:05:31.181,River St & 1 St,12 St & Sinatra Dr N,member
+A743FA829999E29D,rider_006,classic_bike,2026-09-12 12:53:20.409,2026-09-12 13:40:48.035,City Hall - Washington St & 1 St,7 St & Monroe St,member
+86A27A0BE1435467,rider_001,classic_bike,2026-09-12 13:13:57.497,2026-09-12 13:47:11.143,11 St & Washington St,Morris Canal,member
+52C590F454ADF912,rider_007,classic_bike,2026-09-12 14:24:36.329,2026-09-12 15:00:58.654,JC Medical Center,JC Medical Center,member
+ADBAAA49FBEAC5E2,rider_005,classic_bike,2026-09-12 14:28:50.065,2026-09-12 14:44:16.235,Bloomfield St & 15 St,2 St & Park Ave,member
+3C8CCA582B6612C2,rider_008,classic_bike,2026-09-12 15:05:33.370,2026-09-12 15:18:52.718,Marshall St & 2 St,4 St & River St,member
+E44E5166BC6B15C8,rider_002,electric_bike,2026-09-12 15:58:12.002,2026-09-12 16:11:06.023,Hamilton Park,14 St Ferry - 14 St & Shipyard Ln,member
+4E410C8B778671BD,rider_004,electric_bike,2026-09-12 16:22:16.889,2026-09-12 16:31:28.045,Hudson Pl & Hoboken Terminal,9 St HBLR - Jackson St & 8 St,member
+E771FF4FB9C3AABB,rider_004,electric_bike,2026-09-12 16:23:34.953,2026-09-12 16:33:50.802,Dr. Lena Edwards Park,Columbus Drive,member
+F84B86B172E3C9BC,rider_008,electric_bike,2026-09-12 18:26:41.992,2026-09-12 18:47:48.325,Madison St & 1 St,Clinton St & Newark St,member
+0709B376BD20DE28,rider_006,electric_bike,2026-09-12 18:38:23.170,2026-09-12 18:46:34.490,Newark Ave,Pacific Ave & Communipaw Ave,member
+9F7107E15C953060,rider_008,electric_bike,2026-09-12 20:06:10.538,2026-09-12 20:20:21.605,14 St Ferry - 14 St & Shipyard Ln,2 St & Park Ave,member
+EB7B533FC3FF8350,rider_002,electric_bike,2026-09-12 20:38:01.884,2026-09-12 20:48:25.656,Riverview Park,River St & 1 St,member
+DC47174FF011EA84,rider_003,electric_bike,2026-09-12 21:59:59.477,2026-09-12 22:14:41.935,11 St & Washington St,11 St & Washington St,member
+5BD35590D0252BF4,rider_008,classic_bike,2026-09-12 22:21:43.914,2026-09-12 22:48:05.858,Journal Square,Bergen Ave,member
+CF383839A44E054D,rider_008,electric_bike,2026-09-12 23:35:03.644,2026-09-12 23:44:21.552,Hamilton Park,Leonard Gordon Park,member
+D5270772AAC980A7,rider_003,classic_bike,2026-09-13 11:35:14.117,2026-09-13 11:46:14.214,Hudson Pl & Hoboken Terminal,Heights Elevator,member
+B8C1822FC7F1ED3E,rider_003,electric_bike,2026-09-13 12:02:03.791,2026-09-13 12:13:23.886,Newport PATH,Liberty Light Rail,member
+49B1F948618235E7,rider_005,classic_bike,2026-09-13 12:37:10.292,2026-09-13 13:13:44.050,Communipaw & Berry Lane,Montgomery St,member
+4E1783C03FBD6AD6,rider_004,classic_bike,2026-09-13 13:48:54.727,2026-09-13 13:58:28.616,Lincoln Park,Bergen Ave & Sip Ave,member
+31A16B6140026F68,rider_008,electric_bike,2026-09-13 14:11:51.576,2026-09-13 14:24:31.468,Washington St,Christ Hospital,member
+A34939C2C66892D9,rider_008,classic_bike,2026-09-13 14:39:40.973,2026-09-13 14:49:09.354,Clinton St & Newark St,Newport PATH,member
+C701096B2FF8A26C,rider_007,electric_bike,2026-09-13 15:23:11.806,2026-09-13 15:39:07.787,Union St,Bergen Ave & Sip Ave,member
+7B7D590450B0F599,rider_007,classic_bike,2026-09-13 15:36:05.470,2026-09-13 15:45:02.693,Grove St PATH,Pacific Ave & Communipaw Ave,member
+3144B66848833C71,rider_008,electric_bike,2026-09-13 17:57:57.666,2026-09-13 18:06:03.528,Brunswick St,Clinton St & Newark St,member
+72533A32F12F2A6E,rider_007,electric_bike,2026-09-13 18:47:12.602,2026-09-13 19:04:38.321,12 St & Sinatra Dr N,River St & 1 St,member
+93C9E7B14116DADC,rider_008,electric_bike,2026-09-13 19:20:56.423,2026-09-13 19:31:52.138,Marin Light Rail,Newark St & Washington St,member
+EA039AB7C556D0F8,rider_001,classic_bike,2026-09-13 21:01:42.728,2026-09-13 21:13:11.657,Marin Light Rail,Communipaw & Berry Lane,member
+3548394077F20D03,rider_004,electric_bike,2026-09-13 21:23:46.867,2026-09-13 21:32:37.982,Grove St PATH,Lafayette Park,member
+00B0B223AB0A2CBC,rider_002,electric_bike,2026-09-13 21:42:50.770,2026-09-13 22:24:48.963,Adams St & 12 St,Willow Ave & 12 St,member
+27733030AD00112C,rider_003,classic_bike,2026-09-13 21:54:18.755,2026-09-13 22:14:26.606,2 St & Park Ave,Brunswick St,member
+9227D57E7E0625FC,rider_007,electric_bike,2026-09-14 05:04:36.196,2026-09-14 05:12:58.661,Southwest Park - Jackson St & Observer Hwy,Columbus Drive,member
+C2C5D963A6C82959,rider_002,classic_bike,2026-09-14 06:36:04.251,2026-09-14 06:48:51.167,11 St & Washington St,12 Ave & W 40 St,member
+B27DA77B199ADFEC,rider_007,classic_bike,2026-09-14 06:54:50.771,2026-09-14 07:11:49.134,5 Corners Library,Adams St & 2 St,member
+9E5177573D3D07C3,rider_006,electric_bike,2026-09-14 08:14:21.364,2026-09-14 08:29:59.862,Hudson Pl & Hoboken Terminal,McGinley Square,member
+E41C1C5E3B11DC8C,rider_005,electric_bike,2026-09-14 09:50:04.965,2026-09-14 09:58:18.449,Washington St,South Waterfront Walkway - Sinatra Dr & 1 St,member
+92D086604539E24E,rider_006,classic_bike,2026-09-14 10:02:38.807,2026-09-14 10:10:52.790,Van Vorst Park,Warren St,member
+5514FF7FBF28B67F,rider_006,electric_bike,2026-09-14 13:11:14.961,2026-09-14 13:24:13.112,Church Sq Park - 5 St & Park Ave,Columbus Drive,member
+C43CD4E2288353AF,rider_002,classic_bike,2026-09-14 13:32:37.921,2026-09-14 13:47:52.059,Hoboken Ave at Monmouth St,Washington St & Morgan St,member
+D5498EEC2FFA15F4,rider_005,electric_bike,2026-09-14 16:12:53.428,2026-09-14 16:20:56.201,Dixon Mills,Bergen Ave,member
+9006B5E2A90A80EB,rider_006,classic_bike,2026-09-14 16:24:54.284,2026-09-14 16:38:13.995,Adams St & 2 St,Columbus Park - Clinton St & 9 St,member
+FBF8E48A8799F217,rider_004,classic_bike,2026-09-14 16:42:14.783,2026-09-14 16:58:15.166,Garfield Light Rail,McGinley Square,member
+DDD535E22193DDAE,rider_003,classic_bike,2026-09-14 17:29:27.010,2026-09-14 17:38:46.011,Hudson Pl & Hoboken Terminal,14 St Ferry - 14 St & Shipyard Ln,member
+50F774FBFEEF08AE,rider_002,classic_bike,2026-09-14 18:20:47.858,2026-09-14 18:39:31.621,Communipaw & Berry Lane,Grove St PATH,member
+E8536A7480D082A1,rider_003,electric_bike,2026-09-14 18:24:55.025,2026-09-14 18:37:20.414,Essex Light Rail,Manila & 1st,member
+B0A99AA501D48AF8,rider_008,classic_bike,2026-09-14 18:35:44.808,2026-09-14 18:47:10.682,Newport PATH,Washington St & Morgan St,member
+03E89749EB32AE64,rider_003,electric_bike,2026-09-14 18:49:24.953,2026-09-14 19:01:30.894,Hoboken Ave at Monmouth St,York St & Marin Blvd,member
+100BDE49D66BE47C,rider_001,classic_bike,2026-09-14 18:53:31.418,2026-09-14 19:32:32.792,Marin Light Rail,Marin Light Rail,member
+A6E6751C594DEEE6,rider_008,classic_bike,2026-09-14 19:25:05.797,2026-09-14 19:33:41.338,Willow Ave & 12 St,Marshall St & 2 St,member
+9041EFEF964552D1,rider_002,electric_bike,2026-09-14 19:37:02.163,2026-09-14 19:45:22.567,Grand St & 14 St,Southwest Park - Jackson St & Observer Hwy,member
+C3E30298E07BC89F,rider_002,electric_bike,2026-09-14 21:30:42.110,2026-09-14 21:42:24.597,York St & Marin Blvd,Caven Point Recreation Fields,member
+289C86BABCB7A33B,rider_001,classic_bike,2026-09-14 22:01:35.027,2026-09-14 22:10:03.893,Columbus Drive,Marin Light Rail,member
+84216887B4F37C57,rider_008,classic_bike,2026-09-15 07:28:37.681,2026-09-15 07:36:41.313,Jersey & 6th St,Grand St,member
+57DBD2C8A8AE258C,rider_002,electric_bike,2026-09-15 10:35:20.206,2026-09-15 10:47:43.809,Pershing Field,Glenwood Ave,member
+003A36620DFE3BF6,rider_008,classic_bike,2026-09-15 15:18:24.633,2026-09-15 15:40:44.015,Grand St,Morris Canal,member
+A5CB617FF8C34C86,rider_004,electric_bike,2026-09-15 15:22:44.926,2026-09-15 15:32:05.849,Newport PATH,Christ Hospital,member
+7006283634007A61,rider_007,electric_bike,2026-09-15 15:39:00.661,2026-09-15 15:47:37.615,Van Vorst Park,Baldwin at Montgomery,member
+673015EC460DEE0A,rider_005,classic_bike,2026-09-15 17:49:08.623,2026-09-15 17:58:21.195,Adams St & 2 St,Grand St & 14 St,member
+1F38CD04CED6F2F5,rider_001,classic_bike,2026-09-15 18:13:24.447,2026-09-15 18:21:54.303,Grand St & 14 St,Marshall St & 2 St,member
+ED679AE744EC0D5D,rider_002,classic_bike,2026-09-15 19:09:41.323,2026-09-15 19:23:37.355,Brunswick & 6th,Church Sq Park - 5 St & Park Ave,member
+9A0FFEE1F3EC6ACC,rider_003,classic_bike,2026-09-15 22:09:43.968,2026-09-15 22:21:40.299,Southwest Park - Jackson St & Observer Hwy,Washington St & Morgan St,member
+10792E123016CBC3,rider_004,classic_bike,2026-09-15 22:23:13.404,2026-09-15 22:34:40.637,Newark St & Washington St,Riverview Park,member
+D756A33256C95C89,rider_006,classic_bike,2026-09-16 06:56:20.349,2026-09-16 07:10:50.698,5 Corners Library,Adams St & 2 St,member
+3AD3CF20696CB8F0,rider_001,electric_bike,2026-09-16 07:12:36.741,2026-09-16 08:06:10.374,Dey St,Broadway & W 58 St,member
+1C8887E3A05AC20D,rider_003,classic_bike,2026-09-16 07:47:34.892,2026-09-16 08:00:33.601,Madison St & 1 St,Washington St & Morgan St,member
+E8E2361C60AF707B,rider_002,electric_bike,2026-09-16 08:17:38.360,2026-09-16 08:28:08.546,Hilltop,Washington St & Morgan St,member
+25487D2B044E3B84,rider_002,electric_bike,2026-09-16 08:29:50.624,2026-09-16 08:40:08.825,Riverview Park,South Waterfront Walkway - Sinatra Dr & 1 St,member
+4B54008C3A706AA8,rider_004,electric_bike,2026-09-16 08:30:19.214,2026-09-16 08:40:34.445,Brunswick St,Pershing Field,member
+D2F9AABF4CA5514C,rider_006,classic_bike,2026-09-16 08:46:37.016,2026-09-16 08:57:45.278,7 St & Monroe St,City Hall - Washington St & 1 St,member
+8D6EF1E701CB4B49,rider_006,electric_bike,2026-09-16 10:10:13.203,2026-09-16 10:20:56.164,Newport PATH,Morris Canal,member
+92D1423330451597,rider_003,classic_bike,2026-09-16 11:59:21.075,2026-09-16 12:07:58.515,Brunswick St,Oakland Ave,member
+A207005B4779687A,rider_002,classic_bike,2026-09-16 12:39:47.877,2026-09-16 12:48:03.431,9 St HBLR - Jackson St & 8 St,12 St & Sinatra Dr N,member
+CECE6CCACDED88D0,rider_003,electric_bike,2026-09-16 12:41:18.750,2026-09-16 12:49:45.877,Pacific Ave & Communipaw Ave,City Hall,member
+5B242AE202C2434C,rider_005,classic_bike,2026-09-16 13:05:21.618,2026-09-16 13:25:16.595,Hoboken Ave at Monmouth St,Oakland Ave,member
+F80E131B310617A6,rider_004,classic_bike,2026-09-16 13:43:46.073,2026-09-16 13:52:35.622,Heights Elevator,Christ Hospital,member
+50AA3D3E4E413D3B,rider_006,electric_bike,2026-09-16 14:09:57.778,2026-09-16 14:24:30.488,Bergen Ave,Pershing Field,member
+6E53A7C68A48651B,rider_004,electric_bike,2026-09-16 15:46:57.681,2026-09-16 16:00:05.821,Garfield Light Rail,Hamilton Park,member
+BE08AE633AAC619B,rider_008,electric_bike,2026-09-16 16:12:03.073,2026-09-16 16:25:11.759,Glenwood Ave,Dixon Mills,member
+C32E4A808984045D,rider_001,electric_bike,2026-09-16 17:10:58.140,2026-09-16 17:22:07.551,McGinley Square,Hamilton Park,member
+B862E3D248657C04,rider_006,classic_bike,2026-09-16 17:33:47.111,2026-09-16 17:50:54.785,Washington St,11 St & Washington St,member
+E8D5AC235BFBA03A,rider_002,classic_bike,2026-09-16 18:00:22.435,2026-09-16 18:30:36.475,Caven Point Recreation Fields,Hilltop,member
+C5A20FB5D8C398A1,rider_003,electric_bike,2026-09-16 18:11:24.459,2026-09-16 18:19:53.291,Bloomfield St & 15 St,2 St & Park Ave,member
+93CB30E4A6164F7C,rider_005,classic_bike,2026-09-16 18:24:11.252,2026-09-16 18:32:18.532,Grove St PATH,Liberty Light Rail,member
+92D4E2E78A174BD6,rider_007,classic_bike,2026-09-16 19:24:50.464,2026-09-16 19:35:54.668,River St & 1 St,7 St & Monroe St,member
+CF48C3FCE9D1A13F,rider_007,electric_bike,2026-09-16 19:25:58.435,2026-09-16 19:34:56.510,Manila & 1st,Liberty Light Rail,member
+A22C56AA2AB17445,rider_002,classic_bike,2026-09-16 20:54:08.311,2026-09-16 21:02:09.527,Newport PATH,Dixon Mills,member
+9AA1FD8955A4F7DF,rider_007,electric_bike,2026-09-17 08:10:23.104,2026-09-17 08:47:49.212,Marin Light Rail,W 40 St & 7 Ave,member
+3BF5EA7C9B530B54,rider_002,classic_bike,2026-09-17 08:29:51.768,2026-09-17 08:39:36.986,14 St Ferry - 14 St & Shipyard Ln,River St & 1 St,member
+C72C2A78BDFDD327,rider_002,electric_bike,2026-09-17 08:55:34.924,2026-09-17 09:14:40.051,Communipaw & Berry Lane,Grove St PATH,member
+8BEE8FB649606172,rider_002,electric_bike,2026-09-17 09:02:13.127,2026-09-17 09:11:03.114,Pacific Ave & Communipaw Ave,Grove St PATH,member
+5FB0296980BC3905,rider_002,electric_bike,2026-09-17 09:45:45.205,2026-09-17 10:18:54.657,Leonard Gordon Park,Leonard Gordon Park,member
+400B0FF484E7FBF2,rider_007,classic_bike,2026-09-17 10:38:37.574,2026-09-17 10:46:51.902,Brunswick St,Exchange Pl,member
+2DAFEFEBA90DC95D,rider_001,classic_bike,2026-09-17 11:35:03.772,2026-09-17 11:44:19.102,Madison St & 10 St,City Hall - Washington St & 1 St,member
+BC7619686BB1AEB2,rider_005,classic_bike,2026-09-17 12:21:03.274,2026-09-17 12:43:09.302,Heights Elevator,Newport Pkwy,member
+AFA39687CCECE48B,rider_006,classic_bike,2026-09-17 12:56:55.436,2026-09-17 13:05:00.317,Newark Ave,Washington St & Morgan St,member
+FF30E20D7D2E815A,rider_008,electric_bike,2026-09-17 13:56:32.992,2026-09-17 14:09:35.314,Hudson Pl & Hoboken Terminal,Church Sq Park - 5 St & Park Ave,member
+CDCBB22763BDED93,rider_004,classic_bike,2026-09-17 14:21:39.023,2026-09-17 14:31:40.456,Hoboken Ave at Monmouth St,Hoboken Terminal - Hudson St & Hudson Pl,member
+FDFC29F145FBE901,rider_004,classic_bike,2026-09-17 14:31:11.473,2026-09-17 14:43:02.092,Mallory Ave & Roosevelt Ave,Garfield Light Rail,member
+52DB85C9A28E9C86,rider_002,classic_bike,2026-09-17 14:56:02.788,2026-09-17 15:07:05.265,River St & 1 St,Southwest Park - Jackson St & Observer Hwy,member
+751AAFEA9146A5C6,rider_008,electric_bike,2026-09-17 14:59:08.704,2026-09-17 15:33:40.014,Warren St,Warren St,member
+55F0E62780C12FF3,rider_007,electric_bike,2026-09-17 16:33:12.195,2026-09-17 16:47:37.696,Essex Light Rail,Riverview Park,member
+B468C3CA15E6C806,rider_008,electric_bike,2026-09-17 16:52:40.181,2026-09-17 17:18:23.125,Paulus Hook,Fulton St & William St,member
+BFD23BA4D2B5467B,rider_002,electric_bike,2026-09-17 17:55:03.595,2026-09-17 18:05:54.394,Grand St,Church Sq Park - 5 St & Park Ave,member
+E956B27CC7D8E359,rider_005,classic_bike,2026-09-17 19:08:23.374,2026-09-17 19:20:41.493,14 St Ferry - 14 St & Shipyard Ln,14 St Ferry - 14 St & Shipyard Ln,member
+CBFA4809DC6A3195,rider_007,classic_bike,2026-09-17 20:42:27.552,2026-09-17 20:53:40.537,City Hall - Washington St & 1 St,Hamilton Park,member
+E630DB800F5A13D4,rider_007,electric_bike,2026-09-17 20:44:24.558,2026-09-17 20:53:05.256,Hudson Pl & Hoboken Terminal,11 St & Washington St,member
+E507D4C9ECFE2922,rider_007,electric_bike,2026-09-17 20:49:46.355,2026-09-17 21:00:49.597,Hamilton Park,Dr. Lena Edwards Park,member
+C3EC54447943AE64,rider_006,electric_bike,2026-09-18 07:00:05.641,2026-09-18 07:15:27.176,5 Corners Library,Adams St & 2 St,member
+8300F0129E8D25EE,rider_007,classic_bike,2026-09-18 07:28:12.433,2026-09-18 07:52:40.835,Exchange Pl,West Side Ave Light Rail,member
+31DBF6A21ADBF9AF,rider_004,electric_bike,2026-09-18 07:38:52.351,2026-09-18 07:47:01.476,Marshall St & 2 St,Hudson Pl & Hoboken Terminal,member
+867BB732A127C50E,rider_007,electric_bike,2026-09-18 07:55:11.157,2026-09-18 08:04:07.774,Danforth Light Rail,Culver Ave & JFK Blvd,member
+50C25D2806F9AB17,rider_003,classic_bike,2026-09-18 09:48:03.571,2026-09-18 10:01:26.683,Brunswick & 6th,Van Vorst Park,member
+98ABC15779D1CDF6,rider_004,electric_bike,2026-09-18 11:10:43.827,2026-09-18 11:18:47.795,Glenwood Ave,Van Vorst Park,member
+D8C2F2C8E8C754F9,rider_003,electric_bike,2026-09-18 12:03:46.555,2026-09-18 12:15:29.775,Grove St PATH,4 St & River St,member
+F9CFCF4FAB6C6421,rider_005,electric_bike,2026-09-18 12:29:52.245,2026-09-18 12:46:42.648,5 Corners Library,Communipaw & Berry Lane,member
+6CF87F433BA69821,rider_003,electric_bike,2026-09-18 13:08:45.100,2026-09-18 13:31:58.884,Madison St & 10 St,North Moore St & Greenwich St,member
+3B2E4BC12E5CD0CA,rider_005,electric_bike,2026-09-18 15:45:12.407,2026-09-18 16:05:29.675,Bergen Ave & Sip Ave,Exchange Pl,member
+9C8182F215A107BC,rider_007,classic_bike,2026-09-18 15:54:08.827,2026-09-18 16:02:09.564,Hudson Pl & Hoboken Terminal,12 St & Sinatra Dr N,member
+8E8FD1E23796523C,rider_002,classic_bike,2026-09-18 16:42:38.104,2026-09-18 16:57:40.954,Grand St,Brunswick St,member
+A02ABB4E6B6D3586,rider_004,electric_bike,2026-09-18 17:31:31.433,2026-09-18 17:43:16.323,Newport PATH,Monmouth & 6th,member
+40AAE386FD141641,rider_003,classic_bike,2026-09-18 17:32:31.532,2026-09-18 17:48:15.311,City Hall,Newark Ave,member
+87BA8BBC75D437C1,rider_004,classic_bike,2026-09-18 17:38:04.106,2026-09-18 17:50:57.608,Hudson Pl & Hoboken Terminal,9 St HBLR - Jackson St & 8 St,member
+4752F5BE268EF425,rider_006,electric_bike,2026-09-18 18:29:09.948,2026-09-18 18:42:56.686,Brunswick & 6th,Caven Point Recreation Fields,member
+BDFEB275D85EAC4D,rider_004,electric_bike,2026-09-18 18:39:57.016,2026-09-18 18:59:30.184,Marshall St & 2 St,Pershing Field,member
+753D5A7AA2F96627,rider_008,electric_bike,2026-09-18 19:02:20.891,2026-09-18 19:17:54.002,Columbus Park - Clinton St & 9 St,Newark Ave,member
+92A85D313118E729,rider_006,classic_bike,2026-09-18 19:13:28.346,2026-09-18 19:22:38.568,Hoboken Ave at Monmouth St,River St & 1 St,member
+5F0630C98FB76352,rider_004,electric_bike,2026-09-18 19:42:36.783,2026-09-18 20:10:01.634,14 St Ferry - 14 St & Shipyard Ln,Bloomfield St & 15 St,member
+740120208E2CD6C2,rider_004,classic_bike,2026-09-18 19:54:00.105,2026-09-18 20:08:49.509,Madison St & 10 St,Hoboken Ave at Monmouth St,member
+5BA96F5EB3D3CB4F,rider_001,electric_bike,2026-09-18 20:57:19.717,2026-09-18 21:10:23.340,Madison St & 1 St,Madison St & 1 St,member
+76EEF232F870C4EF,rider_003,classic_bike,2026-09-18 22:16:15.767,2026-09-18 22:33:29.594,City Hall,Hudson Pl & Hoboken Terminal,member
+EE4750784474CEA5,rider_003,electric_bike,2026-09-18 22:56:43.619,2026-09-18 23:05:06.240,Hoboken Ave at Monmouth St,Riverview Park,member
+E385248122BA2A66,rider_002,electric_bike,2026-09-19 03:04:31.390,2026-09-19 03:13:37.469,Madison St & 1 St,Monmouth & 6th,member
+93554FB9EEBC33A1,rider_001,classic_bike,2026-09-19 06:22:31.473,2026-09-19 06:38:22.116,Newport Pkwy,Leonard Gordon Park,member
+BBEC48FF2F5EAEC6,rider_001,electric_bike,2026-09-19 08:45:23.309,2026-09-19 09:24:54.421,West Side Ave & Stegman Pkwy,Bergen Ave & Sip Ave,member
+EDBAEC668E929F77,rider_006,electric_bike,2026-09-19 09:26:09.980,2026-09-19 09:36:55.904,Grove St PATH,Journal Square,member
+34ECBAA9216E3431,rider_001,classic_bike,2026-09-19 09:27:54.641,2026-09-19 09:57:09.463,Essex Light Rail,Morris Canal,member
+467B42BBBE341AE9,rider_006,electric_bike,2026-09-19 09:43:15.854,2026-09-19 09:55:07.541,Carteret Ave & Arlington Ave,Grove St PATH,member
+A98D67743A1582EE,rider_001,classic_bike,2026-09-19 10:59:59.330,2026-09-19 11:20:50.067,Essex Light Rail,Marin Light Rail,member
+B98D923660EDE458,rider_003,electric_bike,2026-09-19 11:19:08.049,2026-09-19 11:27:14.032,Pershing Field,Hudson Pl & Hoboken Terminal,member
+390916E299AC4D12,rider_008,classic_bike,2026-09-19 13:07:25.524,2026-09-19 13:16:59.578,12 St & Sinatra Dr N,South Waterfront Walkway - Sinatra Dr & 1 St,member
+369723E52260AB1D,rider_001,classic_bike,2026-09-19 13:14:54.296,2026-09-19 13:41:04.937,Newport PATH,Dey St,member
+FF75615FC152C6A4,rider_001,electric_bike,2026-09-19 14:02:48.879,2026-09-19 14:12:00.254,Columbus Park - Clinton St & 9 St,City Hall - Washington St & 1 St,member
+B6EE73D6D30D353E,rider_008,electric_bike,2026-09-19 14:59:26.116,2026-09-19 15:10:43.444,Mama Johnson Field - 4 St & Jackson St,Stevens - River Ter & 6 St,member
+C6D23964C866AA8C,rider_002,electric_bike,2026-09-19 15:04:17.658,2026-09-19 15:15:36.008,Clinton St & Newark St,Dixon Mills,member
+56E8B3CF309041A2,rider_004,classic_bike,2026-09-19 15:37:31.543,2026-09-19 15:49:24.222,Warren St,Baldwin at Montgomery,member
+4593B42DD51D86CA,rider_007,classic_bike,2026-09-19 15:49:34.350,2026-09-19 16:00:39.782,Newport Pkwy,Grove St PATH,member
+88584FE49D8EB67F,rider_006,electric_bike,2026-09-19 16:23:07.509,2026-09-19 16:31:21.808,Communipaw & Berry Lane,Grove St PATH,member
+548844FBBD057F5E,rider_007,electric_bike,2026-09-19 16:25:34.315,2026-09-19 16:49:18.730,9 St HBLR - Jackson St & 8 St,Warren St,member
+C4C1588394BA30AC,rider_005,classic_bike,2026-09-19 17:31:12.903,2026-09-19 17:42:14.237,Jersey & 3rd,Lafayette Park,member
+8A88CDA0F0A9B9DB,rider_006,classic_bike,2026-09-19 17:48:46.860,2026-09-19 18:04:44.495,Astor Place,Bergen Ave & Sip Ave,member
+F7A917BC1C12325E,rider_008,electric_bike,2026-09-19 17:53:23.481,2026-09-19 18:05:45.893,Bergen Ave & Sip Ave,Washington St,member
+40F54DA7E6E3E5B7,rider_001,classic_bike,2026-09-19 17:57:50.508,2026-09-19 18:07:04.031,Grove St PATH,Hoboken Ave at Monmouth St,member
+FFA97723C7308196,rider_005,classic_bike,2026-09-19 18:11:45.549,2026-09-19 18:21:24.278,Jersey & 6th St,Washington St & Morgan St,member
+41B0A477DF08CD74,rider_005,electric_bike,2026-09-19 18:27:50.680,2026-09-19 18:36:48.956,Riverview Park,Jersey & 6th St,member
+F7C247ECCE7A96C3,rider_002,electric_bike,2026-09-19 18:40:35.216,2026-09-19 18:49:46.543,Grand St & 14 St,Heights Elevator,member
+2320F22F47EE7296,rider_005,classic_bike,2026-09-19 18:44:53.039,2026-09-19 18:56:24.751,Grove St PATH,Pacific Ave & Communipaw Ave,member
+F2EFF538C1C3D30F,rider_003,electric_bike,2026-09-19 21:20:55.114,2026-09-19 21:30:23.226,Hilltop,Exchange Pl,member
+205122415FD1D0CC,rider_005,electric_bike,2026-09-19 23:56:56.248,2026-09-20 00:07:30.705,14 St Ferry - 14 St & Shipyard Ln,Newport Pkwy,member
+46CAFCB5199F3962,rider_007,electric_bike,2026-09-20 00:06:37.540,2026-09-20 00:15:10.963,11 St & Washington St,Hoboken Ave at Monmouth St,member
+FE3F453C663CDEF9,rider_006,electric_bike,2026-09-20 11:43:42.214,2026-09-20 11:56:37.598,JC Medical Center,JC Medical Center,member
+FE31F2D3FE359EB6,rider_006,classic_bike,2026-09-20 14:23:08.414,2026-09-20 14:36:08.469,Hoboken Ave at Monmouth St,Warren St,member
+30C831F02DC87A22,rider_004,classic_bike,2026-09-20 15:03:38.327,2026-09-20 15:15:18.114,Hudson Pl & Hoboken Terminal,Bloomfield St & 15 St,member
+45861349C26FD54F,rider_004,electric_bike,2026-09-20 17:23:55.722,2026-09-20 17:38:38.320,Newport PATH,Riverview Park,member
+AADD70A67BF3073B,rider_007,electric_bike,2026-09-21 06:57:22.829,2026-09-21 07:19:40.138,Clinton St & 7 St,W 59 St & 10 Ave,member
+7B4660B551F25DA7,rider_001,classic_bike,2026-09-21 08:47:28.171,2026-09-21 08:57:58.633,Hilltop,Washington St & Morgan St,member
+F9C1AF87BE7261FF,rider_002,electric_bike,2026-09-21 08:56:47.622,2026-09-21 09:09:41.647,Leonard Gordon Park,Exchange Pl,member
+1E4CF02A34F4BC7A,rider_004,electric_bike,2026-09-21 09:06:41.112,2026-09-21 09:15:50.632,Lafayette Park,Grove St PATH,member
+6071AA4D1FB4A6D9,rider_006,classic_bike,2026-09-21 12:38:15.663,2026-09-21 12:47:10.014,11 St & Washington St,Newark St & Washington St,member
+4A207A5CBD0A37DE,rider_004,classic_bike,2026-09-21 14:49:46.098,2026-09-21 14:58:50.809,Liberty Light Rail,City Hall,member
+09409B1C7461AEEE,rider_008,electric_bike,2026-09-21 14:58:52.152,2026-09-21 15:07:36.544,2 St & Park Ave,Oakland Ave,member
+E300E6FE32F9C445,rider_005,electric_bike,2026-09-21 16:34:13.118,2026-09-21 16:57:34.746,West Side Ave & Stegman Pkwy,Morris Canal,member
+D01DB4750BA69E82,rider_004,electric_bike,2026-09-21 16:38:21.313,2026-09-21 16:52:31.389,Paulus Hook,Clinton St & 7 St,member
+6ED924D81181F0B6,rider_008,electric_bike,2026-09-21 16:45:34.012,2026-09-21 17:05:26.830,Riverview Park,Dixon Mills,member
+24816A7D32182075,rider_004,classic_bike,2026-09-21 16:46:06.390,2026-09-21 17:04:39.671,Bergen Ave & Sip Ave,Bergen Ave & Sip Ave,member
+50A295FC4FFDAA9C,rider_003,electric_bike,2026-09-21 16:54:32.192,2026-09-21 17:05:06.974,Bergen Ave & Sip Ave,Hoboken Ave at Monmouth St,member
+B5426C0B5140509D,rider_003,classic_bike,2026-09-21 17:26:26.579,2026-09-21 17:47:00.778,Riverview Park,8 St & Washington St,member
+FB341D72AE0F32C2,rider_006,classic_bike,2026-09-21 17:31:34.006,2026-09-21 17:44:22.877,Grove St PATH,Essex Light Rail,member
+6D0BB80243E36037,rider_006,electric_bike,2026-09-21 18:01:27.064,2026-09-21 18:10:41.846,Grove St PATH,Dr. Lena Edwards Park,member
+5080B2AD879DFCC6,rider_001,electric_bike,2026-09-21 18:10:14.135,2026-09-21 18:18:37.322,Newport Pkwy,Paulus Hook,member
+5900FF172BFDCEFE,rider_007,electric_bike,2026-09-21 18:28:05.073,2026-09-21 18:39:18.072,Grove St PATH,Pacific Ave & Communipaw Ave,member
+8F6C88D001F41328,rider_007,classic_bike,2026-09-21 18:39:16.562,2026-09-21 18:49:34.222,Pacific Ave & Communipaw Ave,Columbus Drive,member
+8A687FC2F637728F,rider_001,classic_bike,2026-09-21 18:50:22.763,2026-09-21 18:58:52.087,Montgomery St,Brunswick & 6th,member
+3DB678C91A4FA5C9,rider_004,classic_bike,2026-09-21 19:16:32.215,2026-09-21 19:28:17.117,Columbus Park - Clinton St & 9 St,Hoboken Ave at Monmouth St,member
+67459C2E8029240A,rider_006,electric_bike,2026-09-21 21:37:34.895,2026-09-21 22:04:01.586,Bergen Ave & Sip Ave,Bergen Ave,member
+A7FDA21A1F67B780,rider_004,classic_bike,2026-09-21 21:38:31.840,2026-09-21 22:05:18.216,Adams St & 2 St,Pacific Ave & Communipaw Ave,member
+78F55334E4D0908A,rider_005,classic_bike,2026-09-22 07:17:56.787,2026-09-22 07:27:58.457,Southwest Park - Jackson St & Observer Hwy,Grove St PATH,member
+4AD475D71B471911,rider_002,classic_bike,2026-09-22 08:23:04.311,2026-09-22 08:32:39.949,Bloomfield St & 15 St,River St & 1 St,member
+188669B340605510,rider_002,electric_bike,2026-09-22 10:53:25.132,2026-09-22 11:02:17.143,Columbus Drive,Baldwin at Montgomery,member
+05CF81869438E316,rider_004,classic_bike,2026-09-22 11:13:42.179,2026-09-22 11:24:49.502,Communipaw & Berry Lane,Grove St PATH,member
+6D07F7A4A202EC65,rider_008,classic_bike,2026-09-22 11:23:21.990,2026-09-22 11:32:19.891,Newark Ave,Newport Pkwy,member
+09D1586AC95115DF,rider_006,electric_bike,2026-09-22 11:39:40.995,2026-09-22 11:51:26.327,Morris Canal,South Waterfront Walkway - Sinatra Dr & 1 St,member
+9F574E7D6982E9A1,rider_005,classic_bike,2026-09-22 14:10:14.391,2026-09-22 14:51:15.683,Oakland Ave,Paulus Hook,member
+FE78B9EC378CCD88,rider_003,classic_bike,2026-09-22 14:11:36.041,2026-09-22 14:24:17.071,Columbus Drive,Hudson Pl & Hoboken Terminal,member
+851778A0FE84979B,rider_005,electric_bike,2026-09-22 14:29:59.923,2026-09-22 14:41:20.811,Bergen Ave & Sip Ave,West Side Ave & Stegman Pkwy,member
+CC8B12D5B6D16646,rider_006,electric_bike,2026-09-22 14:48:08.049,2026-09-22 15:02:06.798,Marin Light Rail,Riverview Park,member
+B3ACA30F7B2B1001,rider_006,classic_bike,2026-09-22 15:35:21.222,2026-09-22 15:45:32.746,Church Sq Park - 5 St & Park Ave,Hudson Pl & Hoboken Terminal,member
+126C45554CDD1CEC,rider_003,electric_bike,2026-09-22 16:21:20.504,2026-09-22 16:30:08.418,River St & 1 St,Adams St & 12 St,member
+C420C9CDB54D0918,rider_001,classic_bike,2026-09-22 16:38:33.291,2026-09-22 16:58:40.531,Exchange Pl,Jackson Square,member
+F2ADDB94E6B7D878,rider_008,electric_bike,2026-09-22 17:18:28.967,2026-09-22 17:29:47.160,Southwest Park - Jackson St & Observer Hwy,14 St Ferry - 14 St & Shipyard Ln,member
+61CC30442B4C2968,rider_003,classic_bike,2026-09-22 18:08:21.830,2026-09-22 18:24:13.079,Warren St,Bergen Ave & Sip Ave,member
+861FBA3DB3D6FD46,rider_007,electric_bike,2026-09-22 18:36:31.180,2026-09-22 18:45:08.738,Journal Square,Baldwin at Montgomery,member
+202CC23A84E63055,rider_001,classic_bike,2026-09-22 20:09:39.308,2026-09-22 20:22:30.763,Columbus Drive,Communipaw & Berry Lane,member
+353159F0F46F113E,rider_001,classic_bike,2026-09-22 20:30:22.882,2026-09-22 20:42:58.326,Van Vorst Park,Newport Pkwy,member
+598C378E40819921,rider_001,electric_bike,2026-09-23 00:57:25.503,2026-09-23 01:14:42.255,Washington St & Morgan St,Heights Elevator,member
+EEA6D03908B24406,rider_001,electric_bike,2026-09-23 05:16:24.691,2026-09-23 05:28:34.546,Union St,Exchange Pl,member
+D81E81E47A773A94,rider_001,electric_bike,2026-09-23 05:54:53.237,2026-09-23 06:15:35.128,Bloomfield St & 15 St,Murray St & West St (NW Corner),member
+A17575A4715103AC,rider_006,electric_bike,2026-09-23 06:26:47.760,2026-09-23 06:36:54.213,Riverview Park,Exchange Pl,member
+87C3D4722EFD46C0,rider_001,classic_bike,2026-09-23 07:41:19.875,2026-09-23 07:51:02.937,Marin Light Rail,Hamilton Park,member
+C79D1A988AC984F1,rider_003,electric_bike,2026-09-23 08:32:59.753,2026-09-23 09:03:44.616,Newark Ave,Hudson Blvd W & W 36 St,member
+AF39DF95C269E3EF,rider_007,classic_bike,2026-09-23 08:46:49.577,2026-09-23 09:08:45.660,Van Vorst Park,Journal Square,member
+5963E53737DADE0D,rider_002,classic_bike,2026-09-23 09:46:21.910,2026-09-23 09:56:29.051,7 St & Monroe St,Stevens - River Ter & 6 St,member
+424D2A2236A8305E,rider_007,classic_bike,2026-09-23 10:43:57.897,2026-09-23 10:54:39.006,Communipaw & Berry Lane,Van Vorst Park,member
+9E6F8C73DA41A9C3,rider_001,classic_bike,2026-09-23 12:10:19.536,2026-09-23 12:34:04.022,Willow Ave & 12 St,11 St & Washington St,member
+8A2109DC755A368D,rider_001,classic_bike,2026-09-23 12:54:56.710,2026-09-23 13:03:30.799,Manila & 1st,Montgomery St,member
+046099522B96B892,rider_006,classic_bike,2026-09-23 13:08:42.124,2026-09-23 13:19:17.847,Hudson Pl & Hoboken Terminal,14 St Ferry - 14 St & Shipyard Ln,member
+CB07457B37CD9D12,rider_006,electric_bike,2026-09-23 13:59:37.014,2026-09-23 14:10:14.700,Columbus Park - Clinton St & 9 St,Hamilton Park,member
+094C42C5A953D79E,rider_005,classic_bike,2026-09-23 14:21:50.728,2026-09-23 14:33:31.927,Hoboken Terminal - Hudson St & Hudson Pl,Bloomfield St & 15 St,member
+1B5AEB3976A8B011,rider_008,classic_bike,2026-09-23 15:38:08.035,2026-09-23 15:46:55.080,Paulus Hook,Newport Pkwy,member
+C03A3530CFF09686,rider_008,classic_bike,2026-09-23 17:01:16.517,2026-09-23 17:10:18.847,River St & 1 St,Columbus Park - Clinton St & 9 St,member
+ED8875D79FD4B559,rider_002,classic_bike,2026-09-23 17:06:54.521,2026-09-23 17:15:45.110,South Waterfront Walkway - Sinatra Dr & 1 St,Columbus Park - Clinton St & 9 St,member
+DA01F013A7E01DE3,rider_008,electric_bike,2026-09-23 17:39:28.567,2026-09-23 17:48:26.432,Pacific Ave & Communipaw Ave,Grove St PATH,member
+3A47CB14D13299A8,rider_001,classic_bike,2026-09-23 17:48:50.682,2026-09-23 18:02:03.515,9 St HBLR - Jackson St & 8 St,Stevens - River Ter & 6 St,member
+BD7A112A2106530A,rider_008,classic_bike,2026-09-23 18:20:06.104,2026-09-23 18:31:30.410,Washington St,Madison St & 1 St,member
+D91ED53650697193,rider_002,electric_bike,2026-09-23 20:10:16.992,2026-09-23 20:20:31.571,Montgomery St,Glenwood Ave,member
+3DD832CC336CB21D,rider_003,electric_bike,2026-09-23 20:40:48.815,2026-09-23 20:49:40.836,Hudson Pl & Hoboken Terminal,Washington St,member
+84C5E963DF7C05F1,rider_007,electric_bike,2026-09-24 07:25:55.040,2026-09-24 07:34:02.619,Southwest Park - Jackson St & Observer Hwy,Grove St PATH,member
+144E151BF5E592A6,rider_003,classic_bike,2026-09-24 07:56:47.184,2026-09-24 08:08:11.285,Heights Elevator,Hilltop,member
+B9D7568704A268C3,rider_006,classic_bike,2026-09-24 08:02:28.874,2026-09-24 08:12:49.953,Mama Johnson Field - 4 St & Jackson St,River St & 1 St,member
+9F24D126DE676A3F,rider_008,classic_bike,2026-09-24 08:18:12.651,2026-09-24 08:31:41.857,9 St HBLR - Jackson St & 8 St,9 St HBLR - Jackson St & 8 St,member
+514889A67A228297,rider_007,classic_bike,2026-09-24 08:26:00.754,2026-09-24 09:10:47.823,Jersey & 6th St,Newport PATH,member
+548AA26D60A8D685,rider_006,electric_bike,2026-09-24 15:09:50.023,2026-09-24 15:25:27.871,West Side Ave Light Rail,Exchange Pl,member
+52A5FEB575206A33,rider_005,electric_bike,2026-09-24 15:17:43.531,2026-09-24 15:35:01.283,Jackson Square,Hilltop,member
+979CB6B0444F3E47,rider_004,electric_bike,2026-09-24 16:06:28.430,2026-09-24 16:15:02.831,Pacific Ave & Communipaw Ave,City Hall,member
+CA5E0756C09388B1,rider_007,classic_bike,2026-09-24 17:01:45.309,2026-09-24 17:11:10.825,11 St & Washington St,Hudson Pl & Hoboken Terminal,member
+523E9FC83DC482F3,rider_007,classic_bike,2026-09-24 17:56:30.665,2026-09-24 18:09:45.895,Newport Pkwy,Stevens - River Ter & 6 St,member
+ACC0E2AA811128B2,rider_004,classic_bike,2026-09-24 18:13:57.289,2026-09-24 18:23:31.883,Pacific Ave & Communipaw Ave,Montgomery St,member
+6418F5655D953141,rider_005,classic_bike,2026-09-24 18:14:08.041,2026-09-24 18:32:12.895,Willow Ave & 12 St,Newark St & Washington St,member
+B44BD05EB7D54CA9,rider_008,classic_bike,2026-09-24 19:24:12.300,2026-09-24 19:44:48.873,12 St & Sinatra Dr N,Warren St,member
+1882947E8C8B0B16,rider_002,classic_bike,2026-09-24 19:26:07.837,2026-09-24 19:38:46.934,Hoboken Ave at Monmouth St,Newport Pkwy,member
+6C272AB3005CD45B,rider_002,electric_bike,2026-09-24 20:28:07.457,2026-09-24 20:36:08.429,Grove St PATH,Grand St,member
+694F963AD0927CB6,rider_001,electric_bike,2026-09-24 21:41:31.100,2026-09-24 21:50:56.187,Fairmount Ave,Grove St PATH,member
+C7063915D5C22670,rider_004,classic_bike,2026-09-24 23:53:31.835,2026-09-25 00:01:47.663,Van Vorst Park,Pacific Ave & Communipaw Ave,member
+E1E2D33BE0F88ABE,rider_006,electric_bike,2026-09-25 08:36:43.907,2026-09-25 08:51:13.838,Madison St & 10 St,Newport PATH,member
+A716AE08DFA9955D,rider_005,classic_bike,2026-09-25 08:39:37.722,2026-09-25 08:51:48.991,11 St & Washington St,11 St & Washington St,member
+C5E806E6AF2522F7,rider_002,classic_bike,2026-09-25 08:58:56.071,2026-09-25 09:08:52.381,Marin Light Rail,Washington St,member
+B8113BFB823284B5,rider_002,classic_bike,2026-09-25 09:36:47.650,2026-09-25 09:48:15.684,Communipaw & Berry Lane,Grand St,member
+12BC1C5591A9BAD9,rider_006,classic_bike,2026-09-25 09:46:06.198,2026-09-25 10:08:46.906,Newark St & Washington St,Riverview Park,member
+E342A4C8D1E17F22,rider_002,classic_bike,2026-09-25 10:53:13.234,2026-09-25 11:02:08.063,Christ Hospital,Heights Elevator,member
+878DE5A34BFD89E3,rider_003,electric_bike,2026-09-25 11:30:17.823,2026-09-25 11:45:45.288,12 St & Sinatra Dr N,Newark St & Washington St,member
+153F8E628C54D93C,rider_007,electric_bike,2026-09-25 13:57:15.676,2026-09-25 14:24:18.080,Bloomfield St & 15 St,2 St & Park Ave,member
+75788872B2B9C438,rider_005,electric_bike,2026-09-25 14:54:17.755,2026-09-25 15:05:38.577,Bergen Ave & Sip Ave,Newark Ave,member
+6D11B4C81BD7BCF7,rider_001,classic_bike,2026-09-25 15:20:21.427,2026-09-25 15:29:26.045,Madison St & 1 St,11 St & Washington St,member
+BFC0F23B37F29412,rider_002,electric_bike,2026-09-25 15:25:40.493,2026-09-25 15:36:57.613,Washington St,11 St & Washington St,member
+E8914F26C7D300DE,rider_001,electric_bike,2026-09-25 16:01:37.616,2026-09-25 16:15:30.446,Newport PATH,Newport PATH,member
+2E7F5C5656E65C13,rider_008,electric_bike,2026-09-25 16:12:38.699,2026-09-25 16:21:41.569,Newark St & Washington St,Adams St & 12 St,member
+EE98B8AABDC4B264,rider_007,electric_bike,2026-09-25 16:49:52.959,2026-09-25 16:58:34.711,9 St HBLR - Jackson St & 8 St,Hoboken Ave at Monmouth St,member
+C975F5A7E07C0F71,rider_001,electric_bike,2026-09-25 17:17:31.474,2026-09-25 17:28:32.847,Monmouth & 6th,Dey St,member
+A7BD122D1CD69780,rider_001,electric_bike,2026-09-25 17:22:09.407,2026-09-25 17:37:40.708,Washington St & Morgan St,Stevens - River Ter & 6 St,member
+579126AA6A25B355,rider_005,electric_bike,2026-09-25 17:41:48.913,2026-09-25 17:51:43.572,Van Vorst Park,Southwest Park - Jackson St & Observer Hwy,member
+56B9920FC7594DA6,rider_008,electric_bike,2026-09-25 18:15:00.824,2026-09-25 18:23:43.802,Manila & 1st,Riverview Park,member
+E726B3B37DFA51A9,rider_006,classic_bike,2026-09-25 18:22:56.200,2026-09-25 18:33:32.503,Manila & 1st,Dr. Lena Edwards Park,member
+767F98E4081247B0,rider_001,electric_bike,2026-09-25 19:09:04.082,2026-09-25 19:23:25.668,11 St & Washington St,Jersey & 3rd,member
+E87B1F2FD49EF4D0,rider_007,electric_bike,2026-09-25 20:00:52.633,2026-09-25 20:09:15.915,Hilltop,Grove St PATH,member
+DE7C71782223BD03,rider_007,classic_bike,2026-09-26 03:57:21.066,2026-09-26 04:05:36.972,River St & 1 St,Clinton St & 7 St,member
+D604EB0FB3ABE8D2,rider_007,electric_bike,2026-09-26 05:32:15.675,2026-09-26 05:51:28.012,City Hall - Washington St & 1 St,West Side Ave Light Rail,member
+BE64FE3BA4E55FF0,rider_003,classic_bike,2026-09-26 15:12:52.533,2026-09-26 15:37:23.532,Columbus Drive,Clinton St & 7 St,member
+F4079D7B7F2F19B6,rider_007,electric_bike,2026-09-26 15:42:52.304,2026-09-26 15:52:03.209,Newark St & Washington St,14 St Ferry - 14 St & Shipyard Ln,member
+0A6BFE5DE0D1E09B,rider_001,classic_bike,2026-09-27 11:46:05.321,2026-09-27 11:54:59.758,Bloomfield St & 15 St,City Hall - Washington St & 1 St,member
+DDFBBF210ED11545,rider_005,classic_bike,2026-09-27 20:32:27.267,2026-09-27 20:46:55.315,4 St & Grand St,Oakland Ave,member
+FBCEAEECAC951D22,rider_001,classic_bike,2026-09-28 07:20:18.073,2026-09-28 07:28:27.557,Jersey & 6th St,Newport Pkwy,member
+BF2A7D94E7E3C9AA,rider_002,classic_bike,2026-09-28 08:23:45.524,2026-09-28 08:40:07.545,9 St HBLR - Jackson St & 8 St,7 St & Monroe St,member
+9EC7425DB6951F43,rider_006,classic_bike,2026-09-28 12:28:12.494,2026-09-28 12:37:20.079,Grove St PATH,Baldwin at Montgomery,member
+D07FCF13634EC823,rider_004,electric_bike,2026-09-28 14:29:38.504,2026-09-28 14:42:08.932,Leonard Gordon Park,2 St & Park Ave,member
+7211118B8AEDC569,rider_004,classic_bike,2026-09-28 15:11:27.204,2026-09-28 15:44:05.835,McGinley Square,5 Corners Library,member
+D31315D79B1A9588,rider_003,electric_bike,2026-09-28 16:39:20.334,2026-09-28 16:52:49.073,Columbus Park - Clinton St & 9 St,City Hall,member
+49493223515BC3FA,rider_008,classic_bike,2026-09-28 16:58:42.188,2026-09-28 17:07:25.563,Newport Pkwy,Newark St & Washington St,member
+09376DD1E565F27D,rider_005,classic_bike,2026-09-28 17:32:15.503,2026-09-28 17:50:21.361,Bergen Ave,York St & Marin Blvd,member
+E21F97F24993FEBE,rider_005,classic_bike,2026-09-28 17:56:44.305,2026-09-28 18:14:14.282,Exchange Pl,Dey St,member
+4F00A9B3659053A8,rider_005,classic_bike,2026-09-28 18:04:09.289,2026-09-28 18:13:10.726,Grove St PATH,Morris Canal,member
+2CCAFBC26084B240,rider_003,classic_bike,2026-09-28 18:09:48.146,2026-09-28 18:24:29.222,Washington St,Southwest Park - Jackson St & Observer Hwy,member
+445D5B897B9C8708,rider_007,electric_bike,2026-09-28 18:19:02.185,2026-09-28 18:27:10.702,Grand St & 14 St,8 St & Washington St,member
+46D19334CCFD90CA,rider_003,classic_bike,2026-09-28 19:13:31.212,2026-09-28 19:25:56.130,Baldwin at Montgomery,Grove St PATH,member
+EA9D858240104EA3,rider_005,electric_bike,2026-09-28 19:31:08.304,2026-09-28 19:39:23.337,14 St Ferry - 14 St & Shipyard Ln,Adams St & 2 St,member
+1D393C8544736352,rider_007,classic_bike,2026-09-28 20:31:03.600,2026-09-28 21:31:15.753,JC Medical Center,JC Medical Center,member
+9D0263E4E2D35C13,rider_008,classic_bike,2026-09-28 20:45:11.983,2026-09-28 20:55:11.601,Newark Ave,Baldwin at Montgomery,member
+D5714D2064790744,rider_006,electric_bike,2026-09-28 21:51:00.254,2026-09-28 22:04:29.059,City Hall - Washington St & 1 St,Brunswick St,member
+C30B6EBFFBB7957C,rider_004,electric_bike,2026-09-29 07:40:22.432,2026-09-29 07:53:05.161,14 St Ferry - 14 St & Shipyard Ln,Southwest Park - Jackson St & Observer Hwy,member
+33D0430A83EB038A,rider_002,electric_bike,2026-09-29 09:00:09.980,2026-09-29 09:08:14.116,Newport PATH,Hamilton Park,member
+2E5C9891BC26D0FD,rider_007,electric_bike,2026-09-29 09:09:09.435,2026-09-29 09:21:16.133,14 St Ferry - 14 St & Shipyard Ln,Washington St,member
+84488B98C5A30452,rider_003,classic_bike,2026-09-29 09:09:41.200,2026-09-29 09:19:13.411,Hoboken Ave at Monmouth St,Church Sq Park - 5 St & Park Ave,member
+664932A66E1A3A74,rider_003,classic_bike,2026-09-29 09:16:01.029,2026-09-29 09:31:08.615,Grand St,Van Vorst Park,member
+F36F8B923BA4268B,rider_002,electric_bike,2026-09-29 11:56:46.936,2026-09-29 12:10:16.384,River St & 1 St,Hoboken Ave at Monmouth St,member
+1C37713DE645C08B,rider_002,classic_bike,2026-09-29 12:32:21.726,2026-09-29 12:41:19.747,14 St Ferry - 14 St & Shipyard Ln,Hudson Pl & Hoboken Terminal,member
+CEAF7D3E2E7D50CB,rider_003,classic_bike,2026-09-29 13:09:39.705,2026-09-29 13:18:42.295,Grove St PATH,Dr. Lena Edwards Park,member
+5E307913D5F18CB8,rider_008,classic_bike,2026-09-29 16:45:42.783,2026-09-29 16:53:46.445,Newport PATH,Hamilton Park,member
+14FF130A4A8919AA,rider_005,classic_bike,2026-09-29 16:50:44.392,2026-09-29 17:00:22.259,South Waterfront Walkway - Sinatra Dr & 1 St,Washington St,member
+022E9C9E4928BCF5,rider_006,classic_bike,2026-09-29 17:09:10.723,2026-09-29 17:30:27.114,Astor Place,Pershing Field,member
+3C66E26623689B61,rider_006,classic_bike,2026-09-29 18:16:30.262,2026-09-29 19:00:31.894,Paulus Hook,Paulus Hook,member
+C62D41727311167F,rider_008,classic_bike,2026-09-29 18:21:48.974,2026-09-29 19:09:27.644,Grove St PATH,City Hall,member
+DBE3DBE24AF623D9,rider_008,electric_bike,2026-09-29 19:48:42.146,2026-09-29 20:01:23.672,Marin Light Rail,Clinton St & Newark St,member
+1EDA1AE706283167,rider_005,electric_bike,2026-09-29 20:39:13.617,2026-09-29 20:49:02.642,Newark Ave,Heights Elevator,member
+21337059E14EBF16,rider_003,classic_bike,2026-09-29 21:18:29.683,2026-09-29 21:28:42.924,City Hall,Communipaw & Berry Lane,member
+F54469877E6FC6DD,rider_007,classic_bike,2026-09-30 08:32:39.635,2026-09-30 08:52:25.776,Manila & 1st,Hamilton Park,member
+2C525CAB9099246E,rider_004,classic_bike,2026-09-30 08:52:44.830,2026-09-30 11:34:15.455,Morris Canal,Exchange Pl,member
+10BC937BBE1FCB0E,rider_007,classic_bike,2026-09-30 11:34:46.509,2026-09-30 12:50:00.223,Communipaw & Berry Lane,Essex Light Rail,member
+184510F0C2B4520B,rider_004,classic_bike,2026-09-30 12:10:02.560,2026-09-30 12:38:38.716,Riverview Park,Riverview Park,member
+64D863283004EF8F,rider_007,electric_bike,2026-09-30 12:23:20.841,2026-09-30 12:31:45.365,Hudson Pl & Hoboken Terminal,Newport Pkwy,member
+392AAFC7FDA8E785,rider_008,classic_bike,2026-09-30 12:49:41.533,2026-09-30 13:15:30.168,Marshall St & 2 St,Marshall St & 2 St,member
+1FC946147C5939C8,rider_008,electric_bike,2026-09-30 13:13:01.599,2026-09-30 13:22:14.307,Bergen Ave & Sip Ave,Dixon Mills,member
+98D340AC302C5554,rider_008,classic_bike,2026-09-30 13:45:10.500,2026-09-30 14:04:45.273,Bergen Ave & Sip Ave,City Hall,member
+DC8DD26BD34DA3A9,rider_003,electric_bike,2026-09-30 14:06:33.015,2026-09-30 14:21:30.216,Dixon Mills,11 St & Washington St,member
+971849F8115D1135,rider_002,electric_bike,2026-09-30 16:08:42.212,2026-09-30 16:17:03.027,Hudson Pl & Hoboken Terminal,9 St HBLR - Jackson St & 8 St,member
+E19DB47E04EB43A7,rider_003,electric_bike,2026-09-30 16:55:39.544,2026-09-30 17:04:53.843,Bergen Ave & Sip Ave,Hoboken Ave at Monmouth St,member
+34E08FACA84A194D,rider_005,electric_bike,2026-09-30 16:57:07.090,2026-09-30 17:30:47.583,McGinley Square,Mallory Ave & Roosevelt Ave,member
+FB6C698679C69B31,rider_004,electric_bike,2026-09-30 17:30:40.225,2026-09-30 17:38:40.261,Bloomfield St & 15 St,South Waterfront Walkway - Sinatra Dr & 1 St,member
+ABADFEA9DF157F32,rider_006,classic_bike,2026-09-30 17:46:33.056,2026-09-30 17:54:51.794,Paulus Hook,JC Medical Center,member
+679739678525E654,rider_007,electric_bike,2026-09-30 18:04:28.771,2026-09-30 18:15:15.324,Oakland Ave,Hoboken Terminal - Hudson St & Hudson Pl,member
+FA9081B0A6B61A29,rider_002,electric_bike,2026-09-30 19:39:14.559,2026-09-30 19:54:39.796,Journal Square,Hamilton Park,member
+37341ED5D33D97BD,rider_005,classic_bike,2026-09-30 20:39:28.833,2026-09-30 20:48:29.275,Grove St PATH,Liberty Light Rail,member
+57705690A16916A3,rider_008,electric_bike,2026-09-30 20:55:53.280,2026-09-30 21:10:22.778,Jersey & 6th St,Liberty Light Rail,member
+DE23908D892B2C70,rider_007,electric_bike,2026-09-30 21:48:40.394,2026-09-30 21:56:44.187,Journal Square,Union St & Bergen Ave,member

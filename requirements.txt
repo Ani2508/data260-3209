@@ -17,3 +17,5 @@ pyyaml
 pyjwt
 ruff
 pre-commit
+langchain
+langgraph

@@ -1,0 +1,521 @@
+ride_id,rider_id,rideable_type,started_at,ended_at,start_station_name,end_station_name,member_casual
+60724F50C380BEDE,rider_177,classic_bike,2026-09-01 08:24:21.092,2026-09-01 08:26:04.869,Bloomfield St & 15 St,14 St Ferry - 14 St & Shipyard Ln,casual
+18743C6354B262F1,rider_183,classic_bike,2026-09-01 09:32:36.846,2026-09-01 09:36:18.483,Madison St & 1 St,River St & 1 St,casual
+22341D795BFB3EB9,rider_220,classic_bike,2026-09-01 12:36:29.107,2026-09-01 12:43:19.184,7 St & Monroe St,Southwest Park - Jackson St & Observer Hwy,casual
+3DFF11ACE25F08E8,rider_153,classic_bike,2026-09-01 15:12:27.806,2026-09-01 15:22:18.524,Christ Hospital,Southwest Park - Jackson St & Observer Hwy,casual
+7A741872A82E53A1,rider_020,classic_bike,2026-09-01 15:52:38.879,2026-09-01 16:00:40.764,Bloomfield St & 15 St,Church Sq Park - 5 St & Park Ave,casual
+80C31DB84AB99E28,rider_213,classic_bike,2026-09-01 16:05:41.180,2026-09-01 16:17:45.568,Grand St & 14 St,City Hall - Washington St & 1 St,casual
+571D45EEB4942987,rider_173,classic_bike,2026-09-01 17:03:23.725,2026-09-01 17:11:34.713,Exchange Pl,Marin Light Rail,casual
+EE9240A45C350344,rider_239,classic_bike,2026-09-01 19:53:32.223,2026-09-01 20:05:13.009,River St & 1 St,Grand St & 14 St,casual
+EBEF36F6B4751FF8,rider_043,classic_bike,2026-09-01 20:20:10.680,2026-09-01 20:29:20.283,Newport Pkwy,Jersey & 3rd,casual
+3FA80F42FCB97FB8,rider_250,classic_bike,2026-09-01 20:53:49.439,2026-09-01 21:03:09.205,11 St & Washington St,South Waterfront Walkway - Sinatra Dr & 1 St,casual
+883832D5E8AC4B7F,rider_141,classic_bike,2026-09-01 23:07:16.220,2026-09-01 23:16:18.133,Hudson Pl & Hoboken Terminal,8 St & Washington St,casual
+72D16C62F40363F6,rider_171,classic_bike,2026-09-02 08:22:35.602,2026-09-02 08:29:00.512,Brunswick & 6th,Grove St PATH,casual
+1C35E0A6BF0AF0E2,rider_135,classic_bike,2026-09-02 08:32:56.282,2026-09-02 08:38:59.297,6 St & Grand St,City Hall - Washington St & 1 St,casual
+1FCAED0A94A9BF43,rider_123,classic_bike,2026-09-02 09:01:04.504,2026-09-02 09:12:03.899,Hoboken Ave at Monmouth St,Church Sq Park - 5 St & Park Ave,casual
+F76A89F1EF8FEAF7,rider_101,classic_bike,2026-09-02 09:46:34.556,2026-09-02 09:52:39.071,Paulus Hook,Grand St,casual
+09E4AEAFBEAF786E,rider_138,classic_bike,2026-09-02 10:58:48.207,2026-09-02 11:11:05.056,McGinley Square,McGinley Square,casual
+6E23255028A356C9,rider_022,classic_bike,2026-09-02 15:59:37.233,2026-09-02 16:08:02.933,Hudson Pl & Hoboken Terminal,8 St & Washington St,casual
+EEEB24BD1BB5B792,rider_154,classic_bike,2026-09-02 16:22:36.735,2026-09-02 16:29:09.145,Marshall St & 2 St,Madison St & 10 St,casual
+C7E18FAB59AC18E1,rider_166,classic_bike,2026-09-02 16:46:02.787,2026-09-02 16:53:17.597,Newport PATH,Hoboken Ave at Monmouth St,casual
+352FD0A058513438,rider_034,classic_bike,2026-09-02 17:32:29.884,2026-09-02 17:44:15.503,Bergen Ave,Grove St PATH,casual
+E442B32C55F8BBB1,rider_063,classic_bike,2026-09-02 18:04:53.128,2026-09-02 18:10:09.439,Brunswick St,Hamilton Park,casual
+DDFCAD557D724B71,rider_182,classic_bike,2026-09-02 18:32:45.823,2026-09-02 18:37:55.074,Dixon Mills,York St & Marin Blvd,casual
+9DE4E994B05B1CC0,rider_229,classic_bike,2026-09-02 18:47:14.153,2026-09-02 18:53:43.281,Newport Pkwy,Washington St & Morgan St,casual
+0F114D34C8C9E964,rider_204,classic_bike,2026-09-02 19:15:13.642,2026-09-02 19:29:49.778,Hoboken Ave at Monmouth St,South Waterfront Walkway - Sinatra Dr & 1 St,casual
+3733D0BC86694CD5,rider_147,classic_bike,2026-09-02 19:22:57.255,2026-09-02 19:28:27.252,Madison St & 1 St,River St & 1 St,casual
+E50B24FF28E78CBB,rider_044,classic_bike,2026-09-02 19:37:34.955,2026-09-02 19:48:42.738,River St & 1 St,Willow Ave & 12 St,casual
+828B9D6E1F209A77,rider_112,classic_bike,2026-09-02 19:43:57.558,2026-09-02 19:50:45.037,River St & 1 St,8 St & Washington St,casual
+BCA563621BCE22CF,rider_027,classic_bike,2026-09-02 19:47:31.579,2026-09-02 19:57:06.529,Hudson Pl & Hoboken Terminal,9 St HBLR - Jackson St & 8 St,casual
+5818A00B16587271,rider_245,classic_bike,2026-09-02 20:46:01.628,2026-09-02 20:51:20.786,9 St HBLR - Jackson St & 8 St,4 St & Grand St,casual
+32BAB2EC2A1222A0,rider_234,classic_bike,2026-09-02 21:23:21.364,2026-09-02 21:34:20.712,Marin Light Rail,Dr. Lena Edwards Park,casual
+7F50E9D0ED61D1F5,rider_059,classic_bike,2026-09-03 08:44:21.381,2026-09-03 08:56:24.969,Hudson Pl & Hoboken Terminal,South Waterfront Walkway - Sinatra Dr & 1 St,casual
+720FB9C18A8DEC5F,rider_062,classic_bike,2026-09-03 09:08:01.324,2026-09-03 09:12:30.205,Monmouth & 6th,Manila & 1st,casual
+E94421E76EC57F57,rider_089,classic_bike,2026-09-03 09:19:29.041,2026-09-03 09:26:05.752,12 St & Sinatra Dr N,South Waterfront Walkway - Sinatra Dr & 1 St,casual
+DDF888651D2DCE2B,rider_062,classic_bike,2026-09-03 11:41:11.980,2026-09-03 11:47:53.707,Newark St & Washington St,Clinton St & 7 St,casual
+DC6EE612CA029AD2,rider_222,classic_bike,2026-09-03 11:47:55.407,2026-09-03 11:55:41.183,14 St Ferry - 14 St & Shipyard Ln,South Waterfront Walkway - Sinatra Dr & 1 St,casual
+24553A6190CFCF25,rider_002,classic_bike,2026-09-03 12:23:39.262,2026-09-03 12:34:45.516,Riverview Park,Hudson Pl & Hoboken Terminal,casual
+4F2558636FB678E3,rider_187,classic_bike,2026-09-03 13:51:34.040,2026-09-03 13:58:50.167,Dixon Mills,Grove St PATH,casual
+1EA50BC65CF6E349,rider_085,classic_bike,2026-09-03 14:01:46.405,2026-09-03 14:07:51.796,4 St & River St,11 St & Washington St,casual
+29C983AC558C7F86,rider_182,classic_bike,2026-09-03 16:16:25.395,2026-09-03 16:24:34.501,12 St & Sinatra Dr N,Church Sq Park - 5 St & Park Ave,casual
+E3F0F6F20BF287A2,rider_037,classic_bike,2026-09-03 16:47:17.411,2026-09-03 16:50:25.388,Brunswick St,Newark Ave,casual
+696385533E4B6236,rider_196,classic_bike,2026-09-03 17:06:02.409,2026-09-03 17:12:56.194,City Hall - Washington St & 1 St,Madison St & 1 St,casual
+53CBFCE34F7F773B,rider_130,classic_bike,2026-09-03 17:38:40.292,2026-09-03 17:50:50.211,Grove St PATH,Liberty Light Rail,casual
+5BDBA9B3601F4DD6,rider_081,classic_bike,2026-09-03 19:15:54.469,2026-09-03 19:21:45.288,Grove St PATH,Jersey & 3rd,casual
+B198ADB1974082B6,rider_235,classic_bike,2026-09-03 19:20:08.901,2026-09-03 19:27:19.109,Hudson Pl & Hoboken Terminal,8 St & Washington St,casual
+13EC2E5382210FCA,rider_027,classic_bike,2026-09-03 19:22:49.291,2026-09-03 19:31:52.557,River St & 1 St,14 St Ferry - 14 St & Shipyard Ln,casual
+38C5E3125B3B34CE,rider_132,classic_bike,2026-09-03 19:29:32.053,2026-09-03 19:36:08.736,Jersey & 3rd,Dixon Mills,casual
+6ACB4A49631E286D,rider_176,classic_bike,2026-09-03 19:29:50.123,2026-09-03 19:34:07.342,River St & 1 St,Church Sq Park - 5 St & Park Ave,casual
+10352043AF9D50FC,rider_215,classic_bike,2026-09-03 19:45:22.294,2026-09-03 19:48:57.699,Columbus Park - Clinton St & 9 St,11 St & Washington St,casual
+BC22ADD14A224D55,rider_108,classic_bike,2026-09-04 05:46:28.283,2026-09-04 05:51:20.095,Madison St & 10 St,Grand St & 14 St,casual
+C2B0E8B6906D3430,rider_092,classic_bike,2026-09-04 07:09:29.672,2026-09-04 07:13:35.155,Clinton St & Newark St,6 St & Grand St,casual
+C43075592971E0EC,rider_074,classic_bike,2026-09-04 09:58:55.090,2026-09-04 10:03:30.353,Marin Light Rail,Paulus Hook,casual
+EE8F051BDF2F32B8,rider_148,classic_bike,2026-09-04 10:33:29.978,2026-09-04 10:41:13.044,Brunswick & 6th,Brunswick & 6th,casual
+9EFDBB59BAB31743,rider_201,classic_bike,2026-09-04 15:33:48.513,2026-09-04 15:43:32.002,14 St Ferry - 14 St & Shipyard Ln,South Waterfront Walkway - Sinatra Dr & 1 St,casual
+0CF3B4FAE4C52954,rider_214,classic_bike,2026-09-04 15:44:45.119,2026-09-04 15:52:51.363,Exchange Pl,Newark Ave,casual
+B583F034808363AA,rider_046,classic_bike,2026-09-04 16:27:10.218,2026-09-04 16:33:58.523,Hoboken Ave at Monmouth St,Newport Pkwy,casual
+C645020DB140254D,rider_260,classic_bike,2026-09-04 16:58:18.511,2026-09-04 17:00:27.023,City Hall,Grove St PATH,casual
+E8B7432CA037454B,rider_092,classic_bike,2026-09-04 17:37:21.211,2026-09-04 17:49:57.327,Hoboken Ave at Monmouth St,City Hall,casual
+1751AD4A9F088353,rider_078,classic_bike,2026-09-04 17:50:47.170,2026-09-04 18:00:21.507,Marin Light Rail,Monmouth & 6th,casual
+AD0FBD0163FE37C2,rider_054,classic_bike,2026-09-04 19:08:36.900,2026-09-04 19:17:00.437,River St & 1 St,12 St & Sinatra Dr N,casual
+B186304A17DA5485,rider_130,classic_bike,2026-09-04 19:11:01.091,2026-09-04 19:23:29.171,Adams St & 2 St,Washington St,casual
+B480DED9841B96A0,rider_065,classic_bike,2026-09-04 20:27:14.707,2026-09-04 20:32:56.514,Newport Pkwy,Washington St & Morgan St,casual
+1764BF7D0908B409,rider_072,classic_bike,2026-09-04 22:00:23.991,2026-09-04 22:10:14.965,8 St & Washington St,8 St & Washington St,casual
+4438972DC65A82AF,rider_258,classic_bike,2026-09-05 00:04:42.716,2026-09-05 00:15:15.681,Grove St PATH,Pacific Ave & Communipaw Ave,casual
+0D17D01DFE8AB59E,rider_258,classic_bike,2026-09-05 02:13:08.819,2026-09-05 02:20:51.724,Hoboken Terminal - Hudson St & Hudson Pl,Hoboken Ave at Monmouth St,casual
+BB860543CB824E3F,rider_165,classic_bike,2026-09-05 02:34:15.334,2026-09-05 02:41:09.712,Hoboken Terminal - Hudson St & Hudson Pl,Southwest Park - Jackson St & Observer Hwy,casual
+3EC9C62567989B29,rider_210,classic_bike,2026-09-05 03:14:15.748,2026-09-05 03:27:21.988,City Hall,Hoboken Ave at Monmouth St,casual
+678EBD0CA389D420,rider_162,classic_bike,2026-09-05 10:16:49.072,2026-09-05 10:24:09.955,Clinton St & 7 St,Hudson Pl & Hoboken Terminal,casual
+7BE16C3E5602C81F,rider_239,classic_bike,2026-09-05 10:19:19.771,2026-09-05 10:25:10.589,Essex Light Rail,Columbus Drive,casual
+041828137D9D4023,rider_190,classic_bike,2026-09-05 11:40:32.536,2026-09-05 11:46:40.524,12 St & Sinatra Dr N,South Waterfront Walkway - Sinatra Dr & 1 St,casual
+B9F7C029056AE051,rider_153,classic_bike,2026-09-05 12:30:30.945,2026-09-05 12:33:01.258,Columbus Park - Clinton St & 9 St,Willow Ave & 12 St,casual
+65B74E8D98A7CB96,rider_077,classic_bike,2026-09-05 12:51:14.437,2026-09-05 12:58:34.703,Adams St & 2 St,4 St & River St,casual
+C0517E89BFD2AAAF,rider_158,classic_bike,2026-09-05 13:11:37.722,2026-09-05 13:23:46.100,South Waterfront Walkway - Sinatra Dr & 1 St,Hoboken Ave at Monmouth St,casual
+E4EF7DBF228EB83C,rider_180,classic_bike,2026-09-05 13:30:01.549,2026-09-05 13:44:53.701,Brunswick & 6th,City Hall,casual
+6E53D45DF5FDFD4E,rider_100,classic_bike,2026-09-05 13:48:59.176,2026-09-05 13:57:44.267,City Hall - Washington St & 1 St,11 St & Washington St,casual
+84E8D4F6F2B71408,rider_091,classic_bike,2026-09-05 14:19:32.440,2026-09-05 14:28:21.635,Newport Pkwy,Grand St,casual
+1763A5BD260A03E1,rider_040,classic_bike,2026-09-05 14:42:05.641,2026-09-05 14:49:08.799,Newport PATH,Hamilton Park,casual
+9B9E1DC862F55C72,rider_159,classic_bike,2026-09-05 15:14:54.667,2026-09-05 15:23:56.609,Hudson Pl & Hoboken Terminal,Mama Johnson Field - 4 St & Jackson St,casual
+83047098600E4123,rider_233,classic_bike,2026-09-05 16:42:46.592,2026-09-05 16:54:46.771,Hudson Pl & Hoboken Terminal,14 St Ferry - 14 St & Shipyard Ln,casual
+8D05550D8DB350AE,rider_001,classic_bike,2026-09-05 17:53:57.273,2026-09-05 18:01:44.148,City Hall - Washington St & 1 St,Columbus Park - Clinton St & 9 St,casual
+EB584A6C2E01D087,rider_240,classic_bike,2026-09-05 18:46:27.208,2026-09-05 18:57:00.777,Montgomery St,Washington St & Morgan St,casual
+116D24EC97037DB0,rider_134,classic_bike,2026-09-05 18:56:03.983,2026-09-05 19:08:06.510,11 St & Washington St,Hoboken Terminal - Hudson St & Hudson Pl,casual
+88A3A6D2BE78814D,rider_093,classic_bike,2026-09-05 19:11:03.671,2026-09-05 19:26:00.938,Columbus Park - Clinton St & 9 St,Hudson Pl & Hoboken Terminal,casual
+ECEEEC4192DD808D,rider_109,classic_bike,2026-09-05 20:23:13.937,2026-09-05 20:34:21.234,Christ Hospital,Riverview Park,casual
+32FB1EEC4D6849F9,rider_107,classic_bike,2026-09-05 22:09:29.990,2026-09-05 22:24:28.068,South Waterfront Walkway - Sinatra Dr & 1 St,Newport PATH,casual
+ACFA9AF45763060F,rider_055,classic_bike,2026-09-06 03:58:54.532,2026-09-06 04:06:07.933,JC Medical Center,Lafayette Park,casual
+BDC64B79C8781D75,rider_219,classic_bike,2026-09-06 09:19:18.145,2026-09-06 09:29:55.338,West Side Ave & Stegman Pkwy,Mallory Ave & Roosevelt Ave,casual
+7403BAF352139800,rider_014,classic_bike,2026-09-06 11:40:32.383,2026-09-06 11:48:15.396,Madison St & 1 St,8 St & Washington St,casual
+428F2DF5A4B7B15C,rider_257,classic_bike,2026-09-06 12:35:25.303,2026-09-06 12:37:49.885,Church Sq Park - 5 St & Park Ave,Church Sq Park - 5 St & Park Ave,casual
+49DBEC6D4747E19F,rider_218,classic_bike,2026-09-06 12:35:47.310,2026-09-06 12:45:48.018,York St & Marin Blvd,Newport Pkwy,casual
+CAE586126B54F042,rider_131,classic_bike,2026-09-06 13:00:39.628,2026-09-06 13:13:11.362,Jersey & 6th St,Hilltop,casual
+BB8B539FF8DF3C3E,rider_102,classic_bike,2026-09-06 13:45:40.118,2026-09-06 13:55:23.977,Madison St & 10 St,Hudson Pl & Hoboken Terminal,casual
+101D0E94CED84E83,rider_169,classic_bike,2026-09-06 13:53:11.181,2026-09-06 13:55:29.023,12 St & Sinatra Dr N,12 St & Sinatra Dr N,casual
+FA395F8177A85438,rider_020,classic_bike,2026-09-06 14:01:03.307,2026-09-06 14:08:49.255,Clinton St & Newark St,Grand St & 14 St,casual
+D6A852436D066B73,rider_154,classic_bike,2026-09-06 14:37:18.573,2026-09-06 14:39:14.294,Liberty Light Rail,Liberty Light Rail,casual
+CEED11DC433F8512,rider_178,classic_bike,2026-09-06 14:57:23.488,2026-09-06 15:12:13.106,Newport PATH,Clinton St & 7 St,casual
+BE9F1344BA4166EC,rider_040,classic_bike,2026-09-06 16:45:45.593,2026-09-06 16:53:07.005,Hoboken Ave at Monmouth St,Newark St & Washington St,casual
+802681DFFDCCD1DB,rider_121,classic_bike,2026-09-06 17:10:01.756,2026-09-06 17:14:39.005,Manila & 1st,Monmouth & 6th,casual
+DF0990FC288EA04C,rider_010,classic_bike,2026-09-06 17:11:21.463,2026-09-06 17:14:40.417,Marin Light Rail,Grove St PATH,casual
+A1E97316EE651DA3,rider_097,classic_bike,2026-09-06 18:37:15.240,2026-09-06 18:47:48.775,4 St & Grand St,Hamilton Park,casual
+9BEEAABB60FAEA5C,rider_197,classic_bike,2026-09-06 18:39:06.954,2026-09-06 18:46:42.116,South Waterfront Walkway - Sinatra Dr & 1 St,14 St Ferry - 14 St & Shipyard Ln,casual
+9FBC3FADA4EB0272,rider_019,classic_bike,2026-09-06 18:43:07.176,2026-09-06 18:53:45.847,Newport PATH,City Hall - Washington St & 1 St,casual
+7A9E3E6B55E45F37,rider_016,classic_bike,2026-09-06 19:27:41.324,2026-09-06 19:33:43.139,Van Vorst Park,Monmouth & 6th,casual
+2C6FC2410173BEEF,rider_259,classic_bike,2026-09-07 09:26:11.891,2026-09-07 09:40:11.224,Marin Light Rail,Hoboken Ave at Monmouth St,casual
+92960FDB8BF6E66D,rider_116,classic_bike,2026-09-07 11:35:40.534,2026-09-07 11:44:41.049,Clinton St & Newark St,Grand St & 14 St,casual
+6D663B257871B88F,rider_087,classic_bike,2026-09-07 13:12:50.204,2026-09-07 13:26:28.281,Bergen Ave & Stegman St,Astor Place,casual
+DAD62B764E60F2FD,rider_009,classic_bike,2026-09-07 13:59:48.931,2026-09-07 14:09:46.761,4 St & River St,7 St & Monroe St,casual
+5B914B2BAA506FA8,rider_097,classic_bike,2026-09-07 14:05:26.331,2026-09-07 14:19:25.026,14 St Ferry - 14 St & Shipyard Ln,Hudson Pl & Hoboken Terminal,casual
+79D370AD3FD21961,rider_194,classic_bike,2026-09-07 14:47:30.773,2026-09-07 14:54:07.435,Mama Johnson Field - 4 St & Jackson St,4 St & River St,casual
+0CCA7CDADAFD8B8D,rider_139,classic_bike,2026-09-07 15:27:47.593,2026-09-07 15:37:59.922,South Waterfront Walkway - Sinatra Dr & 1 St,11 St & Washington St,casual
+5706B630955D6EB8,rider_128,classic_bike,2026-09-07 15:31:42.612,2026-09-07 15:33:31.024,14 St Ferry - 14 St & Shipyard Ln,14 St Ferry - 14 St & Shipyard Ln,casual
+ED5F64746005041A,rider_125,classic_bike,2026-09-07 16:06:22.884,2026-09-07 16:12:49.579,River St & 1 St,12 St & Sinatra Dr N,casual
+14A7BD9C2369998E,rider_012,classic_bike,2026-09-07 16:52:40.413,2026-09-07 17:01:26.926,Hudson Pl & Hoboken Terminal,11 St & Washington St,casual
+77949D1E88072634,rider_042,classic_bike,2026-09-07 17:01:57.457,2026-09-07 17:10:51.092,Willow Ave & 12 St,Church Sq Park - 5 St & Park Ave,casual
+0BB8BFB3DBB81F9C,rider_095,classic_bike,2026-09-07 17:22:53.428,2026-09-07 17:24:19.847,MLK Dr & Bramhall Ave,MLK Dr & Bramhall Ave,casual
+45D5B57AE180BD75,rider_068,classic_bike,2026-09-07 17:41:37.399,2026-09-07 17:51:36.636,Bloomfield St & 15 St,7 St & Monroe St,casual
+070AE6621C3CF7BC,rider_019,classic_bike,2026-09-07 18:26:41.072,2026-09-07 18:41:03.856,Fairmount Ave,JC Medical Center,casual
+A82E32AA3D18F22C,rider_122,classic_bike,2026-09-07 19:08:03.785,2026-09-07 19:20:51.358,Columbus Park - Clinton St & 9 St,Newport Pkwy,casual
+BAC20020EE945FD1,rider_041,classic_bike,2026-09-07 19:58:21.874,2026-09-07 20:08:38.506,River St & 1 St,9 St HBLR - Jackson St & 8 St,casual
+CED5AFEDEC9D2B24,rider_256,classic_bike,2026-09-07 21:03:39.745,2026-09-07 21:12:25.371,City Hall,Morris Canal,casual
+DD1D392F8BF57F3E,rider_221,classic_bike,2026-09-07 21:49:25.509,2026-09-07 21:59:14.764,River St & 1 St,Bloomfield St & 15 St,casual
+EB7F0C8CD180235F,rider_127,classic_bike,2026-09-08 01:58:12.842,2026-09-08 02:08:35.585,Grand St & 14 St,7 St & Monroe St,casual
+9086C3099D7F0130,rider_124,classic_bike,2026-09-08 08:18:33.008,2026-09-08 08:22:12.674,11 St & Washington St,Madison St & 10 St,casual
+EAABEB22D8DB25DF,rider_103,classic_bike,2026-09-08 08:48:30.693,2026-09-08 08:55:59.898,South Waterfront Walkway - Sinatra Dr & 1 St,11 St & Washington St,casual
+635FC818B48A46E3,rider_104,classic_bike,2026-09-08 09:39:45.726,2026-09-08 09:52:22.023,Hudson Pl & Hoboken Terminal,Madison St & 10 St,casual
+1A8986D4A4B56C83,rider_050,classic_bike,2026-09-08 12:11:37.482,2026-09-08 12:16:57.460,JC Medical Center,Jersey & 3rd,casual
+2EA236ECEA2B2F08,rider_169,classic_bike,2026-09-08 12:36:22.755,2026-09-08 12:43:45.029,Grove St PATH,Hoboken Ave at Monmouth St,casual
+9D6BEA73B42CAA36,rider_150,classic_bike,2026-09-08 13:11:33.605,2026-09-08 13:19:58.640,Hudson Pl & Hoboken Terminal,14 St Ferry - 14 St & Shipyard Ln,casual
+C519E1634EB0AE37,rider_081,classic_bike,2026-09-08 13:37:44.855,2026-09-08 13:46:24.717,Hudson Pl & Hoboken Terminal,14 St Ferry - 14 St & Shipyard Ln,casual
+04ED17B24ACCBBAA,rider_192,classic_bike,2026-09-08 14:12:03.108,2026-09-08 14:25:03.045,Newark St & Washington St,7 St & Monroe St,casual
+1DE49AD21FCFAE4A,rider_156,classic_bike,2026-09-08 14:41:45.979,2026-09-08 14:51:37.777,8 St & Washington St,Southwest Park - Jackson St & Observer Hwy,casual
+348EE9B4AE530898,rider_106,classic_bike,2026-09-08 14:42:15.335,2026-09-08 14:44:28.726,11 St & Washington St,8 St & Washington St,casual
+E7A4EE74768EE3D2,rider_137,classic_bike,2026-09-08 16:08:48.208,2026-09-08 16:21:09.441,Mallory Ave & Roosevelt Ave,Garfield Light Rail,casual
+7BFBE5FEDBF97708,rider_060,classic_bike,2026-09-08 16:31:45.800,2026-09-08 16:36:59.079,Fairmount Ave,Bergen Ave & Sip Ave,casual
+A590D94A1EC8700B,rider_049,classic_bike,2026-09-08 17:13:52.861,2026-09-08 17:25:06.302,Hudson Pl & Hoboken Terminal,14 St Ferry - 14 St & Shipyard Ln,casual
+D840D9D0EF457992,rider_123,classic_bike,2026-09-08 18:12:13.585,2026-09-08 18:19:03.502,Newark St & Washington St,Marshall St & 2 St,casual
+B8A2A1F6365FD6ED,rider_099,classic_bike,2026-09-08 18:20:58.345,2026-09-08 18:23:33.158,8 St & Washington St,11 St & Washington St,casual
+24119AAF9F976C66,rider_144,classic_bike,2026-09-08 18:32:07.723,2026-09-08 18:41:52.954,Bloomfield St & 15 St,Bloomfield St & 15 St,casual
+E5588B6596E074A2,rider_142,classic_bike,2026-09-08 18:51:51.967,2026-09-08 19:00:36.114,South Waterfront Walkway - Sinatra Dr & 1 St,12 St & Sinatra Dr N,casual
+06BAD4FD4DB57503,rider_060,classic_bike,2026-09-08 19:12:51.553,2026-09-08 19:19:48.218,Essex Light Rail,Warren St,casual
+11FAE50047D6CD8A,rider_006,classic_bike,2026-09-08 19:12:54.962,2026-09-08 19:20:00.768,Newark Ave,Marin Light Rail,casual
+55564042CF678473,rider_210,classic_bike,2026-09-08 20:04:47.056,2026-09-08 20:07:42.910,Grove St PATH,Marin Light Rail,casual
+1925690638BB0195,rider_061,classic_bike,2026-09-08 21:17:30.876,2026-09-08 21:25:46.518,Paulus Hook,Exchange Pl,casual
+10EBDDD9852219F2,rider_073,classic_bike,2026-09-08 21:59:31.129,2026-09-08 22:07:16.581,Clinton St & Newark St,Willow Ave & 12 St,casual
+1F34F90CF0D4C39C,rider_087,classic_bike,2026-09-08 23:28:48.700,2026-09-08 23:33:55.441,Newport Pkwy,Warren St,casual
+84EB7E8D3ED5EDFB,rider_014,classic_bike,2026-09-09 09:15:20.919,2026-09-09 09:23:49.084,Hoboken Ave at Monmouth St,Hudson Pl & Hoboken Terminal,casual
+E2BC034D6A5D74A5,rider_004,classic_bike,2026-09-09 09:21:11.624,2026-09-09 09:24:37.910,Marshall St & 2 St,7 St & Monroe St,casual
+1BDFD8DEEE64F307,rider_225,classic_bike,2026-09-09 10:16:14.588,2026-09-09 10:20:44.272,9 St HBLR - Jackson St & 8 St,Southwest Park - Jackson St & Observer Hwy,casual
+4E1FB0197C35896B,rider_178,classic_bike,2026-09-09 10:55:05.738,2026-09-09 11:05:47.200,Grand St & 14 St,Church Sq Park - 5 St & Park Ave,casual
+2AB376312097BB0C,rider_249,classic_bike,2026-09-09 11:31:32.165,2026-09-09 11:39:28.449,Jersey & 6th St,City Hall,casual
+82DE0ECF1A43D3DF,rider_031,classic_bike,2026-09-09 12:11:04.481,2026-09-09 12:23:37.588,11 St & Washington St,Newark St & Washington St,casual
+9239111E8B4BE6C1,rider_095,classic_bike,2026-09-09 13:04:55.191,2026-09-09 13:11:09.437,Dr. Lena Edwards Park,City Hall,casual
+38EC136433BB0DE3,rider_096,classic_bike,2026-09-09 13:29:53.503,2026-09-09 13:40:50.305,12 St & Sinatra Dr N,South Waterfront Walkway - Sinatra Dr & 1 St,casual
+4172CA3D463AA19E,rider_069,classic_bike,2026-09-09 13:33:09.981,2026-09-09 13:35:23.546,Marshall St & 2 St,Mama Johnson Field - 4 St & Jackson St,casual
+7535D2A0EAC195E4,rider_105,classic_bike,2026-09-09 13:51:51.544,2026-09-09 13:55:56.352,8 St & Washington St,Bloomfield St & 15 St,casual
+81392DD6D7815B55,rider_148,classic_bike,2026-09-09 14:55:15.983,2026-09-09 15:06:40.507,11 St & Washington St,South Waterfront Walkway - Sinatra Dr & 1 St,casual
+6EADB2CF77D6DE95,rider_070,classic_bike,2026-09-09 17:40:07.080,2026-09-09 17:44:48.997,River St & 1 St,4 St & Grand St,casual
+7A947FE18722F9A3,rider_034,classic_bike,2026-09-09 17:47:34.942,2026-09-09 17:55:47.475,4 St & Grand St,Hudson Pl & Hoboken Terminal,casual
+038D7B9FC6AFA83C,rider_069,classic_bike,2026-09-09 17:47:46.700,2026-09-09 18:00:16.192,Marshall St & 2 St,12 St & Sinatra Dr N,casual
+E229815CDD355EC7,rider_109,classic_bike,2026-09-09 17:58:53.159,2026-09-09 18:06:19.560,Newark St & Washington St,7 St & Monroe St,casual
+2C29F9151970E4CF,rider_243,classic_bike,2026-09-09 18:49:35.496,2026-09-09 18:57:42.030,4 St & River St,14 St Ferry - 14 St & Shipyard Ln,casual
+D1464B878EF49828,rider_032,classic_bike,2026-09-09 18:49:49.097,2026-09-09 19:01:05.615,Dr. Lena Edwards Park,Washington St & Morgan St,casual
+73395DB646B99D62,rider_018,classic_bike,2026-09-09 18:50:42.399,2026-09-09 18:55:37.586,Columbus Park - Clinton St & 9 St,11 St & Washington St,casual
+7476FA6E3DB7C8DA,rider_061,classic_bike,2026-09-09 20:50:01.961,2026-09-09 21:01:24.463,River St & 1 St,Bloomfield St & 15 St,casual
+F0E95B6C37122741,rider_192,classic_bike,2026-09-09 22:02:34.938,2026-09-09 22:07:44.757,Stevens - River Ter & 6 St,4 St & Grand St,casual
+704F5B457F5B197D,rider_189,classic_bike,2026-09-09 22:07:37.391,2026-09-09 22:12:52.930,Columbus Park - Clinton St & 9 St,Adams St & 2 St,casual
+09D5DB99E5B80BF9,rider_036,classic_bike,2026-09-09 23:17:45.234,2026-09-09 23:28:09.099,City Hall,Communipaw & Berry Lane,casual
+9A030E6F5B3CBB01,rider_157,classic_bike,2026-09-10 00:43:33.664,2026-09-10 00:47:19.061,Adams St & 2 St,Adams St & 2 St,casual
+FC774168ED7DDCD8,rider_212,classic_bike,2026-09-10 09:03:52.487,2026-09-10 09:14:58.981,Grand St & 14 St,River St & 1 St,casual
+A7498032DF0A6716,rider_108,classic_bike,2026-09-10 10:12:34.396,2026-09-10 10:23:19.665,14 St Ferry - 14 St & Shipyard Ln,River St & 1 St,casual
+DE5AA22331424E1A,rider_143,classic_bike,2026-09-10 11:27:53.260,2026-09-10 11:34:54.603,Manila & 1st,Van Vorst Park,casual
+1EF23E2DB4CBE4CB,rider_007,classic_bike,2026-09-10 12:29:15.672,2026-09-10 12:33:38.031,Columbus Park - Clinton St & 9 St,11 St & Washington St,casual
+5992A4BFF4276D8E,rider_253,classic_bike,2026-09-10 13:29:45.696,2026-09-10 13:41:16.571,Grand St & 14 St,City Hall - Washington St & 1 St,casual
+4359AB58EB500832,rider_122,classic_bike,2026-09-10 16:59:23.118,2026-09-10 17:08:32.949,7 St & Monroe St,Hoboken Terminal - Hudson St & Hudson Pl,casual
+8C7796EB202A2D48,rider_166,classic_bike,2026-09-10 19:32:11.207,2026-09-10 19:39:58.749,River St & 1 St,Clinton St & 7 St,casual
+60607A31EDE02667,rider_162,classic_bike,2026-09-10 19:58:46.355,2026-09-10 20:06:51.160,Journal Square,Leonard Gordon Park,casual
+6C3803585BC0139F,rider_066,classic_bike,2026-09-10 20:26:09.552,2026-09-10 20:35:22.359,River St & 1 St,Marshall St & 2 St,casual
+3CF96D5150FE28D1,rider_181,classic_bike,2026-09-10 21:05:55.088,2026-09-10 21:10:00.518,Grove St PATH,JC Medical Center,casual
+517004B2B31EAC3B,rider_244,classic_bike,2026-09-10 21:43:50.683,2026-09-10 21:51:42.453,Church Sq Park - 5 St & Park Ave,14 St Ferry - 14 St & Shipyard Ln,casual
+AE838EE6711DC1A9,rider_015,classic_bike,2026-09-10 22:07:31.632,2026-09-10 22:13:25.789,8 St & Washington St,City Hall - Washington St & 1 St,casual
+0455CF5B604F9F9B,rider_238,classic_bike,2026-09-10 22:27:53.581,2026-09-10 22:35:32.936,4 St & River St,Adams St & 12 St,casual
+7C9961B4D9D3DD86,rider_001,classic_bike,2026-09-10 22:53:04.841,2026-09-10 23:06:33.492,River St & 1 St,Willow Ave & 12 St,casual
+0C5ACA611CAEFE27,rider_146,classic_bike,2026-09-10 23:27:49.845,2026-09-10 23:36:11.148,11 St & Washington St,Adams St & 2 St,casual
+BFAA0B6F0F7E65D5,rider_117,classic_bike,2026-09-11 06:53:21.862,2026-09-11 07:01:40.356,River St & 1 St,Adams St & 2 St,casual
+BBB6411DB7627EB5,rider_106,classic_bike,2026-09-11 08:48:07.724,2026-09-11 08:58:21.598,Madison St & 1 St,Newark St & Washington St,casual
+89C4F7F8CE541B9B,rider_211,classic_bike,2026-09-11 09:05:46.697,2026-09-11 09:17:23.858,Willow Ave & 12 St,Newark St & Washington St,casual
+9BEDF80E9F45C297,rider_203,classic_bike,2026-09-11 10:02:37.585,2026-09-11 10:13:14.008,Marshall St & 2 St,Newport Pkwy,casual
+BBE4A09FD441BC48,rider_026,classic_bike,2026-09-11 10:22:33.648,2026-09-11 10:25:33.707,Washington St & Morgan St,Washington St,casual
+B97EC4E1824D3F99,rider_200,classic_bike,2026-09-11 11:11:50.298,2026-09-11 11:22:12.308,12 St & Sinatra Dr N,Clinton St & Newark St,casual
+5BA3A141CCA729C8,rider_188,classic_bike,2026-09-11 12:18:04.607,2026-09-11 12:29:23.681,Lafayette Park,City Hall,casual
+82B04F43FE6C9E17,rider_216,classic_bike,2026-09-11 12:19:00.798,2026-09-11 12:26:38.362,8 St & Washington St,Hudson Pl & Hoboken Terminal,casual
+059C8F8DD12FB47B,rider_055,classic_bike,2026-09-11 12:30:47.090,2026-09-11 12:35:16.215,City Hall,Newark Ave,casual
+5AB8FA1B11A87F35,rider_170,classic_bike,2026-09-11 14:10:05.237,2026-09-11 14:24:29.893,Brunswick & 6th,Brunswick & 6th,casual
+002255ABCD7D5762,rider_057,classic_bike,2026-09-11 14:28:33.666,2026-09-11 14:37:07.083,Communipaw & Berry Lane,Montgomery St,casual
+CDE8DA599B356F41,rider_116,classic_bike,2026-09-11 15:20:44.517,2026-09-11 15:27:29.001,Grove St PATH,Brunswick St,casual
+8FB28233D89EF281,rider_079,classic_bike,2026-09-11 16:00:39.572,2026-09-11 16:12:45.783,Hudson Pl & Hoboken Terminal,7 St & Monroe St,casual
+C28F5248FAF5B0C7,rider_236,classic_bike,2026-09-11 17:15:21.224,2026-09-11 17:22:49.656,Clinton St & Newark St,Grand St & 14 St,casual
+EF45C6D440684E88,rider_033,classic_bike,2026-09-11 17:26:59.617,2026-09-11 17:31:39.784,Washington St & Morgan St,Marin Light Rail,casual
+FE91D5A3BF54D646,rider_133,classic_bike,2026-09-11 17:31:12.283,2026-09-11 17:40:20.675,Hoboken Terminal - Hudson St & Hudson Pl,9 St HBLR - Jackson St & 8 St,casual
+C0E15781CC61218A,rider_161,classic_bike,2026-09-11 17:31:49.548,2026-09-11 17:36:45.293,River St & 1 St,Adams St & 2 St,casual
+E8703952B0EE16FF,rider_244,classic_bike,2026-09-11 17:41:22.842,2026-09-11 17:49:14.734,Adams St & 2 St,Hudson Pl & Hoboken Terminal,casual
+C1F62DE4ED0C9F26,rider_202,classic_bike,2026-09-11 17:45:35.395,2026-09-11 17:54:40.390,Columbus Park - Clinton St & 9 St,Clinton St & Newark St,casual
+2A2534264470AB94,rider_051,classic_bike,2026-09-11 17:52:28.904,2026-09-11 17:55:05.752,11 St & Washington St,Adams St & 12 St,casual
+A2C747F2D1D7735A,rider_011,classic_bike,2026-09-11 17:56:18.439,2026-09-11 17:57:56.242,JC Medical Center,JC Medical Center,casual
+3E4B6A528C9A457A,rider_164,classic_bike,2026-09-11 18:15:58.384,2026-09-11 18:20:40.575,14 St Ferry - 14 St & Shipyard Ln,11 St & Washington St,casual
+92161BBB3C095859,rider_231,classic_bike,2026-09-11 18:24:59.532,2026-09-11 18:31:44.950,Clinton St & 7 St,Madison St & 1 St,casual
+1064FAF3F43CDF35,rider_201,classic_bike,2026-09-11 18:36:40.181,2026-09-11 18:47:38.674,McGinley Square,Brunswick St,casual
+E5860DCE0803F5A0,rider_064,classic_bike,2026-09-11 18:58:36.226,2026-09-11 19:07:15.040,Columbus Park - Clinton St & 9 St,Newark St & Washington St,casual
+1A6D2DC412726213,rider_209,classic_bike,2026-09-11 19:04:48.042,2026-09-11 19:14:10.766,Grove St PATH,Newport Pkwy,casual
+900342EF6B38F994,rider_021,classic_bike,2026-09-11 19:45:00.675,2026-09-11 19:58:17.917,Columbus Park - Clinton St & 9 St,Hoboken Ave at Monmouth St,casual
+78E4A48439DDD285,rider_004,classic_bike,2026-09-11 20:31:38.355,2026-09-11 20:40:30.892,Hoboken Ave at Monmouth St,Hudson Pl & Hoboken Terminal,casual
+7FA35775A25919AB,rider_237,classic_bike,2026-09-11 22:49:49.079,2026-09-11 22:56:08.076,12 St & Sinatra Dr N,Hudson Pl & Hoboken Terminal,casual
+7940F1BDA958FFFA,rider_230,classic_bike,2026-09-11 23:07:06.064,2026-09-11 23:14:43.982,Hoboken Terminal - Hudson St & Hudson Pl,Hoboken Ave at Monmouth St,casual
+558A5AA3A800FA4D,rider_085,classic_bike,2026-09-11 23:38:28.309,2026-09-11 23:53:20.018,Newark St & Washington St,Bloomfield St & 15 St,casual
+E36FB9BF240B682F,rider_137,classic_bike,2026-09-12 00:46:30.039,2026-09-12 00:52:28.297,Adams St & 2 St,7 St & Monroe St,casual
+7CC31D53F14245F1,rider_064,classic_bike,2026-09-12 01:36:15.741,2026-09-12 01:49:30.632,Newark St & Washington St,Brunswick & 6th,casual
+4864F37344CA52A0,rider_017,classic_bike,2026-09-12 01:50:00.199,2026-09-12 01:59:16.562,River St & 1 St,Newark St & Washington St,casual
+0891F5A7EEB5420D,rider_175,classic_bike,2026-09-12 02:51:18.835,2026-09-12 03:03:31.548,Bergen Ave & Sip Ave,Astor Place,casual
+60BB564F58575ED6,rider_058,classic_bike,2026-09-12 03:05:42.602,2026-09-12 03:13:11.601,Marin Light Rail,Manila & 1st,casual
+28B49C7A5A555234,rider_247,classic_bike,2026-09-12 06:52:31.560,2026-09-12 06:58:30.748,City Hall,Hamilton Park,casual
+F8E97D0F28EDB6D1,rider_188,classic_bike,2026-09-12 07:49:01.006,2026-09-12 07:53:34.273,4 St & Grand St,8 St & Washington St,casual
+6C4960061429147E,rider_259,classic_bike,2026-09-12 08:12:50.647,2026-09-12 08:19:25.369,Hoboken Ave at Monmouth St,Hoboken Terminal - Hudson St & Hudson Pl,casual
+5CA25AE9175FE982,rider_023,classic_bike,2026-09-12 09:03:34.468,2026-09-12 09:08:12.600,Willow Ave & 12 St,4 St & Grand St,casual
+EE02D1B931EBD2E4,rider_160,classic_bike,2026-09-12 09:40:12.137,2026-09-12 09:50:51.901,Liberty Light Rail,Exchange Pl,casual
+AED053F2F73C7531,rider_228,classic_bike,2026-09-12 10:45:30.877,2026-09-12 10:55:45.299,9 St HBLR - Jackson St & 8 St,Newark St & Washington St,casual
+FFAFF326117CEDFB,rider_086,classic_bike,2026-09-12 10:52:12.218,2026-09-12 11:02:49.497,9 St HBLR - Jackson St & 8 St,Clinton St & Newark St,casual
+5BC87FAEE0ECF4EE,rider_038,classic_bike,2026-09-12 11:44:55.173,2026-09-12 11:58:00.944,Marin Light Rail,Communipaw & Berry Lane,casual
+66B150D305DB4B80,rider_025,classic_bike,2026-09-12 11:46:42.338,2026-09-12 11:51:46.380,Adams St & 2 St,River St & 1 St,casual
+D36662711327BCB0,rider_074,classic_bike,2026-09-12 11:56:38.179,2026-09-12 12:06:26.426,12 St & Sinatra Dr N,Hudson Pl & Hoboken Terminal,casual
+55E731C9AA35F9AF,rider_094,classic_bike,2026-09-12 11:57:38.753,2026-09-12 12:00:28.248,Exchange Pl,Grand St,casual
+1AC430C8F2216F27,rider_075,classic_bike,2026-09-12 12:00:14.170,2026-09-12 12:04:47.670,McGinley Square,Bergen Ave & Sip Ave,casual
+CF265B3C0CED88F9,rider_221,classic_bike,2026-09-12 12:01:27.777,2026-09-12 12:09:44.122,York St & Marin Blvd,Hamilton Park,casual
+17AD42AD9F2ABB4B,rider_129,classic_bike,2026-09-12 13:30:10.953,2026-09-12 13:37:31.895,11 St & Washington St,Church Sq Park - 5 St & Park Ave,casual
+A2D9AB6AE2E2EE0A,rider_082,classic_bike,2026-09-12 13:35:09.333,2026-09-12 13:40:52.809,Exchange Pl,Marin Light Rail,casual
+5AC13F3F4C3D3350,rider_163,classic_bike,2026-09-12 14:00:08.812,2026-09-12 14:06:58.105,Columbus Park - Clinton St & 9 St,Madison St & 1 St,casual
+CA5CC15447768B30,rider_195,classic_bike,2026-09-12 14:31:43.383,2026-09-12 14:33:24.833,8 St & Washington St,8 St & Washington St,casual
+A5B9DA4CD2E9686E,rider_235,classic_bike,2026-09-12 14:40:38.507,2026-09-12 14:52:16.752,6 St & Grand St,Willow Ave & 12 St,casual
+31A1405058A2FC18,rider_200,classic_bike,2026-09-12 15:26:49.385,2026-09-12 15:31:32.435,Brunswick & 6th,Jersey & 3rd,casual
+63302BA05CC80FD7,rider_052,classic_bike,2026-09-12 15:53:11.606,2026-09-12 16:05:12.174,Montgomery St,Washington St & Morgan St,casual
+7DA4E1EE34ACA298,rider_037,classic_bike,2026-09-12 16:33:35.966,2026-09-12 16:38:46.547,Washington St,Grove St PATH,casual
+681EC24FF027BA59,rider_057,classic_bike,2026-09-12 17:05:11.186,2026-09-12 17:12:07.542,Clinton St & 7 St,14 St Ferry - 14 St & Shipyard Ln,casual
+38C764FE7D164DC5,rider_252,classic_bike,2026-09-12 17:17:34.929,2026-09-12 17:26:34.119,14 St Ferry - 14 St & Shipyard Ln,Columbus Park - Clinton St & 9 St,casual
+BFD00063509A2097,rider_026,classic_bike,2026-09-12 18:20:07.179,2026-09-12 18:31:50.934,14 St Ferry - 14 St & Shipyard Ln,Clinton St & 7 St,casual
+E39469ED30D74B8E,rider_015,classic_bike,2026-09-12 18:23:48.225,2026-09-12 18:33:42.239,Clinton St & 7 St,2 St & Park Ave,casual
+D7013321B855D1DB,rider_084,classic_bike,2026-09-12 20:08:23.045,2026-09-12 20:12:05.946,Newport Pkwy,Washington St,casual
+83B64C337D462F90,rider_181,classic_bike,2026-09-12 21:56:26.901,2026-09-12 22:05:41.525,Newport PATH,Clinton St & Newark St,casual
+6796869DC4678742,rider_073,classic_bike,2026-09-12 22:38:39.875,2026-09-12 22:47:37.200,6 St & Grand St,City Hall - Washington St & 1 St,casual
+F2B3A323715DE342,rider_065,classic_bike,2026-09-12 22:45:41.979,2026-09-12 22:55:32.700,Hudson Pl & Hoboken Terminal,Adams St & 12 St,casual
+6673C71731B09CE3,rider_126,classic_bike,2026-09-13 00:37:53.606,2026-09-13 00:45:26.677,River St & 1 St,11 St & Washington St,casual
+3916CAC6E4EEBF1B,rider_053,classic_bike,2026-09-13 01:07:08.069,2026-09-13 01:15:30.380,8 St & Washington St,9 St HBLR - Jackson St & 8 St,casual
+637145F4FA73E712,rider_198,classic_bike,2026-09-13 01:30:28.370,2026-09-13 01:40:19.162,2 St & Park Ave,Willow Ave & 12 St,casual
+796DAFDED8780A30,rider_211,classic_bike,2026-09-13 02:46:35.102,2026-09-13 02:59:21.153,Grand St,Lafayette Park,casual
+011FA655E611B603,rider_044,classic_bike,2026-09-13 12:40:21.433,2026-09-13 12:45:46.394,Columbus Drive,Newport PATH,casual
+EC628D576055EB62,rider_152,classic_bike,2026-09-13 13:43:30.838,2026-09-13 13:52:20.685,JC Medical Center,Washington St & Morgan St,casual
+22C9A0BF4F2AA273,rider_038,classic_bike,2026-09-13 17:01:48.644,2026-09-13 17:10:07.874,Newport Pkwy,Grand St,casual
+2CBFAD172B044414,rider_136,classic_bike,2026-09-13 17:32:42.155,2026-09-13 17:38:39.020,4 St & Grand St,Newark St & Washington St,casual
+B7F1D717E22EBCA1,rider_052,classic_bike,2026-09-13 17:45:17.628,2026-09-13 17:58:39.323,14 St Ferry - 14 St & Shipyard Ln,Bloomfield St & 15 St,casual
+C9241AAB137FA99F,rider_113,classic_bike,2026-09-13 18:16:46.851,2026-09-13 18:28:46.272,12 St & Sinatra Dr N,Willow Ave & 12 St,casual
+E6AB8E38F303784B,rider_103,classic_bike,2026-09-13 22:34:32.801,2026-09-13 22:36:16.604,Journal Square,Journal Square,casual
+1327F7114D8EFD06,rider_242,classic_bike,2026-09-13 23:45:16.358,2026-09-13 23:58:23.797,Newport Pkwy,Essex Light Rail,casual
+DD59F9C4612C5C43,rider_008,classic_bike,2026-09-14 05:43:14.993,2026-09-14 05:50:03.813,Hudson Pl & Hoboken Terminal,8 St & Washington St,casual
+32E7543F541A53B9,rider_177,classic_bike,2026-09-14 06:05:45.899,2026-09-14 06:16:10.412,McGinley Square,Newark Ave,casual
+DFD3EF73338ECA8D,rider_224,classic_bike,2026-09-14 07:39:56.677,2026-09-14 07:50:04.915,Hoboken Ave at Monmouth St,Warren St,casual
+A7069584ABB57124,rider_029,classic_bike,2026-09-14 11:58:10.917,2026-09-14 12:10:47.376,Pacific Ave & Communipaw Ave,Van Vorst Park,casual
+6A568F54D577EAFE,rider_071,classic_bike,2026-09-14 16:06:10.543,2026-09-14 16:19:47.794,Hoboken Terminal - Hudson St & Hudson Pl,Hoboken Ave at Monmouth St,casual
+BD33BBE7EF76736F,rider_241,classic_bike,2026-09-14 16:46:00.921,2026-09-14 16:52:53.550,Willow Ave & 12 St,Mama Johnson Field - 4 St & Jackson St,casual
+F3AB10332AD42C8C,rider_206,classic_bike,2026-09-14 17:26:14.171,2026-09-14 17:33:34.954,Grove St PATH,Monmouth & 6th,casual
+B5DB0981195BF632,rider_214,classic_bike,2026-09-14 17:37:37.598,2026-09-14 17:48:30.373,Washington St & Morgan St,Clinton St & Newark St,casual
+65F0AD7AF58B5BC8,rider_196,classic_bike,2026-09-14 19:30:35.460,2026-09-14 19:33:12.919,Newport PATH,Washington St,casual
+E7FAD94059A6DECB,rider_140,classic_bike,2026-09-14 21:05:52.618,2026-09-14 21:12:16.541,7 St & Monroe St,Clinton St & Newark St,casual
+F4A84698961C2FD6,rider_091,classic_bike,2026-09-14 21:24:05.558,2026-09-14 21:28:27.161,JC Medical Center,Jersey & 3rd,casual
+5BC4CD022D93E15B,rider_168,classic_bike,2026-09-15 07:56:17.690,2026-09-15 08:04:09.996,Newport Pkwy,Southwest Park - Jackson St & Observer Hwy,casual
+8F10A95A22EB850E,rider_030,classic_bike,2026-09-15 12:00:50.845,2026-09-15 12:04:05.417,Madison St & 1 St,2 St & Park Ave,casual
+955EBD15A2E63ADF,rider_056,classic_bike,2026-09-15 12:25:50.273,2026-09-15 12:32:50.959,11 St & Washington St,South Waterfront Walkway - Sinatra Dr & 1 St,casual
+2B158697DD70451D,rider_193,classic_bike,2026-09-15 13:10:58.341,2026-09-15 13:17:01.710,11 St & Washington St,9 St HBLR - Jackson St & 8 St,casual
+260B9594907D8CB0,rider_249,classic_bike,2026-09-15 13:38:15.870,2026-09-15 13:44:35.785,Washington St,Exchange Pl,casual
+AAD9AC067DAFEF74,rider_021,classic_bike,2026-09-15 13:51:33.570,2026-09-15 13:59:15.713,River St & 1 St,Clinton St & 7 St,casual
+8EE8A90A36DF350C,rider_237,classic_bike,2026-09-15 14:18:08.383,2026-09-15 14:22:24.582,City Hall - Washington St & 1 St,8 St & Washington St,casual
+6FAA437327080D5F,rider_017,classic_bike,2026-09-15 15:41:49.982,2026-09-15 15:49:31.595,14 St Ferry - 14 St & Shipyard Ln,Madison St & 10 St,casual
+3B8C62F6F202F653,rider_135,classic_bike,2026-09-15 16:32:17.469,2026-09-15 16:45:26.658,Washington St,Dixon Mills,casual
+F38A2A586810A5C3,rider_002,classic_bike,2026-09-15 16:58:10.068,2026-09-15 17:01:29.172,Essex Light Rail,Marin Light Rail,casual
+B9840E6EACA3702D,rider_149,classic_bike,2026-09-15 17:16:12.040,2026-09-15 17:25:14.979,Willow Ave & 12 St,4 St & Grand St,casual
+944EC7B9E18AC598,rider_223,classic_bike,2026-09-15 17:39:47.508,2026-09-15 17:43:33.891,Grove St PATH,Marin Light Rail,casual
+93F6CEEF04E6B813,rider_036,classic_bike,2026-09-15 17:51:24.630,2026-09-15 18:01:26.769,Brunswick St,Marin Light Rail,casual
+88A795519968A13C,rider_179,classic_bike,2026-09-15 18:08:44.261,2026-09-15 18:17:23.246,River St & 1 St,11 St & Washington St,casual
+8553A45C2E72BBDA,rider_111,classic_bike,2026-09-15 18:59:26.073,2026-09-15 19:06:48.392,River St & 1 St,Madison St & 1 St,casual
+67FBEB222C6DDA37,rider_088,classic_bike,2026-09-15 18:59:38.312,2026-09-15 19:10:28.051,Newport Pkwy,Southwest Park - Jackson St & Observer Hwy,casual
+1130E790A2D7DF60,rider_180,classic_bike,2026-09-15 19:01:12.915,2026-09-15 19:06:39.029,11 St & Washington St,Stevens - River Ter & 6 St,casual
+30211DB30F7E8FE0,rider_031,classic_bike,2026-09-15 19:42:54.234,2026-09-15 19:46:34.693,Stevens - River Ter & 6 St,Hudson Pl & Hoboken Terminal,casual
+9EC91CB076B87A2A,rider_047,classic_bike,2026-09-15 20:47:38.848,2026-09-15 20:58:31.843,Warren St,Warren St,casual
+58BC315935B9F92B,rider_194,classic_bike,2026-09-15 22:23:13.213,2026-09-15 22:30:24.052,4 St & Grand St,Southwest Park - Jackson St & Observer Hwy,casual
+D18D558B57EC6FF3,rider_168,classic_bike,2026-09-15 22:26:12.031,2026-09-15 22:34:52.465,Morris Canal,Morris Canal,casual
+CD4E462AB5C487D6,rider_098,classic_bike,2026-09-15 22:30:18.180,2026-09-15 22:41:51.437,Newark Ave,Southwest Park - Jackson St & Observer Hwy,casual
+B904586C2E5C9C3C,rider_231,classic_bike,2026-09-16 00:36:49.281,2026-09-16 00:47:28.385,Grand St & 14 St,Bloomfield St & 15 St,casual
+EDD6E6DE70AD14BF,rider_152,classic_bike,2026-09-16 05:34:25.954,2026-09-16 05:41:07.611,Hoboken Ave at Monmouth St,Hoboken Terminal - Hudson St & Hudson Pl,casual
+75C49E9EE9089FAA,rider_217,classic_bike,2026-09-16 07:54:08.469,2026-09-16 08:00:31.963,4 St & Grand St,Hoboken Terminal - Hudson St & Hudson Pl,casual
+9761F575CE345810,rider_160,classic_bike,2026-09-16 08:08:44.411,2026-09-16 08:12:31.528,11 St & Washington St,Madison St & 10 St,casual
+6B7041E6177ECF00,rider_118,classic_bike,2026-09-16 08:16:39.054,2026-09-16 08:27:46.010,Arlington Ave & Bramhall Ave,Grove St PATH,casual
+8B1E0311F7F6E1DD,rider_008,classic_bike,2026-09-16 08:40:22.108,2026-09-16 08:42:42.524,Columbus Park - Clinton St & 9 St,Madison St & 10 St,casual
+1F5B240D7E530A06,rider_250,classic_bike,2026-09-16 08:54:23.141,2026-09-16 08:59:37.302,Brunswick & 6th,Manila & 1st,casual
+EB27BB5721B6AFA4,rider_056,classic_bike,2026-09-16 09:08:09.825,2026-09-16 09:15:19.623,12 St & Sinatra Dr N,River St & 1 St,casual
+2246B7CE657AEFA8,rider_236,classic_bike,2026-09-16 09:09:44.094,2026-09-16 09:21:59.238,Monmouth & 6th,Madison St & 1 St,casual
+106E79AF89665D30,rider_010,classic_bike,2026-09-16 09:18:13.135,2026-09-16 09:26:26.475,Clinton St & 7 St,Marshall St & 2 St,casual
+3945CA258F414225,rider_251,classic_bike,2026-09-16 10:11:08.548,2026-09-16 10:17:07.458,Carteret Ave & Arlington Ave,Union St & Bergen Ave,casual
+261ED2F17F9A46D0,rider_080,classic_bike,2026-09-16 10:53:58.064,2026-09-16 10:59:14.266,Marshall St & 2 St,City Hall - Washington St & 1 St,casual
+4E3FC56577BCFCE3,rider_090,classic_bike,2026-09-16 12:20:09.472,2026-09-16 12:27:03.693,Liberty Light Rail,Van Vorst Park,casual
+9D0D5186E142BC91,rider_185,classic_bike,2026-09-16 13:28:13.522,2026-09-16 13:35:14.981,14 St Ferry - 14 St & Shipyard Ln,4 St & River St,casual
+A6D61655E358537D,rider_252,classic_bike,2026-09-16 15:42:26.191,2026-09-16 15:52:29.135,Madison St & 10 St,2 St & Park Ave,casual
+5629DA8E30C8CD99,rider_032,classic_bike,2026-09-16 15:55:05.717,2026-09-16 16:00:01.204,Morris Canal,Grand St,casual
+EE9991C0E3F208FD,rider_232,classic_bike,2026-09-16 17:27:13.146,2026-09-16 17:31:16.640,Church Sq Park - 5 St & Park Ave,11 St & Washington St,casual
+EA73E6930477BA56,rider_039,classic_bike,2026-09-16 18:07:27.514,2026-09-16 18:17:31.857,River St & 1 St,Adams St & 12 St,casual
+BEC1D05FBBF9D534,rider_083,classic_bike,2026-09-16 18:44:54.196,2026-09-16 18:52:07.690,14 St Ferry - 14 St & Shipyard Ln,Church Sq Park - 5 St & Park Ave,casual
+FD59F2C54CAD9DB8,rider_070,classic_bike,2026-09-16 19:19:08.784,2026-09-16 19:27:10.744,12 St & Sinatra Dr N,2 St & Park Ave,casual
+BAA5934E929093DB,rider_012,classic_bike,2026-09-16 19:58:42.691,2026-09-16 20:08:00.614,Washington St & Morgan St,Clinton St & Newark St,casual
+73AF653817F3F2D9,rider_102,classic_bike,2026-09-16 21:19:57.642,2026-09-16 21:26:22.793,River St & 1 St,14 St Ferry - 14 St & Shipyard Ln,casual
+CAEF83467AFD9CB1,rider_186,classic_bike,2026-09-16 21:39:02.372,2026-09-16 21:49:20.488,11 St & Washington St,Hoboken Terminal - Hudson St & Hudson Pl,casual
+FA8996B36B79B52E,rider_121,classic_bike,2026-09-16 21:41:35.294,2026-09-16 21:51:56.695,4 St & River St,Willow Ave & 12 St,casual
+9B6423930C2C7E0D,rider_126,classic_bike,2026-09-16 22:10:42.228,2026-09-16 22:16:52.333,4 St & River St,14 St Ferry - 14 St & Shipyard Ln,casual
+18D7AC4D083C222F,rider_049,classic_bike,2026-09-17 08:30:10.528,2026-09-17 08:39:31.229,12 St & Sinatra Dr N,9 St HBLR - Jackson St & 8 St,casual
+D9F2B31E0CA9D970,rider_144,classic_bike,2026-09-17 10:52:33.768,2026-09-17 10:55:08.004,11 St & Washington St,Bloomfield St & 15 St,casual
+09E2ABE670FB3EFB,rider_171,classic_bike,2026-09-17 11:31:05.773,2026-09-17 11:37:07.983,11 St & Washington St,4 St & River St,casual
+05BCC8C9D2EB8B53,rider_255,classic_bike,2026-09-17 14:09:24.963,2026-09-17 14:14:26.032,Manila & 1st,Van Vorst Park,casual
+7E780448DF26A72B,rider_129,classic_bike,2026-09-17 14:19:25.722,2026-09-17 14:27:09.162,Pacific Ave & Communipaw Ave,City Hall,casual
+DF66E0606223F823,rider_140,classic_bike,2026-09-17 14:23:21.995,2026-09-17 14:25:47.681,Communipaw & Berry Lane,Pacific Ave & Communipaw Ave,casual
+46CB34DDA793AF76,rider_215,classic_bike,2026-09-17 14:42:04.256,2026-09-17 14:50:48.773,Ferris Triangle Park,Bergen Ave & Stegman St,casual
+518180F2ED6F10FE,rider_219,classic_bike,2026-09-17 15:22:32.173,2026-09-17 15:28:49.900,Hamilton Park,Hoboken Ave at Monmouth St,casual
+10F60827B90A945C,rider_187,classic_bike,2026-09-17 16:20:12.224,2026-09-17 16:29:16.787,Hudson Pl & Hoboken Terminal,Grand St & 14 St,casual
+AE5084BE956DCCCD,rider_104,classic_bike,2026-09-17 16:24:55.497,2026-09-17 16:31:17.273,River St & 1 St,Southwest Park - Jackson St & Observer Hwy,casual
+1F80260B978A582A,rider_138,classic_bike,2026-09-17 16:42:58.028,2026-09-17 16:51:15.054,Grove St PATH,Dr. Lena Edwards Park,casual
+67F384A606C31335,rider_075,classic_bike,2026-09-17 17:44:25.474,2026-09-17 17:51:39.488,Pacific Ave & Communipaw Ave,Dixon Mills,casual
+41C8972C29C035C6,rider_128,classic_bike,2026-09-17 18:27:28.803,2026-09-17 18:32:55.592,River St & 1 St,14 St Ferry - 14 St & Shipyard Ln,casual
+DC4685C3EF3F6D7C,rider_257,classic_bike,2026-09-17 19:06:26.080,2026-09-17 19:13:48.313,Brunswick St,Dr. Lena Edwards Park,casual
+FFC24D37FA3F0DC2,rider_090,classic_bike,2026-09-17 19:24:31.606,2026-09-17 19:37:46.212,Grove St PATH,Communipaw & Berry Lane,casual
+99854B9C3C908B2D,rider_028,classic_bike,2026-09-17 20:09:23.508,2026-09-17 20:15:57.682,14 St Ferry - 14 St & Shipyard Ln,14 St Ferry - 14 St & Shipyard Ln,casual
+3D0A7B0A5E73A5D7,rider_174,classic_bike,2026-09-17 20:25:55.895,2026-09-17 20:29:37.429,Grand St & 14 St,Columbus Park - Clinton St & 9 St,casual
+1F3C70C6624305B0,rider_232,classic_bike,2026-09-17 21:04:42.089,2026-09-17 21:07:22.036,Marin Light Rail,Grove St PATH,casual
+F492FF0AE646631D,rider_113,classic_bike,2026-09-17 23:01:42.527,2026-09-17 23:03:26.606,Grand St,Morris Canal,casual
+8872C258F051577C,rider_100,classic_bike,2026-09-17 23:16:13.976,2026-09-17 23:22:40.849,Warren St,Dixon Mills,casual
+CD3266C5F7CD9AD5,rider_167,classic_bike,2026-09-18 08:00:40.831,2026-09-18 08:04:42.863,11 St & Washington St,Madison St & 10 St,casual
+F0F6FE168E6947DF,rider_058,classic_bike,2026-09-18 09:05:27.071,2026-09-18 09:17:34.838,Hoboken Ave at Monmouth St,Hoboken Ave at Monmouth St,casual
+35B7DFCFEA6739F3,rider_141,classic_bike,2026-09-18 10:03:37.633,2026-09-18 10:15:33.223,Stegman St & Ocean Ave,Danforth Ave & Sullivan Dr,casual
+490F22F70ABC3D5E,rider_229,classic_bike,2026-09-18 10:11:49.612,2026-09-18 10:19:32.894,Glenwood Ave,Journal Square,casual
+70954D0FA6A3FBB5,rider_033,classic_bike,2026-09-18 11:18:10.510,2026-09-18 11:26:53.224,11 St & Washington St,Hudson Pl & Hoboken Terminal,casual
+68E375FD778B74F5,rider_207,classic_bike,2026-09-18 13:22:51.861,2026-09-18 13:33:11.574,Oakland Ave,Van Vorst Park,casual
+99BCB9A9E4BB3B74,rider_098,classic_bike,2026-09-18 13:30:07.790,2026-09-18 13:41:34.704,Clinton St & Newark St,Newport PATH,casual
+F00FDCB961887C3D,rider_149,classic_bike,2026-09-18 15:46:07.628,2026-09-18 15:59:23.901,Grove St PATH,Hoboken Ave at Monmouth St,casual
+59CB987DE95A2A97,rider_119,classic_bike,2026-09-18 17:06:16.771,2026-09-18 17:13:30.456,Madison St & 10 St,4 St & Grand St,casual
+B44AF7CD24B29D0B,rider_186,classic_bike,2026-09-18 17:39:10.614,2026-09-18 17:46:36.929,14 St Ferry - 14 St & Shipyard Ln,Church Sq Park - 5 St & Park Ave,casual
+8CB753C6E6271C72,rider_051,classic_bike,2026-09-18 18:04:26.099,2026-09-18 18:13:57.149,Manila & 1st,Newport Pkwy,casual
+92EA2DCF80D0E3C3,rider_041,classic_bike,2026-09-18 18:14:07.656,2026-09-18 18:19:06.240,Clinton St & Newark St,Hudson Pl & Hoboken Terminal,casual
+706CDA57E5733C41,rider_193,classic_bike,2026-09-18 18:24:09.254,2026-09-18 18:29:18.101,Oakland Ave,Pershing Field,casual
+99EE4191FBCFABF7,rider_248,classic_bike,2026-09-18 18:28:09.100,2026-09-18 18:34:46.906,Hoboken Terminal - Hudson St & Hudson Pl,Southwest Park - Jackson St & Observer Hwy,casual
+38738E4220C13667,rider_050,classic_bike,2026-09-18 18:34:35.227,2026-09-18 18:36:48.099,6 St & Grand St,Church Sq Park - 5 St & Park Ave,casual
+DE7BBDEDC8C649BE,rider_184,classic_bike,2026-09-18 19:00:24.577,2026-09-18 19:04:52.021,Madison St & 1 St,City Hall - Washington St & 1 St,casual
+33D91D647C6DBD73,rider_247,classic_bike,2026-09-18 19:04:38.415,2026-09-18 19:17:45.867,South Waterfront Walkway - Sinatra Dr & 1 St,Willow Ave & 12 St,casual
+F1582A0EDA5A1F87,rider_243,classic_bike,2026-09-18 19:56:33.622,2026-09-18 20:05:46.323,Columbus Drive,Brunswick St,casual
+F16C16358C9E86D8,rider_003,classic_bike,2026-09-18 22:11:52.632,2026-09-18 22:19:24.120,Columbus Drive,Essex Light Rail,casual
+E197468894DEC1AE,rider_172,classic_bike,2026-09-19 01:04:11.275,2026-09-19 01:13:56.076,Exchange Pl,Newport Pkwy,casual
+A9859C5F16BE2241,rider_220,classic_bike,2026-09-19 03:22:42.208,2026-09-19 03:33:06.345,City Hall,Lafayette Park,casual
+2E28E86FCCDB10B5,rider_222,classic_bike,2026-09-19 07:29:21.935,2026-09-19 07:33:14.973,8 St & Washington St,River St & 1 St,casual
+61806B203A56161A,rider_260,classic_bike,2026-09-19 09:35:47.906,2026-09-19 09:39:46.629,8 St & Washington St,Clinton St & 7 St,casual
+00CB9C740B24441C,rider_005,classic_bike,2026-09-19 11:26:16.128,2026-09-19 11:32:53.466,11 St & Washington St,7 St & Monroe St,casual
+F5C031B72942DB1A,rider_125,classic_bike,2026-09-19 11:48:29.234,2026-09-19 11:52:38.441,JC Medical Center,Montgomery St,casual
+0DA757DF75D9565E,rider_078,classic_bike,2026-09-19 12:51:45.631,2026-09-19 13:00:28.059,Liberty Light Rail,Van Vorst Park,casual
+F2E252D04D2D7752,rider_234,classic_bike,2026-09-19 13:41:30.805,2026-09-19 13:56:13.679,Grove St PATH,Marshall St & 2 St,casual
+4CE92AC8BA9B9783,rider_208,classic_bike,2026-09-19 13:44:42.450,2026-09-19 13:57:25.296,Madison St & 1 St,Newport PATH,casual
+8F3CABEBBB45CEE1,rider_224,classic_bike,2026-09-19 14:52:33.760,2026-09-19 15:02:31.556,Dixon Mills,Pacific Ave & Communipaw Ave,casual
+704FA77A23B64F21,rider_191,classic_bike,2026-09-19 15:07:55.998,2026-09-19 15:13:58.947,14 St Ferry - 14 St & Shipyard Ln,Church Sq Park - 5 St & Park Ave,casual
+DBD3A89634A359FE,rider_198,classic_bike,2026-09-19 15:26:56.829,2026-09-19 15:37:41.126,4 St & Grand St,Grand St & 14 St,casual
+55A95471E3D506A3,rider_146,classic_bike,2026-09-19 16:36:57.317,2026-09-19 16:46:23.293,Pershing Field,Church Sq Park - 5 St & Park Ave,casual
+60E338454DA064D8,rider_046,classic_bike,2026-09-19 16:56:20.947,2026-09-19 17:04:25.034,4 St & River St,14 St Ferry - 14 St & Shipyard Ln,casual
+B40FEA5FEDFDBE6E,rider_242,classic_bike,2026-09-19 16:57:44.255,2026-09-19 17:10:42.076,Monmouth & 6th,9 St HBLR - Jackson St & 8 St,casual
+48CE545CDADAB125,rider_009,classic_bike,2026-09-19 17:17:35.338,2026-09-19 17:29:17.000,Newark St & Washington St,Bloomfield St & 15 St,casual
+6636513589C0434C,rider_207,classic_bike,2026-09-19 17:48:57.124,2026-09-19 17:56:17.989,14 St Ferry - 14 St & Shipyard Ln,4 St & River St,casual
+719CF620E88A1FBE,rider_084,classic_bike,2026-09-19 18:15:35.844,2026-09-19 18:25:07.575,Hudson Pl & Hoboken Terminal,12 St & Sinatra Dr N,casual
+D8923F00F3C7309D,rider_013,classic_bike,2026-09-19 18:34:12.425,2026-09-19 18:35:53.016,Hudson Pl & Hoboken Terminal,Hudson Pl & Hoboken Terminal,casual
+738184FDB21DDDAA,rider_086,classic_bike,2026-09-19 18:38:17.382,2026-09-19 18:47:35.170,Hoboken Terminal - Hudson St & Hudson Pl,Hoboken Ave at Monmouth St,casual
+8FB8990F20A01757,rider_018,classic_bike,2026-09-19 19:04:19.783,2026-09-19 19:15:24.316,Hoboken Ave at Monmouth St,Hudson Pl & Hoboken Terminal,casual
+FB3B4F467E0D4BDA,rider_199,classic_bike,2026-09-19 19:14:24.594,2026-09-19 19:20:42.754,River St & 1 St,Clinton St & 7 St,casual
+1A6F16027D416B91,rider_107,classic_bike,2026-09-19 19:14:32.512,2026-09-19 19:22:00.730,Montgomery St,Brunswick & 6th,casual
+483E07438A5B9065,rider_005,classic_bike,2026-09-19 19:36:25.874,2026-09-19 19:42:50.233,Adams St & 2 St,Madison St & 10 St,casual
+74208B0C6E832F09,rider_256,classic_bike,2026-09-19 19:47:38.388,2026-09-19 19:55:32.619,Essex Light Rail,Grove St PATH,casual
+8CF5E5310EAF9ED2,rider_240,classic_bike,2026-09-19 20:23:21.536,2026-09-19 20:27:50.742,Van Vorst Park,Marin Light Rail,casual
+87F449B463B8B10F,rider_059,classic_bike,2026-09-19 20:59:16.990,2026-09-19 21:08:59.352,Hoboken Terminal - Hudson St & Hudson Pl,Jersey & 6th St,casual
+C76D65BF0265450C,rider_066,classic_bike,2026-09-19 23:04:32.471,2026-09-19 23:12:18.063,Church Sq Park - 5 St & Park Ave,Madison St & 1 St,casual
+C65DE0EBFB129293,rider_011,classic_bike,2026-09-19 23:19:27.889,2026-09-19 23:30:40.643,Grove St PATH,Lafayette Park,casual
+ABECB49E41B5B9B8,rider_043,classic_bike,2026-09-20 00:26:46.208,2026-09-20 00:35:11.250,Hudson Pl & Hoboken Terminal,Marshall St & 2 St,casual
+36568614D1891ACC,rider_189,classic_bike,2026-09-20 00:44:20.080,2026-09-20 00:55:31.001,Newark Ave,Adams St & 2 St,casual
+7B4E3212C1E426FA,rider_223,classic_bike,2026-09-20 02:04:08.895,2026-09-20 02:08:40.454,Grove St PATH,Grand St,casual
+73B70FD3484B6618,rider_203,classic_bike,2026-09-20 02:26:12.204,2026-09-20 02:35:31.810,Church Sq Park - 5 St & Park Ave,11 St & Washington St,casual
+DB0368CA4059117F,rider_118,classic_bike,2026-09-20 02:59:43.399,2026-09-20 03:05:38.864,Church Sq Park - 5 St & Park Ave,9 St HBLR - Jackson St & 8 St,casual
+D474D957833DD8BF,rider_202,classic_bike,2026-09-20 09:38:29.983,2026-09-20 09:43:25.263,Washington St,Washington St,casual
+FE459D304B6487BF,rider_134,classic_bike,2026-09-20 10:18:25.031,2026-09-20 10:20:30.284,Marshall St & 2 St,Mama Johnson Field - 4 St & Jackson St,casual
+D075D4143952067B,rider_191,classic_bike,2026-09-20 12:41:06.216,2026-09-20 12:50:29.958,Columbus Drive,Hamilton Park,casual
+A0184D41F0577665,rider_054,classic_bike,2026-09-20 13:44:45.596,2026-09-20 13:50:00.791,Grand St,City Hall,casual
+17368943EEB057DC,rider_245,classic_bike,2026-09-20 16:35:22.588,2026-09-20 16:42:27.559,City Hall - Washington St & 1 St,Adams St & 12 St,casual
+CB6C73CAF566BB4D,rider_150,classic_bike,2026-09-21 08:13:10.164,2026-09-21 08:21:42.967,Bergen Ave,Journal Square,casual
+7EF29BFFCB89B0B9,rider_105,classic_bike,2026-09-21 09:21:14.189,2026-09-21 09:27:30.824,Marshall St & 2 St,City Hall - Washington St & 1 St,casual
+7BC890E9A8AC3DCA,rider_216,classic_bike,2026-09-21 12:03:18.083,2026-09-21 12:08:30.259,9 St HBLR - Jackson St & 8 St,4 St & Grand St,casual
+2B200C675E4429D3,rider_230,classic_bike,2026-09-21 14:01:52.006,2026-09-21 14:07:09.028,Church Sq Park - 5 St & Park Ave,9 St HBLR - Jackson St & 8 St,casual
+C40187EE98DE1B52,rider_208,classic_bike,2026-09-21 14:31:08.984,2026-09-21 14:37:27.983,Warren St,Newport PATH,casual
+BC54B0515C5509E7,rider_209,classic_bike,2026-09-21 16:25:44.084,2026-09-21 16:31:53.548,Stevens - River Ter & 6 St,Hudson Pl & Hoboken Terminal,casual
+2E73692A2C0672B2,rider_028,classic_bike,2026-09-21 16:57:25.253,2026-09-21 17:06:43.459,14 St Ferry - 14 St & Shipyard Ln,South Waterfront Walkway - Sinatra Dr & 1 St,casual
+13C99B378E09C416,rider_042,classic_bike,2026-09-21 17:19:18.797,2026-09-21 17:29:16.568,Newport PATH,City Hall - Washington St & 1 St,casual
+14B7B7897CE602FF,rider_007,classic_bike,2026-09-21 17:30:55.756,2026-09-21 17:40:26.877,Hudson Pl & Hoboken Terminal,Madison St & 10 St,casual
+1235F79947D04DA9,rider_076,classic_bike,2026-09-21 17:35:42.688,2026-09-21 17:50:34.824,Newport PATH,Montgomery St,casual
+E3F51A1ACD5B2E3F,rider_176,classic_bike,2026-09-21 17:49:46.037,2026-09-21 17:57:24.006,4 St & River St,Bloomfield St & 15 St,casual
+AD359BCB8047E9FF,rider_255,classic_bike,2026-09-21 17:55:35.359,2026-09-21 18:07:37.840,Bloomfield St & 15 St,City Hall - Washington St & 1 St,casual
+8533F9D3700F922E,rider_174,classic_bike,2026-09-21 18:09:17.897,2026-09-21 18:13:05.535,Hudson Pl & Hoboken Terminal,Clinton St & Newark St,casual
+F26E8F8CD3CB6521,rider_080,classic_bike,2026-09-21 18:53:50.185,2026-09-21 19:02:13.678,Marshall St & 2 St,Willow Ave & 12 St,casual
+D73BFC8880301F98,rider_241,classic_bike,2026-09-21 19:43:53.148,2026-09-21 19:48:18.245,Willow Ave & 12 St,Church Sq Park - 5 St & Park Ave,casual
+C4249CD82BCAAAB5,rider_206,classic_bike,2026-09-21 20:29:48.812,2026-09-21 20:34:45.639,Newark St & Washington St,8 St & Washington St,casual
+AFF86981347CB51D,rider_161,classic_bike,2026-09-22 07:38:42.446,2026-09-22 07:44:08.166,Stevens - River Ter & 6 St,Hudson Pl & Hoboken Terminal,casual
+18AA66B72D255136,rider_127,classic_bike,2026-09-22 08:06:23.123,2026-09-22 08:16:37.392,Lafayette Park,City Hall,casual
+8FB4303843B1A1A7,rider_142,classic_bike,2026-09-22 08:35:08.588,2026-09-22 08:49:23.906,Pershing Field,Bergen Ave,casual
+F4B7DA536B6D1DB6,rider_254,classic_bike,2026-09-22 08:40:22.074,2026-09-22 08:49:12.425,Dr. Lena Edwards Park,Grove St PATH,casual
+4A2F7BA9FE3BEC04,rider_029,classic_bike,2026-09-22 15:14:07.594,2026-09-22 15:19:00.694,McGinley Square,Bergen Ave & Sip Ave,casual
+4237EA5317D28311,rider_110,classic_bike,2026-09-22 17:33:37.872,2026-09-22 17:40:27.778,River St & 1 St,14 St Ferry - 14 St & Shipyard Ln,casual
+2CC4C127B8E627F9,rider_133,classic_bike,2026-09-22 17:46:25.595,2026-09-22 17:51:30.822,Newark Ave,Marin Light Rail,casual
+E2EA5BDD826A6C71,rider_124,classic_bike,2026-09-22 18:36:32.220,2026-09-22 18:44:35.156,Mama Johnson Field - 4 St & Jackson St,Newark St & Washington St,casual
+181AC59E2DF4D989,rider_035,classic_bike,2026-09-22 18:43:17.898,2026-09-22 18:52:23.400,Clinton St & Newark St,Willow Ave & 12 St,casual
+B6F230CCEF7781B8,rider_083,classic_bike,2026-09-22 18:45:37.863,2026-09-22 18:49:16.559,2 St & Park Ave,Marshall St & 2 St,casual
+DCDCDFE09696EEB9,rider_251,classic_bike,2026-09-22 19:34:00.597,2026-09-22 19:43:01.205,Madison St & 1 St,4 St & River St,casual
+B9D96858C484D91D,rider_226,classic_bike,2026-09-22 19:42:05.165,2026-09-22 19:54:08.171,Van Vorst Park,Washington St & Morgan St,casual
+16FADCA8AA79E3A1,rider_096,classic_bike,2026-09-23 07:46:16.806,2026-09-23 07:53:20.770,Newport Pkwy,Washington St & Morgan St,casual
+5D8EA0AB6CEB2576,rider_045,classic_bike,2026-09-23 07:48:26.685,2026-09-23 07:54:23.516,Southwest Park - Jackson St & Observer Hwy,7 St & Monroe St,casual
+C556C81C2A2DE1A3,rider_088,classic_bike,2026-09-23 08:10:41.052,2026-09-23 08:13:29.872,Morris Canal,Exchange Pl,casual
+011D0AF46278BB48,rider_071,classic_bike,2026-09-23 09:40:40.651,2026-09-23 09:48:25.614,Clinton St & Newark St,Newport PATH,casual
+CD52ECB22CA6D249,rider_185,classic_bike,2026-09-23 12:12:14.740,2026-09-23 12:15:51.367,Arlington Ave & Bramhall Ave,Garfield Light Rail,casual
+42264B9343CFD4FA,rider_024,classic_bike,2026-09-23 14:28:09.734,2026-09-23 14:37:09.917,Newark St & Washington St,9 St HBLR - Jackson St & 8 St,casual
+40D003C0771FA771,rider_204,classic_bike,2026-09-23 14:56:47.260,2026-09-23 14:59:22.468,River St & 1 St,Hoboken Terminal - Hudson St & Hudson Pl,casual
+B59CC21570112C91,rider_157,classic_bike,2026-09-23 15:28:13.667,2026-09-23 15:34:41.458,Columbus Park - Clinton St & 9 St,12 St & Sinatra Dr N,casual
+D5E0D3DB4301BA2E,rider_179,classic_bike,2026-09-23 15:44:14.946,2026-09-23 15:50:47.058,Warren St,Monmouth & 6th,casual
+2A8EAAA0D30C6BAE,rider_067,classic_bike,2026-09-23 15:59:19.839,2026-09-23 16:08:01.194,Columbus Park - Clinton St & 9 St,Newark St & Washington St,casual
+CA8EFA931D49C3D5,rider_190,classic_bike,2026-09-23 16:58:08.343,2026-09-23 17:00:14.853,Brunswick St,Newark Ave,casual
+2C391D7EE7EFB508,rider_195,classic_bike,2026-09-23 16:59:45.361,2026-09-23 17:04:33.084,Willow Ave & 12 St,7 St & Monroe St,casual
+0E397F1D6DF1BDDB,rider_003,classic_bike,2026-09-23 17:34:38.245,2026-09-23 17:44:33.109,11 St & Washington St,Hudson Pl & Hoboken Terminal,casual
+7BCA9B7E63D3CBCB,rider_119,classic_bike,2026-09-23 17:49:19.754,2026-09-23 18:00:03.130,Willow Ave & 12 St,Madison St & 1 St,casual
+44AD0369D537D3A6,rider_117,classic_bike,2026-09-23 18:06:27.649,2026-09-23 18:16:06.354,Hoboken Terminal - Hudson St & Hudson Pl,Adams St & 12 St,casual
+F397EFA2CC199BEA,rider_063,classic_bike,2026-09-23 18:50:42.010,2026-09-23 19:05:17.605,4 St & River St,Adams St & 12 St,casual
+012F335498D8593C,rider_225,classic_bike,2026-09-23 18:52:25.170,2026-09-23 18:58:17.031,Dixon Mills,Washington St & Morgan St,casual
+65E0D776723F5F40,rider_199,classic_bike,2026-09-23 19:27:27.773,2026-09-23 19:30:01.306,Marshall St & 2 St,Mama Johnson Field - 4 St & Jackson St,casual
+BDB03CE453D3310D,rider_025,classic_bike,2026-09-23 19:27:37.166,2026-09-23 19:33:46.856,7 St & Monroe St,Willow Ave & 12 St,casual
+C4CE8DF12525E968,rider_114,classic_bike,2026-09-23 20:20:58.790,2026-09-23 20:30:16.947,Grove St PATH,Liberty Light Rail,casual
+69604A30464AA228,rider_035,classic_bike,2026-09-23 20:23:06.787,2026-09-23 20:32:08.065,7 St & Monroe St,Hoboken Terminal - Hudson St & Hudson Pl,casual
+6A2D11E2E736D7DF,rider_089,classic_bike,2026-09-23 20:52:57.832,2026-09-23 21:01:16.080,Madison St & 10 St,Clinton St & Newark St,casual
+5E1724369AD3557E,rider_131,classic_bike,2026-09-23 22:28:18.794,2026-09-23 22:34:29.889,5 Corners Library,Pershing Field,casual
+A041BFD006F9AC2D,rider_115,classic_bike,2026-09-23 23:14:53.542,2026-09-23 23:18:15.048,Exchange Pl,Warren St,casual
+E9E79A3EB93715E4,rider_205,classic_bike,2026-09-24 10:30:11.706,2026-09-24 10:43:29.711,Hoboken Ave at Monmouth St,5 Corners Library,casual
+19826D0352B4A496,rider_246,classic_bike,2026-09-24 11:30:18.084,2026-09-24 11:36:42.448,City Hall,Essex Light Rail,casual
+8A52DEFDD0EA2F96,rider_076,classic_bike,2026-09-24 11:46:53.365,2026-09-24 11:53:01.032,Manila & 1st,Newport PATH,casual
+BCFBA11C0161FEBE,rider_077,classic_bike,2026-09-24 13:05:09.777,2026-09-24 13:13:54.494,6 St & Grand St,River St & 1 St,casual
+72476855E49686F4,rider_147,classic_bike,2026-09-24 14:55:23.528,2026-09-24 15:00:24.482,Madison St & 10 St,Church Sq Park - 5 St & Park Ave,casual
+EB49CC568FFA5A82,rider_238,classic_bike,2026-09-24 15:19:29.677,2026-09-24 15:22:34.906,Bergen Ave & Stegman St,Grant Ave & MLK Dr,casual
+09E412831B129076,rider_151,classic_bike,2026-09-24 15:27:22.706,2026-09-24 15:35:40.451,River St & 1 St,Mama Johnson Field - 4 St & Jackson St,casual
+47C36C0BCE3B269D,rider_039,classic_bike,2026-09-24 15:37:11.830,2026-09-24 15:44:29.203,Van Vorst Park,Hamilton Park,casual
+1BD07799923F489C,rider_228,classic_bike,2026-09-24 16:28:17.783,2026-09-24 16:39:23.168,Madison St & 10 St,Hoboken Terminal - Hudson St & Hudson Pl,casual
+84534FAD9E589798,rider_145,classic_bike,2026-09-24 18:39:23.656,2026-09-24 18:46:40.846,Columbus Drive,JC Medical Center,casual
+1B24BB370AA75043,rider_068,classic_bike,2026-09-24 18:59:04.982,2026-09-24 19:07:15.345,Church Sq Park - 5 St & Park Ave,Adams St & 12 St,casual
+30151421012658CA,rider_165,classic_bike,2026-09-24 19:03:14.996,2026-09-24 19:14:59.397,Adams St & 2 St,Bloomfield St & 15 St,casual
+6BD4C041AFDDA6D2,rider_218,classic_bike,2026-09-24 20:00:55.502,2026-09-24 20:10:24.685,Hudson Pl & Hoboken Terminal,12 St & Sinatra Dr N,casual
+65B0820924DD18D9,rider_136,classic_bike,2026-09-24 20:06:40.787,2026-09-24 20:11:30.197,Columbus Drive,Newark Ave,casual
+72AFAD69236553F3,rider_030,classic_bike,2026-09-24 20:52:59.552,2026-09-24 21:04:47.529,12 St & Sinatra Dr N,Adams St & 2 St,casual
+C1F497109933881F,rider_246,classic_bike,2026-09-24 22:33:16.396,2026-09-24 22:36:59.435,Washington St,Jersey & 3rd,casual
+48C0FDB40F5C1102,rider_132,classic_bike,2026-09-25 07:55:55.175,2026-09-25 08:02:53.055,Grand St & 14 St,Mama Johnson Field - 4 St & Jackson St,casual
+2105BEA09996050F,rider_197,classic_bike,2026-09-25 08:21:13.502,2026-09-25 08:24:27.008,Marshall St & 2 St,Madison St & 1 St,casual
+4C72BE46B3C6E1BC,rider_227,classic_bike,2026-09-25 08:47:35.067,2026-09-25 08:54:58.624,South Waterfront Walkway - Sinatra Dr & 1 St,Newport Pkwy,casual
+75BD5D6F4E14CF82,rider_205,classic_bike,2026-09-25 14:20:51.805,2026-09-25 14:33:18.259,8 St & Washington St,Hoboken Ave at Monmouth St,casual
+26CB378967AB68DB,rider_164,classic_bike,2026-09-25 14:24:45.516,2026-09-25 14:36:36.444,Hudson Pl & Hoboken Terminal,14 St Ferry - 14 St & Shipyard Ln,casual
+E783DA4411C9F5C1,rider_072,classic_bike,2026-09-25 14:37:33.342,2026-09-25 14:48:16.335,Newport PATH,Clinton St & Newark St,casual
+2374C11B89AA11CA,rider_079,classic_bike,2026-09-25 15:59:57.924,2026-09-25 16:04:16.766,8 St & Washington St,14 St Ferry - 14 St & Shipyard Ln,casual
+DF1AFB534F8CF22D,rider_175,classic_bike,2026-09-25 18:21:46.768,2026-09-25 18:26:48.320,Hoboken Terminal - Hudson St & Hudson Pl,Southwest Park - Jackson St & Observer Hwy,casual
+982898A4C83C946A,rider_047,classic_bike,2026-09-25 18:38:32.436,2026-09-25 18:42:47.347,11 St & Washington St,9 St HBLR - Jackson St & 8 St,casual
+5599B315FCAF6AD8,rider_139,classic_bike,2026-09-26 01:01:52.024,2026-09-26 01:09:29.721,South Waterfront Walkway - Sinatra Dr & 1 St,12 St & Sinatra Dr N,casual
+6C38EDB5435F3271,rider_006,classic_bike,2026-09-26 02:33:37.928,2026-09-26 02:48:09.712,2 St & Park Ave,Brunswick & 6th,casual
+BF2653B897CF7808,rider_112,classic_bike,2026-09-26 08:27:22.389,2026-09-26 08:34:01.495,Dr. Lena Edwards Park,Dr. Lena Edwards Park,casual
+1D126829BB39B75B,rider_184,classic_bike,2026-09-26 14:40:00.583,2026-09-26 14:45:06.857,Brunswick & 6th,Manila & 1st,casual
+B4F4B840C88ABA5E,rider_155,classic_bike,2026-09-26 16:07:41.374,2026-09-26 16:10:55.909,McGinley Square,Bergen Ave,casual
+D6314CC24BA1F596,rider_254,classic_bike,2026-09-26 16:08:17.124,2026-09-26 16:15:14.290,Mama Johnson Field - 4 St & Jackson St,Adams St & 12 St,casual
+59936411F4BE4833,rider_115,classic_bike,2026-09-27 16:59:51.366,2026-09-27 17:05:29.939,Arlington Ave & Bramhall Ave,Arlington Ave & Bramhall Ave,casual
+D55D39C2E8659DCC,rider_173,classic_bike,2026-09-27 21:41:17.976,2026-09-27 21:50:03.012,Marshall St & 2 St,Marshall St & 2 St,casual
+40F56C11D24C9006,rider_120,classic_bike,2026-09-28 11:50:31.760,2026-09-28 12:01:14.766,Fairmount Ave,Newark Ave,casual
+1644F8D893922114,rider_155,classic_bike,2026-09-28 12:41:45.925,2026-09-28 12:51:58.492,City Hall - Washington St & 1 St,Bloomfield St & 15 St,casual
+A94CD7D797227711,rider_111,classic_bike,2026-09-28 15:24:00.578,2026-09-28 15:29:57.897,Columbus Drive,Marin Light Rail,casual
+C795F0943D77D59E,rider_212,classic_bike,2026-09-28 18:30:13.299,2026-09-28 18:37:07.563,12 St & Sinatra Dr N,South Waterfront Walkway - Sinatra Dr & 1 St,casual
+E764542911A67EDC,rider_024,classic_bike,2026-09-28 18:55:58.050,2026-09-28 19:02:28.175,Church Sq Park - 5 St & Park Ave,Hudson Pl & Hoboken Terminal,casual
+B56548DDC8BF3758,rider_170,classic_bike,2026-09-29 14:10:00.257,2026-09-29 14:15:17.044,Essex Light Rail,Grove St PATH,casual
+1C68336E2633A31F,rider_172,classic_bike,2026-09-29 14:14:09.228,2026-09-29 14:24:40.071,Adams St & 2 St,11 St & Washington St,casual
+3E21389F760A9845,rider_163,classic_bike,2026-09-29 14:50:43.732,2026-09-29 15:04:44.580,Brunswick St,Newark St & Washington St,casual
+376F1585416A7F7E,rider_110,classic_bike,2026-09-29 15:52:05.190,2026-09-29 15:57:45.285,JC Medical Center,Newark Ave,casual
+5394F2F8E649A314,rider_248,classic_bike,2026-09-29 16:30:43.719,2026-09-29 16:36:14.311,Paulus Hook,York St & Marin Blvd,casual
+FA37569661F68CB1,rider_151,classic_bike,2026-09-29 16:40:55.214,2026-09-29 16:47:38.226,River St & 1 St,14 St Ferry - 14 St & Shipyard Ln,casual
+6D8990602D2153D9,rider_067,classic_bike,2026-09-29 16:54:53.366,2026-09-29 17:07:02.398,Columbus Drive,Marin Light Rail,casual
+0D004DF5AAA1DA77,rider_183,classic_bike,2026-09-29 17:43:31.180,2026-09-29 17:57:02.122,Madison St & 1 St,Columbus Drive,casual
+D898B2CB2FFCECB4,rider_167,classic_bike,2026-09-29 18:32:40.283,2026-09-29 18:42:02.327,Grove St PATH,Lafayette Park,casual
+775A6850BE7DBEA9,rider_023,classic_bike,2026-09-29 18:41:30.004,2026-09-29 18:50:52.849,Baldwin at Montgomery,Bergen Ave & Sip Ave,casual
+D4646B9CBCFCF302,rider_143,classic_bike,2026-09-29 19:16:29.670,2026-09-29 19:26:06.397,Madison St & 10 St,Adams St & 2 St,casual
+EF02B9E5F7352F7F,rider_158,classic_bike,2026-09-29 19:40:58.754,2026-09-29 19:49:06.463,City Hall,Liberty Light Rail,casual
+551E45566367CDF0,rider_156,classic_bike,2026-09-29 19:58:36.287,2026-09-29 20:07:53.127,Newark Ave,Pacific Ave & Communipaw Ave,casual
+82E29113BDD6A60B,rider_145,classic_bike,2026-09-29 20:05:26.440,2026-09-29 20:17:23.381,Exchange Pl,Pacific Ave & Communipaw Ave,casual
+D20A112D1FF4A7D7,rider_022,classic_bike,2026-09-30 10:09:28.056,2026-09-30 10:20:12.100,Mama Johnson Field - 4 St & Jackson St,4 St & River St,casual
+3844E880ED7ECE2A,rider_013,classic_bike,2026-09-30 10:46:08.072,2026-09-30 10:54:48.388,7 St & Monroe St,4 St & River St,casual
+553E08283B461169,rider_016,classic_bike,2026-09-30 11:08:58.397,2026-09-30 11:23:32.772,Garfield Light Rail,Brunswick St,casual
+690D156B050A73C9,rider_045,classic_bike,2026-09-30 12:52:23.141,2026-09-30 13:05:18.849,Newport PATH,Mama Johnson Field - 4 St & Jackson St,casual
+95F0F53B8FD9E1F3,rider_094,classic_bike,2026-09-30 15:24:30.686,2026-09-30 15:30:46.270,Columbus Park - Clinton St & 9 St,Bloomfield St & 15 St,casual
+3CF00F70D657F249,rider_120,classic_bike,2026-09-30 17:08:04.423,2026-09-30 17:18:02.421,River St & 1 St,Bloomfield St & 15 St,casual
+C16C5740C39EFFC2,rider_114,classic_bike,2026-09-30 17:32:09.284,2026-09-30 17:38:38.931,Paulus Hook,York St & Marin Blvd,casual
+557B7A70D5CFE57B,rider_048,classic_bike,2026-09-30 17:39:17.646,2026-09-30 17:51:50.402,Hudson Pl & Hoboken Terminal,12 St & Sinatra Dr N,casual
+E56ECECFC11EB4CC,rider_226,classic_bike,2026-09-30 17:53:35.739,2026-09-30 18:02:20.901,Brunswick St,Pacific Ave & Communipaw Ave,casual
+41E7A7B07229BF98,rider_099,classic_bike,2026-09-30 18:15:28.503,2026-09-30 18:19:29.918,Grove St PATH,JC Medical Center,casual
+6C0A8D3CCCD4B768,rider_227,classic_bike,2026-09-30 18:19:40.995,2026-09-30 18:28:19.740,Garfield Light Rail,Richard St Light Rail,casual
+51E89A42941D6581,rider_213,classic_bike,2026-09-30 18:20:52.581,2026-09-30 18:24:55.737,River St & 1 St,Stevens - River Ter & 6 St,casual
+BC3A3314C5D862FC,rider_082,classic_bike,2026-09-30 18:26:49.547,2026-09-30 18:34:46.666,14 St Ferry - 14 St & Shipyard Ln,4 St & River St,casual
+84B7316727007E6D,rider_093,classic_bike,2026-09-30 18:50:06.160,2026-09-30 18:57:49.184,Hoboken Terminal - Hudson St & Hudson Pl,Hoboken Ave at Monmouth St,casual
+124DC30B67DD3A4D,rider_053,classic_bike,2026-09-30 19:24:46.576,2026-09-30 19:35:49.951,Clinton St & Newark St,Bloomfield St & 15 St,casual
+31C3FA4584F0FCF6,rider_217,classic_bike,2026-09-30 19:50:00.323,2026-09-30 20:01:41.115,Grove St PATH,Pacific Ave & Communipaw Ave,casual
+F135412B34F62AD4,rider_253,classic_bike,2026-09-30 20:00:39.207,2026-09-30 20:05:30.014,Marshall St & 2 St,4 St & Grand St,casual
+C459CA2EB9B81296,rider_048,classic_bike,2026-09-30 20:12:26.853,2026-09-30 20:20:22.290,Hilltop,Pershing Field,casual
+E70ACA6D72688120,rider_101,classic_bike,2026-09-30 20:41:06.089,2026-09-30 20:50:45.449,Bloomfield St & 15 St,2 St & Park Ave,casual
+07352FA8BEA208AC,rider_159,classic_bike,2026-09-30 21:51:15.092,2026-09-30 21:56:22.141,Clinton St & Newark St,Hudson Pl & Hoboken Terminal,casual
+3F1D1A98F8E3ACC1,rider_233,classic_bike,2026-09-30 23:20:42.037,2026-09-30 23:26:01.380,Hoboken Terminal - Hudson St & Hudson Pl,Madison St & 1 St,casual

@@ -95,3 +95,11 @@ hw07-part3:
 hw07-part3-show:
 	@$(call STAMP7,make hw07-part3-show (HW7 Part 3 stored reflection))
 	python3 -u code/run_hw07_part3.py show 2>&1 | python3 code/tslog.py $(LOG7)
+
+hw07-part4-data:
+	@$(call STAMP7,make hw07-part4-data (HW7 Part 4 scenario CSVs from Citi Bike data))
+	cd code && python3 -u -m bikeshare.prepare_scenarios 2>&1 | python3 tslog.py ../$(LOG7)
+
+hw07-part4:
+	@$(call STAMP7,make hw07-part4 S=$(S) (HW7 Part 4 bike-share agent))
+	python3 -u code/run_hw07_part4.py $(S) 2>&1 | python3 code/tslog.py $(LOG7)
