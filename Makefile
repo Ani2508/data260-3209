@@ -112,3 +112,7 @@ hw07-part6:
 	@$(call STAMP7,make hw07-part6 (HW7 Part 6 file tools + safety gate))
 	cd code && python3 -u -m devtools.test_devtools 2>&1 | python3 tslog.py ../$(LOG7)
 	python3 -u code/run_hw07_part6.py 2>&1 | python3 code/tslog.py $(LOG7)
+
+verify-hw07:
+	@$(call STAMP7,make verify-hw07 (HW7 smoke test))
+	python3 -u code/verify_hw07.py 2>&1 | python3 code/tslog.py $(LOG7)
