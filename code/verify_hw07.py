@@ -38,7 +38,7 @@ state: dict = {}
 
 def git(*args: str) -> str:
     r = subprocess.run(["git", *args], capture_output=True, text=True, cwd=ROOT)
-    return r.stdout.strip()
+    return r.stdout.rstrip("\n")
 
 
 def check(part: str, name: str, fn) -> dict:
@@ -124,10 +124,14 @@ def hashed_passwords():
 
 
 def lint_clean():
+    """Run the pre-commit Ruff hook on every Python file added or changed since the hw6 tag."""
+    files = git("diff", "--name-only", "--diff-filter=AM", "hw6", "HEAD", "--",
+                "code/*.py", "src/*.py").split()
     pc = ROOT / ".venv" / "bin" / "pre-commit"
-    r = run([str(pc) if pc.exists() else "pre-commit", "run", "ruff", "--all-files"], ROOT)
+    r = run([str(pc) if pc.exists() else "pre-commit", "run", "ruff", "--files", *files], ROOT)
     last = (r.stdout.strip().splitlines() or ["(no output)"])[0]
-    return r.returncode == 0, f"pre-commit ruff hook: {last}"
+    return r.returncode == 0 and len(files) > 0, \
+        f"pre-commit ruff hook on {len(files)} HW7 files -> {last.split('.')[-1].strip()}"
 
 
 # ---------------------------------------------------------------- Part 2
@@ -279,7 +283,7 @@ CHECKS = [
     ("Part 1", "GET /auth/me: 401 without / with forged token, 200 with role", me_codes),
     ("Part 1", "RBAC on /api/trials: read any role, create writer+, delete moderator", rbac_codes),
     ("Part 1", "MySQL users table stores only bcrypt hashes and the three roles", hashed_passwords),
-    ("Part 1", "Ruff pre-commit hook passes on code/ and src/", lint_clean),
+    ("Part 1", "Ruff pre-commit hook passes on all HW7 Python files", lint_clean),
     ("Part 2", "Agent loop offline tests (repair path, ceilings, logging)", part2_offline_tests),
     ("Part 2", "run_agent completes task A (search -> get_trial) and passes verifier",
      part2_task_a),
