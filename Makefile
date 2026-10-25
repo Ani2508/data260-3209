@@ -103,3 +103,7 @@ hw07-part4-data:
 hw07-part4:
 	@$(call STAMP7,make hw07-part4 S=$(S) (HW7 Part 4 bike-share agent))
 	python3 -u code/run_hw07_part4.py $(S) 2>&1 | python3 code/tslog.py $(LOG7)
+
+hw07-part5:
+	@$(call STAMP7,make hw07-part5 (HW7 Part 5 prompt-injection attacks before/after defenses))
+	python3 -u code/run_hw07_part5.py 2>&1 | python3 code/tslog.py $(LOG7)
