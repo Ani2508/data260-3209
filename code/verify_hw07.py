@@ -211,22 +211,64 @@ def part4_snapshots():
     return all(out), f"snapshot SHA-256 matches saved hash: A={out[0]}, B={out[1]}"
 
 
-def part4_agent_b():
-    """Run the agent on scenario B; a local LLM can stall once, so allow one rerun (both logged)."""
+def replay_model(calls: list[dict], final: dict):
+    """Return a scripted chat model that replays recorded tool calls, then the final answer."""
+    from langchain_core.language_models.chat_models import BaseChatModel
+    from langchain_core.messages import AIMessage
+    from langchain_core.outputs import ChatGeneration, ChatResult
+
+    class Replay(BaseChatModel):
+        step: int = 0
+
+        @property
+        def _llm_type(self) -> str:
+            return "recorded-replay"
+
+        def bind_tools(self, tools, **kw):
+            return self
+
+        def _generate(self, messages, stop=None, run_manager=None, **kw):
+            self.step += 1
+            name, args = ((calls[self.step - 1]["tool"], calls[self.step - 1]["args"])
+                          if self.step <= len(calls) else ("BikeDecision", final))
+            msg = AIMessage(content="", tool_calls=[{"name": name, "args": args,
+                                                     "id": f"r{self.step}"}])
+            return ChatResult(generations=[ChatGeneration(message=msg)])
+
+    return Replay()
+
+
+def _obs(ev: dict) -> object:
+    """Return a tool observation without its timestamps/URL so runs can be compared."""
+    env = json.loads(ev["content"])
+    data = env.get("data") or {}
+    if ev["tool"] == "policy_retriever":
+        data = [(p["id"], p["text"]) for p in data.get("passages", [])]
+    return [env["success"], data, env.get("error")]
+
+
+def part4_replay_b():
+    """Replay the recorded scenario-B run through create_agent, the tools and the answer check."""
     from bikeshare.agent import run_bike_agent
+    rec = json.loads((HW / "raw" / "part4_scenarioB" / "result.json").read_text())
+    url = "http://127.0.0.1:8598/pricing_snapshot.txt"
+    calls = [{"tool": e["tool"], "args": {**e["args"], **({"url": url} if "url" in e["args"]
+                                                           else {})}}
+             for e in rec["timeline"] if e["type"] == "tool_call"]
     srv = serve(HW / "raw" / "part4_scenarioB", 8598)
-    tries = []
     try:
-        for _ in range(2):
-            r = run_bike_agent(HW / "cases" / "part4_scenarioB_trips.csv",
-                               "http://127.0.0.1:8598/pricing_snapshot.txt")
-            m = r["metrics"]
-            tries.append(f"decision={r['decision']}, steps={m['steps']}, stop={m['stop_reason']}")
-            if r["decision"] == "Pay Per Ride/Minute" and m["stop_reason"] == "final_answer":
-                return True, f"scenario B, attempt {len(tries)} of 2: " + " | ".join(tries)
+        r = run_bike_agent(HW / "cases" / "part4_scenarioB_trips.csv", url,
+                           model=replay_model(calls, rec["final"]))
     finally:
         srv.shutdown()
-    return False, "scenario B, 2 attempts: " + " | ".join(tries)
+    old = [_obs(e) for e in rec["timeline"] if e["type"] == "observation"]
+    new = [_obs(e) for e in r["timeline"] if e["type"] == "observation"]
+    same = old == new
+    ok = (same and r["decision"] == "Pay Per Ride/Minute"
+          and r["metrics"]["stop_reason"] == "final_answer")
+    return ok, (f"{len(calls)} recorded tool calls replayed, observations identical={same}, "
+                f"answer check accepted decision={r['decision']}, "
+                f"stop={r['metrics']['stop_reason']}")
 
 
 def part5_defenses():
@@ -299,7 +341,8 @@ CHECKS = [
      part3_reflexion_run),
     ("Part 4", "csv_sql / calculator return the common envelope and correct values", part4_tools),
     ("Part 4", "Saved pricing snapshots match their SHA-256 hashes", part4_snapshots),
-    ("Part 4", "Bike-share agent recommends pay-per-use for scenario B", part4_agent_b),
+    ("Part 4", "Recorded scenario-B run replays through create_agent + answer check",
+     part4_replay_b),
     ("Part 5", "Tool boundary rejects writes; retrieved text labelled untrusted", part5_defenses),
     ("Part 6", "Safety gate: 5 safe allowed, 5 destructive blocked unless confirmed", part6_gate),
     ("Part 6", "File tools in a temp sandbox (glob, search, read, edit diff, escape)",
@@ -321,7 +364,8 @@ def main() -> None:
         "code_matches_commit": not changed,
         "model": {"agent_loop_and_reflexion": "llama3.1:8b (Ollama via src/model_client.py, "
                                               "temperature 0, seed 3209, num_ctx 8192)",
-                  "bikeshare_agent": "qwen3:8b (Ollama, LangChain create_agent, temperature 0)"},
+                  "bikeshare_agent": "qwen3:8b run recorded in raw/part4_scenarioB, replayed "
+                                     "through LangChain create_agent (no live model call)"},
         "config": {"port_base": 8509, "prefix": "s3209", "domain_id": 1,
                    "domain": "Clinical trial listings", "database": "MySQL s3209_rel",
                    "jwt": "HS256 bearer, roles reader/writer/moderator"},
