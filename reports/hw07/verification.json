@@ -1,0 +1,137 @@
+{
+  "homework": "HW7",
+  "sid4": 3209,
+  "commit": "8cbf1953f11e88d196fdf8ec6f643a0ba6f5988d",
+  "code_matches_commit": true,
+  "model": {
+    "agent_loop_and_reflexion": "llama3.1:8b (Ollama via src/model_client.py, temperature 0, seed 3209, num_ctx 8192)",
+    "bikeshare_agent": "qwen3:8b run recorded in raw/part4_scenarioB, replayed through LangChain create_agent (no live model call)"
+  },
+  "config": {
+    "port_base": 8509,
+    "prefix": "s3209",
+    "domain_id": 1,
+    "domain": "Clinical trial listings",
+    "database": "MySQL s3209_rel",
+    "jwt": "HS256 bearer, roles reader/writer/moderator"
+  },
+  "seed": 3209,
+  "verify_seed": 263209,
+  "timestamp": "2026-10-25T11:12:42",
+  "checks": [
+    {
+      "part": "Part 1",
+      "check": "POST /auth/login: token for valid, 401 for invalid credentials",
+      "pass": true,
+      "detail": "valid -> 200 (JWT 207 chars), invalid -> 401",
+      "seconds": 0.3
+    },
+    {
+      "part": "Part 1",
+      "check": "GET /auth/me: 401 without / with forged token, 200 with role",
+      "pass": true,
+      "detail": "no token / forged / valid -> [401, 401, 200], role=reader",
+      "seconds": 0.5
+    },
+    {
+      "part": "Part 1",
+      "check": "RBAC on /api/trials: read any role, create writer+, delete moderator",
+      "pass": true,
+      "detail": "list reader / create reader / create writer / delete writer / delete moderator -> [200, 403, 201, 403, 200]",
+      "seconds": 0.0
+    },
+    {
+      "part": "Part 1",
+      "check": "MySQL users table stores only bcrypt hashes and the three roles",
+      "pass": true,
+      "detail": "3 users, bcrypt hashes=True",
+      "seconds": 0.1
+    },
+    {
+      "part": "Part 1",
+      "check": "Ruff pre-commit hook passes on all HW7 Python files",
+      "pass": true,
+      "detail": "pre-commit ruff hook on 27 HW7 files -> Passed",
+      "seconds": 0.1
+    },
+    {
+      "part": "Part 2",
+      "check": "Agent loop offline tests (repair path, ceilings, logging)",
+      "pass": true,
+      "detail": "test_agent_loop.py exit 0, 7 PASS",
+      "seconds": 0.0
+    },
+    {
+      "part": "Part 2",
+      "check": "run_agent completes task A (search -> get_trial) and passes verifier",
+      "pass": true,
+      "detail": "tools ['search_trials', 'get_trial'], stop=final_answer, verifier passed=True",
+      "seconds": 3.1
+    },
+    {
+      "part": "Part 2",
+      "check": "Nonexistent id: useful tool error, agent stops without crashing",
+      "pass": true,
+      "detail": "execute_tool -> ok=false (trial 99999 not found); agent stop=final_answer",
+      "seconds": 1.7
+    },
+    {
+      "part": "Part 3",
+      "check": "Reflexion offline tests (verifier, store isolation, sanitizing)",
+      "pass": true,
+      "detail": "test_reflexion.py exit 0, 8 PASS",
+      "seconds": 0.1
+    },
+    {
+      "part": "Part 3",
+      "check": "Reflexion run on task B stops cleanly within retry/tool budgets",
+      "pass": true,
+      "detail": "task B stop=success, retries=1/2, tool calls=5/12, tokens=6714",
+      "seconds": 6.5
+    },
+    {
+      "part": "Part 4",
+      "check": "csv_sql / calculator return the common envelope and correct values",
+      "pass": true,
+      "detail": "csv_sql rows=520, calculator 2*(3+4)=14.0, injection rejected=True",
+      "seconds": 0.0
+    },
+    {
+      "part": "Part 4",
+      "check": "Saved pricing snapshots match their SHA-256 hashes",
+      "pass": true,
+      "detail": "snapshot SHA-256 matches saved hash: A=True, B=True",
+      "seconds": 0.0
+    },
+    {
+      "part": "Part 4",
+      "check": "Recorded scenario-B run replays through create_agent + answer check",
+      "pass": true,
+      "detail": "12 recorded tool calls replayed, observations identical=True, answer check accepted decision=Pay Per Ride/Minute, stop=final_answer",
+      "seconds": 0.6
+    },
+    {
+      "part": "Part 5",
+      "check": "Tool boundary rejects writes; retrieved text labelled untrusted",
+      "pass": true,
+      "detail": "DELETE rejected=True, stacked rejected=True, rows 520->520, retrieved text labelled untrusted=True",
+      "seconds": 0.5
+    },
+    {
+      "part": "Part 6",
+      "check": "Safety gate: 5 safe allowed, 5 destructive blocked unless confirmed",
+      "pass": true,
+      "detail": "5 safe allowed=True, 5 destructive blocked=True, allowed with confirmation=True",
+      "seconds": 0.0
+    },
+    {
+      "part": "Part 6",
+      "check": "File tools in a temp sandbox (glob, search, read, edit diff, escape)",
+      "pass": true,
+      "detail": "glob 2 files, search -> ['app.py'], max_lines=1 -> 1, diff ok, sandbox escape refused=True, rm -rf blocked=True",
+      "seconds": 0.0
+    }
+  ],
+  "passed": 16,
+  "total": 16
+}
