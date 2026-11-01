@@ -116,3 +116,84 @@ hw07-part6:
 verify-hw07:
 	@$(call STAMP7,make verify-hw07 (HW7 smoke test))
 	python3 -u code/verify_hw07.py 2>&1 | python3 code/tslog.py $(LOG7)
+
+# ---------------- HW8 ----------------
+LOG8 = reports/hw08/RUN_LOG.txt
+COMPOSE8 = docker compose -f code/kafka_service/docker-compose.yml
+STAMP8 = mkdir -p reports/hw08/raw; echo "[$$(date '+%Y-%m-%d %H:%M:%S')] ======================================================================" >> $(LOG8); echo "[$$(date '+%Y-%m-%d %H:%M:%S')] RUN: $(1)   run by: Ani Taraiya" >> $(LOG8)
+
+hw08-up:
+	$(COMPOSE8) up -d --build
+
+hw08-down:
+	$(COMPOSE8) down
+
+hw08-ps:
+	@$(call STAMP8,make hw08-ps (HW8 Part 1 containers))
+	@(echo "Run by: Ani Taraiya (s3209)   $$(date '+%Y-%m-%d %H:%M:%S')"; \
+	  docker ps --filter name=s3209_ --format "table {{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}") 2>&1 | python3 code/tslog.py $(LOG8)
+
+hw08-logs:
+	@$(call STAMP8,make hw08-logs (HW8 Part 1 worker and API startup logs))
+	@for i in $$(seq 30); do docker logs s3209_trial_worker 2>&1 | grep -q "Consumer is ready" && break; sleep 1; done
+	@(echo "Run by: Ani Taraiya (s3209)"; echo "---- docker logs s3209_trial_worker ----"; \
+	  docker logs s3209_trial_worker 2>&1 | grep -E "Run by|Consumer is ready"; \
+	  echo "---- docker logs s3209_trial_api ----"; \
+	  docker logs s3209_trial_api 2>&1 | grep -E "Run by|Server started|Uvicorn running") 2>&1 | python3 code/tslog.py $(LOG8)
+
+hw08-demo:
+	@$(call STAMP8,make hw08-demo (HW8 Part 1 CREATE_TRIAL -> GET_TRIAL over Kafka))
+	python3 -u code/homework_demo.py 2>&1 | python3 code/tslog.py $(LOG8)
+
+hw08-errors:
+	@$(call STAMP8,make hw08-errors (HW8 Part 1 error responses over Kafka))
+	python3 -u code/homework_demo.py --errors 2>&1 | python3 code/tslog.py $(LOG8)
+
+hw08-api:
+	@$(call STAMP8,make hw08-api (HW8 Part 1 FastAPI wrapper over Kafka))
+	@bash code/kafka_service/api_demo.sh 2>&1 | python3 code/tslog.py $(LOG8)
+
+# HW8 Part 2: four topics created with the Kafka CLI, then one agent per terminal
+KT = docker exec s3209_kafka /opt/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092
+
+hw08-topics:
+	@$(call STAMP8,make hw08-topics (HW8 Part 2 create s3209_inbox/tasks/drafts/final))
+	@(echo "Run by: Ani Taraiya (s3209)"; \
+	  for tp in inbox:1 tasks:2 drafts:1 final:1; do t=s3209_$${tp%%:*}; n=$${tp##*:}; \
+	    echo "$$ kafka-topics.sh --create --if-not-exists --topic $$t --partitions $$n --replication-factor 1"; \
+	    $(KT) --create --if-not-exists --topic $$t --partitions $$n --replication-factor 1 2>&1 | grep -v "WARNING: Due to"; \
+	  done; echo; echo "$$ kafka-topics.sh --describe"; \
+	  for t in inbox tasks drafts final; do \
+	    $(KT) --describe --topic s3209_$$t | grep PartitionCount | awk '{print $$1, $$2, $$5, $$6, $$7, $$8}'; done) 2>&1 | python3 code/tslog.py $(LOG8)
+
+hw08-topics-delete:
+	@for t in inbox tasks drafts final; do $(KT) --delete --if-exists --topic s3209_$$t; done; echo "deleted s3209_inbox/tasks/drafts/final"
+
+hw08-planner:
+	@$(call STAMP8,make hw08-planner (HW8 Part 2 Planner))
+	cd code/kafka_agents && python3 -u planner.py 2>&1 | python3 ../tslog.py ../../$(LOG8)
+
+hw08-writer:
+	@$(call STAMP8,make hw08-writer (HW8 Part 2 Writer))
+	cd code/kafka_agents && python3 -u writer.py 2>&1 | python3 ../tslog.py ../../$(LOG8)
+
+hw08-reviewer:
+	@$(call STAMP8,make hw08-reviewer (HW8 Part 2 Reviewer))
+	cd code/kafka_agents && python3 -u reviewer.py 2>&1 | python3 ../tslog.py ../../$(LOG8)
+
+hw08-ask:
+	@$(call STAMP8,make hw08-ask (HW8 Part 2 send one question))
+	cd code/kafka_agents && python3 -u send_question.py 2>&1 | python3 ../tslog.py ../../$(LOG8)
+
+# HW8 Part 3: failure tests (stop the Part 2 Writer first; each test starts its own Writer)
+hw08-topic-dlq:
+	@$(call STAMP8,make hw08-topic-dlq (HW8 Part 3 create s3209_dead_letter))
+	@(echo "Run by: Ani Taraiya (s3209)"; \
+	  echo "$$ kafka-topics.sh --create --if-not-exists --topic s3209_dead_letter --partitions 1 --replication-factor 1"; \
+	  $(KT) --create --if-not-exists --topic s3209_dead_letter --partitions 1 --replication-factor 1 2>&1 | grep -v "WARNING: Due to"; \
+	  $(KT) --describe --topic s3209_dead_letter | grep PartitionCount | awk '{print $$1, $$2, $$5, $$6, $$7, $$8}') 2>&1 | python3 code/tslog.py $(LOG8)
+
+P3_TESTS = dup crash poison order
+$(foreach t,$(P3_TESTS),hw08-$(t)-before) $(foreach t,$(P3_TESTS),hw08-$(t)-after):
+	@$(call STAMP8,make $@ (HW8 Part 3 $(word 2,$(subst -, ,$@)) $(word 3,$(subst -, ,$@)) fix))
+	cd code/kafka_agents && python3 -u failure_tests.py $(word 2,$(subst -, ,$@)) $(if $(filter before,$(word 3,$(subst -, ,$@))),--before) 2>&1 | python3 ../tslog.py ../../$(LOG8)
