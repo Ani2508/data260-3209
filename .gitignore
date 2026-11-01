@@ -16,3 +16,10 @@ reports/hw07/Snippets/
 
 # HW7 Part 4 downloaded public trip data
 data/
+
+# HW8 working screenshots and report draft (used only inside the report)
+reports/hw08/Snippets/
+reports/hw08/*.docx
+
+# HW8 Part 3 Writer idempotency markers (runtime state)
+code/kafka_agents/state/

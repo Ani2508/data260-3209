@@ -19,3 +19,4 @@ ruff
 pre-commit
 langchain
 langgraph
+kafka-python>=2.2
