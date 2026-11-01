@@ -197,3 +197,7 @@ P3_TESTS = dup crash poison order
 $(foreach t,$(P3_TESTS),hw08-$(t)-before) $(foreach t,$(P3_TESTS),hw08-$(t)-after):
 	@$(call STAMP8,make $@ (HW8 Part 3 $(word 2,$(subst -, ,$@)) $(word 3,$(subst -, ,$@)) fix))
 	cd code/kafka_agents && python3 -u failure_tests.py $(word 2,$(subst -, ,$@)) $(if $(filter before,$(word 3,$(subst -, ,$@))),--before) 2>&1 | python3 ../tslog.py ../../$(LOG8)
+
+verify-hw08:
+	@$(call STAMP8,make verify-hw08 (HW8 smoke test))
+	python3 -u code/verify_hw08.py 2>&1 | python3 code/tslog.py $(LOG8)
