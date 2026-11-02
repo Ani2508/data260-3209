@@ -1,0 +1,124 @@
+{
+  "homework": "HW8",
+  "sid4": 3209,
+  "prefix": "s3209",
+  "port_base": 8509,
+  "commit": "e5f85ee5a6ed36d79657979755e2008932b06383",
+  "code_clean": true,
+  "model": "llama3.1:8b",
+  "model_settings": {
+    "temperature": 0.0,
+    "seed": 3209
+  },
+  "kafka": {
+    "bootstrap": "localhost:9092",
+    "image": "apache/kafka:3.8.0"
+  },
+  "seed": 3209,
+  "verify_seed": 263209,
+  "run_at": "2026-11-01T15:45:06",
+  "summary": {
+    "passed": 14,
+    "total": 14
+  },
+  "checks": [
+    {
+      "part": "Part 1",
+      "check": "docker containers running",
+      "pass": true,
+      "detail": "running: ['s3209_kafka', 's3209_trial_worker', 's3209_trial_api']",
+      "seconds": 0.1
+    },
+    {
+      "part": "Part 1",
+      "check": "request/response topics exist",
+      "pass": true,
+      "detail": "s3209_trial_requests=1 s3209_trial_responses=1 partitions",
+      "seconds": 0.1
+    },
+    {
+      "part": "Part 1",
+      "check": "CREATE_TRIAL over Kafka",
+      "pass": true,
+      "detail": "success=True uuid trial_id=aaa80500-d021-46a7-a2d7-a62bd63c49ca cid kept=True",
+      "seconds": 0.1
+    },
+    {
+      "part": "Part 1",
+      "check": "GET_TRIAL round trip",
+      "pass": true,
+      "detail": "success=True fields match=True cid kept=True",
+      "seconds": 0.0
+    },
+    {
+      "part": "Part 1",
+      "check": "clean errors keep correlation_id",
+      "pass": true,
+      "detail": "not found / unknown op / invalid data -> clean error + cid kept: [True, True, True]",
+      "seconds": 0.0
+    },
+    {
+      "part": "Part 1",
+      "check": "FastAPI wrapper on PORT_BASE",
+      "pass": true,
+      "detail": "POST/GET via http://127.0.0.1:8509: success=True header cid kept=True",
+      "seconds": 0.0
+    },
+    {
+      "part": "Part 2",
+      "check": "four topics, tasks has 2 partitions",
+      "pass": true,
+      "detail": "s3209_inbox=1, s3209_tasks=2, s3209_drafts=1, s3209_final=1",
+      "seconds": 0.1
+    },
+    {
+      "part": "Part 2",
+      "check": "planner, writer, reviewer start",
+      "pass": true,
+      "detail": "planner/writer/reviewer ready=[True, True, True] writer owns both task partitions=True",
+      "seconds": 2.4
+    },
+    {
+      "part": "Part 2",
+      "check": "question reaches s3209_final",
+      "pass": true,
+      "detail": "inbox -> final: status=approved answer words=79 cid kept=True",
+      "seconds": 7.4
+    },
+    {
+      "part": "Part 3",
+      "check": "dead-letter topic exists",
+      "pass": true,
+      "detail": "s3209_dead_letter partitions=1",
+      "seconds": 0.1
+    },
+    {
+      "part": "Part 3",
+      "check": "duplicate replay has no extra draft",
+      "pass": true,
+      "detail": "same message delivered twice -> drafts=1 (want 1)",
+      "seconds": 11.6
+    },
+    {
+      "part": "Part 3",
+      "check": "offset committed after success",
+      "pass": true,
+      "detail": "writer committed p0=51 after last message at offset 50",
+      "seconds": 0.0
+    },
+    {
+      "part": "Part 3",
+      "check": "poison -> dead letter, next message runs",
+      "pass": true,
+      "detail": "poison in s3209_dead_letter=1 attempts=3; next message drafted=True",
+      "seconds": 6.0
+    },
+    {
+      "part": "Part 3",
+      "check": "same key -> same partition",
+      "pass": true,
+      "detail": "key=trial id -> partitions per trial: {'NCT05512874': [0], 'NCT04811023': [0], 'NCT06120458': [0]}",
+      "seconds": 0.1
+    }
+  ]
+}

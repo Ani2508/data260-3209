@@ -1,0 +1,50 @@
+{
+  "verify_seed": 263209,
+  "processed": 20,
+  "entities": {
+    "NCT05512874": {
+      "seq_order": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "partitions": [
+        0
+      ],
+      "in_order": true
+    },
+    "NCT04811023": {
+      "seq_order": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "partitions": [
+        0
+      ],
+      "in_order": true
+    },
+    "NCT06120458": {
+      "seq_order": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "partitions": [
+        0
+      ],
+      "in_order": true
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "correlation_id": "c5edba34-c6a6-4e2c-9a65-68f30373bdaa",
+  "status": "approved",
+  "answer": "Before joining a Phase II clinical trial for type 2 diabetes, a patient should review the trial's inclusion and exclusion criteria to ensure they meet the necessary requirements. They should also understand the trial's treatment and intervention, including any potential risks or side effects, to make an informed decision. It's also recommended to discuss the trial with a healthcare provider to determine if it's a good fit for their specific needs and medical history.",
+  "review_notes": "The draft clearly answers the question and follows the plan, providing a concise and informative response for patients considering a Phase II clinical trial for type 2 diabetes.",
+  "question": "What should a patient check before joining a recruiting Phase II clinical trial for type 2 diabetes?",
+  "plan": [
+    "Step 1: Review the trial's inclusion and exclusion criteria to ensure the patient meets the necessary requirements.",
+    "Step 2: Understand the trial's treatment and intervention, including any potential risks or side effects, to make an informed decision.",
+    "Step 3: Discuss the trial with a healthcare provider to determine if it's a good fit for their specific needs and medical history."
+  ],
+  "planned_at": "14:45:03.717",
+  "written_at": "14:45:05.447",
+  "reviewed_at": "14:45:06.244"
+}
