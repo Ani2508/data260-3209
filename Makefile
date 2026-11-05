@@ -272,3 +272,30 @@ hw09-part2-redis:
 	    echo "$$ redis-cli HMGET $$k query data_version review created_at"; \
 	    docker exec s3209_redis redis-cli HMGET $$k query data_version review created_at; done) \
 	  2>&1 | python3 code/tslog.py $(LOG9)
+
+# HW9 Part 3: threshold sweep, false hit, stale answers
+hw09-trials:
+	@$(call STAMP9,make hw09-trials (HW9 Part 3 trials used in cache_cases.yaml))
+	@(echo "Run by: Ani Taraiya (s3209)"; cd code/web_application && python3 -c "from database import engine; from sqlalchemy import text; \
+	  [print(*r, sep=' | ') for r in engine.connect().execute(text('SELECT t.id, t.nct_id, t.trial_title, t.status, t.enrollment_slots, s.name FROM trials t JOIN sponsors s ON s.id = t.sponsor_id ORDER BY t.id LIMIT 12'))]") \
+	  2>&1 | python3 code/tslog.py $(LOG9)
+
+hw09-part3-test:
+	@$(call STAMP9,make hw09-part3-test (HW9 Part 3 offline tests))
+	python3 -u code/semantic_cache/test_semantic_cache.py 2>&1 | python3 code/tslog.py $(LOG9)
+
+hw09-part3-sweep:
+	@$(call STAMP9,make hw09-part3-sweep (HW9 Part 3.2 threshold sweep, 40 labeled cases))
+	python3 -u code/run_hw09_part3.py sweep 2>&1 | python3 code/tslog.py $(LOG9)
+
+hw09-part3-show:
+	@$(call STAMP9,make hw09-part3-show (HW9 Part 3.2 saved sweep rows, threshold $(or $(TH),0.85)))
+	python3 -u code/run_hw09_part3.py show --threshold $(or $(TH),0.85) 2>&1 | python3 code/tslog.py $(LOG9)
+
+hw09-part3-falsehit:
+	@$(call STAMP9,make hw09-part3-falsehit (HW9 Part 3.3 one false hit, threshold $(or $(TH),0.85)))
+	python3 -u code/run_hw09_part3.py falsehit --threshold $(or $(TH),0.85) 2>&1 | python3 code/tslog.py $(LOG9)
+
+hw09-part3-stale:
+	@$(call STAMP9,make hw09-part3-stale (HW9 Part 3.5 stale answer and invalidation))
+	python3 -u code/run_hw09_part3.py stale 2>&1 | python3 code/tslog.py $(LOG9)

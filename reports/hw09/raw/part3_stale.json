@@ -1,0 +1,42 @@
+[
+  {
+    "step": "first ask",
+    "is_cached": false,
+    "similarity": 0.0,
+    "answer": "The current status of trial NCT30565986 is Completed.",
+    "data_version": "1@ef4f9729",
+    "stale_invalidated": false,
+    "latency_ms": 1699.1,
+    "db_status": "Completed"
+  },
+  {
+    "step": "stale hit",
+    "is_cached": true,
+    "similarity": 1.0,
+    "answer": "The current status of trial NCT30565986 is Completed.",
+    "data_version": "1@ef4f9729",
+    "stale_invalidated": false,
+    "latency_ms": 31.8,
+    "db_status": "Terminated"
+  },
+  {
+    "step": "invalidated",
+    "is_cached": false,
+    "similarity": 1.0,
+    "answer": "The trial NCT30565986, titled 'Phase II Study of Drug B-1 in Migraine', has been terminated.",
+    "data_version": "1@9af5261c",
+    "stale_invalidated": true,
+    "latency_ms": 2022.9,
+    "db_status": "Terminated"
+  },
+  {
+    "step": "fresh hit",
+    "is_cached": true,
+    "similarity": 1.0,
+    "answer": "The trial NCT30565986, titled 'Phase II Study of Drug B-1 in Migraine', has been terminated.",
+    "data_version": "1@9af5261c",
+    "stale_invalidated": false,
+    "latency_ms": 16.3,
+    "db_status": "Terminated"
+  }
+]

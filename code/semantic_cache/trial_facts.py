@@ -13,9 +13,9 @@ from pathlib import Path
 VERSION_FIELDS = ("nct_id", "trial_title", "status", "enrollment_slots", "sponsor")
 NCT_RE = re.compile(r"\bNCT\d{8}\b", re.IGNORECASE)
 WEB_APP = Path(__file__).resolve().parents[1] / "web_application"
-TRIAL_SQL = ("SELECT t.id, t.nct_id, t.trial_title, t.status, t.enrollment_slots, "
-             "s.name AS sponsor, t.updated_at FROM trials t "
-             "JOIN sponsors s ON s.id = t.sponsor_id WHERE t.nct_id = :nct")
+BASE_SQL = ("SELECT t.id, t.nct_id, t.trial_title, t.status, t.enrollment_slots, "
+            "s.name AS sponsor, t.updated_at FROM trials t "
+            "JOIN sponsors s ON s.id = t.sponsor_id WHERE ")
 
 
 def extract_nct_ids(question: str) -> list[str]:
@@ -47,9 +47,9 @@ def facts_text(rows: list[dict]) -> str:
         f"enrollment slots {r['enrollment_slots']}; sponsor {r['sponsor']}" for r in rows)
 
 
-def fetch_trials(nct_ids: list[str]) -> list[dict]:
-    """Return the trial rows (with sponsor name) for the given NCT ids that exist."""
-    if not nct_ids:
+def _fetch(column: str, values: list) -> list[dict]:
+    """Return the trial rows (with sponsor name) whose column matches each value, in order."""
+    if not values:
         return []
     if str(WEB_APP) not in sys.path:
         sys.path.insert(0, str(WEB_APP))
@@ -59,11 +59,21 @@ def fetch_trials(nct_ids: list[str]) -> list[dict]:
 
     rows = []
     with engine.connect() as conn:
-        for nct in nct_ids:
-            row = conn.execute(text(TRIAL_SQL), {"nct": nct}).mappings().first()
+        for value in values:
+            row = conn.execute(text(BASE_SQL + f"t.{column} = :v"), {"v": value}).mappings().first()
             if row is not None:
                 rows.append(dict(row))
     return rows
+
+
+def fetch_trials(nct_ids: list[str]) -> list[dict]:
+    """Return the trial rows for the given NCT ids that exist."""
+    return _fetch("nct_id", nct_ids)
+
+
+def current_version(trial_ids: list[int]) -> str:
+    """Return the data-version marker computed from the trials' rows as they are now."""
+    return data_version(_fetch("id", trial_ids))
 
 
 def find_trial_facts(question: str) -> dict:

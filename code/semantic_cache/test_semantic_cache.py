@@ -44,9 +44,17 @@ class FakeCache:
 
     def store(self, query, vec, answer, version, trial_ids, review="") -> str:
         """Return a fake key after keeping the entry."""
+        key = f"s3209:semcache:{len(self.entries) + 1}"
         self.entries.append({"query": query, "answer": answer, "data_version": version,
-                             "review": review})
-        return f"s3209:semcache:{len(self.entries)}"
+                             "review": review, "key": key,
+                             "trial_ids": ",".join(map(str, trial_ids))})
+        return key
+
+    def delete(self, key: str) -> bool:
+        """Return True after removing the entry with this key."""
+        before = len(self.entries)
+        self.entries = [e for e in self.entries if e["key"] != key]
+        return len(self.entries) < before
 
 
 class FakePipeline:
@@ -107,8 +115,26 @@ def run_tests() -> int:
         pass
     else:
         raise AssertionError("empty question accepted")
-    return 9
+    # 10. store=False (Part 3 sweep): a miss runs the agents but adds nothing to the cache
+    frozen = QAService(FakeCache(), FakeEmbedder(), FakePipeline(), store=False)
+    assert frozen.answer("anything")["is_cached"] is False and frozen.cache.entries == []
+
+    # 11-12. Part 3.5 invalidation: changed record -> entry deleted and agents re-run
+    import qa_service
+
+    cache, pipe = FakeCache(), FakePipeline()
+    cache.entries.append({"query": q, "answer": "old", "data_version": "1@aaaa1111",
+                          "review": "approved", "key": "s3209:semcache:1", "trial_ids": "1"})
+    cache.next_query = q
+    qa_service.current_version = lambda ids: "1@aaaa1111"
+    fresh = QAService(cache, FakeEmbedder(), pipe, check_version=True).answer(q)
+    assert fresh["is_cached"] is True and fresh["answer"] == "old" and pipe.calls == 0
+    qa_service.current_version = lambda ids: "1@bbbb2222"
+    redo = QAService(cache, FakeEmbedder(), pipe, check_version=True).answer(q)
+    assert redo["is_cached"] is False and redo["stale_invalidated"] is True and pipe.calls == 1
+    assert [e["answer"] for e in cache.entries] == ["answer 1"]
+    return 12
 
 
 if __name__ == "__main__":
-    print(f"HW9 Part 2 offline tests: {run_tests()} / 9 passed")
+    print(f"HW9 Part 2-3 offline tests: {run_tests()} / 12 passed")

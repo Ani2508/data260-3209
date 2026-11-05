@@ -1109,3 +1109,672 @@
 [2026-11-04 17:41:28] Avg latency cached:          21.6 ms (n=7)
 [2026-11-04 17:41:28] Avg latency non-cached:    2648.0 ms (n=5)
 [2026-11-04 17:41:28] Saved reports/hw09/raw/part2_results.json and part2_results.csv
+[2026-11-04 17:44:33] ======================================================================
+[2026-11-04 17:44:33] RUN: make hw09-part2-redis (HW9 Part 2 cache entries in Redis)   run by: Ani Taraiya
+[2026-11-04 17:44:33] Run by: Ani Taraiya (s3209)
+[2026-11-04 17:44:33] $ redis-cli FT.INFO s3209_semcache_idx (num_docs)
+[2026-11-04 17:44:33] num_docs
+[2026-11-04 17:44:33] 5
+[2026-11-04 17:44:33] $ redis-cli HMGET s3209:semcache:ed6220b143d7 query data_version review created_at
+[2026-11-04 17:44:33] What does a Terminated status mean for a clinical trial listing?
+[2026-11-04 17:44:33] none
+[2026-11-04 17:44:33] approved
+[2026-11-04 17:44:33] 2026-11-04 17:41:28
+[2026-11-04 17:44:33] $ redis-cli HMGET s3209:semcache:306dd6618e57 query data_version review created_at
+[2026-11-04 17:44:33] What is the current status of trial NCT30565986?
+[2026-11-04 17:44:33] 1@ef4f9729
+[2026-11-04 17:44:33] rejected
+[2026-11-04 17:44:33] 2026-11-04 17:41:16
+[2026-11-04 17:44:33] $ redis-cli HMGET s3209:semcache:f3d6dcb527ab query data_version review created_at
+[2026-11-04 17:44:33] How many enrollment slots does trial NCT30565986 have?
+[2026-11-04 17:44:33] 1@ef4f9729
+[2026-11-04 17:44:33] rejected
+[2026-11-04 17:44:33] 2026-11-04 17:41:18
+[2026-11-04 17:48:25] ======================================================================
+[2026-11-04 17:48:25] RUN: make hw09-trials (HW9 Part 3 trials used in cache_cases.yaml)   run by: Ani Taraiya
+[2026-11-04 17:48:25] Run by: Ani Taraiya (s3209)
+[2026-11-04 17:48:25] 1 | NCT30565986 | Phase II Study of Drug B-1 in Migraine | Completed | 0 | Charite Berlin
+[2026-11-04 17:48:25] 2 | NCT71134900 | Phase II Study of Drug C-2 in Migraine | Terminated | 0 | Charite Berlin
+[2026-11-04 17:48:25] 3 | NCT48236558 | Phase II Study of Drug D-3 in Hypertension | Recruiting | 113 | Stanford Medicine
+[2026-11-04 17:48:25] 4 | NCT72283365 | Phase III Study of Drug E-4 in Alzheimer's Disease | Recruiting | 114 | Tata Memorial Centre
+[2026-11-04 17:48:25] 5 | NCT69258056 | Observational Study of Drug F-5 in Psoriasis | Completed | 0 | Johns Hopkins Medicine
+[2026-11-04 17:48:25] 6 | NCT55837001 | Phase I Study of Drug G-6 in Asthma | Terminated | 0 | Mayo Clinic
+[2026-11-04 17:48:25] 7 | NCT15684177 | Phase II Study of Drug H-7 in Rheumatoid Arthritis | Terminated | 0 | UCSF Health
+[2026-11-04 17:48:25] 8 | NCT80911774 | Observational Study of Drug I-8 in Hypertension | Active - Not Recruiting | 0 | Johns Hopkins Medicine
+[2026-11-04 17:48:25] 9 | NCT10856964 | Phase II Study of Drug J-9 in Migraine | Active - Not Recruiting | 0 | Mayo Clinic
+[2026-11-04 17:48:25] 10 | NCT75969695 | Phase III Study of Drug K-10 in Type 2 Diabetes | Completed | 0 | Karolinska Institutet
+[2026-11-04 17:48:25] 11 | NCT51652013 | Observational Study of Drug L-11 in Chronic Kidney Disease | Recruiting | 8 | Johns Hopkins Medicine
+[2026-11-04 17:48:25] 12 | NCT19648166 | Observational Study of Drug M-12 in Type 2 Diabetes | Completed | 0 | Charite Berlin
+[2026-11-04 17:51:18] ======================================================================
+[2026-11-04 17:51:18] RUN: make hw09-part3-test (HW9 Part 3 offline tests)   run by: Ani Taraiya
+[2026-11-04 17:51:18] 17:51:18.925 | s3209 CACHE    | MISS  best_sim=0.0000 -> HW8 agent pipeline
+[2026-11-04 17:51:18] 17:51:18.925 | s3209 CACHE    | STORE review=approved version=none latency=0.2 ms
+[2026-11-04 17:51:18] 17:51:18.925 | s3209 CACHE    | HIT   sim=1.0000 matched='What should a patient check before joining a trial?' latency=0.0 ms
+[2026-11-04 17:51:18] 17:51:18.925 | s3209 CACHE    | MISS  best_sim=0.3000 -> HW8 agent pipeline
+[2026-11-04 17:51:18] 17:51:18.925 | s3209 CACHE    | STORE review=approved version=none latency=0.0 ms
+[2026-11-04 17:51:18] 17:51:18.925 | s3209 CACHE    | MISS  best_sim=0.0000 -> HW8 agent pipeline
+[2026-11-04 17:51:18] 17:51:18.925 | s3209 CACHE    | DONE  review=approved version=none latency=0.0 ms
+[2026-11-04 17:51:18] 17:51:18.925 | s3209 CACHE    | HIT   sim=1.0000 matched='What should a patient check before joining a trial?' latency=0.0 ms
+[2026-11-04 17:51:18] 17:51:18.925 | s3209 CACHE    | STALE sim=1.0000 stored=1@aaaa1111 current=1@bbbb2222 -> entry deleted
+[2026-11-04 17:51:18] 17:51:18.926 | s3209 CACHE    | MISS  best_sim=1.0000 -> HW8 agent pipeline
+[2026-11-04 17:51:18] 17:51:18.926 | s3209 CACHE    | STORE review=approved version=none latency=0.0 ms
+[2026-11-04 17:51:18] HW9 Part 2-3 offline tests: 12 / 12 passed
+[2026-11-04 17:51:19] ======================================================================
+[2026-11-04 17:51:19] RUN: make hw09-part3-sweep (HW9 Part 3.2 threshold sweep, 40 labeled cases)   run by: Ani Taraiya
+[2026-11-04 17:51:19] Run by: Ani Taraiya (s3209)   2026-11-04 17:51:19
+[2026-11-04 17:51:22] Cases: reports/hw09/cases/cache_cases.yaml  seeds=10  cases=40
+[2026-11-04 17:51:22] Cache cleared: 5 entries; seeding 10 queries
+[2026-11-04 17:51:25]   S01 stored  version=1@ef4f9729   What is the current status of trial NCT30565986?
+[2026-11-04 17:51:27]   S02 stored  version=3@93740c1e   How many enrollment slots does trial NCT48236558 have?
+[2026-11-04 17:51:29]   S03 stored  version=4@11558ea2   Which sponsor runs trial NCT72283365?
+[2026-11-04 17:51:32]   S04 stored  version=3@93740c1e   What is the current status of trial NCT48236558?
+[2026-11-04 17:51:34]   S05 stored  version=6@27473332   Which sponsor runs trial NCT55837001?
+[2026-11-04 17:51:35]   S06 stored  version=11@c4e795c9  How many enrollment slots does trial NCT51652013 have?
+[2026-11-04 17:51:39]   S07 stored  version=none         What should a patient check before joining a recruiting Phase II clinical trial?
+[2026-11-04 17:51:43]   S08 stored  version=none         What does a Terminated status mean for a clinical trial listing?
+[2026-11-04 17:51:48]   S09 stored  version=none         What is the difference between a Phase II and a Phase III clinical trial?
+[2026-11-04 17:51:53]   S10 stored  version=none         What does informed consent mean for a clinical trial participant?
+[2026-11-04 17:51:53] 
+[2026-11-04 17:51:53] === threshold 0.75 ===
+[2026-11-04 17:51:53] 17:51:53.455 | s3209 CACHE    | HIT   sim=1.0000 matched='What is the current status of trial NCT30565986?' latency=6.7 ms
+[2026-11-04 17:51:53]   E01 exact      expect=hit  HIT  sim=1.0000 nearest=S01       6.7 ms  TP
+[2026-11-04 17:51:53] 17:51:53.462 | s3209 CACHE    | HIT   sim=1.0000 matched='How many enrollment slots does trial NCT48236558 have?' latency=6.4 ms
+[2026-11-04 17:51:53]   E02 exact      expect=hit  HIT  sim=1.0000 nearest=S02       6.4 ms  TP
+[2026-11-04 17:51:53] 17:51:53.467 | s3209 CACHE    | HIT   sim=1.0000 matched='Which sponsor runs trial NCT72283365?' latency=5.3 ms
+[2026-11-04 17:51:53]   E03 exact      expect=hit  HIT  sim=1.0000 nearest=S03       5.3 ms  TP
+[2026-11-04 17:51:53] 17:51:53.473 | s3209 CACHE    | HIT   sim=1.0000 matched='What is the current status of trial NCT48236558?' latency=6.1 ms
+[2026-11-04 17:51:53]   E04 exact      expect=hit  HIT  sim=1.0000 nearest=S04       6.1 ms  TP
+[2026-11-04 17:51:53] 17:51:53.480 | s3209 CACHE    | HIT   sim=1.0000 matched='Which sponsor runs trial NCT55837001?' latency=6.7 ms
+[2026-11-04 17:51:53]   E05 exact      expect=hit  HIT  sim=1.0000 nearest=S05       6.7 ms  TP
+[2026-11-04 17:51:53] 17:51:53.486 | s3209 CACHE    | HIT   sim=1.0000 matched='How many enrollment slots does trial NCT51652013 have?' latency=6.6 ms
+[2026-11-04 17:51:53]   E06 exact      expect=hit  HIT  sim=1.0000 nearest=S06       6.6 ms  TP
+[2026-11-04 17:51:53] 17:51:53.493 | s3209 CACHE    | HIT   sim=1.0000 matched='What should a patient check before joining a recruiting Phase II clinical trial?' latency=6.4 ms
+[2026-11-04 17:51:53]   E07 exact      expect=hit  HIT  sim=1.0000 nearest=S07       6.4 ms  TP
+[2026-11-04 17:51:53] 17:51:53.498 | s3209 CACHE    | HIT   sim=1.0000 matched='What does a Terminated status mean for a clinical trial listing?' latency=4.6 ms
+[2026-11-04 17:51:53]   E08 exact      expect=hit  HIT  sim=1.0000 nearest=S08       4.6 ms  TP
+[2026-11-04 17:51:53] 17:51:53.503 | s3209 CACHE    | HIT   sim=1.0000 matched='What is the difference between a Phase II and a Phase III clinical trial?' latency=5.4 ms
+[2026-11-04 17:51:53]   E09 exact      expect=hit  HIT  sim=1.0000 nearest=S09       5.4 ms  TP
+[2026-11-04 17:51:53] 17:51:53.508 | s3209 CACHE    | HIT   sim=1.0000 matched='What does informed consent mean for a clinical trial participant?' latency=4.8 ms
+[2026-11-04 17:51:53]   E10 exact      expect=hit  HIT  sim=1.0000 nearest=S10       4.8 ms  TP
+[2026-11-04 17:51:53] 17:51:53.513 | s3209 CACHE    | HIT   sim=0.9124 matched='What is the current status of trial NCT30565986?' latency=5.1 ms
+[2026-11-04 17:51:53]   P01 paraphrase expect=hit  HIT  sim=0.9124 nearest=S01       5.1 ms  TP
+[2026-11-04 17:51:53] 17:51:53.519 | s3209 CACHE    | HIT   sim=0.9554 matched='How many enrollment slots does trial NCT48236558 have?' latency=6.0 ms
+[2026-11-04 17:51:53]   P02 paraphrase expect=hit  HIT  sim=0.9554 nearest=S02       6.0 ms  TP
+[2026-11-04 17:51:53] 17:51:53.524 | s3209 CACHE    | HIT   sim=0.9345 matched='Which sponsor runs trial NCT72283365?' latency=4.9 ms
+[2026-11-04 17:51:53]   P03 paraphrase expect=hit  HIT  sim=0.9345 nearest=S03       4.9 ms  TP
+[2026-11-04 17:51:53] 17:51:53.529 | s3209 CACHE    | HIT   sim=0.9672 matched='What is the current status of trial NCT48236558?' latency=5.4 ms
+[2026-11-04 17:51:53]   P04 paraphrase expect=hit  HIT  sim=0.9672 nearest=S04       5.4 ms  TP
+[2026-11-04 17:51:53] 17:51:53.536 | s3209 CACHE    | HIT   sim=0.8894 matched='Which sponsor runs trial NCT55837001?' latency=6.2 ms
+[2026-11-04 17:51:53]   P05 paraphrase expect=hit  HIT  sim=0.8894 nearest=S05       6.2 ms  TP
+[2026-11-04 17:51:53] 17:51:53.541 | s3209 CACHE    | HIT   sim=0.9535 matched='How many enrollment slots does trial NCT51652013 have?' latency=5.1 ms
+[2026-11-04 17:51:53]   P06 paraphrase expect=hit  HIT  sim=0.9535 nearest=S06       5.1 ms  TP
+[2026-11-04 17:51:53] 17:51:53.547 | s3209 CACHE    | HIT   sim=0.9544 matched='What should a patient check before joining a recruiting Phase II clinical trial?' latency=5.7 ms
+[2026-11-04 17:51:53]   P07 paraphrase expect=hit  HIT  sim=0.9544 nearest=S07       5.7 ms  TP
+[2026-11-04 17:51:53] 17:51:53.662 | s3209 CACHE    | HIT   sim=0.9306 matched='What does a Terminated status mean for a clinical trial listing?' latency=115.9 ms
+[2026-11-04 17:51:53]   P08 paraphrase expect=hit  HIT  sim=0.9306 nearest=S08     115.9 ms  TP
+[2026-11-04 17:51:53] 17:51:53.669 | s3209 CACHE    | HIT   sim=0.9647 matched='What is the difference between a Phase II and a Phase III clinical trial?' latency=6.4 ms
+[2026-11-04 17:51:53]   P09 paraphrase expect=hit  HIT  sim=0.9647 nearest=S09       6.4 ms  TP
+[2026-11-04 17:51:53] 17:51:53.675 | s3209 CACHE    | HIT   sim=0.9681 matched='What does informed consent mean for a clinical trial participant?' latency=6.3 ms
+[2026-11-04 17:51:53]   P10 paraphrase expect=hit  HIT  sim=0.9681 nearest=S10       6.3 ms  TP
+[2026-11-04 17:51:53] 17:51:53.679 | s3209 CACHE    | HIT   sim=0.9528 matched='What is the current status of trial NCT48236558?' latency=4.1 ms
+[2026-11-04 17:51:53]   D01 similar    expect=miss HIT  sim=0.9528 nearest=S04       4.1 ms  FALSE_HIT
+[2026-11-04 17:51:53] 17:51:53.684 | s3209 CACHE    | HIT   sim=0.9835 matched='How many enrollment slots does trial NCT48236558 have?' latency=4.9 ms
+[2026-11-04 17:51:53]   D02 similar    expect=miss HIT  sim=0.9835 nearest=S02       4.9 ms  FALSE_HIT
+[2026-11-04 17:51:53] 17:51:53.688 | s3209 CACHE    | HIT   sim=0.9823 matched='Which sponsor runs trial NCT72283365?' latency=3.9 ms
+[2026-11-04 17:51:53]   D03 similar    expect=miss HIT  sim=0.9823 nearest=S03       3.9 ms  FALSE_HIT
+[2026-11-04 17:51:53] 17:51:53.693 | s3209 CACHE    | HIT   sim=0.9484 matched='What is the current status of trial NCT48236558?' latency=4.4 ms
+[2026-11-04 17:51:53]   D04 similar    expect=miss HIT  sim=0.9484 nearest=S04       4.4 ms  FALSE_HIT
+[2026-11-04 17:51:53] 17:51:53.696 | s3209 CACHE    | HIT   sim=0.9824 matched='Which sponsor runs trial NCT72283365?' latency=3.4 ms
+[2026-11-04 17:51:53]   D05 similar    expect=miss HIT  sim=0.9824 nearest=S03       3.4 ms  FALSE_HIT
+[2026-11-04 17:51:53] 17:51:53.700 | s3209 CACHE    | HIT   sim=0.9746 matched='How many enrollment slots does trial NCT48236558 have?' latency=4.2 ms
+[2026-11-04 17:51:53]   D06 similar    expect=miss HIT  sim=0.9746 nearest=S02       4.2 ms  FALSE_HIT
+[2026-11-04 17:51:53] 17:51:53.704 | s3209 CACHE    | HIT   sim=0.9483 matched='What should a patient check before joining a recruiting Phase II clinical trial?' latency=3.9 ms
+[2026-11-04 17:51:53]   D07 similar    expect=miss HIT  sim=0.9483 nearest=S07       3.9 ms  FALSE_HIT
+[2026-11-04 17:51:53] 17:51:53.709 | s3209 CACHE    | HIT   sim=0.8412 matched='What does a Terminated status mean for a clinical trial listing?' latency=4.5 ms
+[2026-11-04 17:51:53]   D08 similar    expect=miss HIT  sim=0.8412 nearest=S08       4.5 ms  FALSE_HIT
+[2026-11-04 17:51:53] 17:51:53.713 | s3209 CACHE    | HIT   sim=0.9563 matched='What is the difference between a Phase II and a Phase III clinical trial?' latency=4.0 ms
+[2026-11-04 17:51:53]   D09 similar    expect=miss HIT  sim=0.9563 nearest=S09       4.0 ms  FALSE_HIT
+[2026-11-04 17:51:53] 17:51:53.718 | s3209 CACHE    | MISS  best_sim=0.7071 -> HW8 agent pipeline
+[2026-11-04 17:51:57] 17:51:57.774 | s3209 CACHE    | DONE  review=approved version=none latency=4061.3 ms
+[2026-11-04 17:51:57]   D10 similar    expect=miss MISS sim=0.7071 nearest=S08    4061.3 ms  TN
+[2026-11-04 17:51:57] 17:51:57.798 | s3209 CACHE    | MISS  best_sim=0.4129 -> HW8 agent pipeline
+[2026-11-04 17:52:00] 17:52:00.639 | s3209 CACHE    | DONE  review=approved version=none latency=2864.5 ms
+[2026-11-04 17:52:00]   U01 unrelated  expect=miss MISS sim=0.4129 nearest=S02    2864.5 ms  TN
+[2026-11-04 17:52:00] 17:52:00.794 | s3209 CACHE    | MISS  best_sim=0.2601 -> HW8 agent pipeline
+[2026-11-04 17:52:03] 17:52:03.478 | s3209 CACHE    | DONE  review=rejected version=none latency=2839.2 ms
+[2026-11-04 17:52:03]   U02 unrelated  expect=miss MISS sim=0.2601 nearest=S02    2839.2 ms  TN
+[2026-11-04 17:52:03] 17:52:03.504 | s3209 CACHE    | MISS  best_sim=0.3602 -> HW8 agent pipeline
+[2026-11-04 17:52:06] 17:52:06.860 | s3209 CACHE    | DONE  review=approved version=none latency=3381.8 ms
+[2026-11-04 17:52:06]   U03 unrelated  expect=miss MISS sim=0.3602 nearest=S03    3381.8 ms  TN
+[2026-11-04 17:52:06] 17:52:06.887 | s3209 CACHE    | MISS  best_sim=0.5265 -> HW8 agent pipeline
+[2026-11-04 17:52:10] 17:52:10.041 | s3209 CACHE    | DONE  review=approved version=none latency=3180.9 ms
+[2026-11-04 17:52:10]   U04 unrelated  expect=miss MISS sim=0.5265 nearest=S03    3180.9 ms  TN
+[2026-11-04 17:52:10] 17:52:10.188 | s3209 CACHE    | MISS  best_sim=0.0642 -> HW8 agent pipeline
+[2026-11-04 17:52:12] 17:52:12.929 | s3209 CACHE    | DONE  review=approved version=none latency=2887.7 ms
+[2026-11-04 17:52:12]   U05 unrelated  expect=miss MISS sim=0.0642 nearest=S01    2887.7 ms  TN
+[2026-11-04 17:52:12] 17:52:12.953 | s3209 CACHE    | MISS  best_sim=0.6181 -> HW8 agent pipeline
+[2026-11-04 17:52:14] 17:52:14.762 | s3209 CACHE    | DONE  review=rejected version=none latency=1832.8 ms
+[2026-11-04 17:52:14]   U06 unrelated  expect=miss MISS sim=0.6181 nearest=S02    1832.8 ms  TN
+[2026-11-04 17:52:15] 17:52:15.165 | s3209 CACHE    | MISS  best_sim=0.3817 -> HW8 agent pipeline
+[2026-11-04 17:52:17] 17:52:17.388 | s3209 CACHE    | DONE  review=rejected version=none latency=2626.3 ms
+[2026-11-04 17:52:17]   U07 unrelated  expect=miss MISS sim=0.3817 nearest=S03    2626.3 ms  TN
+[2026-11-04 17:52:17] 17:52:17.416 | s3209 CACHE    | MISS  best_sim=0.2970 -> HW8 agent pipeline
+[2026-11-04 17:52:20] 17:52:20.666 | s3209 CACHE    | DONE  review=approved version=none latency=3278.3 ms
+[2026-11-04 17:52:20]   U08 unrelated  expect=miss MISS sim=0.2970 nearest=S08    3278.3 ms  TN
+[2026-11-04 17:52:20] 17:52:20.685 | s3209 CACHE    | MISS  best_sim=0.0320 -> HW8 agent pipeline
+[2026-11-04 17:52:24] 17:52:24.040 | s3209 CACHE    | DONE  review=rejected version=none latency=3373.6 ms
+[2026-11-04 17:52:24]   U09 unrelated  expect=miss MISS sim=0.0320 nearest=S06    3373.6 ms  TN
+[2026-11-04 17:52:24] 17:52:24.185 | s3209 CACHE    | MISS  best_sim=0.0807 -> HW8 agent pipeline
+[2026-11-04 17:52:25] 17:52:25.784 | s3209 CACHE    | DONE  review=rejected version=none latency=1743.4 ms
+[2026-11-04 17:52:25]   U10 unrelated  expect=miss MISS sim=0.0807 nearest=S03    1743.4 ms  TN
+[2026-11-04 17:52:25] 
+[2026-11-04 17:52:25] === threshold 0.80 ===
+[2026-11-04 17:52:25] 17:52:25.810 | s3209 CACHE    | HIT   sim=1.0000 matched='What is the current status of trial NCT30565986?' latency=26.6 ms
+[2026-11-04 17:52:25]   E01 exact      expect=hit  HIT  sim=1.0000 nearest=S01      26.6 ms  TP
+[2026-11-04 17:52:25] 17:52:25.817 | s3209 CACHE    | HIT   sim=1.0000 matched='How many enrollment slots does trial NCT48236558 have?' latency=6.8 ms
+[2026-11-04 17:52:25]   E02 exact      expect=hit  HIT  sim=1.0000 nearest=S02       6.8 ms  TP
+[2026-11-04 17:52:25] 17:52:25.823 | s3209 CACHE    | HIT   sim=1.0000 matched='Which sponsor runs trial NCT72283365?' latency=5.9 ms
+[2026-11-04 17:52:25]   E03 exact      expect=hit  HIT  sim=1.0000 nearest=S03       5.9 ms  TP
+[2026-11-04 17:52:25] 17:52:25.828 | s3209 CACHE    | HIT   sim=1.0000 matched='What is the current status of trial NCT48236558?' latency=5.2 ms
+[2026-11-04 17:52:25]   E04 exact      expect=hit  HIT  sim=1.0000 nearest=S04       5.2 ms  TP
+[2026-11-04 17:52:25] 17:52:25.834 | s3209 CACHE    | HIT   sim=1.0000 matched='Which sponsor runs trial NCT55837001?' latency=5.7 ms
+[2026-11-04 17:52:25]   E05 exact      expect=hit  HIT  sim=1.0000 nearest=S05       5.7 ms  TP
+[2026-11-04 17:52:25] 17:52:25.840 | s3209 CACHE    | HIT   sim=1.0000 matched='How many enrollment slots does trial NCT51652013 have?' latency=6.0 ms
+[2026-11-04 17:52:25]   E06 exact      expect=hit  HIT  sim=1.0000 nearest=S06       6.0 ms  TP
+[2026-11-04 17:52:25] 17:52:25.846 | s3209 CACHE    | HIT   sim=1.0000 matched='What should a patient check before joining a recruiting Phase II clinical trial?' latency=5.9 ms
+[2026-11-04 17:52:25]   E07 exact      expect=hit  HIT  sim=1.0000 nearest=S07       5.9 ms  TP
+[2026-11-04 17:52:25] 17:52:25.851 | s3209 CACHE    | HIT   sim=1.0000 matched='What does a Terminated status mean for a clinical trial listing?' latency=4.8 ms
+[2026-11-04 17:52:25]   E08 exact      expect=hit  HIT  sim=1.0000 nearest=S08       4.8 ms  TP
+[2026-11-04 17:52:25] 17:52:25.856 | s3209 CACHE    | HIT   sim=1.0000 matched='What is the difference between a Phase II and a Phase III clinical trial?' latency=5.1 ms
+[2026-11-04 17:52:25]   E09 exact      expect=hit  HIT  sim=1.0000 nearest=S09       5.1 ms  TP
+[2026-11-04 17:52:25] 17:52:25.861 | s3209 CACHE    | HIT   sim=1.0000 matched='What does informed consent mean for a clinical trial participant?' latency=5.0 ms
+[2026-11-04 17:52:25]   E10 exact      expect=hit  HIT  sim=1.0000 nearest=S10       5.0 ms  TP
+[2026-11-04 17:52:25] 17:52:25.867 | s3209 CACHE    | HIT   sim=0.9124 matched='What is the current status of trial NCT30565986?' latency=5.7 ms
+[2026-11-04 17:52:25]   P01 paraphrase expect=hit  HIT  sim=0.9124 nearest=S01       5.7 ms  TP
+[2026-11-04 17:52:25] 17:52:25.872 | s3209 CACHE    | HIT   sim=0.9554 matched='How many enrollment slots does trial NCT48236558 have?' latency=5.3 ms
+[2026-11-04 17:52:25]   P02 paraphrase expect=hit  HIT  sim=0.9554 nearest=S02       5.3 ms  TP
+[2026-11-04 17:52:25] 17:52:25.878 | s3209 CACHE    | HIT   sim=0.9345 matched='Which sponsor runs trial NCT72283365?' latency=5.4 ms
+[2026-11-04 17:52:25]   P03 paraphrase expect=hit  HIT  sim=0.9345 nearest=S03       5.4 ms  TP
+[2026-11-04 17:52:25] 17:52:25.884 | s3209 CACHE    | HIT   sim=0.9672 matched='What is the current status of trial NCT48236558?' latency=6.0 ms
+[2026-11-04 17:52:25]   P04 paraphrase expect=hit  HIT  sim=0.9672 nearest=S04       6.0 ms  TP
+[2026-11-04 17:52:25] 17:52:25.888 | s3209 CACHE    | HIT   sim=0.8894 matched='Which sponsor runs trial NCT55837001?' latency=4.6 ms
+[2026-11-04 17:52:25]   P05 paraphrase expect=hit  HIT  sim=0.8894 nearest=S05       4.6 ms  TP
+[2026-11-04 17:52:25] 17:52:25.893 | s3209 CACHE    | HIT   sim=0.9535 matched='How many enrollment slots does trial NCT51652013 have?' latency=4.2 ms
+[2026-11-04 17:52:25]   P06 paraphrase expect=hit  HIT  sim=0.9535 nearest=S06       4.2 ms  TP
+[2026-11-04 17:52:25] 17:52:25.897 | s3209 CACHE    | HIT   sim=0.9544 matched='What should a patient check before joining a recruiting Phase II clinical trial?' latency=4.6 ms
+[2026-11-04 17:52:25]   P07 paraphrase expect=hit  HIT  sim=0.9544 nearest=S07       4.6 ms  TP
+[2026-11-04 17:52:25] 17:52:25.901 | s3209 CACHE    | HIT   sim=0.9306 matched='What does a Terminated status mean for a clinical trial listing?' latency=4.1 ms
+[2026-11-04 17:52:25]   P08 paraphrase expect=hit  HIT  sim=0.9306 nearest=S08       4.1 ms  TP
+[2026-11-04 17:52:25] 17:52:25.906 | s3209 CACHE    | HIT   sim=0.9647 matched='What is the difference between a Phase II and a Phase III clinical trial?' latency=4.4 ms
+[2026-11-04 17:52:25]   P09 paraphrase expect=hit  HIT  sim=0.9647 nearest=S09       4.4 ms  TP
+[2026-11-04 17:52:25] 17:52:25.910 | s3209 CACHE    | HIT   sim=0.9681 matched='What does informed consent mean for a clinical trial participant?' latency=4.3 ms
+[2026-11-04 17:52:25]   P10 paraphrase expect=hit  HIT  sim=0.9681 nearest=S10       4.3 ms  TP
+[2026-11-04 17:52:25] 17:52:25.915 | s3209 CACHE    | HIT   sim=0.9528 matched='What is the current status of trial NCT48236558?' latency=4.4 ms
+[2026-11-04 17:52:25]   D01 similar    expect=miss HIT  sim=0.9528 nearest=S04       4.4 ms  FALSE_HIT
+[2026-11-04 17:52:25] 17:52:25.919 | s3209 CACHE    | HIT   sim=0.9835 matched='How many enrollment slots does trial NCT48236558 have?' latency=4.2 ms
+[2026-11-04 17:52:25]   D02 similar    expect=miss HIT  sim=0.9835 nearest=S02       4.2 ms  FALSE_HIT
+[2026-11-04 17:52:25] 17:52:25.923 | s3209 CACHE    | HIT   sim=0.9823 matched='Which sponsor runs trial NCT72283365?' latency=4.0 ms
+[2026-11-04 17:52:25]   D03 similar    expect=miss HIT  sim=0.9823 nearest=S03       4.0 ms  FALSE_HIT
+[2026-11-04 17:52:25] 17:52:25.927 | s3209 CACHE    | HIT   sim=0.9484 matched='What is the current status of trial NCT48236558?' latency=4.2 ms
+[2026-11-04 17:52:25]   D04 similar    expect=miss HIT  sim=0.9484 nearest=S04       4.2 ms  FALSE_HIT
+[2026-11-04 17:52:25] 17:52:25.931 | s3209 CACHE    | HIT   sim=0.9824 matched='Which sponsor runs trial NCT72283365?' latency=4.2 ms
+[2026-11-04 17:52:25]   D05 similar    expect=miss HIT  sim=0.9824 nearest=S03       4.2 ms  FALSE_HIT
+[2026-11-04 17:52:25] 17:52:25.936 | s3209 CACHE    | HIT   sim=0.9746 matched='How many enrollment slots does trial NCT48236558 have?' latency=4.8 ms
+[2026-11-04 17:52:25]   D06 similar    expect=miss HIT  sim=0.9746 nearest=S02       4.8 ms  FALSE_HIT
+[2026-11-04 17:52:25] 17:52:25.940 | s3209 CACHE    | HIT   sim=0.9483 matched='What should a patient check before joining a recruiting Phase II clinical trial?' latency=4.2 ms
+[2026-11-04 17:52:25]   D07 similar    expect=miss HIT  sim=0.9483 nearest=S07       4.2 ms  FALSE_HIT
+[2026-11-04 17:52:25] 17:52:25.945 | s3209 CACHE    | HIT   sim=0.8412 matched='What does a Terminated status mean for a clinical trial listing?' latency=4.2 ms
+[2026-11-04 17:52:25]   D08 similar    expect=miss HIT  sim=0.8412 nearest=S08       4.2 ms  FALSE_HIT
+[2026-11-04 17:52:25] 17:52:25.949 | s3209 CACHE    | HIT   sim=0.9563 matched='What is the difference between a Phase II and a Phase III clinical trial?' latency=4.3 ms
+[2026-11-04 17:52:25]   D09 similar    expect=miss HIT  sim=0.9563 nearest=S09       4.3 ms  FALSE_HIT
+[2026-11-04 17:52:25] 17:52:25.953 | s3209 CACHE    | MISS  best_sim=0.7071 -> HW8 agent pipeline
+[2026-11-04 17:52:29] 17:52:29.805 | s3209 CACHE    | DONE  review=approved version=none latency=3855.6 ms
+[2026-11-04 17:52:29]   D10 similar    expect=miss MISS sim=0.7071 nearest=S08    3855.6 ms  TN
+[2026-11-04 17:52:29] 17:52:29.830 | s3209 CACHE    | MISS  best_sim=0.4129 -> HW8 agent pipeline
+[2026-11-04 17:52:32] 17:52:32.594 | s3209 CACHE    | DONE  review=approved version=none latency=2788.9 ms
+[2026-11-04 17:52:32]   U01 unrelated  expect=miss MISS sim=0.4129 nearest=S02    2788.9 ms  TN
+[2026-11-04 17:52:32] 17:52:32.618 | s3209 CACHE    | MISS  best_sim=0.2601 -> HW8 agent pipeline
+[2026-11-04 17:52:35] 17:52:35.276 | s3209 CACHE    | DONE  review=rejected version=none latency=2682.3 ms
+[2026-11-04 17:52:35]   U02 unrelated  expect=miss MISS sim=0.2601 nearest=S02    2682.3 ms  TN
+[2026-11-04 17:52:35] 17:52:35.301 | s3209 CACHE    | MISS  best_sim=0.3602 -> HW8 agent pipeline
+[2026-11-04 17:52:38] 17:52:38.663 | s3209 CACHE    | DONE  review=approved version=none latency=3386.9 ms
+[2026-11-04 17:52:38]   U03 unrelated  expect=miss MISS sim=0.3602 nearest=S03    3386.9 ms  TN
+[2026-11-04 17:52:38] 17:52:38.683 | s3209 CACHE    | MISS  best_sim=0.5265 -> HW8 agent pipeline
+[2026-11-04 17:52:41] 17:52:41.836 | s3209 CACHE    | DONE  review=approved version=none latency=3173.3 ms
+[2026-11-04 17:52:41]   U04 unrelated  expect=miss MISS sim=0.5265 nearest=S03    3173.3 ms  TN
+[2026-11-04 17:52:41] 17:52:41.862 | s3209 CACHE    | MISS  best_sim=0.0642 -> HW8 agent pipeline
+[2026-11-04 17:52:44] 17:52:44.583 | s3209 CACHE    | DONE  review=approved version=none latency=2746.1 ms
+[2026-11-04 17:52:44]   U05 unrelated  expect=miss MISS sim=0.0642 nearest=S01    2746.1 ms  TN
+[2026-11-04 17:52:44] 17:52:44.608 | s3209 CACHE    | MISS  best_sim=0.6181 -> HW8 agent pipeline
+[2026-11-04 17:52:46] 17:52:46.406 | s3209 CACHE    | DONE  review=rejected version=none latency=1822.8 ms
+[2026-11-04 17:52:46]   U06 unrelated  expect=miss MISS sim=0.6181 nearest=S02    1822.8 ms  TN
+[2026-11-04 17:52:46] 17:52:46.428 | s3209 CACHE    | MISS  best_sim=0.3817 -> HW8 agent pipeline
+[2026-11-04 17:52:48] 17:52:48.625 | s3209 CACHE    | DONE  review=rejected version=none latency=2219.1 ms
+[2026-11-04 17:52:48]   U07 unrelated  expect=miss MISS sim=0.3817 nearest=S03    2219.1 ms  TN
+[2026-11-04 17:52:48] 17:52:48.642 | s3209 CACHE    | MISS  best_sim=0.2970 -> HW8 agent pipeline
+[2026-11-04 17:52:51] 17:52:51.888 | s3209 CACHE    | DONE  review=approved version=none latency=3263.7 ms
+[2026-11-04 17:52:51]   U08 unrelated  expect=miss MISS sim=0.2970 nearest=S08    3263.7 ms  TN
+[2026-11-04 17:52:51] 17:52:51.914 | s3209 CACHE    | MISS  best_sim=0.0320 -> HW8 agent pipeline
+[2026-11-04 17:52:55] 17:52:55.266 | s3209 CACHE    | DONE  review=rejected version=none latency=3377.3 ms
+[2026-11-04 17:52:55]   U09 unrelated  expect=miss MISS sim=0.0320 nearest=S06    3377.3 ms  TN
+[2026-11-04 17:52:55] 17:52:55.285 | s3209 CACHE    | MISS  best_sim=0.0807 -> HW8 agent pipeline
+[2026-11-04 17:52:56] 17:52:56.862 | s3209 CACHE    | DONE  review=rejected version=none latency=1596.6 ms
+[2026-11-04 17:52:56]   U10 unrelated  expect=miss MISS sim=0.0807 nearest=S03    1596.6 ms  TN
+[2026-11-04 17:52:56] 
+[2026-11-04 17:52:56] === threshold 0.85 ===
+[2026-11-04 17:52:56] 17:52:56.890 | s3209 CACHE    | HIT   sim=1.0000 matched='What is the current status of trial NCT30565986?' latency=27.6 ms
+[2026-11-04 17:52:56]   E01 exact      expect=hit  HIT  sim=1.0000 nearest=S01      27.6 ms  TP
+[2026-11-04 17:52:56] 17:52:56.897 | s3209 CACHE    | HIT   sim=1.0000 matched='How many enrollment slots does trial NCT48236558 have?' latency=6.5 ms
+[2026-11-04 17:52:56]   E02 exact      expect=hit  HIT  sim=1.0000 nearest=S02       6.5 ms  TP
+[2026-11-04 17:52:56] 17:52:56.903 | s3209 CACHE    | HIT   sim=1.0000 matched='Which sponsor runs trial NCT72283365?' latency=5.8 ms
+[2026-11-04 17:52:56]   E03 exact      expect=hit  HIT  sim=1.0000 nearest=S03       5.8 ms  TP
+[2026-11-04 17:52:56] 17:52:56.908 | s3209 CACHE    | HIT   sim=1.0000 matched='What is the current status of trial NCT48236558?' latency=5.6 ms
+[2026-11-04 17:52:56]   E04 exact      expect=hit  HIT  sim=1.0000 nearest=S04       5.6 ms  TP
+[2026-11-04 17:52:56] 17:52:56.914 | s3209 CACHE    | HIT   sim=1.0000 matched='Which sponsor runs trial NCT55837001?' latency=5.7 ms
+[2026-11-04 17:52:56]   E05 exact      expect=hit  HIT  sim=1.0000 nearest=S05       5.7 ms  TP
+[2026-11-04 17:52:56] 17:52:56.919 | s3209 CACHE    | HIT   sim=1.0000 matched='How many enrollment slots does trial NCT51652013 have?' latency=5.5 ms
+[2026-11-04 17:52:56]   E06 exact      expect=hit  HIT  sim=1.0000 nearest=S06       5.5 ms  TP
+[2026-11-04 17:52:56] 17:52:56.926 | s3209 CACHE    | HIT   sim=1.0000 matched='What should a patient check before joining a recruiting Phase II clinical trial?' latency=6.0 ms
+[2026-11-04 17:52:56]   E07 exact      expect=hit  HIT  sim=1.0000 nearest=S07       6.0 ms  TP
+[2026-11-04 17:52:56] 17:52:56.932 | s3209 CACHE    | HIT   sim=1.0000 matched='What does a Terminated status mean for a clinical trial listing?' latency=6.0 ms
+[2026-11-04 17:52:56]   E08 exact      expect=hit  HIT  sim=1.0000 nearest=S08       6.0 ms  TP
+[2026-11-04 17:52:56] 17:52:56.937 | s3209 CACHE    | HIT   sim=1.0000 matched='What is the difference between a Phase II and a Phase III clinical trial?' latency=5.3 ms
+[2026-11-04 17:52:56]   E09 exact      expect=hit  HIT  sim=1.0000 nearest=S09       5.3 ms  TP
+[2026-11-04 17:52:56] 17:52:56.942 | s3209 CACHE    | HIT   sim=1.0000 matched='What does informed consent mean for a clinical trial participant?' latency=5.3 ms
+[2026-11-04 17:52:56]   E10 exact      expect=hit  HIT  sim=1.0000 nearest=S10       5.3 ms  TP
+[2026-11-04 17:52:56] 17:52:56.947 | s3209 CACHE    | HIT   sim=0.9124 matched='What is the current status of trial NCT30565986?' latency=5.2 ms
+[2026-11-04 17:52:56]   P01 paraphrase expect=hit  HIT  sim=0.9124 nearest=S01       5.2 ms  TP
+[2026-11-04 17:52:56] 17:52:56.952 | s3209 CACHE    | HIT   sim=0.9554 matched='How many enrollment slots does trial NCT48236558 have?' latency=4.6 ms
+[2026-11-04 17:52:56]   P02 paraphrase expect=hit  HIT  sim=0.9554 nearest=S02       4.6 ms  TP
+[2026-11-04 17:52:56] 17:52:56.957 | s3209 CACHE    | HIT   sim=0.9345 matched='Which sponsor runs trial NCT72283365?' latency=4.6 ms
+[2026-11-04 17:52:56]   P03 paraphrase expect=hit  HIT  sim=0.9345 nearest=S03       4.6 ms  TP
+[2026-11-04 17:52:56] 17:52:56.962 | s3209 CACHE    | HIT   sim=0.9672 matched='What is the current status of trial NCT48236558?' latency=4.8 ms
+[2026-11-04 17:52:56]   P04 paraphrase expect=hit  HIT  sim=0.9672 nearest=S04       4.8 ms  TP
+[2026-11-04 17:52:56] 17:52:56.967 | s3209 CACHE    | HIT   sim=0.8894 matched='Which sponsor runs trial NCT55837001?' latency=4.9 ms
+[2026-11-04 17:52:56]   P05 paraphrase expect=hit  HIT  sim=0.8894 nearest=S05       4.9 ms  TP
+[2026-11-04 17:52:56] 17:52:56.972 | s3209 CACHE    | HIT   sim=0.9535 matched='How many enrollment slots does trial NCT51652013 have?' latency=5.0 ms
+[2026-11-04 17:52:56]   P06 paraphrase expect=hit  HIT  sim=0.9535 nearest=S06       5.0 ms  TP
+[2026-11-04 17:52:56] 17:52:56.978 | s3209 CACHE    | HIT   sim=0.9544 matched='What should a patient check before joining a recruiting Phase II clinical trial?' latency=6.0 ms
+[2026-11-04 17:52:56]   P07 paraphrase expect=hit  HIT  sim=0.9544 nearest=S07       6.0 ms  TP
+[2026-11-04 17:52:56] 17:52:56.983 | s3209 CACHE    | HIT   sim=0.9306 matched='What does a Terminated status mean for a clinical trial listing?' latency=5.3 ms
+[2026-11-04 17:52:56]   P08 paraphrase expect=hit  HIT  sim=0.9306 nearest=S08       5.3 ms  TP
+[2026-11-04 17:52:56] 17:52:56.988 | s3209 CACHE    | HIT   sim=0.9647 matched='What is the difference between a Phase II and a Phase III clinical trial?' latency=4.8 ms
+[2026-11-04 17:52:56]   P09 paraphrase expect=hit  HIT  sim=0.9647 nearest=S09       4.8 ms  TP
+[2026-11-04 17:52:56] 17:52:56.992 | s3209 CACHE    | HIT   sim=0.9681 matched='What does informed consent mean for a clinical trial participant?' latency=4.2 ms
+[2026-11-04 17:52:56]   P10 paraphrase expect=hit  HIT  sim=0.9681 nearest=S10       4.2 ms  TP
+[2026-11-04 17:52:56] 17:52:56.997 | s3209 CACHE    | HIT   sim=0.9528 matched='What is the current status of trial NCT48236558?' latency=4.7 ms
+[2026-11-04 17:52:56]   D01 similar    expect=miss HIT  sim=0.9528 nearest=S04       4.7 ms  FALSE_HIT
+[2026-11-04 17:52:57] 17:52:57.001 | s3209 CACHE    | HIT   sim=0.9835 matched='How many enrollment slots does trial NCT48236558 have?' latency=4.4 ms
+[2026-11-04 17:52:57]   D02 similar    expect=miss HIT  sim=0.9835 nearest=S02       4.4 ms  FALSE_HIT
+[2026-11-04 17:52:57] 17:52:57.005 | s3209 CACHE    | HIT   sim=0.9823 matched='Which sponsor runs trial NCT72283365?' latency=4.0 ms
+[2026-11-04 17:52:57]   D03 similar    expect=miss HIT  sim=0.9823 nearest=S03       4.0 ms  FALSE_HIT
+[2026-11-04 17:52:57] 17:52:57.010 | s3209 CACHE    | HIT   sim=0.9484 matched='What is the current status of trial NCT48236558?' latency=4.1 ms
+[2026-11-04 17:52:57]   D04 similar    expect=miss HIT  sim=0.9484 nearest=S04       4.1 ms  FALSE_HIT
+[2026-11-04 17:52:57] 17:52:57.014 | s3209 CACHE    | HIT   sim=0.9824 matched='Which sponsor runs trial NCT72283365?' latency=4.1 ms
+[2026-11-04 17:52:57]   D05 similar    expect=miss HIT  sim=0.9824 nearest=S03       4.1 ms  FALSE_HIT
+[2026-11-04 17:52:57] 17:52:57.018 | s3209 CACHE    | HIT   sim=0.9746 matched='How many enrollment slots does trial NCT48236558 have?' latency=4.1 ms
+[2026-11-04 17:52:57]   D06 similar    expect=miss HIT  sim=0.9746 nearest=S02       4.1 ms  FALSE_HIT
+[2026-11-04 17:52:57] 17:52:57.022 | s3209 CACHE    | HIT   sim=0.9483 matched='What should a patient check before joining a recruiting Phase II clinical trial?' latency=3.9 ms
+[2026-11-04 17:52:57]   D07 similar    expect=miss HIT  sim=0.9483 nearest=S07       3.9 ms  FALSE_HIT
+[2026-11-04 17:52:57] 17:52:57.026 | s3209 CACHE    | MISS  best_sim=0.8412 -> HW8 agent pipeline
+[2026-11-04 17:52:59] 17:52:59.595 | s3209 CACHE    | DONE  review=approved version=none latency=2573.4 ms
+[2026-11-04 17:52:59]   D08 similar    expect=miss MISS sim=0.8412 nearest=S08    2573.4 ms  TN
+[2026-11-04 17:52:59] 17:52:59.622 | s3209 CACHE    | HIT   sim=0.9563 matched='What is the difference between a Phase II and a Phase III clinical trial?' latency=26.1 ms
+[2026-11-04 17:52:59]   D09 similar    expect=miss HIT  sim=0.9563 nearest=S09      26.1 ms  FALSE_HIT
+[2026-11-04 17:52:59] 17:52:59.627 | s3209 CACHE    | MISS  best_sim=0.7071 -> HW8 agent pipeline
+[2026-11-04 17:53:03] 17:53:03.503 | s3209 CACHE    | DONE  review=approved version=none latency=3881.4 ms
+[2026-11-04 17:53:03]   D10 similar    expect=miss MISS sim=0.7071 nearest=S08    3881.4 ms  TN
+[2026-11-04 17:53:03] 17:53:03.527 | s3209 CACHE    | MISS  best_sim=0.4129 -> HW8 agent pipeline
+[2026-11-04 17:53:06] 17:53:06.283 | s3209 CACHE    | DONE  review=approved version=none latency=2780.0 ms
+[2026-11-04 17:53:06]   U01 unrelated  expect=miss MISS sim=0.4129 nearest=S02    2780.0 ms  TN
+[2026-11-04 17:53:06] 17:53:06.310 | s3209 CACHE    | MISS  best_sim=0.2601 -> HW8 agent pipeline
+[2026-11-04 17:53:08] 17:53:08.972 | s3209 CACHE    | DONE  review=rejected version=none latency=2689.3 ms
+[2026-11-04 17:53:08]   U02 unrelated  expect=miss MISS sim=0.2601 nearest=S02    2689.3 ms  TN
+[2026-11-04 17:53:08] 17:53:08.998 | s3209 CACHE    | MISS  best_sim=0.3602 -> HW8 agent pipeline
+[2026-11-04 17:53:12] 17:53:12.351 | s3209 CACHE    | DONE  review=approved version=none latency=3378.4 ms
+[2026-11-04 17:53:12]   U03 unrelated  expect=miss MISS sim=0.3602 nearest=S03    3378.4 ms  TN
+[2026-11-04 17:53:12] 17:53:12.370 | s3209 CACHE    | MISS  best_sim=0.5265 -> HW8 agent pipeline
+[2026-11-04 17:53:15] 17:53:15.520 | s3209 CACHE    | DONE  review=approved version=none latency=3169.0 ms
+[2026-11-04 17:53:15]   U04 unrelated  expect=miss MISS sim=0.5265 nearest=S03    3169.0 ms  TN
+[2026-11-04 17:53:15] 17:53:15.540 | s3209 CACHE    | MISS  best_sim=0.0642 -> HW8 agent pipeline
+[2026-11-04 17:53:18] 17:53:18.256 | s3209 CACHE    | DONE  review=approved version=none latency=2735.9 ms
+[2026-11-04 17:53:18]   U05 unrelated  expect=miss MISS sim=0.0642 nearest=S01    2735.9 ms  TN
+[2026-11-04 17:53:18] 17:53:18.274 | s3209 CACHE    | MISS  best_sim=0.6181 -> HW8 agent pipeline
+[2026-11-04 17:53:20] 17:53:20.080 | s3209 CACHE    | DONE  review=rejected version=none latency=1823.8 ms
+[2026-11-04 17:53:20]   U06 unrelated  expect=miss MISS sim=0.6181 nearest=S02    1823.8 ms  TN
+[2026-11-04 17:53:20] 17:53:20.104 | s3209 CACHE    | MISS  best_sim=0.3817 -> HW8 agent pipeline
+[2026-11-04 17:53:22] 17:53:22.304 | s3209 CACHE    | DONE  review=rejected version=none latency=2224.4 ms
+[2026-11-04 17:53:22]   U07 unrelated  expect=miss MISS sim=0.3817 nearest=S03    2224.4 ms  TN
+[2026-11-04 17:53:22] 17:53:22.332 | s3209 CACHE    | MISS  best_sim=0.2970 -> HW8 agent pipeline
+[2026-11-04 17:53:25] 17:53:25.587 | s3209 CACHE    | DONE  review=approved version=none latency=3283.0 ms
+[2026-11-04 17:53:25]   U08 unrelated  expect=miss MISS sim=0.2970 nearest=S08    3283.0 ms  TN
+[2026-11-04 17:53:25] 17:53:25.611 | s3209 CACHE    | MISS  best_sim=0.0320 -> HW8 agent pipeline
+[2026-11-04 17:53:28] 17:53:28.961 | s3209 CACHE    | DONE  review=rejected version=none latency=3373.2 ms
+[2026-11-04 17:53:28]   U09 unrelated  expect=miss MISS sim=0.0320 nearest=S06    3373.2 ms  TN
+[2026-11-04 17:53:28] 17:53:28.986 | s3209 CACHE    | MISS  best_sim=0.0807 -> HW8 agent pipeline
+[2026-11-04 17:53:30] 17:53:30.564 | s3209 CACHE    | DONE  review=rejected version=none latency=1602.9 ms
+[2026-11-04 17:53:30]   U10 unrelated  expect=miss MISS sim=0.0807 nearest=S03    1602.9 ms  TN
+[2026-11-04 17:53:30] 
+[2026-11-04 17:53:30] === threshold 0.90 ===
+[2026-11-04 17:53:30] 17:53:30.582 | s3209 CACHE    | HIT   sim=1.0000 matched='What is the current status of trial NCT30565986?' latency=17.9 ms
+[2026-11-04 17:53:30]   E01 exact      expect=hit  HIT  sim=1.0000 nearest=S01      17.9 ms  TP
+[2026-11-04 17:53:30] 17:53:30.587 | s3209 CACHE    | HIT   sim=1.0000 matched='How many enrollment slots does trial NCT48236558 have?' latency=5.7 ms
+[2026-11-04 17:53:30]   E02 exact      expect=hit  HIT  sim=1.0000 nearest=S02       5.7 ms  TP
+[2026-11-04 17:53:30] 17:53:30.592 | s3209 CACHE    | HIT   sim=1.0000 matched='Which sponsor runs trial NCT72283365?' latency=5.2 ms
+[2026-11-04 17:53:30]   E03 exact      expect=hit  HIT  sim=1.0000 nearest=S03       5.2 ms  TP
+[2026-11-04 17:53:30] 17:53:30.598 | s3209 CACHE    | HIT   sim=1.0000 matched='What is the current status of trial NCT48236558?' latency=5.6 ms
+[2026-11-04 17:53:30]   E04 exact      expect=hit  HIT  sim=1.0000 nearest=S04       5.6 ms  TP
+[2026-11-04 17:53:30] 17:53:30.603 | s3209 CACHE    | HIT   sim=1.0000 matched='Which sponsor runs trial NCT55837001?' latency=4.9 ms
+[2026-11-04 17:53:30]   E05 exact      expect=hit  HIT  sim=1.0000 nearest=S05       4.9 ms  TP
+[2026-11-04 17:53:30] 17:53:30.608 | s3209 CACHE    | HIT   sim=1.0000 matched='How many enrollment slots does trial NCT51652013 have?' latency=5.2 ms
+[2026-11-04 17:53:30]   E06 exact      expect=hit  HIT  sim=1.0000 nearest=S06       5.2 ms  TP
+[2026-11-04 17:53:30] 17:53:30.613 | s3209 CACHE    | HIT   sim=1.0000 matched='What should a patient check before joining a recruiting Phase II clinical trial?' latency=5.1 ms
+[2026-11-04 17:53:30]   E07 exact      expect=hit  HIT  sim=1.0000 nearest=S07       5.1 ms  TP
+[2026-11-04 17:53:30] 17:53:30.618 | s3209 CACHE    | HIT   sim=1.0000 matched='What does a Terminated status mean for a clinical trial listing?' latency=4.8 ms
+[2026-11-04 17:53:30]   E08 exact      expect=hit  HIT  sim=1.0000 nearest=S08       4.8 ms  TP
+[2026-11-04 17:53:30] 17:53:30.623 | s3209 CACHE    | HIT   sim=1.0000 matched='What is the difference between a Phase II and a Phase III clinical trial?' latency=5.2 ms
+[2026-11-04 17:53:30]   E09 exact      expect=hit  HIT  sim=1.0000 nearest=S09       5.2 ms  TP
+[2026-11-04 17:53:30] 17:53:30.628 | s3209 CACHE    | HIT   sim=1.0000 matched='What does informed consent mean for a clinical trial participant?' latency=4.5 ms
+[2026-11-04 17:53:30]   E10 exact      expect=hit  HIT  sim=1.0000 nearest=S10       4.5 ms  TP
+[2026-11-04 17:53:30] 17:53:30.633 | s3209 CACHE    | HIT   sim=0.9124 matched='What is the current status of trial NCT30565986?' latency=4.9 ms
+[2026-11-04 17:53:30]   P01 paraphrase expect=hit  HIT  sim=0.9124 nearest=S01       4.9 ms  TP
+[2026-11-04 17:53:30] 17:53:30.637 | s3209 CACHE    | HIT   sim=0.9554 matched='How many enrollment slots does trial NCT48236558 have?' latency=4.5 ms
+[2026-11-04 17:53:30]   P02 paraphrase expect=hit  HIT  sim=0.9554 nearest=S02       4.5 ms  TP
+[2026-11-04 17:53:30] 17:53:30.643 | s3209 CACHE    | HIT   sim=0.9345 matched='Which sponsor runs trial NCT72283365?' latency=5.2 ms
+[2026-11-04 17:53:30]   P03 paraphrase expect=hit  HIT  sim=0.9345 nearest=S03       5.2 ms  TP
+[2026-11-04 17:53:30] 17:53:30.648 | s3209 CACHE    | HIT   sim=0.9672 matched='What is the current status of trial NCT48236558?' latency=5.2 ms
+[2026-11-04 17:53:30]   P04 paraphrase expect=hit  HIT  sim=0.9672 nearest=S04       5.2 ms  TP
+[2026-11-04 17:53:30] 17:53:30.652 | s3209 CACHE    | MISS  best_sim=0.8894 -> HW8 agent pipeline
+[2026-11-04 17:53:32] 17:53:32.964 | s3209 CACHE    | DONE  review=rejected version=6@27473332 latency=2316.1 ms
+[2026-11-04 17:53:32]   P05 paraphrase expect=hit  MISS sim=0.8894 nearest=S05    2316.1 ms  FALSE_MISS
+[2026-11-04 17:53:32] 17:53:32.990 | s3209 CACHE    | HIT   sim=0.9535 matched='How many enrollment slots does trial NCT51652013 have?' latency=25.5 ms
+[2026-11-04 17:53:32]   P06 paraphrase expect=hit  HIT  sim=0.9535 nearest=S06      25.5 ms  TP
+[2026-11-04 17:53:32] 17:53:32.996 | s3209 CACHE    | HIT   sim=0.9544 matched='What should a patient check before joining a recruiting Phase II clinical trial?' latency=6.7 ms
+[2026-11-04 17:53:32]   P07 paraphrase expect=hit  HIT  sim=0.9544 nearest=S07       6.7 ms  TP
+[2026-11-04 17:53:33] 17:53:33.002 | s3209 CACHE    | HIT   sim=0.9306 matched='What does a Terminated status mean for a clinical trial listing?' latency=5.5 ms
+[2026-11-04 17:53:33]   P08 paraphrase expect=hit  HIT  sim=0.9306 nearest=S08       5.5 ms  TP
+[2026-11-04 17:53:33] 17:53:33.008 | s3209 CACHE    | HIT   sim=0.9647 matched='What is the difference between a Phase II and a Phase III clinical trial?' latency=6.4 ms
+[2026-11-04 17:53:33]   P09 paraphrase expect=hit  HIT  sim=0.9647 nearest=S09       6.4 ms  TP
+[2026-11-04 17:53:33] 17:53:33.015 | s3209 CACHE    | HIT   sim=0.9681 matched='What does informed consent mean for a clinical trial participant?' latency=6.4 ms
+[2026-11-04 17:53:33]   P10 paraphrase expect=hit  HIT  sim=0.9681 nearest=S10       6.4 ms  TP
+[2026-11-04 17:53:33] 17:53:33.021 | s3209 CACHE    | HIT   sim=0.9528 matched='What is the current status of trial NCT48236558?' latency=5.9 ms
+[2026-11-04 17:53:33]   D01 similar    expect=miss HIT  sim=0.9528 nearest=S04       5.9 ms  FALSE_HIT
+[2026-11-04 17:53:33] 17:53:33.026 | s3209 CACHE    | HIT   sim=0.9835 matched='How many enrollment slots does trial NCT48236558 have?' latency=5.4 ms
+[2026-11-04 17:53:33]   D02 similar    expect=miss HIT  sim=0.9835 nearest=S02       5.4 ms  FALSE_HIT
+[2026-11-04 17:53:33] 17:53:33.031 | s3209 CACHE    | HIT   sim=0.9823 matched='Which sponsor runs trial NCT72283365?' latency=4.4 ms
+[2026-11-04 17:53:33]   D03 similar    expect=miss HIT  sim=0.9823 nearest=S03       4.4 ms  FALSE_HIT
+[2026-11-04 17:53:33] 17:53:33.036 | s3209 CACHE    | HIT   sim=0.9484 matched='What is the current status of trial NCT48236558?' latency=5.1 ms
+[2026-11-04 17:53:33]   D04 similar    expect=miss HIT  sim=0.9484 nearest=S04       5.1 ms  FALSE_HIT
+[2026-11-04 17:53:33] 17:53:33.040 | s3209 CACHE    | HIT   sim=0.9824 matched='Which sponsor runs trial NCT72283365?' latency=4.6 ms
+[2026-11-04 17:53:33]   D05 similar    expect=miss HIT  sim=0.9824 nearest=S03       4.6 ms  FALSE_HIT
+[2026-11-04 17:53:33] 17:53:33.047 | s3209 CACHE    | HIT   sim=0.9746 matched='How many enrollment slots does trial NCT48236558 have?' latency=6.4 ms
+[2026-11-04 17:53:33]   D06 similar    expect=miss HIT  sim=0.9746 nearest=S02       6.4 ms  FALSE_HIT
+[2026-11-04 17:53:33] 17:53:33.053 | s3209 CACHE    | HIT   sim=0.9483 matched='What should a patient check before joining a recruiting Phase II clinical trial?' latency=5.9 ms
+[2026-11-04 17:53:33]   D07 similar    expect=miss HIT  sim=0.9483 nearest=S07       5.9 ms  FALSE_HIT
+[2026-11-04 17:53:33] 17:53:33.059 | s3209 CACHE    | MISS  best_sim=0.8412 -> HW8 agent pipeline
+[2026-11-04 17:53:35] 17:53:35.594 | s3209 CACHE    | DONE  review=approved version=none latency=2541.5 ms
+[2026-11-04 17:53:35]   D08 similar    expect=miss MISS sim=0.8412 nearest=S08    2541.5 ms  TN
+[2026-11-04 17:53:35] 17:53:35.616 | s3209 CACHE    | HIT   sim=0.9563 matched='What is the difference between a Phase II and a Phase III clinical trial?' latency=21.8 ms
+[2026-11-04 17:53:35]   D09 similar    expect=miss HIT  sim=0.9563 nearest=S09      21.8 ms  FALSE_HIT
+[2026-11-04 17:53:35] 17:53:35.622 | s3209 CACHE    | MISS  best_sim=0.7071 -> HW8 agent pipeline
+[2026-11-04 17:53:39] 17:53:39.459 | s3209 CACHE    | DONE  review=approved version=none latency=3842.5 ms
+[2026-11-04 17:53:39]   D10 similar    expect=miss MISS sim=0.7071 nearest=S08    3842.5 ms  TN
+[2026-11-04 17:53:39] 17:53:39.484 | s3209 CACHE    | MISS  best_sim=0.4129 -> HW8 agent pipeline
+[2026-11-04 17:53:42] 17:53:42.243 | s3209 CACHE    | DONE  review=approved version=none latency=2783.7 ms
+[2026-11-04 17:53:42]   U01 unrelated  expect=miss MISS sim=0.4129 nearest=S02    2783.7 ms  TN
+[2026-11-04 17:53:42] 17:53:42.270 | s3209 CACHE    | MISS  best_sim=0.2601 -> HW8 agent pipeline
+[2026-11-04 17:53:44] 17:53:44.921 | s3209 CACHE    | DONE  review=rejected version=none latency=2678.4 ms
+[2026-11-04 17:53:44]   U02 unrelated  expect=miss MISS sim=0.2601 nearest=S02    2678.4 ms  TN
+[2026-11-04 17:53:44] 17:53:44.947 | s3209 CACHE    | MISS  best_sim=0.3602 -> HW8 agent pipeline
+[2026-11-04 17:53:48] 17:53:48.309 | s3209 CACHE    | DONE  review=approved version=none latency=3387.4 ms
+[2026-11-04 17:53:48]   U03 unrelated  expect=miss MISS sim=0.3602 nearest=S03    3387.4 ms  TN
+[2026-11-04 17:53:48] 17:53:48.333 | s3209 CACHE    | MISS  best_sim=0.5265 -> HW8 agent pipeline
+[2026-11-04 17:53:51] 17:53:51.496 | s3209 CACHE    | DONE  review=approved version=none latency=3187.2 ms
+[2026-11-04 17:53:51]   U04 unrelated  expect=miss MISS sim=0.5265 nearest=S03    3187.2 ms  TN
+[2026-11-04 17:53:51] 17:53:51.521 | s3209 CACHE    | MISS  best_sim=0.0642 -> HW8 agent pipeline
+[2026-11-04 17:53:54] 17:53:54.262 | s3209 CACHE    | DONE  review=approved version=none latency=2766.1 ms
+[2026-11-04 17:53:54]   U05 unrelated  expect=miss MISS sim=0.0642 nearest=S01    2766.1 ms  TN
+[2026-11-04 17:53:54] 17:53:54.289 | s3209 CACHE    | MISS  best_sim=0.6181 -> HW8 agent pipeline
+[2026-11-04 17:53:56] 17:53:56.112 | s3209 CACHE    | DONE  review=rejected version=none latency=1849.4 ms
+[2026-11-04 17:53:56]   U06 unrelated  expect=miss MISS sim=0.6181 nearest=S02    1849.4 ms  TN
+[2026-11-04 17:53:56] 17:53:56.137 | s3209 CACHE    | MISS  best_sim=0.3817 -> HW8 agent pipeline
+[2026-11-04 17:53:58] 17:53:58.351 | s3209 CACHE    | DONE  review=rejected version=none latency=2239.5 ms
+[2026-11-04 17:53:58]   U07 unrelated  expect=miss MISS sim=0.3817 nearest=S03    2239.5 ms  TN
+[2026-11-04 17:53:58] 17:53:58.376 | s3209 CACHE    | MISS  best_sim=0.2970 -> HW8 agent pipeline
+[2026-11-04 17:54:01] 17:54:01.633 | s3209 CACHE    | DONE  review=approved version=none latency=3282.1 ms
+[2026-11-04 17:54:01]   U08 unrelated  expect=miss MISS sim=0.2970 nearest=S08    3282.1 ms  TN
+[2026-11-04 17:54:01] 17:54:01.659 | s3209 CACHE    | MISS  best_sim=0.0320 -> HW8 agent pipeline
+[2026-11-04 17:54:05] 17:54:05.029 | s3209 CACHE    | DONE  review=rejected version=none latency=3395.6 ms
+[2026-11-04 17:54:05]   U09 unrelated  expect=miss MISS sim=0.0320 nearest=S06    3395.6 ms  TN
+[2026-11-04 17:54:05] 17:54:05.054 | s3209 CACHE    | MISS  best_sim=0.0807 -> HW8 agent pipeline
+[2026-11-04 17:54:06] 17:54:06.634 | s3209 CACHE    | DONE  review=rejected version=none latency=1604.3 ms
+[2026-11-04 17:54:06]   U10 unrelated  expect=miss MISS sim=0.0807 nearest=S03    1604.3 ms  TN
+[2026-11-04 17:54:06] 
+[2026-11-04 17:54:06] === threshold 0.95 ===
+[2026-11-04 17:54:06] 17:54:06.659 | s3209 CACHE    | HIT   sim=1.0000 matched='What is the current status of trial NCT30565986?' latency=25.6 ms
+[2026-11-04 17:54:06]   E01 exact      expect=hit  HIT  sim=1.0000 nearest=S01      25.6 ms  TP
+[2026-11-04 17:54:06] 17:54:06.666 | s3209 CACHE    | HIT   sim=1.0000 matched='How many enrollment slots does trial NCT48236558 have?' latency=6.8 ms
+[2026-11-04 17:54:06]   E02 exact      expect=hit  HIT  sim=1.0000 nearest=S02       6.8 ms  TP
+[2026-11-04 17:54:06] 17:54:06.672 | s3209 CACHE    | HIT   sim=1.0000 matched='Which sponsor runs trial NCT72283365?' latency=6.1 ms
+[2026-11-04 17:54:06]   E03 exact      expect=hit  HIT  sim=1.0000 nearest=S03       6.1 ms  TP
+[2026-11-04 17:54:06] 17:54:06.678 | s3209 CACHE    | HIT   sim=1.0000 matched='What is the current status of trial NCT48236558?' latency=6.2 ms
+[2026-11-04 17:54:06]   E04 exact      expect=hit  HIT  sim=1.0000 nearest=S04       6.2 ms  TP
+[2026-11-04 17:54:06] 17:54:06.683 | s3209 CACHE    | HIT   sim=1.0000 matched='Which sponsor runs trial NCT55837001?' latency=4.7 ms
+[2026-11-04 17:54:06]   E05 exact      expect=hit  HIT  sim=1.0000 nearest=S05       4.7 ms  TP
+[2026-11-04 17:54:06] 17:54:06.689 | s3209 CACHE    | HIT   sim=1.0000 matched='How many enrollment slots does trial NCT51652013 have?' latency=5.4 ms
+[2026-11-04 17:54:06]   E06 exact      expect=hit  HIT  sim=1.0000 nearest=S06       5.4 ms  TP
+[2026-11-04 17:54:06] 17:54:06.694 | s3209 CACHE    | HIT   sim=1.0000 matched='What should a patient check before joining a recruiting Phase II clinical trial?' latency=5.5 ms
+[2026-11-04 17:54:06]   E07 exact      expect=hit  HIT  sim=1.0000 nearest=S07       5.5 ms  TP
+[2026-11-04 17:54:06] 17:54:06.699 | s3209 CACHE    | HIT   sim=1.0000 matched='What does a Terminated status mean for a clinical trial listing?' latency=5.3 ms
+[2026-11-04 17:54:06]   E08 exact      expect=hit  HIT  sim=1.0000 nearest=S08       5.3 ms  TP
+[2026-11-04 17:54:06] 17:54:06.705 | s3209 CACHE    | HIT   sim=1.0000 matched='What is the difference between a Phase II and a Phase III clinical trial?' latency=5.4 ms
+[2026-11-04 17:54:06]   E09 exact      expect=hit  HIT  sim=1.0000 nearest=S09       5.4 ms  TP
+[2026-11-04 17:54:06] 17:54:06.709 | s3209 CACHE    | HIT   sim=1.0000 matched='What does informed consent mean for a clinical trial participant?' latency=4.5 ms
+[2026-11-04 17:54:06]   E10 exact      expect=hit  HIT  sim=1.0000 nearest=S10       4.5 ms  TP
+[2026-11-04 17:54:06] 17:54:06.714 | s3209 CACHE    | MISS  best_sim=0.9124 -> HW8 agent pipeline
+[2026-11-04 17:54:08] 17:54:08.640 | s3209 CACHE    | DONE  review=rejected version=1@ef4f9729 latency=1930.1 ms
+[2026-11-04 17:54:08]   P01 paraphrase expect=hit  MISS sim=0.9124 nearest=S01    1930.1 ms  FALSE_MISS
+[2026-11-04 17:54:08] 17:54:08.658 | s3209 CACHE    | HIT   sim=0.9554 matched='How many enrollment slots does trial NCT48236558 have?' latency=18.7 ms
+[2026-11-04 17:54:08]   P02 paraphrase expect=hit  HIT  sim=0.9554 nearest=S02      18.7 ms  TP
+[2026-11-04 17:54:08] 17:54:08.664 | s3209 CACHE    | MISS  best_sim=0.9345 -> HW8 agent pipeline
+[2026-11-04 17:54:10] 17:54:10.369 | s3209 CACHE    | DONE  review=rejected version=4@11558ea2 latency=1711.0 ms
+[2026-11-04 17:54:10]   P03 paraphrase expect=hit  MISS sim=0.9345 nearest=S03    1711.0 ms  FALSE_MISS
+[2026-11-04 17:54:10] 17:54:10.390 | s3209 CACHE    | HIT   sim=0.9672 matched='What is the current status of trial NCT48236558?' latency=20.3 ms
+[2026-11-04 17:54:10]   P04 paraphrase expect=hit  HIT  sim=0.9672 nearest=S04      20.3 ms  TP
+[2026-11-04 17:54:10] 17:54:10.394 | s3209 CACHE    | MISS  best_sim=0.8894 -> HW8 agent pipeline
+[2026-11-04 17:54:12] 17:54:12.593 | s3209 CACHE    | DONE  review=rejected version=6@27473332 latency=2203.7 ms
+[2026-11-04 17:54:12]   P05 paraphrase expect=hit  MISS sim=0.8894 nearest=S05    2203.7 ms  FALSE_MISS
+[2026-11-04 17:54:12] 17:54:12.619 | s3209 CACHE    | HIT   sim=0.9535 matched='How many enrollment slots does trial NCT51652013 have?' latency=25.6 ms
+[2026-11-04 17:54:12]   P06 paraphrase expect=hit  HIT  sim=0.9535 nearest=S06      25.6 ms  TP
+[2026-11-04 17:54:12] 17:54:12.626 | s3209 CACHE    | HIT   sim=0.9544 matched='What should a patient check before joining a recruiting Phase II clinical trial?' latency=6.7 ms
+[2026-11-04 17:54:12]   P07 paraphrase expect=hit  HIT  sim=0.9544 nearest=S07       6.7 ms  TP
+[2026-11-04 17:54:12] 17:54:12.632 | s3209 CACHE    | MISS  best_sim=0.9306 -> HW8 agent pipeline
+[2026-11-04 17:54:16] 17:54:16.527 | s3209 CACHE    | DONE  review=approved version=none latency=3900.9 ms
+[2026-11-04 17:54:16]   P08 paraphrase expect=hit  MISS sim=0.9306 nearest=S08    3900.9 ms  FALSE_MISS
+[2026-11-04 17:54:16] 17:54:16.553 | s3209 CACHE    | HIT   sim=0.9647 matched='What is the difference between a Phase II and a Phase III clinical trial?' latency=25.8 ms
+[2026-11-04 17:54:16]   P09 paraphrase expect=hit  HIT  sim=0.9647 nearest=S09      25.8 ms  TP
+[2026-11-04 17:54:16] 17:54:16.557 | s3209 CACHE    | HIT   sim=0.9681 matched='What does informed consent mean for a clinical trial participant?' latency=4.7 ms
+[2026-11-04 17:54:16]   P10 paraphrase expect=hit  HIT  sim=0.9681 nearest=S10       4.7 ms  TP
+[2026-11-04 17:54:16] 17:54:16.563 | s3209 CACHE    | HIT   sim=0.9528 matched='What is the current status of trial NCT48236558?' latency=5.4 ms
+[2026-11-04 17:54:16]   D01 similar    expect=miss HIT  sim=0.9528 nearest=S04       5.4 ms  FALSE_HIT
+[2026-11-04 17:54:16] 17:54:16.569 | s3209 CACHE    | HIT   sim=0.9835 matched='How many enrollment slots does trial NCT48236558 have?' latency=6.0 ms
+[2026-11-04 17:54:16]   D02 similar    expect=miss HIT  sim=0.9835 nearest=S02       6.0 ms  FALSE_HIT
+[2026-11-04 17:54:16] 17:54:16.574 | s3209 CACHE    | HIT   sim=0.9823 matched='Which sponsor runs trial NCT72283365?' latency=5.1 ms
+[2026-11-04 17:54:16]   D03 similar    expect=miss HIT  sim=0.9823 nearest=S03       5.1 ms  FALSE_HIT
+[2026-11-04 17:54:16] 17:54:16.581 | s3209 CACHE    | MISS  best_sim=0.9484 -> HW8 agent pipeline
+[2026-11-04 17:54:18] 17:54:18.324 | s3209 CACHE    | DONE  review=rejected version=8@c4578798 latency=1749.5 ms
+[2026-11-04 17:54:18]   D04 similar    expect=miss MISS sim=0.9484 nearest=S04    1749.5 ms  TN
+[2026-11-04 17:54:18] 17:54:18.349 | s3209 CACHE    | HIT   sim=0.9824 matched='Which sponsor runs trial NCT72283365?' latency=25.2 ms
+[2026-11-04 17:54:18]   D05 similar    expect=miss HIT  sim=0.9824 nearest=S03      25.2 ms  FALSE_HIT
+[2026-11-04 17:54:18] 17:54:18.355 | s3209 CACHE    | HIT   sim=0.9746 matched='How many enrollment slots does trial NCT48236558 have?' latency=6.7 ms
+[2026-11-04 17:54:18]   D06 similar    expect=miss HIT  sim=0.9746 nearest=S02       6.7 ms  FALSE_HIT
+[2026-11-04 17:54:18] 17:54:18.361 | s3209 CACHE    | MISS  best_sim=0.9483 -> HW8 agent pipeline
+[2026-11-04 17:54:21] 17:54:21.312 | s3209 CACHE    | DONE  review=approved version=none latency=2956.4 ms
+[2026-11-04 17:54:21]   D07 similar    expect=miss MISS sim=0.9483 nearest=S07    2956.4 ms  TN
+[2026-11-04 17:54:21] 17:54:21.338 | s3209 CACHE    | MISS  best_sim=0.8412 -> HW8 agent pipeline
+[2026-11-04 17:54:23] 17:54:23.872 | s3209 CACHE    | DONE  review=approved version=none latency=2560.3 ms
+[2026-11-04 17:54:23]   D08 similar    expect=miss MISS sim=0.8412 nearest=S08    2560.3 ms  TN
+[2026-11-04 17:54:23] 17:54:23.897 | s3209 CACHE    | HIT   sim=0.9563 matched='What is the difference between a Phase II and a Phase III clinical trial?' latency=24.6 ms
+[2026-11-04 17:54:23]   D09 similar    expect=miss HIT  sim=0.9563 nearest=S09      24.6 ms  FALSE_HIT
+[2026-11-04 17:54:23] 17:54:23.903 | s3209 CACHE    | MISS  best_sim=0.7071 -> HW8 agent pipeline
+[2026-11-04 17:54:27] 17:54:27.755 | s3209 CACHE    | DONE  review=approved version=none latency=3858.2 ms
+[2026-11-04 17:54:27]   D10 similar    expect=miss MISS sim=0.7071 nearest=S08    3858.2 ms  TN
+[2026-11-04 17:54:27] 17:54:27.776 | s3209 CACHE    | MISS  best_sim=0.4129 -> HW8 agent pipeline
+[2026-11-04 17:54:30] 17:54:30.542 | s3209 CACHE    | DONE  review=approved version=none latency=2786.5 ms
+[2026-11-04 17:54:30]   U01 unrelated  expect=miss MISS sim=0.4129 nearest=S02    2786.5 ms  TN
+[2026-11-04 17:54:30] 17:54:30.562 | s3209 CACHE    | MISS  best_sim=0.2601 -> HW8 agent pipeline
+[2026-11-04 17:54:33] 17:54:33.230 | s3209 CACHE    | DONE  review=rejected version=none latency=2687.7 ms
+[2026-11-04 17:54:33]   U02 unrelated  expect=miss MISS sim=0.2601 nearest=S02    2687.7 ms  TN
+[2026-11-04 17:54:33] 17:54:33.246 | s3209 CACHE    | MISS  best_sim=0.3602 -> HW8 agent pipeline
+[2026-11-04 17:54:36] 17:54:36.611 | s3209 CACHE    | DONE  review=approved version=none latency=3381.6 ms
+[2026-11-04 17:54:36]   U03 unrelated  expect=miss MISS sim=0.3602 nearest=S03    3381.6 ms  TN
+[2026-11-04 17:54:36] 17:54:36.636 | s3209 CACHE    | MISS  best_sim=0.5265 -> HW8 agent pipeline
+[2026-11-04 17:54:39] 17:54:39.795 | s3209 CACHE    | DONE  review=approved version=none latency=3183.6 ms
+[2026-11-04 17:54:39]   U04 unrelated  expect=miss MISS sim=0.5265 nearest=S03    3183.6 ms  TN
+[2026-11-04 17:54:39] 17:54:39.820 | s3209 CACHE    | MISS  best_sim=0.0642 -> HW8 agent pipeline
+[2026-11-04 17:54:42] 17:54:42.539 | s3209 CACHE    | DONE  review=approved version=none latency=2743.9 ms
+[2026-11-04 17:54:42]   U05 unrelated  expect=miss MISS sim=0.0642 nearest=S01    2743.9 ms  TN
+[2026-11-04 17:54:42] 17:54:42.565 | s3209 CACHE    | MISS  best_sim=0.6181 -> HW8 agent pipeline
+[2026-11-04 17:54:44] 17:54:44.378 | s3209 CACHE    | DONE  review=rejected version=none latency=1838.7 ms
+[2026-11-04 17:54:44]   U06 unrelated  expect=miss MISS sim=0.6181 nearest=S02    1838.7 ms  TN
+[2026-11-04 17:54:44] 17:54:44.406 | s3209 CACHE    | MISS  best_sim=0.3817 -> HW8 agent pipeline
+[2026-11-04 17:54:46] 17:54:46.612 | s3209 CACHE    | DONE  review=rejected version=none latency=2234.3 ms
+[2026-11-04 17:54:46]   U07 unrelated  expect=miss MISS sim=0.3817 nearest=S03    2234.3 ms  TN
+[2026-11-04 17:54:46] 17:54:46.640 | s3209 CACHE    | MISS  best_sim=0.2970 -> HW8 agent pipeline
+[2026-11-04 17:54:49] 17:54:49.892 | s3209 CACHE    | DONE  review=approved version=none latency=3279.5 ms
+[2026-11-04 17:54:49]   U08 unrelated  expect=miss MISS sim=0.2970 nearest=S08    3279.5 ms  TN
+[2026-11-04 17:54:49] 17:54:49.917 | s3209 CACHE    | MISS  best_sim=0.0320 -> HW8 agent pipeline
+[2026-11-04 17:54:53] 17:54:53.288 | s3209 CACHE    | DONE  review=rejected version=none latency=3396.4 ms
+[2026-11-04 17:54:53]   U09 unrelated  expect=miss MISS sim=0.0320 nearest=S06    3396.4 ms  TN
+[2026-11-04 17:54:53] 17:54:53.312 | s3209 CACHE    | MISS  best_sim=0.0807 -> HW8 agent pipeline
+[2026-11-04 17:54:54] 17:54:54.891 | s3209 CACHE    | DONE  review=rejected version=none latency=1602.8 ms
+[2026-11-04 17:54:54]   U10 unrelated  expect=miss MISS sim=0.0807 nearest=S03    1602.8 ms  TN
+[2026-11-04 17:54:54] 
+[2026-11-04 17:54:54] === Threshold sweep: 40 cases, cost = misses x 1 + false hits x 20 ===
+[2026-11-04 17:54:54] threshold  hit rate  false-hit rate  false hits  false misses   mean ms  total cost
+[2026-11-04 17:54:54]      0.75     72.5%           31.0%           9             0     808.3       191.0
+[2026-11-04 17:54:54]      0.80     72.5%           31.0%           9             0     776.9       191.0
+[2026-11-04 17:54:54]      0.85     70.0%           28.6%           8             0     842.5       172.0
+[2026-11-04 17:54:54]      0.90     67.5%           29.6%           8             1     901.7       173.0
+[2026-11-04 17:54:54]      0.95     55.0%           27.3%           6             4    1206.4       138.0
+[2026-11-04 17:54:54] Lowest total cost: threshold 0.95 (cost 138.0)
+[2026-11-04 17:54:54] Saved reports/hw09/raw/part3_sweep_cases.json and part3_sweep_summary.json
+[2026-11-04 17:54:55] ======================================================================
+[2026-11-04 17:54:55] RUN: make hw09-part3-falsehit (HW9 Part 3.3 one false hit, threshold 0.85)   run by: Ani Taraiya
+[2026-11-04 17:54:56] Run by: Ani Taraiya (s3209)   2026-11-04 17:54:56
+[2026-11-04 17:54:56] False hits at threshold 0.85: 8 (D01, D02, D03, D04, D05, D06, D07, D09)
+[2026-11-04 17:54:56] 
+[2026-11-04 17:54:56] Case            : D02 [similar] expect=miss
+[2026-11-04 17:54:56] Incoming query  : How many enrollment slots does trial NCT72283365 have?
+[2026-11-04 17:54:56] Cached query    : How many enrollment slots does trial NCT48236558 have?
+[2026-11-04 17:54:56] Similarity      : 0.9835  (threshold 0.85)
+[2026-11-04 17:54:56] Cached answer   : Trial NCT48236558 has 113 enrollment slots.
+[2026-11-04 17:54:56] Record (s3209_rel): NCT72283365: title 'Phase III Study of Drug E-4 in Alzheimer's Disease'; status Recruiting; enrollment slots 114; sponsor Tata Memorial Centre
+[2026-11-04 17:54:58] Correct answer  : Trial NCT72283365 has 114 enrollment slots.
+[2026-11-04 17:54:58] Words only in incoming: ['nct72283365']   only in cached: ['nct48236558']
+[2026-11-04 17:54:58] Saved reports/hw09/raw/part3_false_hit.json
+[2026-11-04 17:54:58] ======================================================================
+[2026-11-04 17:54:58] RUN: make hw09-part3-stale (HW9 Part 3.5 stale answer and invalidation)   run by: Ani Taraiya
+[2026-11-04 17:54:58] Run by: Ani Taraiya (s3209)   2026-11-04 17:54:58
+[2026-11-04 17:55:01] Cache cleared: 10 entries   question: What is the current status of trial NCT30565986?
+[2026-11-04 17:55:01] Record trials.id=1 NCT30565986: status=Completed
+[2026-11-04 17:55:01] 
+[2026-11-04 17:55:01] [1] First ask -> miss, answer cached with data_version
+[2026-11-04 17:55:01] 17:55:01.504 | s3209 CACHE    | MISS  best_sim=0.0000 -> HW8 agent pipeline
+[2026-11-04 17:55:03] 17:55:03.194 | s3209 CACHE    | STORE review=rejected version=1@ef4f9729 latency=1699.1 ms
+[2026-11-04 17:55:03]   -> is_cached=False sim=0.0000 version=1@ef4f9729 invalidated=False latency=1699.1 ms
+[2026-11-04 17:55:03]      answer: The current status of trial NCT30565986 is Completed.
+[2026-11-04 17:55:03]      DB status now: Completed
+[2026-11-04 17:55:03] 
+[2026-11-04 17:55:03] [2] UPDATE trials SET status='Terminated' WHERE nct_id='NCT30565986'
+[2026-11-04 17:55:03]      data_version now: 1@9af5261c
+[2026-11-04 17:55:03] 
+[2026-11-04 17:55:03] [3] Ask again, no invalidation -> STALE HIT (old answer)
+[2026-11-04 17:55:03] 17:55:03.433 | s3209 CACHE    | HIT   sim=1.0000 matched='What is the current status of trial NCT30565986?' latency=31.8 ms
+[2026-11-04 17:55:03]   -> is_cached=True sim=1.0000 version=1@ef4f9729 invalidated=False latency=31.8 ms
+[2026-11-04 17:55:03]      answer: The current status of trial NCT30565986 is Completed.
+[2026-11-04 17:55:03]      DB status now: Terminated
+[2026-11-04 17:55:03] 
+[2026-11-04 17:55:03] [4] Ask again, invalidation on -> version mismatch, entry deleted, agents re-run
+[2026-11-04 17:55:03] 17:55:03.446 | s3209 CACHE    | STALE sim=1.0000 stored=1@ef4f9729 current=1@9af5261c -> entry deleted
+[2026-11-04 17:55:03] 17:55:03.446 | s3209 CACHE    | MISS  best_sim=1.0000 -> HW8 agent pipeline
+[2026-11-04 17:55:05] 17:55:05.457 | s3209 CACHE    | STORE review=rejected version=1@9af5261c latency=2022.9 ms
+[2026-11-04 17:55:05]   -> is_cached=False sim=1.0000 version=1@9af5261c invalidated=True latency=2022.9 ms
+[2026-11-04 17:55:05]      answer: The trial NCT30565986, titled 'Phase II Study of Drug B-1 in Migraine', has been terminated.
+[2026-11-04 17:55:05]      DB status now: Terminated
+[2026-11-04 17:55:05] 
+[2026-11-04 17:55:05] [5] Ask again, invalidation on -> fresh hit
+[2026-11-04 17:55:05] 17:55:05.475 | s3209 CACHE    | HIT   sim=1.0000 matched='What is the current status of trial NCT30565986?' latency=16.3 ms
+[2026-11-04 17:55:05]   -> is_cached=True sim=1.0000 version=1@9af5261c invalidated=False latency=16.3 ms
+[2026-11-04 17:55:05]      answer: The trial NCT30565986, titled 'Phase II Study of Drug B-1 in Migraine', has been terminated.
+[2026-11-04 17:55:05]      DB status now: Terminated
+[2026-11-04 17:55:05] 
+[2026-11-04 17:55:05] Restored NCT30565986 status=Completed; cache cleared: 1 entries
+[2026-11-04 17:55:05] Saved reports/hw09/raw/part3_stale.json
+[2026-11-04 18:03:48] ======================================================================
+[2026-11-04 18:03:48] RUN: make hw09-part3-test (HW9 Part 3 offline tests)   run by: Ani Taraiya
+[2026-11-04 18:03:49] 18:03:49.194 | s3209 CACHE    | MISS  best_sim=0.0000 -> HW8 agent pipeline
+[2026-11-04 18:03:49] 18:03:49.194 | s3209 CACHE    | STORE review=approved version=none latency=0.2 ms
+[2026-11-04 18:03:49] 18:03:49.194 | s3209 CACHE    | HIT   sim=1.0000 matched='What should a patient check before joining a trial?' latency=0.0 ms
+[2026-11-04 18:03:49] 18:03:49.194 | s3209 CACHE    | MISS  best_sim=0.3000 -> HW8 agent pipeline
+[2026-11-04 18:03:49] 18:03:49.194 | s3209 CACHE    | STORE review=approved version=none latency=0.0 ms
+[2026-11-04 18:03:49] 18:03:49.194 | s3209 CACHE    | MISS  best_sim=0.0000 -> HW8 agent pipeline
+[2026-11-04 18:03:49] 18:03:49.194 | s3209 CACHE    | DONE  review=approved version=none latency=0.0 ms
+[2026-11-04 18:03:49] 18:03:49.194 | s3209 CACHE    | HIT   sim=1.0000 matched='What should a patient check before joining a trial?' latency=0.0 ms
+[2026-11-04 18:03:49] 18:03:49.194 | s3209 CACHE    | STALE sim=1.0000 stored=1@aaaa1111 current=1@bbbb2222 -> entry deleted
+[2026-11-04 18:03:49] 18:03:49.194 | s3209 CACHE    | MISS  best_sim=1.0000 -> HW8 agent pipeline
+[2026-11-04 18:03:49] 18:03:49.194 | s3209 CACHE    | STORE review=approved version=none latency=0.0 ms
+[2026-11-04 18:03:49] HW9 Part 2-3 offline tests: 12 / 12 passed
+[2026-11-04 19:05:41] ======================================================================
+[2026-11-04 19:05:42] RUN: make hw09-part3-show (HW9 Part 3.2 saved sweep rows, threshold 0.85)   run by: Ani Taraiya
+[2026-11-04 19:05:42] Run by: Ani Taraiya (s3209)   2026-11-04 19:05:42
+[2026-11-04 19:05:42] Sweep results at threshold 0.85 from reports/hw09/raw/part3_sweep_cases.json (sweep run 2026-11-04 17:54)
+[2026-11-04 19:05:42] case group      expect result     sim  nearest       ms  outcome
+[2026-11-04 19:05:42] E01  exact      hit    HIT     1.0000  S01         27.6  TP
+[2026-11-04 19:05:42] E02  exact      hit    HIT     1.0000  S02          6.5  TP
+[2026-11-04 19:05:42] E03  exact      hit    HIT     1.0000  S03          5.8  TP
+[2026-11-04 19:05:42] E04  exact      hit    HIT     1.0000  S04          5.6  TP
+[2026-11-04 19:05:42] E05  exact      hit    HIT     1.0000  S05          5.7  TP
+[2026-11-04 19:05:42] E06  exact      hit    HIT     1.0000  S06          5.5  TP
+[2026-11-04 19:05:42] E07  exact      hit    HIT     1.0000  S07          6.0  TP
+[2026-11-04 19:05:42] E08  exact      hit    HIT     1.0000  S08          6.0  TP
+[2026-11-04 19:05:42] E09  exact      hit    HIT     1.0000  S09          5.3  TP
+[2026-11-04 19:05:42] E10  exact      hit    HIT     1.0000  S10          5.3  TP
+[2026-11-04 19:05:42] P01  paraphrase hit    HIT     0.9124  S01          5.2  TP
+[2026-11-04 19:05:42] P02  paraphrase hit    HIT     0.9554  S02          4.6  TP
+[2026-11-04 19:05:42] P03  paraphrase hit    HIT     0.9345  S03          4.6  TP
+[2026-11-04 19:05:42] P04  paraphrase hit    HIT     0.9672  S04          4.8  TP
+[2026-11-04 19:05:42] P05  paraphrase hit    HIT     0.8894  S05          4.9  TP
+[2026-11-04 19:05:42] P06  paraphrase hit    HIT     0.9535  S06          5.0  TP
+[2026-11-04 19:05:42] P07  paraphrase hit    HIT     0.9544  S07          6.0  TP
+[2026-11-04 19:05:42] P08  paraphrase hit    HIT     0.9306  S08          5.3  TP
+[2026-11-04 19:05:42] P09  paraphrase hit    HIT     0.9647  S09          4.8  TP
+[2026-11-04 19:05:42] P10  paraphrase hit    HIT     0.9681  S10          4.2  TP
+[2026-11-04 19:05:42] D01  similar    miss   HIT     0.9528  S04          4.7  FALSE_HIT
+[2026-11-04 19:05:42] D02  similar    miss   HIT     0.9835  S02          4.4  FALSE_HIT
+[2026-11-04 19:05:42] D03  similar    miss   HIT     0.9823  S03          4.0  FALSE_HIT
+[2026-11-04 19:05:42] D04  similar    miss   HIT     0.9484  S04          4.1  FALSE_HIT
+[2026-11-04 19:05:42] D05  similar    miss   HIT     0.9824  S03          4.1  FALSE_HIT
+[2026-11-04 19:05:42] D06  similar    miss   HIT     0.9746  S02          4.1  FALSE_HIT
+[2026-11-04 19:05:42] D07  similar    miss   HIT     0.9483  S07          3.9  FALSE_HIT
+[2026-11-04 19:05:42] D08  similar    miss   MISS    0.8412  S08       2573.4  TN
+[2026-11-04 19:05:42] D09  similar    miss   HIT     0.9563  S09         26.1  FALSE_HIT
+[2026-11-04 19:05:42] D10  similar    miss   MISS    0.7071  S08       3881.4  TN
+[2026-11-04 19:05:42] U01  unrelated  miss   MISS    0.4129  S02       2780.0  TN
+[2026-11-04 19:05:42] U02  unrelated  miss   MISS    0.2601  S02       2689.3  TN
+[2026-11-04 19:05:42] U03  unrelated  miss   MISS    0.3602  S03       3378.4  TN
+[2026-11-04 19:05:42] U04  unrelated  miss   MISS    0.5265  S03       3169.0  TN
+[2026-11-04 19:05:42] U05  unrelated  miss   MISS    0.0642  S01       2735.9  TN
+[2026-11-04 19:05:42] U06  unrelated  miss   MISS    0.6181  S02       1823.8  TN
+[2026-11-04 19:05:42] U07  unrelated  miss   MISS    0.3817  S03       2224.4  TN
+[2026-11-04 19:05:42] U08  unrelated  miss   MISS    0.2970  S08       3283.0  TN
+[2026-11-04 19:05:42] U09  unrelated  miss   MISS    0.0320  S06       3373.2  TN
+[2026-11-04 19:05:42] U10  unrelated  miss   MISS    0.0807  S03       1602.9  TN
+[2026-11-04 19:05:42] TP=20  FALSE_HIT=8  FALSE_MISS=0  TN=12
+[2026-11-04 19:05:42] 
+[2026-11-04 19:05:42] threshold  hit rate  false-hit rate   mean ms  total cost
+[2026-11-04 19:05:42]      0.75     72.5%           31.0%     808.3       191.0
+[2026-11-04 19:05:42]      0.80     72.5%           31.0%     776.9       191.0
+[2026-11-04 19:05:42]      0.85     70.0%           28.6%     842.5       172.0
+[2026-11-04 19:05:42]      0.90     67.5%           29.6%     901.7       173.0
+[2026-11-04 19:05:42]      0.95     55.0%           27.3%    1206.4       138.0

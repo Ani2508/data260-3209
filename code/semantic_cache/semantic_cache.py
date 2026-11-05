@@ -108,3 +108,9 @@ class SemanticCache:
             "data_version": data_version, "trial_ids": ",".join(map(str, trial_ids)),
             "review": review, "created_at": time.strftime("%Y-%m-%d %H:%M:%S")})
         return key
+
+    def delete(self, key: str) -> bool:
+        """Return True if the cache entry was removed (used by invalidation)."""
+        if not key.startswith(KEY_PREFIX):
+            raise ValueError(f"key must start with {KEY_PREFIX}")
+        return bool(self.r.delete(key))

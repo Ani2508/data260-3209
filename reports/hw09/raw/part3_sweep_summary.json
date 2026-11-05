@@ -1,0 +1,57 @@
+[
+  {
+    "threshold": 0.75,
+    "hits": 29,
+    "hit_rate": 72.5,
+    "false_hits": 9,
+    "false_hit_rate": 31.0,
+    "false_misses": 0,
+    "misses": 11,
+    "mean_latency_ms": 808.3,
+    "total_cost": 191.0
+  },
+  {
+    "threshold": 0.8,
+    "hits": 29,
+    "hit_rate": 72.5,
+    "false_hits": 9,
+    "false_hit_rate": 31.0,
+    "false_misses": 0,
+    "misses": 11,
+    "mean_latency_ms": 776.9,
+    "total_cost": 191.0
+  },
+  {
+    "threshold": 0.85,
+    "hits": 28,
+    "hit_rate": 70.0,
+    "false_hits": 8,
+    "false_hit_rate": 28.6,
+    "false_misses": 0,
+    "misses": 12,
+    "mean_latency_ms": 842.5,
+    "total_cost": 172.0
+  },
+  {
+    "threshold": 0.9,
+    "hits": 27,
+    "hit_rate": 67.5,
+    "false_hits": 8,
+    "false_hit_rate": 29.6,
+    "false_misses": 1,
+    "misses": 13,
+    "mean_latency_ms": 901.7,
+    "total_cost": 173.0
+  },
+  {
+    "threshold": 0.95,
+    "hits": 22,
+    "hit_rate": 55.0,
+    "false_hits": 6,
+    "false_hit_rate": 27.3,
+    "false_misses": 4,
+    "misses": 18,
+    "mean_latency_ms": 1206.4,
+    "total_cost": 138.0
+  }
+]

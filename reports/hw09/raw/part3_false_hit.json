@@ -1,0 +1,17 @@
+{
+  "threshold": 0.85,
+  "id": "D02",
+  "group": "similar",
+  "expect": "miss",
+  "near": "S02",
+  "query": "How many enrollment slots does trial NCT72283365 have?",
+  "is_cached": true,
+  "similarity": 0.9835,
+  "nearest_seed": "S02",
+  "matched_query": "How many enrollment slots does trial NCT48236558 have?",
+  "answer": "Trial NCT48236558 has 113 enrollment slots.",
+  "latency_ms": 4.4,
+  "outcome": "FALSE_HIT",
+  "correct_answer": "Trial NCT72283365 has 114 enrollment slots.",
+  "record": "- NCT72283365: title 'Phase III Study of Drug E-4 in Alzheimer's Disease'; status Recruiting; enrollment slots 114; sponsor Tata Memorial Centre"
+}
