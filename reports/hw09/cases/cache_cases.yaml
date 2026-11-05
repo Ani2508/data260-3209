@@ -1,0 +1,76 @@
+# HW9 Part 3.1 - labeled semantic-cache test set (s3209, Clinical Trial Listings)
+# Labels were fixed before any threshold sweep and must not be edited afterwards.
+# Labeling mistakes found later are documented in the report, not changed here.
+#
+# seeds : queries answered once by the HW8 agents and stored in the cache
+# cases : 40 incoming queries
+#   exact      (10) same text as a seed                         -> expect hit on that seed
+#   paraphrase (10) same meaning, different wording              -> expect hit on that seed
+#   similar    (10) looks like a seed, different correct answer  -> expect miss (near = look-alike seed)
+#   unrelated  (10) nothing in the cache answers it              -> expect miss
+# Trial facts (s3209_rel, 2026-11-04): NCT30565986 Completed/0/Charite Berlin,
+# NCT71134900 Terminated, NCT48236558 Recruiting/113/Stanford Medicine,
+# NCT72283365 Recruiting/114/Tata Memorial Centre, NCT55837001 Mayo Clinic,
+# NCT51652013 8 slots, NCT80911774 Active - Not Recruiting, NCT15684177 UCSF Health,
+# NCT69258056 0 slots.
+
+seeds:
+  - {id: S01, query: "What is the current status of trial NCT30565986?"}
+  - {id: S02, query: "How many enrollment slots does trial NCT48236558 have?"}
+  - {id: S03, query: "Which sponsor runs trial NCT72283365?"}
+  - {id: S04, query: "What is the current status of trial NCT48236558?"}
+  - {id: S05, query: "Which sponsor runs trial NCT55837001?"}
+  - {id: S06, query: "How many enrollment slots does trial NCT51652013 have?"}
+  - {id: S07, query: "What should a patient check before joining a recruiting Phase II clinical trial?"}
+  - {id: S08, query: "What does a Terminated status mean for a clinical trial listing?"}
+  - {id: S09, query: "What is the difference between a Phase II and a Phase III clinical trial?"}
+  - {id: S10, query: "What does informed consent mean for a clinical trial participant?"}
+
+cases:
+  # ---- exact duplicates (should hit) ----
+  - {id: E01, group: exact, expect: hit, seed: S01, query: "What is the current status of trial NCT30565986?"}
+  - {id: E02, group: exact, expect: hit, seed: S02, query: "How many enrollment slots does trial NCT48236558 have?"}
+  - {id: E03, group: exact, expect: hit, seed: S03, query: "Which sponsor runs trial NCT72283365?"}
+  - {id: E04, group: exact, expect: hit, seed: S04, query: "What is the current status of trial NCT48236558?"}
+  - {id: E05, group: exact, expect: hit, seed: S05, query: "Which sponsor runs trial NCT55837001?"}
+  - {id: E06, group: exact, expect: hit, seed: S06, query: "How many enrollment slots does trial NCT51652013 have?"}
+  - {id: E07, group: exact, expect: hit, seed: S07, query: "What should a patient check before joining a recruiting Phase II clinical trial?"}
+  - {id: E08, group: exact, expect: hit, seed: S08, query: "What does a Terminated status mean for a clinical trial listing?"}
+  - {id: E09, group: exact, expect: hit, seed: S09, query: "What is the difference between a Phase II and a Phase III clinical trial?"}
+  - {id: E10, group: exact, expect: hit, seed: S10, query: "What does informed consent mean for a clinical trial participant?"}
+
+  # ---- paraphrases (should hit) ----
+  - {id: P01, group: paraphrase, expect: hit, seed: S01, query: "What's the status of clinical trial NCT30565986 right now?"}
+  - {id: P02, group: paraphrase, expect: hit, seed: S02, query: "How many open enrollment slots are there in trial NCT48236558?"}
+  - {id: P03, group: paraphrase, expect: hit, seed: S03, query: "Who is the sponsor of trial NCT72283365?"}
+  - {id: P04, group: paraphrase, expect: hit, seed: S04, query: "What status is trial NCT48236558 in at the moment?"}
+  - {id: P05, group: paraphrase, expect: hit, seed: S05, query: "Which organization sponsors trial NCT55837001?"}
+  - {id: P06, group: paraphrase, expect: hit, seed: S06, query: "How many enrollment spots are available in trial NCT51652013?"}
+  - {id: P07, group: paraphrase, expect: hit, seed: S07, query: "Before enrolling in a recruiting Phase II trial, what should a patient check?"}
+  - {id: P08, group: paraphrase, expect: hit, seed: S08, query: "What does it mean when a clinical trial listing is marked Terminated?"}
+  - {id: P09, group: paraphrase, expect: hit, seed: S09, query: "How does a Phase II clinical trial differ from a Phase III trial?"}
+  - {id: P10, group: paraphrase, expect: hit, seed: S10, query: "What does informed consent mean for someone taking part in a clinical trial?"}
+
+  # ---- superficially similar, different correct answer (should miss) ----
+  - {id: D01, group: similar, expect: miss, near: S01, query: "What is the current status of trial NCT71134900?"}
+  - {id: D02, group: similar, expect: miss, near: S02, query: "How many enrollment slots does trial NCT72283365 have?"}
+  - {id: D03, group: similar, expect: miss, near: S03, query: "Which sponsor runs trial NCT48236558?"}
+  - {id: D04, group: similar, expect: miss, near: S04, query: "What is the current status of trial NCT80911774?"}
+  - {id: D05, group: similar, expect: miss, near: S05, query: "Which sponsor runs trial NCT15684177?"}
+  - {id: D06, group: similar, expect: miss, near: S06, query: "How many enrollment slots does trial NCT69258056 have?"}
+  - {id: D07, group: similar, expect: miss, near: S07, query: "What should a patient check before leaving a recruiting Phase II clinical trial?"}
+  - {id: D08, group: similar, expect: miss, near: S08, query: "What does a Completed status mean for a clinical trial listing?"}
+  - {id: D09, group: similar, expect: miss, near: S09, query: "What is the difference between a Phase I and a Phase II clinical trial?"}
+  - {id: D10, group: similar, expect: miss, near: S08, query: "What does an Active - Not Recruiting status mean for a clinical trial listing?"}
+
+  # ---- unrelated (should miss) ----
+  - {id: U01, group: unrelated, expect: miss, query: "How do I reset my password for the trial listings portal?"}
+  - {id: U02, group: unrelated, expect: miss, query: "What time does the help desk open on weekends?"}
+  - {id: U03, group: unrelated, expect: miss, query: "Can I export the trial list to a CSV file?"}
+  - {id: U04, group: unrelated, expect: miss, query: "How do I add a new sponsor to the catalogue?"}
+  - {id: U05, group: unrelated, expect: miss, query: "What is the weather like in Sacramento today?"}
+  - {id: U06, group: unrelated, expect: miss, query: "How many trials are listed in the catalogue in total?"}
+  - {id: U07, group: unrelated, expect: miss, query: "Who maintains this application?"}
+  - {id: U08, group: unrelated, expect: miss, query: "What file formats can I attach to a trial summary?"}
+  - {id: U09, group: unrelated, expect: miss, query: "How do I change the language of the website?"}
+  - {id: U10, group: unrelated, expect: miss, query: "What is the capital of France?"}
