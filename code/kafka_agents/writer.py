@@ -12,6 +12,9 @@ from reliable import run_reliable
 
 SYSTEM = ("You are the Writer for a clinical trial listings help desk. Answer the question "
           "in 60-120 words, following the plan in order. Be factual and plain. "
+          "If trial records are given, use only their values for status, enrollment slots "
+          "and sponsor, and never invent trial IDs, dates or counts; still answer in full "
+          "sentences that name the trial and state the value. "
           'Reply only with JSON: {"answer": "..."}')
 SIM = os.getenv("WRITER_SIM") == "1"
 llm = None if SIM else model()
@@ -24,7 +27,10 @@ def handle(msg: dict) -> dict:
         time.sleep(msg.get("work_ms", 200) / 1000)
         draft = {"answer": f"draft for {msg.get('entity')} update {msg.get('seq')}"}
     else:
-        draft = ask_json(llm, SYSTEM, f"Question: {msg['question']}\nPlan:\n{plan}", "answer")
+        facts = msg.get("facts", "")
+        records = f"\nTrial records:\n{facts}" if facts else ""
+        draft = ask_json(llm, SYSTEM, f"Question: {msg['question']}{records}\nPlan:\n{plan}",
+                         "answer")
     log(NAME, f"DRAFT    {len(draft['answer'].split())} words")
     return {**msg, "draft": draft["answer"], "written_at": now()}
 

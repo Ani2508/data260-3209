@@ -8,10 +8,12 @@ llm = model()
 
 
 def handle(msg: dict) -> dict:
-    plan = ask_json(llm, SYSTEM, msg["question"], "plan")["plan"][:3]
+    facts = msg.get("facts", "")  # HW9: trial records from s3209_rel (may be empty)
+    user = msg["question"] + (f"\nTrial records:\n{facts}" if facts else "")
+    plan = ask_json(llm, SYSTEM, user, "plan")["plan"][:3]
     log("PLANNER", f"PLAN     {plan}")
     return {"correlation_id": msg["correlation_id"], "question": msg["question"],
-            "plan": plan, "planned_at": now()}
+            "facts": facts, "plan": plan, "planned_at": now()}
 
 
 if __name__ == "__main__":

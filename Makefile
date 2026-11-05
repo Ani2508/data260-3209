@@ -241,3 +241,34 @@ hw09-part1-check:
 	  cd code/web_application && python3 -c "from database import engine; from sqlalchemy import text; \
 	  [print(' ', *r) for r in engine.connect().execute(text('SELECT id, nct_id, view_count FROM trials WHERE view_count > 0'))]") \
 	  2>&1 | python3 code/tslog.py $(LOG9)
+
+# HW9 Part 2: semantic cache in front of the HW8 agents (one agent per terminal)
+hw09-planner:
+	@$(call STAMP9,make hw09-planner (HW9 Part 2 HW8 Planner))
+	cd code/kafka_agents && python3 -u planner.py 2>&1 | python3 ../tslog.py ../../$(LOG9)
+
+hw09-writer:
+	@$(call STAMP9,make hw09-writer (HW9 Part 2 HW8 Writer))
+	cd code/kafka_agents && python3 -u writer.py 2>&1 | python3 ../tslog.py ../../$(LOG9)
+
+hw09-reviewer:
+	@$(call STAMP9,make hw09-reviewer (HW9 Part 2 HW8 Reviewer))
+	cd code/kafka_agents && python3 -u reviewer.py 2>&1 | python3 ../tslog.py ../../$(LOG9)
+
+hw09-part2-test:
+	@$(call STAMP9,make hw09-part2-test (HW9 Part 2 offline tests))
+	python3 -u code/semantic_cache/test_semantic_cache.py 2>&1 | python3 code/tslog.py $(LOG9)
+
+hw09-part2:
+	@$(call STAMP9,make hw09-part2 (HW9 Part 2 semantic cache, 12 queries, threshold $(or $(TH),0.85)))
+	python3 -u code/run_hw09_part2.py --threshold $(or $(TH),0.85) 2>&1 | python3 code/tslog.py $(LOG9)
+
+hw09-part2-redis:
+	@$(call STAMP9,make hw09-part2-redis (HW9 Part 2 cache entries in Redis))
+	@(echo "Run by: Ani Taraiya (s3209)"; \
+	  echo "$$ redis-cli FT.INFO s3209_semcache_idx (num_docs)"; \
+	  docker exec s3209_redis redis-cli FT.INFO s3209_semcache_idx | grep -A1 -E "^num_docs$$"; \
+	  for k in $$(docker exec s3209_redis redis-cli --scan --pattern 's3209:semcache:*' | head -3); do \
+	    echo "$$ redis-cli HMGET $$k query data_version review created_at"; \
+	    docker exec s3209_redis redis-cli HMGET $$k query data_version review created_at; done) \
+	  2>&1 | python3 code/tslog.py $(LOG9)
