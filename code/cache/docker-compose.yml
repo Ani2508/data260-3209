@@ -1,0 +1,16 @@
+# HW9 Redis (PREFIX s3209):  make hw09-redis-up
+#   redis   redis-stack-server (Redis + RediSearch for the Part 2 vector index), host port 6379
+name: s3209-hw09
+
+services:
+  redis:
+    image: redis/redis-stack-server:7.4.0-v1
+    container_name: s3209_redis
+    ports:
+      - "127.0.0.1:6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped

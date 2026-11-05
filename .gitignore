@@ -23,3 +23,8 @@ reports/hw08/*.docx
 
 # HW8 Part 3 Writer idempotency markers (runtime state)
 code/kafka_agents/state/
+
+# HW9 working screenshots and report draft (used only inside the report)
+reports/hw09/Snippets/
+reports/hw09/*.docx
+reports/hw09/_to_delete/

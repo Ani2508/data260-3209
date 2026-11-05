@@ -32,6 +32,8 @@ class Trial(Base):
                               server_default="0")              # numeric field, default 0
     status = Column(String(40), nullable=False, default="Recruiting",
                     server_default="Recruiting")
+    view_count = Column(Integer, nullable=False, default=0,
+                        server_default="0")             # HW9 Redis view counter (synced)
     sponsor_id = Column(Integer, ForeignKey("sponsors.id", ondelete="RESTRICT"),
                         nullable=False, index=True)             # foreign key
     created_at = Column(DateTime, nullable=False, server_default=func.now())

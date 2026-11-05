@@ -1,0 +1,187 @@
+[2026-11-04 16:08:08] ======================================================================
+[2026-11-04 16:08:08] RUN: make hw09-redis-ps (HW9 Redis container)   run by: Ani Taraiya
+[2026-11-04 16:08:08] Run by: Ani Taraiya (s3209)   2026-11-04 16:08:08
+[2026-11-04 16:08:08] NAMES         IMAGE                               STATUS                                     PORTS
+[2026-11-04 16:08:08] s3209_redis   redis/redis-stack-server:7.4.0-v1   Up Less than a second (health: starting)   127.0.0.1:6379->6379/tcp
+[2026-11-04 16:08:08] $ redis-cli PING
+[2026-11-04 16:08:08] PONG
+[2026-11-04 16:08:08] ======================================================================
+[2026-11-04 16:08:08] RUN: make hw09-migrate (HW9 Part 1 trials.view_count column)   run by: Ani Taraiya
+[2026-11-04 16:08:08] Run by: Ani Taraiya (s3209)
+[2026-11-04 16:08:08] schema: ALTER TABLE trials ADD COLUMN view_count INT NOT NULL DEFAULT 0 AFTER status
+[2026-11-04 16:08:08]   id                 int            null=NO   default=None
+[2026-11-04 16:08:08]   trial_title        varchar(255)   null=NO   default=None
+[2026-11-04 16:08:08]   nct_id             varchar(11)    null=NO   default=None
+[2026-11-04 16:08:08]   enrollment_slots   int            null=NO   default=0
+[2026-11-04 16:08:08]   status             varchar(40)    null=NO   default=Recruiting
+[2026-11-04 16:08:08]   view_count         int            null=NO   default=0
+[2026-11-04 16:08:08]   sponsor_id         int            null=NO   default=None
+[2026-11-04 16:08:08]   created_at         datetime       null=NO   default=now()
+[2026-11-04 16:08:08]   updated_at         datetime       null=NO   default=now()
+[2026-11-04 16:08:08] ======================================================================
+[2026-11-04 16:08:08] RUN: make hw09-part1-test (HW9 Part 1 offline tests)   run by: Ani Taraiya
+[2026-11-04 16:08:08] HW9 Part 1 offline tests: 6 / 6 passed
+[2026-11-04 16:08:08] ======================================================================
+[2026-11-04 16:08:08] RUN: make hw09-part1 (HW9 Part 1 Redis view counter, 25 accesses)   run by: Ani Taraiya
+[2026-11-04 16:08:08] Run by: Ani Taraiya (s3209)   2026-11-04 16:08:08
+[2026-11-04 16:08:08] Redis 7.4.1 at redis://localhost:6379/0
+[2026-11-04 16:08:08] Trial id=1 NCT30565986 'Phase II Study of Drug B-1 in Migraine'   key=s3209:views:trial:1
+[2026-11-04 16:08:08] Reset: Redis s3209:views:trial:1 deleted, MySQL view_count = 0
+[2026-11-04 16:08:08] 
+[2026-11-04 16:08:08] === Testing Counter ===
+[2026-11-04 16:08:08] Access #1: Total = 1
+[2026-11-04 16:08:08] Access #2: Total = 2
+[2026-11-04 16:08:08] Access #3: Total = 3
+[2026-11-04 16:08:08] Access #4: Total = 4
+[2026-11-04 16:08:08] Access #5: Total = 5
+[2026-11-04 16:08:08] Access #6: Total = 6
+[2026-11-04 16:08:08] Access #7: Total = 7
+[2026-11-04 16:08:08] Access #8: Total = 8
+[2026-11-04 16:08:08] Access #9: Total = 9
+[2026-11-04 16:08:08] ✓ Synced views to database (trial_id=1, view_count=10)
+[2026-11-04 16:08:08] Access #10: Total = 10
+[2026-11-04 16:08:08] Access #11: Total = 11
+[2026-11-04 16:08:08] Access #12: Total = 12
+[2026-11-04 16:08:08] Access #13: Total = 13
+[2026-11-04 16:08:08] Access #14: Total = 14
+[2026-11-04 16:08:08] Access #15: Total = 15
+[2026-11-04 16:08:08] Access #16: Total = 16
+[2026-11-04 16:08:08] Access #17: Total = 17
+[2026-11-04 16:08:08] Access #18: Total = 18
+[2026-11-04 16:08:08] Access #19: Total = 19
+[2026-11-04 16:08:08] ✓ Synced views to database (trial_id=1, view_count=20)
+[2026-11-04 16:08:08] Access #20: Total = 20
+[2026-11-04 16:08:08] Access #21: Total = 21
+[2026-11-04 16:08:08] Access #22: Total = 22
+[2026-11-04 16:08:08] Access #23: Total = 23
+[2026-11-04 16:08:08] Access #24: Total = 24
+[2026-11-04 16:08:08] Access #25: Total = 25
+[2026-11-04 16:08:08] 
+[2026-11-04 16:08:08] Redis GET s3209:views:trial:1 = 25
+[2026-11-04 16:08:08] MySQL trials.view_count (id=1) = 20   (last sync at 20)
+[2026-11-04 16:08:09] ======================================================================
+[2026-11-04 16:08:09] RUN: make hw09-part1-check (HW9 Part 1 Redis key vs MySQL row)   run by: Ani Taraiya
+[2026-11-04 16:08:09] Run by: Ani Taraiya (s3209)
+[2026-11-04 16:08:09] $ redis-cli --scan --pattern 's3209:views:*'
+[2026-11-04 16:08:09] s3209:views:trial:1
+[2026-11-04 16:08:09] $ redis-cli GET s3209:views:trial:1
+[2026-11-04 16:08:09] 25
+[2026-11-04 16:08:09] $ SELECT id, nct_id, view_count FROM trials WHERE view_count > 0
+[2026-11-04 16:08:09]   1 NCT30565986 20
+[2026-11-04 16:11:11] ======================================================================
+[2026-11-04 16:11:11] RUN: make hw09-part1 (HW9 Part 1 Redis view counter, 25 accesses)   run by: Ani Taraiya
+[2026-11-04 16:11:11] Run by: Ani Taraiya (s3209)   2026-11-04 16:11:11
+[2026-11-04 16:11:11] Redis 7.4.1 at redis://localhost:6379/0
+[2026-11-04 16:11:11] Trial id=1 NCT30565986 'Phase II Study of Drug B-1 in Migraine'   key=s3209:views:trial:1
+[2026-11-04 16:11:11] Reset: Redis s3209:views:trial:1 deleted, MySQL view_count = 0
+[2026-11-04 16:11:11] 
+[2026-11-04 16:11:11] === Testing Counter ===
+[2026-11-04 16:11:11] Access #1: Total = 1
+[2026-11-04 16:11:11] Access #2: Total = 2
+[2026-11-04 16:11:11] Access #3: Total = 3
+[2026-11-04 16:11:11] Access #4: Total = 4
+[2026-11-04 16:11:11] Access #5: Total = 5
+[2026-11-04 16:11:11] Access #6: Total = 6
+[2026-11-04 16:11:11] Access #7: Total = 7
+[2026-11-04 16:11:11] Access #8: Total = 8
+[2026-11-04 16:11:11] Access #9: Total = 9
+[2026-11-04 16:11:11] Access #10: Total = 10
+[2026-11-04 16:11:11] ✓ Synced views to database (trial_id=1, view_count=10)
+[2026-11-04 16:11:11] Access #11: Total = 11
+[2026-11-04 16:11:11] Access #12: Total = 12
+[2026-11-04 16:11:11] Access #13: Total = 13
+[2026-11-04 16:11:11] Access #14: Total = 14
+[2026-11-04 16:11:11] Access #15: Total = 15
+[2026-11-04 16:11:11] Access #16: Total = 16
+[2026-11-04 16:11:11] Access #17: Total = 17
+[2026-11-04 16:11:11] Access #18: Total = 18
+[2026-11-04 16:11:11] Access #19: Total = 19
+[2026-11-04 16:11:11] Access #20: Total = 20
+[2026-11-04 16:11:11] ✓ Synced views to database (trial_id=1, view_count=20)
+[2026-11-04 16:11:11] Access #21: Total = 21
+[2026-11-04 16:11:11] Access #22: Total = 22
+[2026-11-04 16:11:11] Access #23: Total = 23
+[2026-11-04 16:11:11] Access #24: Total = 24
+[2026-11-04 16:11:11] Access #25: Total = 25
+[2026-11-04 16:11:11] 
+[2026-11-04 16:11:11] Redis GET s3209:views:trial:1 = 25
+[2026-11-04 16:11:11] MySQL trials.view_count (id=1) = 20   (last sync at 20)
+[2026-11-04 16:11:11] ======================================================================
+[2026-11-04 16:11:11] RUN: make hw09-part1-check (HW9 Part 1 Redis key vs MySQL row)   run by: Ani Taraiya
+[2026-11-04 16:11:11] Run by: Ani Taraiya (s3209)
+[2026-11-04 16:11:11] $ redis-cli --scan --pattern 's3209:views:*'
+[2026-11-04 16:11:11] s3209:views:trial:1
+[2026-11-04 16:11:11] $ redis-cli GET s3209:views:trial:1
+[2026-11-04 16:11:11] 25
+[2026-11-04 16:11:11] $ SELECT id, nct_id, view_count FROM trials WHERE view_count > 0
+[2026-11-04 16:11:11]   1 NCT30565986 20
+[2026-11-04 16:19:05] ======================================================================
+[2026-11-04 16:19:05] RUN: make hw09-redis-ps (HW9 Redis container)   run by: Ani Taraiya
+[2026-11-04 16:19:05] Run by: Ani Taraiya (s3209)   2026-11-04 16:19:05
+[2026-11-04 16:19:05] NAMES         IMAGE                               STATUS                    PORTS
+[2026-11-04 16:19:05] s3209_redis   redis/redis-stack-server:7.4.0-v1   Up 10 minutes (healthy)   127.0.0.1:6379->6379/tcp
+[2026-11-04 16:19:05] $ redis-cli PING
+[2026-11-04 16:19:05] PONG
+[2026-11-04 16:19:19] ======================================================================
+[2026-11-04 16:19:19] RUN: make hw09-migrate (HW9 Part 1 trials.view_count column)   run by: Ani Taraiya
+[2026-11-04 16:19:19] Run by: Ani Taraiya (s3209)
+[2026-11-04 16:19:19] schema: (schema already up to date)
+[2026-11-04 16:19:19]   id                 int            null=NO   default=None
+[2026-11-04 16:19:19]   trial_title        varchar(255)   null=NO   default=None
+[2026-11-04 16:19:19]   nct_id             varchar(11)    null=NO   default=None
+[2026-11-04 16:19:19]   enrollment_slots   int            null=NO   default=0
+[2026-11-04 16:19:19]   status             varchar(40)    null=NO   default=Recruiting
+[2026-11-04 16:19:19]   view_count         int            null=NO   default=0
+[2026-11-04 16:19:19]   sponsor_id         int            null=NO   default=None
+[2026-11-04 16:19:19]   created_at         datetime       null=NO   default=now()
+[2026-11-04 16:19:19]   updated_at         datetime       null=NO   default=now()
+[2026-11-04 16:19:31] ======================================================================
+[2026-11-04 16:19:31] RUN: make hw09-part1-test (HW9 Part 1 offline tests)   run by: Ani Taraiya
+[2026-11-04 16:19:31] HW9 Part 1 offline tests: 6 / 6 passed
+[2026-11-04 16:19:50] ======================================================================
+[2026-11-04 16:19:50] RUN: make hw09-part1 (HW9 Part 1 Redis view counter, 25 accesses)   run by: Ani Taraiya
+[2026-11-04 16:19:50] Run by: Ani Taraiya (s3209)   2026-11-04 16:19:50
+[2026-11-04 16:19:50] Redis 7.4.1 at redis://localhost:6379/0
+[2026-11-04 16:19:50] Trial id=1 NCT30565986 'Phase II Study of Drug B-1 in Migraine'   key=s3209:views:trial:1
+[2026-11-04 16:19:50] Reset: Redis s3209:views:trial:1 deleted, MySQL view_count = 0
+[2026-11-04 16:19:50] 
+[2026-11-04 16:19:50] === Testing Counter ===
+[2026-11-04 16:19:50] Access #1: Total = 1
+[2026-11-04 16:19:50] Access #2: Total = 2
+[2026-11-04 16:19:50] Access #3: Total = 3
+[2026-11-04 16:19:50] Access #4: Total = 4
+[2026-11-04 16:19:50] Access #5: Total = 5
+[2026-11-04 16:19:50] Access #6: Total = 6
+[2026-11-04 16:19:50] Access #7: Total = 7
+[2026-11-04 16:19:50] Access #8: Total = 8
+[2026-11-04 16:19:50] Access #9: Total = 9
+[2026-11-04 16:19:50] Access #10: Total = 10
+[2026-11-04 16:19:50] ✓ Synced views to database (trial_id=1, view_count=10)
+[2026-11-04 16:19:50] Access #11: Total = 11
+[2026-11-04 16:19:50] Access #12: Total = 12
+[2026-11-04 16:19:50] Access #13: Total = 13
+[2026-11-04 16:19:50] Access #14: Total = 14
+[2026-11-04 16:19:50] Access #15: Total = 15
+[2026-11-04 16:19:50] Access #16: Total = 16
+[2026-11-04 16:19:50] Access #17: Total = 17
+[2026-11-04 16:19:50] Access #18: Total = 18
+[2026-11-04 16:19:50] Access #19: Total = 19
+[2026-11-04 16:19:50] Access #20: Total = 20
+[2026-11-04 16:19:50] ✓ Synced views to database (trial_id=1, view_count=20)
+[2026-11-04 16:19:50] Access #21: Total = 21
+[2026-11-04 16:19:50] Access #22: Total = 22
+[2026-11-04 16:19:50] Access #23: Total = 23
+[2026-11-04 16:19:50] Access #24: Total = 24
+[2026-11-04 16:19:50] Access #25: Total = 25
+[2026-11-04 16:19:50] 
+[2026-11-04 16:19:50] Redis GET s3209:views:trial:1 = 25
+[2026-11-04 16:19:50] MySQL trials.view_count (id=1) = 20   (last sync at 20)
+[2026-11-04 16:20:11] ======================================================================
+[2026-11-04 16:20:11] RUN: make hw09-part1-check (HW9 Part 1 Redis key vs MySQL row)   run by: Ani Taraiya
+[2026-11-04 16:20:11] Run by: Ani Taraiya (s3209)
+[2026-11-04 16:20:11] $ redis-cli --scan --pattern 's3209:views:*'
+[2026-11-04 16:20:11] s3209:views:trial:1
+[2026-11-04 16:20:11] $ redis-cli GET s3209:views:trial:1
+[2026-11-04 16:20:11] 25
+[2026-11-04 16:20:11] $ SELECT id, nct_id, view_count FROM trials WHERE view_count > 0
+[2026-11-04 16:20:11]   1 NCT30565986 20

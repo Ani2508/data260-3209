@@ -201,3 +201,43 @@ $(foreach t,$(P3_TESTS),hw08-$(t)-before) $(foreach t,$(P3_TESTS),hw08-$(t)-afte
 verify-hw08:
 	@$(call STAMP8,make verify-hw08 (HW8 smoke test))
 	python3 -u code/verify_hw08.py 2>&1 | python3 code/tslog.py $(LOG8)
+
+# ---------------- HW9 ----------------
+LOG9 = reports/hw09/RUN_LOG.txt
+COMPOSE9 = docker compose -f code/cache/docker-compose.yml
+STAMP9 = mkdir -p reports/hw09/raw; echo "[$$(date '+%Y-%m-%d %H:%M:%S')] ======================================================================" >> $(LOG9); echo "[$$(date '+%Y-%m-%d %H:%M:%S')] RUN: $(1)   run by: Ani Taraiya" >> $(LOG9)
+
+hw09-redis-up:
+	$(COMPOSE9) up -d
+
+hw09-redis-down:
+	$(COMPOSE9) down
+
+hw09-redis-ps:
+	@$(call STAMP9,make hw09-redis-ps (HW9 Redis container))
+	@(echo "Run by: Ani Taraiya (s3209)   $$(date '+%Y-%m-%d %H:%M:%S')"; \
+	  docker ps --filter name=s3209_redis --format "table {{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}"; \
+	  echo "$$ redis-cli PING"; docker exec s3209_redis redis-cli PING) 2>&1 | python3 code/tslog.py $(LOG9)
+
+hw09-migrate:
+	@$(call STAMP9,make hw09-migrate (HW9 Part 1 trials.view_count column))
+	cd code/web_application && python3 -u migrate_hw09.py 2>&1 | python3 ../tslog.py ../../$(LOG9)
+
+hw09-part1-test:
+	@$(call STAMP9,make hw09-part1-test (HW9 Part 1 offline tests))
+	python3 -u code/cache/test_trial_cache.py 2>&1 | python3 code/tslog.py $(LOG9)
+
+hw09-part1:
+	@$(call STAMP9,make hw09-part1 (HW9 Part 1 Redis view counter, 25 accesses))
+	python3 -u code/run_hw09_part1.py $(if $(T),--trial-id $(T)) 2>&1 | python3 code/tslog.py $(LOG9)
+
+hw09-part1-check:
+	@$(call STAMP9,make hw09-part1-check (HW9 Part 1 Redis key vs MySQL row))
+	@(echo "Run by: Ani Taraiya (s3209)"; \
+	  echo "$$ redis-cli --scan --pattern 's3209:views:*'"; docker exec s3209_redis redis-cli --scan --pattern 's3209:views:*'; \
+	  for k in $$(docker exec s3209_redis redis-cli --scan --pattern 's3209:views:*'); do \
+	    echo "$$ redis-cli GET $$k"; docker exec s3209_redis redis-cli GET $$k; done; \
+	  echo "$$ SELECT id, nct_id, view_count FROM trials WHERE view_count > 0"; \
+	  cd code/web_application && python3 -c "from database import engine; from sqlalchemy import text; \
+	  [print(' ', *r) for r in engine.connect().execute(text('SELECT id, nct_id, view_count FROM trials WHERE view_count > 0'))]") \
+	  2>&1 | python3 code/tslog.py $(LOG9)
