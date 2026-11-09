@@ -1,0 +1,30 @@
+[
+  {
+    "variant": "Baseline",
+    "correct": 4,
+    "incorrect": 8,
+    "avg_attempts": 1.0,
+    "avg_latency_ms": 566.6
+  },
+  {
+    "variant": "Evaluator Repair",
+    "correct": 12,
+    "incorrect": 0,
+    "avg_attempts": 1.67,
+    "avg_latency_ms": 885.9
+  },
+  {
+    "variant": "Lesson Memory",
+    "correct": 12,
+    "incorrect": 0,
+    "avg_attempts": 1.08,
+    "avg_latency_ms": 638.2
+  },
+  {
+    "variant": "Validated Improvement",
+    "correct": 12,
+    "incorrect": 0,
+    "avg_attempts": 1.08,
+    "avg_latency_ms": 591.3
+  }
+]

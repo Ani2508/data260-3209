@@ -299,3 +299,12 @@ hw09-part3-falsehit:
 hw09-part3-stale:
 	@$(call STAMP9,make hw09-part3-stale (HW9 Part 3.5 stale answer and invalidation))
 	python3 -u code/run_hw09_part3.py stale 2>&1 | python3 code/tslog.py $(LOG9)
+
+# HW9 Part 4: self-improving Answering + Evaluator agents (Ollama llama3.1:8b)
+hw09-part4-test:
+	@$(call STAMP9,make hw09-part4-test (HW9 Part 4 offline tests))
+	python3 -u code/self_improving/test_self_improving.py 2>&1 | python3 code/tslog.py $(LOG9)
+
+hw09-part4-demo hw09-part4-train hw09-part4-validate hw09-part4-variants hw09-part4-lessons:
+	@$(call STAMP9,make $@ (HW9 Part 4 $(subst hw09-part4-,,$@)))
+	python3 -u code/run_hw09_part4.py $(subst variants,test,$(subst hw09-part4-,,$@)) 2>&1 | python3 code/tslog.py $(LOG9)

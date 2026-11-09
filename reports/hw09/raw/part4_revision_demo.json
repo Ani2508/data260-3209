@@ -1,0 +1,34 @@
+{
+  "id": "DEMO",
+  "question": "What is the current status of trial NCT48236558?",
+  "type": "trial_status",
+  "attempts": 2,
+  "first_result": "REVISE",
+  "final_result": "PASS",
+  "final_answer": "The current status of trial NCT48236558 is Recruiting.",
+  "lessons_used": [],
+  "lessons_created": [],
+  "latency_ms": 496.9,
+  "trace": [
+    {
+      "attempt": 1,
+      "answer": "Trial NCT48236558 is a Phase II hypertension study sponsored by Stanford Medicine.",
+      "lessons_used": [],
+      "checked_reference": false,
+      "result": "REVISE",
+      "explanation": "The answer does not state the status of NCT48236558.",
+      "feedback": "Reference dataset: NCT48236558 status is Recruiting. State this value directly.",
+      "failure_pattern": "omits_current_value"
+    },
+    {
+      "attempt": 2,
+      "answer": "The current status of trial NCT48236558 is Recruiting.",
+      "lessons_used": [],
+      "checked_reference": false,
+      "result": "PASS",
+      "explanation": "The answer states status = Recruiting, matching the reference dataset.",
+      "feedback": "",
+      "failure_pattern": null
+    }
+  ]
+}

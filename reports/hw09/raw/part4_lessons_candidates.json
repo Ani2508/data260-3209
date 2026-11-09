@@ -1,0 +1,19 @@
+[
+  {
+    "lesson_id": "lesson_001",
+    "failure_pattern": "The answer omits or guesses a changing value (status or enrollment slots).",
+    "correction": "Check the reference dataset for the current status and enrollment slots before answering questions about changing values.",
+    "created_at": "2026-11-09",
+    "use_count": 3,
+    "pattern": "omits_current_value",
+    "applies_to": [
+      "trial_status",
+      "trial_slots"
+    ],
+    "action": "check_reference",
+    "learned_from": [
+      "T01",
+      "T02"
+    ]
+  }
+]

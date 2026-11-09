@@ -1,0 +1,286 @@
+[
+  {
+    "id": "T01",
+    "question": "What is the current status of trial NCT48236558?",
+    "type": "trial_status",
+    "attempts": 2,
+    "first_result": "REVISE",
+    "final_result": "PASS",
+    "final_answer": "The current status of trial NCT48236558 is Recruiting.",
+    "lessons_used": [],
+    "lessons_created": [],
+    "latency_ms": 1204.5,
+    "trace": [
+      {
+        "attempt": 1,
+        "answer": "The current status of trial NCT48236558 is not specified in the catalogue listing, but it is a Phase II study.",
+        "lessons_used": [],
+        "checked_reference": false,
+        "result": "REVISE",
+        "explanation": "The answer does not state the status of NCT48236558.",
+        "feedback": "Reference dataset: NCT48236558 status is Recruiting. State this value directly.",
+        "failure_pattern": "omits_current_value"
+      },
+      {
+        "attempt": 2,
+        "answer": "The current status of trial NCT48236558 is Recruiting.",
+        "lessons_used": [],
+        "checked_reference": false,
+        "result": "PASS",
+        "explanation": "The answer states status = Recruiting, matching the reference dataset.",
+        "feedback": "",
+        "failure_pattern": null
+      }
+    ]
+  },
+  {
+    "id": "T02",
+    "question": "How many enrollment slots does trial NCT72283365 have?",
+    "type": "trial_slots",
+    "attempts": 2,
+    "first_result": "REVISE",
+    "final_result": "PASS",
+    "final_answer": "The trial NCT72283365 has 114 enrollment slots.",
+    "lessons_used": [],
+    "lessons_created": [
+      "lesson_001"
+    ],
+    "latency_ms": 994.3,
+    "trace": [
+      {
+        "attempt": 1,
+        "answer": "The catalogue listing does not specify the number of enrollment slots for trial NCT72283365.",
+        "lessons_used": [],
+        "checked_reference": false,
+        "result": "REVISE",
+        "explanation": "The answer does not state the enrollment slots of NCT72283365.",
+        "feedback": "Reference dataset: NCT72283365 enrollment slots is 114. State this value directly.",
+        "failure_pattern": "omits_current_value"
+      },
+      {
+        "attempt": 2,
+        "answer": "The trial NCT72283365 has 114 enrollment slots.",
+        "lessons_used": [],
+        "checked_reference": false,
+        "result": "PASS",
+        "explanation": "The answer states enrollment slots = 114, matching the reference dataset.",
+        "feedback": "",
+        "failure_pattern": null
+      }
+    ]
+  },
+  {
+    "id": "T03",
+    "question": "Is trial NCT55837001 still recruiting participants?",
+    "type": "trial_status",
+    "attempts": 1,
+    "first_result": "PASS",
+    "final_result": "PASS",
+    "final_answer": "No, trial NCT55837001 is not recruiting participants as it has been terminated.",
+    "lessons_used": [
+      "lesson_001"
+    ],
+    "lessons_created": [],
+    "latency_ms": 630.4,
+    "trace": [
+      {
+        "attempt": 1,
+        "answer": "No, trial NCT55837001 is not recruiting participants as it has been terminated.",
+        "lessons_used": [
+          "lesson_001"
+        ],
+        "checked_reference": true,
+        "result": "PASS",
+        "explanation": "The answer states status = Terminated, matching the reference dataset.",
+        "feedback": "",
+        "failure_pattern": null
+      }
+    ]
+  },
+  {
+    "id": "T04",
+    "question": "Which sponsor runs trial NCT69258056?",
+    "type": "trial_sponsor",
+    "attempts": 1,
+    "first_result": "PASS",
+    "final_result": "PASS",
+    "final_answer": "Johns Hopkins Medicine is the sponsor of trial NCT69258056.",
+    "lessons_used": [],
+    "lessons_created": [],
+    "latency_ms": 473.4,
+    "trace": [
+      {
+        "attempt": 1,
+        "answer": "Johns Hopkins Medicine is the sponsor of trial NCT69258056.",
+        "lessons_used": [],
+        "checked_reference": false,
+        "result": "PASS",
+        "explanation": "The answer states sponsor = Johns Hopkins Medicine, matching the reference dataset.",
+        "feedback": "",
+        "failure_pattern": null
+      }
+    ]
+  },
+  {
+    "id": "T05",
+    "question": "How many open enrollment slots are left in trial NCT51652013?",
+    "type": "trial_slots",
+    "attempts": 1,
+    "first_result": "PASS",
+    "final_result": "PASS",
+    "final_answer": "There are 8 open enrollment slots left in trial NCT51652013.",
+    "lessons_used": [
+      "lesson_001"
+    ],
+    "lessons_created": [],
+    "latency_ms": 590.6,
+    "trace": [
+      {
+        "attempt": 1,
+        "answer": "There are 8 open enrollment slots left in trial NCT51652013.",
+        "lessons_used": [
+          "lesson_001"
+        ],
+        "checked_reference": true,
+        "result": "PASS",
+        "explanation": "The answer states enrollment slots = 8, matching the reference dataset.",
+        "feedback": "",
+        "failure_pattern": null
+      }
+    ]
+  },
+  {
+    "id": "T06",
+    "question": "What is the status of trial NCT99887766?",
+    "type": "unknown_trial",
+    "attempts": 2,
+    "first_result": "REVISE",
+    "final_result": "PASS",
+    "final_answer": "Trial NCT99887766 is not listed in the catalogue.",
+    "lessons_used": [],
+    "lessons_created": [],
+    "latency_ms": 936.9,
+    "trace": [
+      {
+        "attempt": 1,
+        "answer": "The status of trial NCT99887766 is 'Recruiting'.",
+        "lessons_used": [],
+        "checked_reference": false,
+        "result": "REVISE",
+        "explanation": "NCT99887766 is not in the reference dataset, but the answer does not say so.",
+        "feedback": "Say that NCT99887766 is not listed in the catalogue and give no status or counts.",
+        "failure_pattern": "invents_unknown_trial"
+      },
+      {
+        "attempt": 2,
+        "answer": "Trial NCT99887766 is not listed in the catalogue.",
+        "lessons_used": [],
+        "checked_reference": false,
+        "result": "PASS",
+        "explanation": "NCT99887766 is not in the reference dataset and the answer says so.",
+        "feedback": "",
+        "failure_pattern": null
+      }
+    ]
+  },
+  {
+    "id": "T07",
+    "question": "Can a new patient still join trial NCT80911774?",
+    "type": "trial_status",
+    "attempts": 1,
+    "first_result": "PASS",
+    "final_result": "PASS",
+    "final_answer": "No, the trial is not recruiting new patients as it is currently Active - Not Recruiting with 0 enrollment slots available.",
+    "lessons_used": [
+      "lesson_001"
+    ],
+    "lessons_created": [],
+    "latency_ms": 768.8,
+    "trace": [
+      {
+        "attempt": 1,
+        "answer": "No, the trial is not recruiting new patients as it is currently Active - Not Recruiting with 0 enrollment slots available.",
+        "lessons_used": [
+          "lesson_001"
+        ],
+        "checked_reference": true,
+        "result": "PASS",
+        "explanation": "The answer states status = Active - Not Recruiting, matching the reference dataset.",
+        "feedback": "",
+        "failure_pattern": null
+      }
+    ]
+  },
+  {
+    "id": "T08",
+    "question": "What does an Active - Not Recruiting status mean for a trial listing?",
+    "type": "definition",
+    "attempts": 1,
+    "first_result": "PASS",
+    "final_result": "PASS",
+    "final_answer": "An Active - Not Recruiting status means the trial is currently active, but it is not currently recruiting participants at this time.",
+    "lessons_used": [],
+    "lessons_created": [],
+    "latency_ms": 1083.6,
+    "trace": [
+      {
+        "attempt": 1,
+        "answer": "An Active - Not Recruiting status means the trial is currently active, but it is not currently recruiting participants at this time.",
+        "lessons_used": [],
+        "checked_reference": false,
+        "result": "PASS",
+        "explanation": "Matches the reference definition of Active - Not Recruiting. Matches reference definition",
+        "feedback": "",
+        "failure_pattern": null
+      }
+    ]
+  },
+  {
+    "id": "T09",
+    "question": "What is a good way to learn to play the guitar?",
+    "type": "unrelated",
+    "attempts": 1,
+    "first_result": "PASS",
+    "final_result": "PASS",
+    "final_answer": "The catalogue does not provide information on guitar playing. However, a reference fact is that the Fender Play app is a popular online resource for learning to play the guitar.",
+    "lessons_used": [],
+    "lessons_created": [],
+    "latency_ms": 847.6,
+    "trace": [
+      {
+        "attempt": 1,
+        "answer": "The catalogue does not provide information on guitar playing. However, a reference fact is that the Fender Play app is a popular online resource for learning to play the guitar.",
+        "lessons_used": [],
+        "checked_reference": false,
+        "result": "PASS",
+        "explanation": "The question is outside the catalogue and the answer states no catalogue facts.",
+        "feedback": "",
+        "failure_pattern": null
+      }
+    ]
+  },
+  {
+    "id": "T10",
+    "question": "What condition does trial NCT15684177 study?",
+    "type": "trial_other",
+    "attempts": 1,
+    "first_result": "PASS",
+    "final_result": "PASS",
+    "final_answer": "Rheumatoid Arthritis",
+    "lessons_used": [],
+    "lessons_created": [],
+    "latency_ms": 304.8,
+    "trace": [
+      {
+        "attempt": 1,
+        "answer": "Rheumatoid Arthritis",
+        "lessons_used": [],
+        "checked_reference": false,
+        "result": "PASS",
+        "explanation": "The answer states condition = Rheumatoid Arthritis, matching the reference dataset.",
+        "feedback": "",
+        "failure_pattern": null
+      }
+    ]
+  }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "lesson_id": "lesson_001",
+    "pattern": "omits_current_value",
+    "before": {
+      "V01": "REVISE",
+      "V02": "REVISE",
+      "V03": "REVISE",
+      "V04": "PASS",
+      "V05": "REVISE",
+      "V06": "PASS",
+      "V07": "PASS",
+      "V08": "PASS",
+      "V09": "REVISE",
+      "V10": "PASS"
+    },
+    "after": {
+      "V01": "PASS",
+      "V02": "PASS",
+      "V03": "PASS",
+      "V04": "PASS",
+      "V05": "REVISE",
+      "V06": "PASS",
+      "V07": "PASS",
+      "V08": "PASS",
+      "V09": "PASS",
+      "V10": "PASS"
+    },
+    "fixed": [
+      "V01",
+      "V02",
+      "V03",
+      "V09"
+    ],
+    "regressions": [],
+    "unrelated_unsupported": [],
+    "kept": true
+  }
+]
