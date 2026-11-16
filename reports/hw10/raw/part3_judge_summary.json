@@ -1,0 +1,65 @@
+{
+  "n": 20,
+  "runs": 3,
+  "per_run": {
+    "run1": {
+      "n": 19,
+      "spearman": 0.532,
+      "p_value": 0.019,
+      "mad": 1.0,
+      "exact_agree": 9
+    },
+    "run2": {
+      "n": 19,
+      "spearman": 0.532,
+      "p_value": 0.019,
+      "mad": 1.0,
+      "exact_agree": 9
+    },
+    "run3": {
+      "n": 19,
+      "spearman": 0.532,
+      "p_value": 0.019,
+      "mad": 1.0,
+      "exact_agree": 9
+    }
+  },
+  "judge_errors": {
+    "run1": [
+      "C16"
+    ],
+    "run2": [
+      "C16"
+    ],
+    "run3": [
+      "C16"
+    ]
+  },
+  "repeatability": {
+    "cases_scored_all_runs": 19,
+    "cases_changed": 0,
+    "pct_changed": 0.0,
+    "pair_changes": 0,
+    "pairs": 57,
+    "mean_abs_change": 0.0,
+    "max_abs_change": 0
+  },
+  "judge_mean": 3.89,
+  "human_mean": 3.6,
+  "judge": {
+    "framework": "deepeval 4.3.4 GEval",
+    "model": "qwen3:8b",
+    "temperature": 0.0,
+    "seed": 3209,
+    "scale": "1-5 rubric",
+    "http_timeout_s": 60,
+    "metric_timeout_s": 90,
+    "max_tokens": 2048,
+    "parse_tries": 4
+  },
+  "committed": {
+    "reports/hw10/cases/eval_cases.json": "7e27e57 2026-11-15 17:21:14 -0800",
+    "reports/hw10/cases/human_labels.csv": "7e27e57 2026-11-15 17:21:14 -0800"
+  },
+  "run_at": "2026-11-15 18:04:01"
+}

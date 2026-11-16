@@ -22,6 +22,8 @@ NAME = "WRITER"
 
 
 def handle(msg: dict) -> dict:
+    if msg.get("fail_stage") == "writer":  # HW10 Part 4.2: injected fault for the failed trace
+        raise RuntimeError("injected fault: writer could not produce a draft")
     plan = "\n".join(f"{i}. {s}" for i, s in enumerate(msg["plan"], 1))
     if SIM:
         time.sleep(msg.get("work_ms", 200) / 1000)

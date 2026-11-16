@@ -12,8 +12,11 @@ def handle(msg: dict) -> dict:
     user = msg["question"] + (f"\nTrial records:\n{facts}" if facts else "")
     plan = ask_json(llm, SYSTEM, user, "plan")["plan"][:3]
     log("PLANNER", f"PLAN     {plan}")
-    return {"correlation_id": msg["correlation_id"], "question": msg["question"],
-            "facts": facts, "plan": plan, "planned_at": now()}
+    out = {"correlation_id": msg["correlation_id"], "question": msg["question"],
+           "facts": facts, "plan": plan, "planned_at": now()}
+    if msg.get("fail_stage"):  # HW10 failed-trace test: pass the fault flag on
+        out["fail_stage"] = msg["fail_stage"]
+    return out
 
 
 if __name__ == "__main__":

@@ -13,7 +13,20 @@ from pathlib import Path
 
 from kafka import ConsumerRebalanceListener, KafkaConsumer
 
-from common import BOOTSTRAP, MODEL, PREFIX, RUN_BY, log, now, producer
+from common import (
+    BOOTSTRAP,
+    MODEL,
+    PREFIX,
+    RUN_BY,
+    epoch_ms,
+    log,
+    now,
+    producer,
+    queue_span,
+    span,
+    topic_stage,
+)
+from tracer import write_span
 
 DEAD_LETTER = f"{PREFIX}_dead_letter"
 STATE = Path(__file__).resolve().parent / "state"
@@ -71,6 +84,10 @@ def process(name, rec, consumer, out, handle, done_dir, out_topic,
         msg = None
     cid = msg.get("correlation_id") if isinstance(msg, dict) else None
     log(name, f"RECEIVED from {rec.topic} [p{rec.partition}@{rec.offset}] cid={cid}")
+    if cid:  # HW10: queue wait on the input topic
+        queue_span(cid, topic_stage(rec.topic), msg.get("sent_ms"),
+                   partition=rec.partition, offset=rec.offset)
+    stage = name.split("-")[0].lower()
 
     marker = done_dir / f"{cid}.done"
     if idempotent and cid and marker.exists():  # idempotency: already handled
@@ -82,7 +99,8 @@ def process(name, rec, consumer, out, handle, done_dir, out_topic,
         try:
             if not isinstance(msg, dict):
                 raise ValueError("message is not a JSON object")
-            result = handle(msg)
+            with span(cid or "unknown", stage, attempt=attempt, partition=rec.partition):
+                result = handle(msg)
             break
         except Exception as exc:
             error = f"{type(exc).__name__}: {exc}"
@@ -94,14 +112,18 @@ def process(name, rec, consumer, out, handle, done_dir, out_topic,
     else:
         bad = {"correlation_id": cid, "error": error, "attempts": max_retries,
                "source": f"{rec.topic} p{rec.partition}@{rec.offset}",
-               "raw": rec.value.decode(errors="replace"), "failed_at": now()}
+               "raw": rec.value.decode(errors="replace"), "failed_at": now(),
+               "failed_stage": stage, "sent_ms": epoch_ms()}
         out.send(DEAD_LETTER, key=cid or "unknown", value=bad).get(timeout=10)
         log(name, f"DEAD_LETTER sent to {DEAD_LETTER} cid={cid} after {max_retries} tries")
+        if cid:
+            write_span(cid, "dead_letter", bad["sent_ms"], epoch_ms(), "error", error,
+                       failed_stage=stage, attempts=max_retries)
         if not commit_first:
             commit(name, consumer, rec)
         return
 
-    result.update(processed_by=name, source_partition=rec.partition)
+    result.update(processed_by=name, source_partition=rec.partition, sent_ms=epoch_ms())
     out.send(out_topic, key=cid, value=result).get(timeout=10)
     log(name, f"SENT     to {out_topic} cid={cid}")
     if idempotent and cid:

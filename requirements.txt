@@ -22,3 +22,7 @@ langgraph
 kafka-python>=2.2
 redis>=5.0
 sentence-transformers
+deepeval
+streamlit
+pandas
+scipy

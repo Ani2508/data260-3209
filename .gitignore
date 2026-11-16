@@ -28,3 +28,8 @@ code/kafka_agents/state/
 reports/hw09/Snippets/
 reports/hw09/*.docx
 reports/hw09/_to_delete/
+
+# HW10 working screenshots and report draft (used only inside the report)
+reports/hw10/Snippets/
+reports/hw10/*.docx
+.deepeval/

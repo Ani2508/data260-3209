@@ -3,13 +3,16 @@ python3 code/semantic_cache/test_semantic_cache.py
 """
 from __future__ import annotations
 
+import os
 import sys
+import tempfile
 from datetime import datetime
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent / "kafka_agents"))
+os.environ["S3209_SPAN_FILE"] = os.path.join(tempfile.mkdtemp(), "spans.jsonl")  # HW10: temp spans
 
 from qa_service import QAService  # noqa: E402
 from semantic_cache import similarity_from_distance  # noqa: E402
@@ -64,7 +67,7 @@ class FakePipeline:
         """Return nothing; no calls yet."""
         self.calls = 0
 
-    def ask(self, question: str, facts: str = "") -> dict:
+    def ask(self, question: str, facts: str = "", trace_id=None, fail_stage=None) -> dict:
         """Return a final message like the HW8 Reviewer's."""
         self.calls += 1
         return {"status": "approved", "answer": f"answer {self.calls}"}

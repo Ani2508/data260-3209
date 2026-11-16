@@ -7,9 +7,11 @@ Part 3.5: with check_version=True a hit whose trial rows changed is deleted and 
 from __future__ import annotations
 
 import time
+import uuid
 
-from common import log
+from common import epoch_ms, log
 from semantic_cache import Embedder, SemanticCache
+from tracer import span, write_span
 from trial_facts import current_version, find_trial_facts
 
 
@@ -38,26 +40,45 @@ class QAService:
         current = current_version(ids)
         return current if current != entry["data_version"] else None
 
-    def answer(self, question: str) -> dict:
-        """Return the answer with is_cached, similarity, latency_ms and per-step timings."""
+    def answer(self, question: str, trace_id: str | None = None,
+               fail_stage: str | None = None) -> dict:
+        """Return the answer with trace_id, is_cached, similarity, latency and step timings."""
         if not isinstance(question, str) or not question.strip():
             raise ValueError("question must be a non-empty string")
-        t0 = time.perf_counter()
-        vec = self.embedder.encode(question)
-        t1 = time.perf_counter()
-        best = self.cache.nearest(vec)
-        t2 = time.perf_counter()
-        sim = best["similarity"] if best else 0.0
-        timings = {"embed_ms": ms(t0, t1), "search_ms": ms(t1, t2)}
+        tid = trace_id or str(uuid.uuid4())  # HW10: one id for cache, Kafka and evaluator
+        start_ms = epoch_ms()
+        try:
+            out = self._answer(question, tid, fail_stage)
+        except Exception as exc:
+            write_span(tid, "request", start_ms, epoch_ms(), "error",
+                       f"{type(exc).__name__}: {exc}", question=question[:120])
+            raise
+        route = "hit" if out["is_cached"] else "miss"
+        write_span(tid, "request", start_ms, epoch_ms(), route=route,
+                   question=question[:120], review=out["agent_status"])
+        return {**out, "trace_id": tid, "started_ms": start_ms}
 
-        stale = None
-        if best and sim >= self.cache.threshold and self.check_version:
-            stale = self.stale_version(best)
-            if stale:
-                self.cache.delete(best["key"])
-                log("CACHE", f"STALE sim={sim:.4f} stored={best['data_version']} "
-                             f"current={stale} -> entry deleted")
-        if best and sim >= self.cache.threshold and not stale:
+    def _answer(self, question: str, tid: str, fail_stage: str | None) -> dict:
+        """Return the answer dict for one request (spans: cache_lookup, facts)."""
+        t0 = time.perf_counter()
+        with span(tid, "cache_lookup", threshold=self.cache.threshold) as attrs:
+            vec = self.embedder.encode(question)
+            t1 = time.perf_counter()
+            best = self.cache.nearest(vec)
+            t2 = time.perf_counter()
+            sim = best["similarity"] if best else 0.0
+            stale = None
+            if best and sim >= self.cache.threshold and self.check_version:
+                stale = self.stale_version(best)
+                if stale:
+                    self.cache.delete(best["key"])
+                    log("CACHE", f"STALE sim={sim:.4f} stored={best['data_version']} "
+                                 f"current={stale} -> entry deleted")
+            hit = bool(best and sim >= self.cache.threshold and not stale)
+            attrs.update(result="hit" if hit else "miss", similarity=sim,
+                         matched_query=best["query"] if hit else "")
+        timings = {"embed_ms": ms(t0, t1), "search_ms": ms(t1, t2)}
+        if hit:
             latency = ms(t0, time.perf_counter())
             log("CACHE", f"HIT   sim={sim:.4f} matched='{best['query']}' latency={latency} ms")
             return {"question": question, "answer": best["answer"], "is_cached": True,
@@ -66,9 +87,10 @@ class QAService:
                     "agent_status": best["review"], "stale_invalidated": False}
 
         log("CACHE", f"MISS  best_sim={sim:.4f} -> HW8 agent pipeline")
-        facts = find_trial_facts(question)
+        with span(tid, "facts"):
+            facts = find_trial_facts(question)
         t3 = time.perf_counter()
-        final = self.pipeline.ask(question, facts["facts"])
+        final = self.pipeline.ask(question, facts["facts"], trace_id=tid, fail_stage=fail_stage)
         t4 = time.perf_counter()
         if self.store:
             self.cache.store(question, vec, final.get("answer", ""), facts["data_version"],

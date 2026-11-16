@@ -16,8 +16,10 @@ from kafka import KafkaConsumer, KafkaProducer
 warnings.filterwarnings("ignore", message=".*serializer does not implement.*")
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "src"))
+sys.path.insert(0, str(ROOT / "code" / "tracing"))
 
 from model_client import ModelClient  # noqa: E402
+from tracer import epoch_ms, queue_span, span  # noqa: E402
 
 SID4 = 3209
 PREFIX = f"s{SID4}"
@@ -27,6 +29,9 @@ BOOTSTRAP = os.getenv("KAFKA_BOOTSTRAP", "localhost:9092")
 MODEL = os.getenv("OLLAMA_MODEL", "llama3.1:8b")
 INBOX, TASKS, DRAFTS, FINAL = (f"{PREFIX}_{t}" for t in ("inbox", "tasks", "drafts", "final"))
 TZ = ZoneInfo("America/Los_Angeles")
+MAX_TOKENS = 400
+MODEL_TIMEOUT_S = 60
+DEAD_LETTER = f"{PREFIX}_dead_letter"
 
 
 def now() -> str:
@@ -43,7 +48,9 @@ def producer() -> KafkaProducer:
 
 
 def model() -> ModelClient:
-    return ModelClient(model=MODEL, temperature=0.0, seed=SEED)
+    # HW10: cap output and wait so a runaway JSON reply fails fast instead of hanging the agent
+    return ModelClient(model=MODEL, temperature=0.0, seed=SEED, num_predict=MAX_TOKENS,
+                       client_kwargs={"timeout": MODEL_TIMEOUT_S})
 
 
 def ask_json(llm: ModelClient, system: str, user: str, key: str, tries: int = 2) -> dict:
@@ -58,6 +65,11 @@ def ask_json(llm: ModelClient, system: str, user: str, key: str, tries: int = 2)
         if isinstance(data, dict) and data.get(key) not in (None, "", []):
             return data
     raise ValueError(f"model reply had no '{key}'")
+
+
+def topic_stage(topic: str) -> str:
+    """Return the trace stage for a topic ('s3209_inbox' -> 'inbox')."""
+    return topic.split("_", 1)[1]
 
 
 def run_agent(name: str, in_topic: str, out_topic: str, handle):
@@ -78,7 +90,22 @@ def run_agent(name: str, in_topic: str, out_topic: str, handle):
                 msg = json.loads(rec.value)
                 cid = msg.get("correlation_id")
                 log(name, f"RECEIVED from {in_topic} [p{rec.partition}@{rec.offset}] cid={cid}")
-                result = handle(msg)
+                if cid:  # HW10: queue wait for this topic, then the agent's own span
+                    queue_span(cid, topic_stage(in_topic), msg.get("sent_ms"),
+                               partition=rec.partition, offset=rec.offset)
+                try:
+                    with span(cid or "unknown", name.lower(), partition=rec.partition):
+                        result = handle(msg)
+                except Exception as exc:  # HW10: one bad message must not kill the agent
+                    error = f"{type(exc).__name__}: {exc}"
+                    bad = {"correlation_id": cid, "error": error, "failed_stage": name.lower(),
+                           "source": f"{in_topic} p{rec.partition}@{rec.offset}",
+                           "failed_at": now(), "sent_ms": epoch_ms()}
+                    out.send(DEAD_LETTER, key=cid or "unknown", value=bad).get(timeout=10)
+                    log(name, f"DEAD_LETTER sent to {DEAD_LETTER} cid={cid} {error}")
+                    consumer.commit()
+                    continue
+                result["sent_ms"] = epoch_ms()
                 out.send(out_topic, key=cid, value=result).get(timeout=10)
                 log(name, f"SENT     to {out_topic} cid={cid} {json.dumps(result)[:160]}")
                 consumer.commit()

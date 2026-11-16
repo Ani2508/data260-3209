@@ -308,3 +308,52 @@ hw09-part4-test:
 hw09-part4-demo hw09-part4-train hw09-part4-validate hw09-part4-variants hw09-part4-lessons:
 	@$(call STAMP9,make $@ (HW9 Part 4 $(subst hw09-part4-,,$@)))
 	python3 -u code/run_hw09_part4.py $(subst variants,test,$(subst hw09-part4-,,$@)) 2>&1 | python3 code/tslog.py $(LOG9)
+
+# ---------------- HW10 ----------------
+LOG10 = reports/hw10/RUN_LOG.txt
+STAMP10 = mkdir -p reports/hw10/raw; echo "[$$(date '+%Y-%m-%d %H:%M:%S')] ======================================================================" >> $(LOG10); echo "[$$(date '+%Y-%m-%d %H:%M:%S')] RUN: $(1)   run by: Ani Taraiya" >> $(LOG10)
+
+# JUDGE=<ollama model> sets the GEval judge for every hw10 target
+ifdef JUDGE
+export JUDGE_MODEL := $(JUDGE)
+endif
+
+# HW8 agents with HW10 trace spans (one per terminal)
+hw10-planner hw10-writer hw10-reviewer:
+	@$(call STAMP10,make $@ (HW10 traced $(subst hw10-,,$@)))
+	cd code/kafka_agents && python3 -u $(subst hw10-,,$@).py 2>&1 | python3 ../tslog.py ../../$(LOG10)
+
+hw10-test:
+	@$(call STAMP10,make hw10-test (HW10 offline tests + HW9 regression))
+	(python3 -u code/evaluation/test_hw10.py; python3 -u code/semantic_cache/test_semantic_cache.py | tail -1) 2>&1 | python3 code/tslog.py $(LOG10)
+
+# HW10 Part 2: test questions through the system, then the GEval evaluator per trace
+hw10-part2:
+	@$(call STAMP10,make hw10-part2 (HW10 Part 2 evaluator, judge $(or $(JUDGE),default)))
+	python3 -u code/run_hw10_part2.py $(if $(JUDGE),--judge-model $(JUDGE)) 2>&1 | python3 code/tslog.py $(LOG10)
+
+# HW10 Part 3: freeze cases -> hand-label -> COMMIT both files -> judge x3
+hw10-part3-cases hw10-part3-show hw10-part3-check hw10-part3-judge hw10-part3-stats:
+	@$(call STAMP10,make $@ (HW10 Part 3 $(subst hw10-part3-,,$@)))
+	python3 -u code/run_hw10_part3.py $(subst hw10-part3-,,$@) 2>&1 | python3 code/tslog.py $(LOG10)
+
+# HW10 Part 4: hit / miss / failed traces, one journey, 50-miss latency run, table
+hw10-part4-traces hw10-part4-latency hw10-part4-table:
+	@$(call STAMP10,make $@ (HW10 Part 4 $(subst hw10-part4-,,$@)))
+	python3 -u code/run_hw10_part4.py $(subst hw10-part4-,,$@) 2>&1 | python3 code/tslog.py $(LOG10)
+
+hw10-part4-show:
+	@$(call STAMP10,make hw10-part4-show (HW10 Part 4 journey $(or $(T),failed)))
+	python3 -u code/run_hw10_part4.py show $(if $(T),--trace-id $(T)) 2>&1 | python3 code/tslog.py $(LOG10)
+
+hw10-spans:
+	@$(call STAMP10,make hw10-spans (HW10 Part 4 raw spans, last 3 lines))
+	@(echo "$$ tail -3 reports/hw10/raw/spans.jsonl"; tail -3 reports/hw10/raw/spans.jsonl) 2>&1 | python3 code/tslog.py $(LOG10)
+
+# HW10 Part 1: Streamlit dashboard on PORT_BASE+1
+hw10-dashboard:
+	streamlit run code/dashboard/app.py --server.port 8510
+
+# HW10 Part 3: interactive hand labeling (no tslog: needs keyboard input)
+hw10-part3-label:
+	python3 -u code/run_hw10_part3.py label

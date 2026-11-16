@@ -1,0 +1,15 @@
+{
+  "miss": {
+    "trace_id": "0b7093e6-1491-41da-887b-799fec234b73",
+    "question": "How should a coordinator record a protocol deviation in a trial log?"
+  },
+  "hit": {
+    "trace_id": "31ddb1be-43f9-48f5-ab6e-1a1edcbb7dee",
+    "question": "How should a coordinator record a protocol deviation in a trial log?"
+  },
+  "failed": {
+    "trace_id": "82e5a3ba-5aaf-43b5-a373-3ae3d3ca385c",
+    "question": "What should a coordinator prepare before a sponsor monitoring visit?",
+    "error": "dead letter from writer: RuntimeError: injected fault: writer could not produce a draft"
+  }
+}

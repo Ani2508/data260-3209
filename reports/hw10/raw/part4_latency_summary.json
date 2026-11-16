@@ -1,0 +1,110 @@
+{
+  "n": 50,
+  "table": {
+    "cache_lookup": {
+      "p50": 28.4,
+      "p95": 37.8,
+      "pct_of_e2e": 0.1
+    },
+    "planner": {
+      "p50": 893.6,
+      "p95": 1220.1,
+      "pct_of_e2e": 3.6
+    },
+    "writer": {
+      "p50": 754.4,
+      "p95": 1333.6,
+      "pct_of_e2e": 3.2
+    },
+    "reviewer": {
+      "p50": 577.8,
+      "p95": 771.3,
+      "pct_of_e2e": 2.3
+    },
+    "queue_wait": {
+      "p50": 10.9,
+      "p95": 13.9,
+      "pct_of_e2e": 0.0
+    },
+    "evaluator": {
+      "p50": 21297.9,
+      "p95": 34851.7,
+      "pct_of_e2e": 90.6
+    },
+    "facts": {
+      "p50": 1.2,
+      "p95": 1.7,
+      "pct_of_e2e": 0.0
+    },
+    "e2e_ms": {
+      "p50": 23867.3,
+      "p95": 37178.0,
+      "pct_of_e2e": 100.0
+    },
+    "request_ms": {
+      "p50": 2303.4,
+      "p95": 3298.4,
+      "pct_of_e2e": 9.3
+    }
+  },
+  "other_pct": 0.2,
+  "dominant": "evaluator",
+  "cache_hit_latency": {
+    "n": 3,
+    "p50": 20.8,
+    "p95": 70.6
+  },
+  "trace_ids": [
+    "a29b2946-22f0-449e-977b-8c960d40ada0",
+    "235497a7-a31a-4210-bfdc-d6be1d782556",
+    "cf58cdce-d8c8-493d-8081-65bb8956ffb0",
+    "b701a851-e440-43f0-b78a-fbb57946bc60",
+    "5bf27e96-3574-47b0-83bf-89d6f1c6954f",
+    "0cc65c70-f2c1-4d5d-9876-9854c44e5c6a",
+    "03f23d89-666a-497a-b342-18aafda344f7",
+    "161e6659-536c-44b4-9435-13bb89f78c51",
+    "6cf9f3bb-788f-4b60-aeb0-0b9ac6065cf1",
+    "35d84955-a291-410b-9382-2c5dc7377228",
+    "3fe0ab69-7ebd-4a56-ba28-5aacef049cb0",
+    "e55a9ee9-a0c4-4276-ab37-5483d5490a32",
+    "906623b8-2232-4b96-a194-e40e563958f9",
+    "f7a919f9-4214-465e-8e33-9bb536956739",
+    "8a172b88-b56b-4eb6-af75-09e4f4a7cae8",
+    "96bd1688-2807-47b8-ace4-9a9bb75ac8c1",
+    "b6b7e2af-8ff6-48dd-9c63-f6d2417324e7",
+    "ee0c7f09-8fc5-409b-86bb-883da885eedd",
+    "69c217a7-cf32-462a-9022-97cb9922e403",
+    "d8d3fbd9-2f9b-4bd8-a088-f3b03e7d391d",
+    "a859542f-3b95-423c-9ab7-9fe699e0410e",
+    "6adb3afd-0734-4a90-b61c-b72e1d29cc98",
+    "acc955fb-8932-4283-b05b-c28a482ec80e",
+    "19bae617-e11d-45c3-a6e3-3b1e04153a79",
+    "1b21d6cd-7ef9-4bb7-9ee8-a8242121b85f",
+    "28bac5f3-f73b-4d87-aff9-249ff81dc0ae",
+    "991563b3-6937-4118-b162-591d512be19a",
+    "1a798d5f-397b-4cc8-89bd-09acfb71657d",
+    "28cc5f42-179a-4ae1-94ba-75c36a9980fc",
+    "7ada55f9-c544-4daa-8a0c-101431e23fc6",
+    "5ae8c890-4323-4da3-a6a0-7962001522ca",
+    "8650b736-6318-40bc-bb04-0a4f1682c6a9",
+    "b647e0b4-9c88-4b24-8eae-77d0c4ac8430",
+    "e2cd9445-248e-416e-9ddc-ad761b8dc010",
+    "31c9045b-6cfe-4fbb-a2b2-e05cacfd6c2d",
+    "f0f2550a-a418-47ac-a84e-5ee97dfdf37d",
+    "6a87fc92-c433-41ce-ac64-20afe467c445",
+    "43348714-72ac-433b-baf4-2a8482096520",
+    "18751812-ceb1-4ab2-85e5-b68797497a51",
+    "65957449-ed03-4cfe-9b0a-9056495313ea",
+    "7e1cae4a-c6ec-4085-a6ee-1ff7a715a0df",
+    "010fc254-4086-4bf5-9d58-e6ec98e0c95d",
+    "32f1b73a-9bda-4566-bc46-99fb4f8da0ab",
+    "a4b6c8cd-fe12-4ac9-a4c1-725cdcbee4f7",
+    "eb4924bd-6936-451b-b24f-a2e0fa234c65",
+    "7a7759fc-80ea-4921-b787-24755f2bf7b7",
+    "428aefc0-fd2a-427d-8b3e-65a5e7df302b",
+    "f2175200-870c-4bed-8b32-0615ac34dad7",
+    "a44b2cd3-dc39-43a3-8926-ca816c2448ed",
+    "5214aa70-6f8a-4738-b8ce-bb4332ae35b2"
+  ],
+  "e2e_definition": "request start -> evaluator span end"
+}
