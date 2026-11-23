@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- HW11 TEST FIXTURE (s3209). Orvane Devices (ORVN), Helix Rail Systems (HLXR), Maple Hearth Foods (MPLF) and Tidewater Grid (TDWG) are fictional companies; these filings do not exist. -->
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>EDGAR 8-K filings (HW11 test fixture, day 1)</title>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999911-26-000201</id>
+    <updated>2026-11-23T16:10:00-05:00</updated>
+    <title>ORVN: 8-K - Current report (Item 2.02)</title>
+    <summary>(Fictional test item.) Orvane Devices Inc. Item 2.02 Results of Operations and Financial Condition; Item 9.01 Exhibits. Q3 revenue $2.31B, up 14% year over year; operating margin 21%.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999911/000999991126000201/0009999911-26-000201-index.htm" rel="alternate"/>
+  </entry>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999912-26-000310</id>
+    <updated>2026-11-23T08:30:00-05:00</updated>
+    <title>HLXR: 8-K - Current report (Item 1.01)</title>
+    <summary>(Fictional test item.) Helix Rail Systems Inc. Item 1.01 Entry into a Material Definitive Agreement: a 7-year, $900M freight-car supply contract with a national rail operator.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999912/000999991226000310/0009999912-26-000310-index.htm" rel="alternate"/>
+  </entry>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999913-26-000415</id>
+    <updated>2026-11-23T07:45:00-05:00</updated>
+    <title>MPLF: 8-K - Current report (Item 8.01)</title>
+    <summary>(Fictional test item.) Maple Hearth Foods Inc. Item 8.01 Other Events: voluntary nationwide recall of its frozen-meals line after a supplier contamination; the line was about 9% of fiscal 2025 net sales. The company expects a charge of $35M-$45M.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999913/000999991326000415/0009999913-26-000415-index.htm" rel="alternate"/>
+  </entry>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999914-26-000052</id>
+    <updated>2026-11-23T17:20:00-05:00</updated>
+    <title>TDWG: 8-K - Current report (Item 5.02)</title>
+    <summary>(Fictional test item.) Tidewater Grid Corp. Item 5.02 Departure of Directors or Certain Officers: the Chief Executive Officer resigned effective immediately; the CFO was named interim CEO.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999914/000999991426000052/0009999914-26-000052-index.htm" rel="alternate"/>
+  </entry>
+</feed>

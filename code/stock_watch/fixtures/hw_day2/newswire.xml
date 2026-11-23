@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- HW11 TEST FIXTURE (s3209). All companies and items are fictional. -->
+<rss version="2.0"><channel>
+  <title>Test newswire (fictional, day 2)</title>
+  <link>https://example-newswire.example/markets</link>
+  <item>
+    <title>Recap: Helix Rail's $900M contract, one day later</title>
+    <link>https://example-newswire.example/markets/hlxr-contract-recap</link>
+    <pubDate>Tue, 24 Nov 2026 08:00:00 GMT</pubDate>
+    <description>(Fictional test item.) A recap of the freight-car contract Helix Rail Systems disclosed on November 23 (accession 0009999912-26-000310).</description>
+  </item>
+</channel></rss>
