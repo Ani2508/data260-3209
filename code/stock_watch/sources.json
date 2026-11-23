@@ -1,0 +1,94 @@
+{
+  "topic": "Material changes for a stock watchlist: large daily price moves and new SEC 8-K filings",
+  "user_agent": "DATA260-stock-watch/1.0 ani.taraiya@sjsu.edu",
+  "note": "Approved-source allowlist. watch.py refuses any URL whose host is not listed here. Price sources are split into volatility tiers so each tier has its own scan threshold (the digest floor in policy.md).",
+  "sources": [
+    {
+      "id": "prices_live_steady",
+      "type": "stooq",
+      "modes": ["live"],
+      "url": "https://stooq.com/q/d/l/",
+      "tickers": ["ko.us", "jnj.us"],
+      "threshold_pct": 2.0,
+      "lookback_days": 3
+    },
+    {
+      "id": "prices_live_core",
+      "type": "stooq",
+      "modes": ["live"],
+      "url": "https://stooq.com/q/d/l/",
+      "tickers": ["aapl.us"],
+      "threshold_pct": 2.5,
+      "lookback_days": 3
+    },
+    {
+      "id": "prices_live_highvol",
+      "type": "stooq",
+      "modes": ["live"],
+      "url": "https://stooq.com/q/d/l/",
+      "tickers": ["nvda.us", "tsla.us"],
+      "threshold_pct": 4.0,
+      "lookback_days": 3
+    },
+    {
+      "id": "edgar_live",
+      "type": "edgar",
+      "modes": ["live"],
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar",
+      "form": "8-K",
+      "per_company": 5,
+      "ciks": {"AAPL": "0000320193", "NVDA": "0001045810", "TSLA": "0001318605", "KO": "0000021344", "JNJ": "0000200406"}
+    },
+    {
+      "id": "prices_demo",
+      "type": "stooq",
+      "modes": ["fixtures"],
+      "url": "https://stooq.com/q/d/l/",
+      "tickers": ["nbrx.us", "cbds.us", "lksp.us"],
+      "threshold_pct": 2.0,
+      "lookback_days": 3
+    },
+    {
+      "id": "prices_fx_steady",
+      "type": "stooq",
+      "modes": ["fixtures"],
+      "url": "https://stooq.com/q/d/l/",
+      "tickers": ["mplf.us", "qstp.us"],
+      "threshold_pct": 2.0,
+      "lookback_days": 3
+    },
+    {
+      "id": "prices_fx_core",
+      "type": "stooq",
+      "modes": ["fixtures"],
+      "url": "https://stooq.com/q/d/l/",
+      "tickers": ["orvn.us"],
+      "threshold_pct": 2.5,
+      "lookback_days": 3
+    },
+    {
+      "id": "prices_fx_highvol",
+      "type": "stooq",
+      "modes": ["fixtures"],
+      "url": "https://stooq.com/q/d/l/",
+      "tickers": ["hlxr.us"],
+      "threshold_pct": 4.0,
+      "lookback_days": 3
+    },
+    {
+      "id": "edgar_fixture",
+      "type": "edgar",
+      "modes": ["fixtures"],
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar",
+      "fixture": "edgar_8k.xml",
+      "ciks": {}
+    },
+    {
+      "id": "newswire_fixture",
+      "type": "rss",
+      "modes": ["fixtures"],
+      "url": "https://example-newswire.example/markets/feed.xml",
+      "fixture": "newswire.xml"
+    }
+  ]
+}

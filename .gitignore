@@ -33,3 +33,12 @@ reports/hw09/_to_delete/
 reports/hw10/Snippets/
 reports/hw10/*.docx
 .deepeval/
+
+# HW11 working screenshots, report draft, Muse upload zip and runtime state
+reports/hw11/Snippets/
+reports/hw11/*.docx
+reports/hw11/_to_delete/
+reports/hw11/stock-watch-kit.zip
+code/stock_watch/state/
+code/stock_watch/digests/
+code/stock_watch/snapshot-copy.json
