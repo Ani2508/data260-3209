@@ -36,7 +36,7 @@
       "modes": ["live"],
       "url": "https://www.sec.gov/cgi-bin/browse-edgar",
       "form": "8-K",
-      "per_company": 5,
+      "per_company": 10,
       "ciks": {"AAPL": "0000320193", "NVDA": "0001045810", "TSLA": "0001318605", "KO": "0000021344", "JNJ": "0000200406"}
     },
     {
